@@ -1,0 +1,35 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="80" y1="20" x2="1080" y2="690" gradientUnits="userSpaceOnUse"><stop stop-color="#07162B"/><stop offset=".48" stop-color="#173957"/><stop offset="1" stop-color="#291A48"/></linearGradient>
+    <linearGradient id="glass" x1="410" y1="270" x2="770" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#173F5F"/><stop offset=".55" stop-color="#07172D"/><stop offset="1" stop-color="#0A0D20"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="520" x2="1100" y2="720" gradientUnits="userSpaceOnUse"><stop stop-color="#071226"/><stop offset=".58" stop-color="#0A3150"/><stop offset="1" stop-color="#1B1740"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="grain" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".72" numOctaves="4" seed="18"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .12"/></feComponentTransfer></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <pattern id="windows" width="58" height="48" patternUnits="userSpaceOnUse"><rect x="5" y="5" width="45" height="34" rx="2" fill="#40CFFF" fill-opacity=".16"/><rect x="8" y="8" width="20" height="28" fill="#FFB95C" fill-opacity=".42"/></pattern>
+  </defs>
+  <rect width="1200" height="720" fill="url(#sky)"/>
+  <circle cx="938" cy="142" r="84" fill="#C9EEFF" fill-opacity=".16"/><circle cx="938" cy="142" r="48" fill="#D9F7FF" fill-opacity=".16" filter="url(#glow)"/>
+  <path d="M0 506C194 449 360 475 520 523C721 584 936 552 1200 466V720H0V506Z" fill="url(#water)"/>
+  <path d="M0 604C240 568 442 594 635 635C828 675 1010 647 1200 583" stroke="#1FC7FF" stroke-opacity=".22" stroke-width="5"/>
+  <path d="M188 422L558 196L1015 406V591H188V422Z" fill="#081427" stroke="#49D8FF" stroke-opacity=".34" stroke-width="4"/>
+  <path d="M160 424L556 174L1037 410" stroke="#D7F5FF" stroke-opacity=".5" stroke-width="13" stroke-linecap="round"/>
+  <ellipse cx="374" cy="494" rx="142" ry="112" fill="#FF9B4A" fill-opacity=".1" filter="url(#glow)"/>
+  <ellipse cx="650" cy="448" rx="168" ry="145" fill="#32CBFF" fill-opacity=".08" filter="url(#glow)"/>
+  <rect x="236" y="385" width="250" height="206" fill="url(#windows)" stroke="#FFB95C" stroke-opacity=".25"/>
+  <rect x="490" y="300" width="292" height="291" fill="url(#glass)" stroke="#43CFFF" stroke-opacity=".5"/>
+  <rect x="490" y="300" width="292" height="291" fill="url(#windows)" opacity=".72"/>
+  <rect x="786" y="388" width="177" height="203" fill="url(#windows)" stroke="#FFB95C" stroke-opacity=".25"/>
+  <g stroke="#9BDEFA" stroke-opacity=".18" stroke-width="3">
+    <path d="M284 385V591M337 385V591M390 385V591M443 385V591"/><path d="M236 433H486M236 481H486M236 529H486"/>
+    <path d="M548 300V591M606 300V591M664 300V591M722 300V591"/><path d="M490 348H782M490 396H782M490 444H782M490 492H782M490 540H782"/>
+  </g>
+  <g fill="#FFD38B">
+    <rect x="302" y="447" width="25" height="31" rx="2" opacity=".72"/><rect x="401" y="500" width="28" height="25" rx="2" opacity=".54"/><rect x="560" y="360" width="31" height="27" rx="2" opacity=".64"/><rect x="681" y="458" width="25" height="31" rx="2" opacity=".48"/><rect x="822" y="431" width="28" height="29" rx="2" opacity=".65"/>
+  </g>
+  <path d="M514 320L746 560" stroke="white" stroke-opacity=".08" stroke-width="24" filter="url(#soft)"/>
+  <rect width="1200" height="720" fill="#D9F7FF" filter="url(#grain)" opacity=".34"/>
+  <path d="M185 592H1015" stroke="#59DEFF" stroke-opacity=".48" stroke-width="4"/><path d="M265 632H946" stroke="#5E7BFF" stroke-opacity=".23" stroke-width="11" filter="url(#glow)"/>
+  <rect width="1200" height="720" fill="url(#shade)"/>
+  <defs><linearGradient id="shade" x1="600" y1="0" x2="600" y2="720"><stop stop-color="#020611" stop-opacity=".05"/><stop offset="1" stop-color="#020611" stop-opacity=".55"/></linearGradient></defs>
+</svg>

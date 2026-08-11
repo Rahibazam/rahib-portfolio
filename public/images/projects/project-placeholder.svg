@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#070B1D"/>
+  <circle cx="260" cy="170" r="230" fill="#0AC4FF" fill-opacity="0.16"/>
+  <circle cx="900" cy="250" r="300" fill="#422AD5" fill-opacity="0.2"/>
+  <rect x="110" y="100" width="980" height="600" rx="48" fill="#0A0F26" fill-opacity="0.78" stroke="#0AC4FF" stroke-opacity="0.26" stroke-width="2"/>
+  <rect x="170" y="170" width="320" height="44" rx="22" fill="#0AC4FF" fill-opacity="0.18"/>
+  <rect x="170" y="250" width="700" height="54" rx="18" fill="white" fill-opacity="0.1"/>
+  <rect x="170" y="335" width="860" height="34" rx="17" fill="white" fill-opacity="0.07"/>
+  <rect x="170" y="395" width="740" height="34" rx="17" fill="white" fill-opacity="0.07"/>
+  <rect x="170" y="500" width="250" height="110" rx="28" fill="#0AC4FF" fill-opacity="0.11" stroke="#0AC4FF" stroke-opacity="0.22"/>
+  <rect x="460" y="500" width="250" height="110" rx="28" fill="#422AD5" fill-opacity="0.14" stroke="#422AD5" stroke-opacity="0.28"/>
+  <rect x="750" y="500" width="250" height="110" rx="28" fill="white" fill-opacity="0.055" stroke="white" stroke-opacity="0.1"/>
+  <text x="170" y="655" fill="#FAFAFA" fill-opacity="0.56" font-family="Arial, sans-serif" font-size="24" font-weight="700">Replace with real project screenshot</text>
+</svg>
