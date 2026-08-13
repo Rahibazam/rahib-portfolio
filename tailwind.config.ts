@@ -38,9 +38,9 @@ const config: Config = {
         'border-purple': 'rgba(108, 76, 255, 0.32)'
       },
       fontFamily: {
-        sans: ['Inter', 'Manrope', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'Sora', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        mono: ['"SFMono-Regular"', 'Consolas', '"Liberation Mono"', 'monospace']
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace']
       },
       boxShadow: {
         card: '0 0 0 1px rgba(10,196,255,0.08), 0 24px 80px rgba(0,0,0,0.38), inset 0 1px 0 rgba(255,255,255,0.07)',
