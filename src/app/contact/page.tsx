@@ -111,8 +111,7 @@ export default function ContactPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
           <Reveal className="relative z-10">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.55)] sm:text-sm">Let’s Talk</p>
-            <h1 className="home-display mt-7 max-w-[59rem] text-[clamp(2.8rem,12vw,4.8rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white lg:text-[5.35rem] xl:text-[5.6rem] 2xl:text-[6.15rem]">
+            <h1 className="home-display max-w-[59rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white">
               <span className="block">Let’s skip the</span>
               <span className="block text-gradient drop-shadow-[0_0_24px_rgba(108,76,255,0.2)]">small talk.</span>
               </h1>

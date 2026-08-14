@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, BarChart3, Database, Gauge, PanelsTopLeft, Search, UserRoundCog, Workflow, Wrench } from 'lucide-react';
 import { PageShell } from '@/components/motion/PageShell';
@@ -9,19 +8,11 @@ import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { HomeOrbitVisual } from '@/components/home/HomeOrbitVisual';
-import { HomeSectionHeader } from '@/components/home/HomeSectionHeader';
+import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { HomeCTAVisual } from '@/components/home/HomeCTAVisual';
 import { FeaturedWorkCard } from '@/components/home/FeaturedWorkCard';
 import { HomeSystemIcon } from '@/components/home/HomeSystemIcon';
 import { homeExperience, homeFeaturedWork, homeProblems, homeProcess, homeSystems, type HomeIconName } from '@/data/home';
-
-function HeadingAccent({ children, className = '' }: { children: ReactNode; className?: string }) {
-  return (
-    <span className={`bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))] ${className}`}>
-      {children}
-    </span>
-  );
-}
 
 const homeIcons: Record<HomeIconName, LucideIcon> = {
   database: Database,
@@ -51,7 +42,7 @@ export default function HomePage() {
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
           <Reveal className="relative z-10">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.55)] sm:text-sm">Welcome to my portfolio</p>
-            <h1 className="home-display mt-7 max-w-[59rem] text-[clamp(2.8rem,12vw,4.8rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white lg:text-[5.35rem] xl:text-[5.6rem] 2xl:text-[6.15rem]">
+            <h1 className="home-display mt-7 max-w-[59rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white">
               <span className="block xl:whitespace-nowrap"><span className="block sm:inline">I build</span><span className="block sm:ml-[0.18em] sm:inline">systems</span></span>
               <span className="block xl:whitespace-nowrap"><span className="block sm:inline">that drive</span><HeadingAccent className="block sm:ml-[0.18em] sm:inline">growth.</HeadingAccent></span>
             </h1>

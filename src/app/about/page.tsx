@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { AboutHeroVisual } from '@/components/about/AboutHeroVisual';
 import { AboutPersonalityGrid } from '@/components/about/AboutPersonalityGrid';
 import { BrandMark } from '@/components/brand/BrandMark';
-import { HomeSectionHeader } from '@/components/home/HomeSectionHeader';
+import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { FloatingSection } from '@/components/motion/FloatingSection';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
@@ -42,8 +42,7 @@ export default function AboutPage() {
         <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />
           <Reveal className="relative z-10">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary sm:text-sm">About me</p>
-            <h1 className="home-display mt-7 max-w-[58rem] text-[clamp(3rem,13vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white lg:text-[5.5rem] xl:text-[6rem]">
+            <h1 className="home-display max-w-[58rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white">
               Who I am,<br />what I <span className="text-gradient">build.</span>
             </h1>
             <p className="mt-8 max-w-[46rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">I’m Rahib Azam — a CRM &amp; Web Technologist and HubSpot Specialist who builds clean systems, thoughtful experiences, and websites that actually work.</p>
@@ -56,7 +55,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title="The Real Version" description="A little less corporate, a little more useful." />
+          <HomeSectionHeader title={<>The Real <HeadingAccent>Version</HeadingAccent></>} description="A little less corporate, a little more useful." />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {aboutIntroCards.map(({ title, Icon, paragraphs }, index) => (
               <Reveal key={title} delay={index * 0.07}>
@@ -71,7 +70,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title="What Defines My Work" description="The principles behind how I build systems, pages, automations, and CRM experiences." />
+          <HomeSectionHeader title={<>What Defines My <HeadingAccent>Work</HeadingAccent></>} description="The principles behind how I build systems, pages, automations, and CRM experiences." />
           <div className="mt-10 grid gap-5 lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
               <Reveal key={title} delay={index * 0.07}>
@@ -85,24 +84,17 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title="Personality Stack" description="A slightly chaotic but accurate snapshot of the tools, habits, obsessions, and weird little details behind how I build." />
+          <HomeSectionHeader title={<>Personality <HeadingAccent>Stack</HeadingAccent></>} description="A slightly chaotic but accurate snapshot of the tools, habits, obsessions, and weird little details behind how I build." />
           <div aria-hidden="true" className="mt-7 h-px w-full bg-gradient-to-r from-secondary/65 via-secondary/20 to-transparent shadow-[0_0_10px_rgba(10,196,255,.2)]" />
           <div className="mt-8"><AboutPersonalityGrid videoSources={videoSources} availableAudio={availableAudio} availableArtwork={availableArtwork} /></div>
           <div className="mt-8 flex items-center justify-center gap-5 text-center font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/35 before:h-px before:w-24 before:bg-gradient-to-r before:from-transparent before:to-secondary/65 after:h-px after:w-24 after:bg-gradient-to-r after:from-secondary/65 after:to-transparent">Tools change. Principles don’t. Curiosity never stops.</div>
         </section>
 
         <section className="py-14 sm:py-16">
-          <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(26rem,0.78fr)] lg:items-center">
-            <div className="flex items-center gap-5">
-              <span aria-hidden="true" className="grid h-9 w-9 shrink-0 place-items-center text-secondary drop-shadow-[0_0_18px_rgba(10,196,255,.78)]">
-                <span className="h-0 w-0 border-y-[0.72rem] border-l-[1.12rem] border-y-transparent border-l-current" />
-              </span>
-              <h2 className="home-display text-4xl font-black uppercase leading-none tracking-[0.02em] text-white sm:text-5xl lg:text-6xl">Toolkit</h2>
-            </div>
-            <p className="border-l-2 border-purple/80 pl-6 text-base leading-8 text-white/72 shadow-[-12px_0_30px_-25px_rgba(108,76,255,.9)] sm:text-lg">
-              The tools, systems, and platforms I use to turn ideas into working infrastructure.
-            </p>
-          </div>
+          <HomeSectionHeader
+            title={<HeadingAccent>Toolkit</HeadingAccent>}
+            description="The tools, systems, and platforms I use to turn ideas into working infrastructure."
+          />
 
           <div className="mt-10 space-y-5">
             {aboutToolkit.map(({ title, description, image, accent, items }) => {
@@ -227,15 +219,10 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <div className="grid gap-6 border-t border-secondary/25 pt-7 lg:grid-cols-[1fr_0.52fr] lg:items-start">
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className="h-2.5 w-2.5 rotate-45 rounded-[0.18rem] bg-secondary shadow-[0_0_14px_4px_rgba(10,196,255,.45)]" />
-              <h2 className="home-display text-4xl font-black uppercase leading-none tracking-[0.02em] text-white sm:text-5xl lg:text-6xl">Experience Snapshot</h2>
-            </div>
-            <p className="border-l-2 border-purple/80 pl-6 text-base leading-8 text-white/72 shadow-[-12px_0_30px_-25px_rgba(108,76,255,.9)] sm:text-lg">
-              A quick view of the work that shaped how I think about CRM, automation, and web systems.
-            </p>
-          </div>
+          <HomeSectionHeader
+            title={<>Experience <HeadingAccent>Snapshot</HeadingAccent></>}
+            description="A quick view of the work that shaped how I think about CRM, automation, and web systems."
+          />
 
           <div className="relative mt-10 space-y-5">
             <div aria-hidden="true" className="absolute bottom-8 left-[1.18rem] top-8 w-px bg-gradient-to-b from-transparent via-secondary/55 to-purple/45 shadow-[0_0_20px_rgba(10,196,255,.38)] sm:left-[1.45rem]" />
@@ -325,15 +312,10 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <div className="grid gap-6 border-t border-secondary/25 pt-7 lg:grid-cols-[1fr_0.52fr] lg:items-start">
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className="h-2.5 w-2.5 rotate-45 rounded-[0.18rem] bg-secondary shadow-[0_0_14px_4px_rgba(10,196,255,.45)]" />
-              <h2 className="home-display text-4xl font-black uppercase leading-none tracking-[0.08em] text-white sm:text-5xl lg:text-6xl">Snapshot</h2>
-            </div>
-            <p className="border-l-2 border-purple/80 pl-6 text-base leading-8 text-white/72 shadow-[-12px_0_30px_-25px_rgba(108,76,255,.9)] sm:text-lg">
-              A few details behind the person building the systems.
-            </p>
-          </div>
+          <HomeSectionHeader
+            title={<HeadingAccent>Snapshot</HeadingAccent>}
+            description="A few details behind the person building the systems."
+          />
 
           <Reveal>
             <div className="relative mt-10 rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.42),0_0_52px_rgba(10,196,255,.12),0_0_64px_rgba(108,76,255,.10)]">

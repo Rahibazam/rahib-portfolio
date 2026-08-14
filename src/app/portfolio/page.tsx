@@ -9,7 +9,7 @@ import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 import { ButtonTransitionLink } from '@/components/ui/Button';
-import { HomeSectionHeader } from '@/components/home/HomeSectionHeader';
+import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { PortfolioHeroVisual } from '@/components/portfolio/PortfolioHeroVisual';
 import { PortfolioProjectGrid } from '@/components/portfolio/PortfolioProjectGrid';
 import { PortfolioProjectVisual } from '@/components/portfolio/PortfolioProjectVisual';
@@ -31,8 +31,7 @@ export default function PortfolioPage() {
         <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-20 xl:min-h-[47rem] xl:grid-cols-[0.92fr_1.08fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[35rem] w-[35rem] rounded-full bg-secondary/[0.08] blur-[125px]" />
           <Reveal className="relative z-10">
-            <Badge className="rounded-lg border-secondary/25 bg-secondary/[0.07] px-4 text-secondary">My Portfolio</Badge>
-            <h1 className="home-display mt-7 text-[clamp(3.2rem,14vw,5.2rem)] font-black uppercase leading-[0.96] tracking-[-0.025em] text-white lg:text-[6rem] xl:text-[6.55rem] 2xl:text-[7rem]">
+            <h1 className="home-display text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.96] tracking-[-0.025em] text-white">
               Selected <span className="text-gradient">Work</span>
             </h1>
             <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/70 sm:text-lg lg:text-[1.16rem] lg:leading-8">
@@ -82,14 +81,14 @@ export default function PortfolioPage() {
         </section>
 
         <section id="project-grid" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title="Project Archive" description="Filter the work by system, platform, or execution type." />
+          <HomeSectionHeader title={<>Project <HeadingAccent>Archive</HeadingAccent></>} description="Filter the work by system, platform, or execution type." />
           <Suspense fallback={null}>
             <PortfolioProjectGrid projects={projects} />
           </Suspense>
         </section>
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title="Systems Behind the Work" description="Every project is built around structure, clarity, automation, and maintainability." />
+          <HomeSectionHeader title={<>Systems Behind the <HeadingAccent>Work</HeadingAccent></>} description="Every project is built around structure, clarity, automation, and maintainability." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {systems.map(({ title, description, Icon }, index) => (
               <Reveal key={title} delay={index * 0.07}>
