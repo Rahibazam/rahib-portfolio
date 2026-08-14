@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 
 type GlassCardProps = {
   className?: string;
+  contentClassName?: string;
   children: React.ReactNode;
   strength?: 'default' | 'strong';
   interactive?: boolean;
@@ -10,6 +11,7 @@ type GlassCardProps = {
 
 export function GlassCard({
   className,
+  contentClassName,
   children,
   strength = 'default',
   interactive = true,
@@ -66,7 +68,7 @@ export function GlassCard({
         </>
       ) : null}
 
-      <div className="relative z-10">{children}</div>
+      <div className={cn('relative z-10', contentClassName)}>{children}</div>
     </div>
   );
 }

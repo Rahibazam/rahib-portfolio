@@ -137,7 +137,10 @@ export default function ContactPage() {
 
         <section id="contact-form" className="scroll-mt-28 py-14 sm:py-16">
           <Reveal>
-            <GlassCard className="home-module-strong overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-6 lg:grid lg:grid-cols-[1.35fr_0.75fr] lg:items-stretch lg:gap-8 lg:p-8 xl:gap-10 xl:p-9">
+            <GlassCard
+              className="home-module-strong overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9"
+              contentClassName="lg:grid lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.75fr)] lg:items-stretch lg:gap-8 xl:gap-10"
+            >
               <div className="flex h-full flex-col">
                 <div className="mb-4 flex items-center gap-4">
                   <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-[1.35rem] border border-[#0AC4FF]/70 bg-[#0000] text-[#0AC4FF] shadow-[0_0_30px_rgba(10,196,255,.24),inset_0_1px_0_rgba(255,255,255,.06)] backdrop-blur-lg">
@@ -182,14 +185,6 @@ export default function ContactPage() {
 
           <Reveal>
             <GlassCard className="home-module-strong relative overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-6 lg:p-7">
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-[linear-gradient(100deg,rgba(10,196,255,0.055),transparent_42%,rgba(108,76,255,0.075))]"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-6 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.62),rgba(139,108,255,.48),transparent)]"
-              />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 {socialDockParticles.map((particle, index) => (
                   <span
@@ -207,14 +202,14 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="relative z-10 grid gap-7 lg:grid-cols-[0.92fr_auto] lg:items-center lg:gap-10">
+              <div className="relative z-10 grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-8 xl:gap-10">
                 <div>
                   <div className="flex items-center gap-3">
                     <span
                       aria-hidden="true"
                       className="h-3 w-3 shrink-0 rounded-[0.2rem] bg-secondary shadow-[0_0_18px_rgba(10,196,255,.75)]"
                     />
-                    <h2 className="home-display text-[clamp(1.45rem,2.4vw,2.15rem)] font-black uppercase leading-tight tracking-[-0.025em] text-white">
+                    <h2 className="home-display text-[clamp(1.4rem,2.1vw,2rem)] font-black uppercase leading-[1.08] tracking-[-0.025em] text-white">
                       Find me online,{' '}
                       <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
                         awkwardly
@@ -227,7 +222,7 @@ export default function ContactPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4 lg:justify-end">
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 lg:flex-nowrap lg:justify-end">
                   {contactSocialLinks.map(({ label, href, ariaLabel, icon }) => (
                     <a
                       key={label}
@@ -287,7 +282,7 @@ export default function ContactPage() {
             <div className="group relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <div className="relative min-h-[650px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[610px] lg:h-[470px] lg:min-h-0">
+              <div className="relative min-h-[650px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[610px] lg:min-h-[38rem]">
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(145deg,rgba(7,17,38,0.985),rgba(8,19,48,0.975)_45%,rgba(19,15,61,0.965)_100%)]" />
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_14%_0%,rgba(10,196,255,.18),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.20),transparent_40%)]" />
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.30),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(108,76,255,.34),transparent_44%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
@@ -309,7 +304,7 @@ export default function ContactPage() {
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
-                    <h2 className="home-display text-[clamp(2.35rem,10vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.055em] text-white sm:text-[clamp(3rem,6vw,4.7rem)]">
+                    <h2 className="home-display text-[clamp(2.25rem,9vw,4.35rem)] font-black uppercase leading-[0.96] tracking-[-0.045em] text-white sm:text-[clamp(2.85rem,5.35vw,4.35rem)]">
                       LET’S BUILD SOMETHING <br className="hidden sm:block" />
                       THAT{' '}
                       <span className="bg-gradient-to-r from-[#06C2FF] via-[#1BA6FF] to-[#8B5CFF] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(10,196,255,.24)]">
