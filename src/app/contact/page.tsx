@@ -183,7 +183,7 @@ export default function ContactPage() {
           />
 
           <Reveal>
-            <div className="relative overflow-hidden border-y border-secondary/25 py-8 sm:py-9 lg:py-10">
+            <div className="relative overflow-hidden border-y border-secondary/25 px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,196,255,.055),transparent_42%,rgba(139,108,255,.06))]" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 {socialDockParticles.map((particle, index) => (
