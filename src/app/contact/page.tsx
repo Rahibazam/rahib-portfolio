@@ -183,7 +183,8 @@ export default function ContactPage() {
           />
 
           <Reveal>
-            <GlassCard className="home-module-strong relative overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-6 lg:p-7">
+            <div className="relative overflow-hidden border-y border-secondary/25 py-8 sm:py-9 lg:py-10">
+              <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,196,255,.055),transparent_42%,rgba(139,108,255,.06))]" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 {socialDockParticles.map((particle, index) => (
                   <span
@@ -240,7 +241,7 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
-            </GlassCard>
+            </div>
           </Reveal>
         </section>
 
@@ -261,17 +262,21 @@ export default function ContactPage() {
             />
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="home-module-strong mt-10 grid overflow-hidden rounded-card border-secondary/35 sm:grid-cols-2 lg:grid-cols-4">
-              {contactStats.map(({ label, value, note, icon: Icon }) => (
-                <div key={label} className="flex min-h-40 gap-5 border-b border-white/10 p-6 sm:border-r lg:[&:nth-child(4n)]:border-r-0 [&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0 lg:p-8">
-                  <Icon className="mt-1 h-8 w-8 shrink-0 text-secondary drop-shadow-[0_0_12px_rgba(10,196,255,.55)]" strokeWidth={1.7} />
-                  <div>
-                    <p className="text-sm font-semibold text-white/62">{label}</p>
-                    <p className="mt-3 font-display text-xl font-black text-white lg:text-2xl">{value}</p>
-                    <p className="mt-2 text-sm leading-6 text-white/46">{note}</p>
+            <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
+              <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.3),rgba(139,108,255,.3),transparent)]" />
+              <div className="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4">
+                {contactStats.map(({ label, value, note, icon: Icon }, index) => (
+                  <div key={label} className="group/stat relative flex min-h-40 gap-5 overflow-hidden border-b border-secondary/15 p-6 transition-colors duration-500 hover:bg-secondary/[0.04] motion-reduce:transition-none sm:border-r lg:[&:nth-child(4n)]:border-r-0 [&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0 lg:min-h-44 lg:p-8">
+                    <span aria-hidden="true" className="pointer-events-none absolute right-4 top-4 font-mono text-[0.58rem] font-bold tracking-[0.16em] text-white/20 transition-colors duration-500 group-hover/stat:text-secondary/65 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
+                    <Icon className="mt-1 h-8 w-8 shrink-0 text-secondary drop-shadow-[0_0_12px_rgba(10,196,255,.55)] transition-[color,filter] duration-500 group-hover/stat:text-cyan-100 group-hover/stat:drop-shadow-[0_0_19px_rgba(10,196,255,.8)] motion-reduce:transition-none" strokeWidth={1.7} />
+                    <div className="relative z-10 pr-5">
+                      <p className="text-sm font-semibold text-white/62">{label}</p>
+                      <p className="mt-3 font-display text-xl font-black text-white lg:text-2xl">{value}</p>
+                      <p className="mt-2 text-sm leading-6 text-white/46 transition-colors duration-500 group-hover/stat:text-white/64 motion-reduce:transition-none">{note}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </Reveal>
         </section>
