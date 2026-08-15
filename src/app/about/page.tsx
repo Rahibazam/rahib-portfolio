@@ -13,7 +13,6 @@ import { Reveal } from '@/components/motion/Reveal';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { aboutExperience, aboutIntroCards, aboutPrinciples, aboutSnapshots, aboutToolkit } from '@/data/about';
 
 export const metadata: Metadata = {
@@ -56,14 +55,19 @@ export default function AboutPage() {
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader title={<>The Real <HeadingAccent>Version</HeadingAccent></>} description="A little less corporate, a little more useful." />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutIntroCards.map(({ title, Icon, paragraphs }, index) => (
-              <Reveal key={title} delay={index * 0.07}>
-                <GlassCard className="home-module h-full min-h-[23rem] border-secondary/30 p-7 lg:p-9">
-                  <Icon className={`h-12 w-12 ${index === 1 ? 'text-purple-200' : 'text-secondary'} drop-shadow-[0_0_13px_currentColor]`} />
-                  <h2 className="mt-7 font-display text-2xl font-black text-white">{title}</h2>
-                  {paragraphs.map((paragraph) => <p key={paragraph} className="mt-5 text-sm leading-7 text-white/66 lg:text-base">{paragraph}</p>)}
-                </GlassCard>
+              <Reveal key={title} delay={index * 0.07} className="h-full">
+                <article className={`group/intro relative h-full min-h-72 overflow-hidden py-9 transition-colors duration-500 motion-reduce:transition-none sm:py-11 lg:min-h-[23rem] lg:px-9 lg:py-12 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(10,196,255,.1),transparent_48%)] opacity-0 transition-opacity duration-500 group-hover/intro:opacity-100 motion-reduce:transition-none" />
+                  <div className="relative z-10 flex items-center justify-between gap-5">
+                    <span className="font-mono text-xs font-bold tracking-[0.2em] text-white/28 transition-colors duration-500 group-hover/intro:text-secondary/80 motion-reduce:transition-none">Profile / 0{index + 1}</span>
+                    <Icon className={`h-11 w-11 transition-[filter,color] duration-500 motion-reduce:transition-none ${index === 1 ? 'text-purple-200 drop-shadow-[0_0_13px_rgba(139,108,255,.55)] group-hover/intro:drop-shadow-[0_0_21px_rgba(139,108,255,.8)]' : 'text-secondary drop-shadow-[0_0_13px_rgba(10,196,255,.55)] group-hover/intro:drop-shadow-[0_0_21px_rgba(10,196,255,.8)]'}`} />
+                  </div>
+                  <span aria-hidden="true" className="relative z-10 mt-6 block h-px bg-[linear-gradient(90deg,rgba(10,196,255,.55),rgba(139,108,255,.3),transparent)]" />
+                  <h2 className="relative z-10 mt-7 font-display text-2xl font-black text-white">{title}</h2>
+                  {paragraphs.map((paragraph) => <p key={paragraph} className="relative z-10 mt-5 text-sm leading-7 text-white/66 transition-colors duration-500 group-hover/intro:text-white/76 motion-reduce:transition-none lg:text-base">{paragraph}</p>)}
+                </article>
               </Reveal>
             ))}
           </div>
@@ -71,13 +75,18 @@ export default function AboutPage() {
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader title={<>What Defines My <HeadingAccent>Work</HeadingAccent></>} description="The principles behind how I build systems, pages, automations, and CRM experiences." />
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
-              <Reveal key={title} delay={index * 0.07}>
-                <GlassCard className="home-module flex h-full min-h-64 items-start gap-6 border-secondary/30 p-7 lg:p-9">
-                  <div className="grid h-16 w-16 shrink-0 place-items-center rounded-card border border-secondary/40 bg-secondary/[0.07] text-secondary shadow-[0_0_28px_rgba(10,196,255,.17)]"><Icon className="h-9 w-9" /></div>
-                  <div><h2 className="font-display text-xl font-black text-white">{title}</h2><p className="mt-4 text-sm leading-7 text-white/64">{description}</p></div>
-                </GlassCard>
+              <Reveal key={title} delay={index * 0.07} className="h-full">
+                <article className={`group/principle relative flex h-full min-h-56 items-start gap-6 overflow-hidden py-9 transition-colors duration-500 motion-reduce:transition-none sm:py-10 lg:min-h-64 lg:px-9 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
+                  <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(108,76,255,.055))] opacity-0 transition-opacity duration-500 group-hover/principle:opacity-100 motion-reduce:transition-none" />
+                  <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/40 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.15),inset_0_0_16px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/principle:border-purple/65 group-hover/principle:text-white group-hover/principle:shadow-[0_0_30px_rgba(10,196,255,.28),0_0_22px_rgba(139,108,255,.2)] motion-reduce:transition-none"><Icon className="h-7 w-7" /></div>
+                  <div className="relative z-10">
+                    <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.18em] text-secondary/60">Principle 0{index + 1}</span>
+                    <h2 className="mt-3 font-display text-xl font-black text-white">{title}</h2>
+                    <p className="mt-4 text-sm leading-7 text-white/64 transition-colors duration-500 group-hover/principle:text-white/76 motion-reduce:transition-none">{description}</p>
+                  </div>
+                </article>
               </Reveal>
             ))}
           </div>
@@ -96,7 +105,7 @@ export default function AboutPage() {
             description="The tools, systems, and platforms I use to turn ideas into working infrastructure."
           />
 
-          <div className="mt-10 space-y-5">
+          <div className="mt-10 divide-y divide-secondary/20 border-y border-secondary/25">
             {aboutToolkit.map(({ title, description, image, accent, items }) => {
               const isPurple = accent === 'purple';
               const isBlue = accent === 'blue';
@@ -104,12 +113,6 @@ export default function AboutPage() {
               const accentLine = isPurple
                 ? 'bg-purple shadow-[0_0_16px_rgba(108,76,255,.8)]'
                 : 'bg-secondary shadow-[0_0_16px_rgba(10,196,255,.8)]';
-              const borderGradient = isPurple
-                ? 'bg-[linear-gradient(135deg,rgba(108,76,255,.78),rgba(10,196,255,.34),rgba(168,85,247,.55),rgba(255,255,255,.16))]'
-                : 'bg-[linear-gradient(135deg,rgba(10,196,255,.75),rgba(108,76,255,.42),rgba(255,255,255,.18),rgba(10,196,255,.45))]';
-              const rowGlow = isPurple
-                ? 'shadow-[0_24px_80px_rgba(0,0,0,.42),0_0_54px_rgba(108,76,255,.16)] hover:shadow-[0_32px_100px_rgba(0,0,0,.48),0_0_72px_rgba(108,76,255,.22)]'
-                : 'shadow-[0_24px_80px_rgba(0,0,0,.42),0_0_44px_rgba(10,196,255,.14)] hover:shadow-[0_32px_100px_rgba(0,0,0,.48),0_0_64px_rgba(10,196,255,.2)]';
               const imageBloom = isPurple
                 ? 'bg-violet-500/18'
                 : isBlue
@@ -137,15 +140,10 @@ export default function AboutPage() {
               return (
                 <article
                   key={title}
-                  className={[
-                    'group relative overflow-hidden rounded-[2rem] p-px transition duration-500 ease-premium hover:-translate-y-1',
-                    rowGlow
-                  ].join(' ')}
+                  className="group relative overflow-hidden transition-colors duration-500 ease-premium hover:bg-white/[0.012] motion-reduce:transition-none"
                 >
-                  <div aria-hidden="true" className={`absolute inset-0 rounded-[2rem] opacity-75 transition duration-500 group-hover:opacity-100 ${borderGradient}`} />
-
-                  <div className="relative overflow-hidden rounded-[calc(2rem-1px)] bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.96),rgba(8,10,34,.94))] shadow-[inset_0_1px_0_rgba(255,255,255,.1),inset_0_-1px_0_rgba(10,196,255,.08)] backdrop-blur-[22px]">
-                    <div aria-hidden="true" className={`pointer-events-none absolute inset-0 rounded-[calc(2rem-1px)] ${isPurple ? 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(108,76,255,.08)]' : 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.06)]'}`} />
+                  <div className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.065),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.09),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.42),rgba(8,10,34,.32))] backdrop-blur-[12px]">
+                    <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${isPurple ? 'shadow-[inset_0_0_34px_rgba(108,76,255,.055)]' : 'shadow-[inset_0_0_34px_rgba(10,196,255,.045)]'}`} />
                     <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,.1),transparent_28%,transparent_68%,rgba(108,76,255,.08))] opacity-50" />
                     <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(10,196,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(10,196,255,.22)_1px,transparent_1px)] [background-size:44px_44px]" />
                     <div aria-hidden="true" className={`pointer-events-none absolute -left-16 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full blur-[82px] ${isPurple ? 'bg-purple/16' : 'bg-secondary/16'}`} />
