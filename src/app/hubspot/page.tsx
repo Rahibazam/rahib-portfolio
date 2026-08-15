@@ -1,6 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
 import {
-  AlertTriangle,
   ArrowRight,
   BarChart3,
   Blocks,
@@ -39,8 +38,8 @@ import { HubSpotHeroVisual } from '@/components/hubspot/HubSpotHeroVisual';
 import { HubSpotMark } from '@/components/brand/HubSpotMark';
 import { HubSpotProjectVisual } from '@/components/hubspot/HubSpotProjectVisual';
 import { HubSpotSectionHeader } from '@/components/hubspot/HubSpotSectionHeader';
+import { HubSpotProblemMap } from '@/components/hubspot/HubSpotProblemMap';
 import {
-  hubspotProblems,
   hubspotProcess,
   hubspotProjects,
   hubspotServices,
@@ -128,25 +127,7 @@ export default function HubSpotPage() {
 
         <section id="problems" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="HubSpot Problems I Fix" description="Most HubSpot issues are not tool problems. They are structure, data, process, and visibility problems." />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {hubspotProblems.map((problem, index) => {
-              const Icon = serviceIcons[problem.icon];
-              return (
-                <Reveal key={problem.title} delay={index * 0.05}>
-                  <article className="home-module interactive-card h-full min-h-60 rounded-card border-secondary/25 p-6 sm:p-7">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="grid h-14 w-14 place-items-center rounded-xl border border-[#ff5c35]/25 bg-[#ff5c35]/[0.07] text-[#ff805f] shadow-[0_0_22px_rgba(255,92,53,0.1)]">
-                        <Icon aria-hidden="true" className="h-6 w-6" />
-                      </div>
-                      <span className="inline-flex items-center gap-2 rounded-full border border-[#ff5c35]/20 bg-[#ff5c35]/[0.06] px-3 py-1.5 font-mono text-[0.63rem] uppercase tracking-[0.13em] text-[#ff9b83]"><AlertTriangle className="h-3.5 w-3.5" /> Audit finding</span>
-                    </div>
-                    <h3 className="mt-6 font-display text-xl font-black uppercase text-white">{problem.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/62 lg:text-base">{problem.description}</p>
-                  </article>
-                </Reveal>
-              );
-            })}
-          </div>
+          <HubSpotProblemMap />
         </section>
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
