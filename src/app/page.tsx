@@ -26,9 +26,9 @@ const homeIcons: Record<HomeIconName, LucideIcon> = {
 };
 
 const problemIconStyles = [
-  'border-secondary/40 bg-secondary/10 text-secondary shadow-[0_0_35px_rgba(10,196,255,0.2)]',
-  'border-purple/45 bg-purple/10 text-[#9f8cff] shadow-[0_0_35px_rgba(108,76,255,0.2)]',
-  'border-secondary/40 bg-secondary/10 text-cyan-100 shadow-[0_0_35px_rgba(10,196,255,0.2)]'
+  'text-secondary drop-shadow-[0_0_16px_rgba(10,196,255,.65)]',
+  'text-[#9f8cff] drop-shadow-[0_0_16px_rgba(108,76,255,.65)]',
+  'text-cyan-100 drop-shadow-[0_0_16px_rgba(10,196,255,.65)]'
 ];
 
 const systemIconTypes = ['crm', 'automation', 'growth'] as const;
@@ -66,18 +66,23 @@ export default function HomePage() {
 
         <section id="problems" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>What I Actually <HeadingAccent>Fix</HeadingAccent></>} description="The operational and web problems I solve — so your business runs smoother and grows faster." />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 border-y border-secondary/25 md:grid md:grid-cols-3">
             {homeProblems.map((problem, index) => {
               const Icon = homeIcons[problem.icon];
               return (
-                <Reveal key={problem.title} delay={index * 0.08}>
-                  <GlassCard className="home-module h-full min-h-64 border-secondary/35 p-7 lg:flex lg:min-h-[17rem] lg:items-center lg:gap-7 lg:p-9">
-                    <div className={`grid h-[5.25rem] w-[5.25rem] shrink-0 place-items-center rounded-card border shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] ${problemIconStyles[index]}`}>
-                      <Icon aria-hidden="true" className="h-11 w-11 drop-shadow-[0_0_14px_currentColor]" />
+                <Reveal key={problem.title} delay={index * 0.08} className="h-full">
+                  <article className={`group/problem relative flex h-full min-h-56 flex-col justify-center overflow-hidden py-8 transition-colors duration-500 motion-reduce:transition-none sm:py-10 md:px-8 lg:min-h-[17rem] lg:px-10 ${index > 0 ? 'border-t border-secondary/20 md:border-l md:border-t-0' : ''}`}>
+                    <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(10,196,255,.09),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover/problem:opacity-100 motion-reduce:transition-none" />
+                    <div className="relative z-10 flex items-center justify-between gap-5">
+                      <span className="font-mono text-sm font-bold tracking-[0.2em] text-white/28 transition-colors duration-500 group-hover/problem:text-secondary/80 motion-reduce:transition-none">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <Icon aria-hidden="true" className={`h-10 w-10 transition-[color,filter] duration-500 motion-reduce:transition-none lg:h-12 lg:w-12 ${problemIconStyles[index]}`} />
                     </div>
-                    <div><h3 className="mt-5 font-display text-xl font-black leading-tight text-white lg:mt-1 lg:text-[1.55rem]">{problem.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/64 lg:text-base">{problem.description}</p></div>
-                  </GlassCard>
+                    <span aria-hidden="true" className="relative z-10 mt-6 h-px w-full origin-left bg-[linear-gradient(90deg,rgba(10,196,255,.5),rgba(139,108,255,.25),transparent)] transition-[transform,opacity] duration-500 group-hover/problem:scale-x-105 group-hover/problem:opacity-100 motion-reduce:transition-none" />
+                    <h3 className="relative z-10 mt-6 font-display text-xl font-black leading-tight text-white lg:text-[1.55rem]">{problem.title}</h3>
+                    <p className="relative z-10 mt-4 max-w-md text-sm leading-7 text-white/64 transition-colors duration-500 group-hover/problem:text-white/76 motion-reduce:transition-none lg:text-base">{problem.description}</p>
+                  </article>
                 </Reveal>
               );
             })}
@@ -166,22 +171,22 @@ export default function HomePage() {
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>How I <HeadingAccent>Work</HeadingAccent></>} description="A clean, practical, systems-first process designed for long-term results." />
-          <div className="relative mt-10 grid gap-6 md:grid-cols-3 md:gap-14">
+          <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 md:grid md:grid-cols-3 md:py-10">
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-20 md:h-px md:w-auto" />
             {homeProcess.map((step, index) => {
               const Icon = homeIcons[step.icon];
               return (
-                <Reveal key={step.number} delay={index * 0.08} className="relative z-10">
-                  <GlassCard className="home-module flex h-full min-h-64 flex-col justify-center border-secondary/35 bg-primary/85 p-7 lg:min-h-[18rem] lg:p-9">
-                    <div className="flex items-center gap-4">
-                      <span className="font-mono text-4xl font-bold tracking-[0.08em] text-secondary drop-shadow-[0_0_14px_rgba(10,196,255,0.5)] lg:text-5xl">{step.number}</span>
-                      <div className="grid h-16 w-16 place-items-center rounded-full border border-purple/60 bg-purple/10 text-white shadow-[0_0_34px_rgba(108,76,255,0.28),inset_0_0_20px_rgba(108,76,255,0.12)]">
-                        <Icon aria-hidden="true" className="h-7 w-7" />
-                      </div>
+                <Reveal key={step.number} delay={index * 0.08} className="relative z-10 h-full">
+                  <article className={`group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 md:min-h-[17rem] md:flex-col md:items-center md:px-8 md:py-0 md:text-center lg:px-12 ${index > 0 ? 'md:border-l md:border-secondary/15' : ''}`}>
+                    <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/45 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.18),inset_0_0_18px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/process:border-purple/70 group-hover/process:text-white group-hover/process:shadow-[0_0_32px_rgba(10,196,255,.34),0_0_24px_rgba(139,108,255,.24),inset_0_0_20px_rgba(108,76,255,.16)] motion-reduce:transition-none md:h-20 md:w-20">
+                      <Icon aria-hidden="true" className="h-6 w-6 md:h-8 md:w-8" />
                     </div>
-                    <h3 className="mt-6 font-display text-2xl font-black text-white">{step.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/62 lg:text-base">{step.description}</p>
-                  </GlassCard>
-                  {index < homeProcess.length - 1 ? <ArrowRight aria-hidden="true" className="absolute -right-11 top-1/2 hidden h-8 w-8 -translate-y-1/2 text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.82)] md:block" /> : null}
+                    <div className="relative z-10 pt-0.5 md:pt-0">
+                      <span className="font-mono text-xs font-bold tracking-[0.2em] text-secondary/70">Stage {step.number}</span>
+                      <h3 className="mt-3 font-display text-2xl font-black text-white lg:text-[1.75rem]">{step.title}</h3>
+                      <p className="mt-4 max-w-md text-sm leading-7 text-white/62 transition-colors duration-500 group-hover/process:text-white/76 motion-reduce:transition-none lg:text-base">{step.description}</p>
+                    </div>
+                  </article>
                 </Reveal>
               );
             })}
