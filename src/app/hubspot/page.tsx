@@ -31,7 +31,6 @@ import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Container } from '@/components/ui/Container';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { HubSpotHeroVisual } from '@/components/hubspot/HubSpotHeroVisual';
@@ -106,19 +105,25 @@ export default function HubSpotPage() {
 
         <section id="services" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="What I Do In HubSpot" description="From CRM architecture to reporting and automation, I build HubSpot systems that are clean, scalable, and actually usable." />
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-2">
             {hubspotServices.map((service, index) => {
               const Icon = serviceIcons[service.icon];
+              const hasMobileDivider = index < hubspotServices.length - 1;
+              const hasDesktopRowDivider = index < hubspotServices.length - 2;
               return (
-                <Reveal key={service.title} delay={index * 0.06}>
-                  <GlassCard className="home-module flex h-full min-h-72 flex-col justify-center border-secondary/30 p-7 lg:min-h-[20rem] lg:p-9">
-                    <div className="grid h-16 w-16 place-items-center rounded-card border border-secondary/35 bg-secondary/[0.08] text-secondary shadow-[0_0_28px_rgba(10,196,255,0.16),inset_0_1px_0_rgba(255,255,255,0.1)]">
-                      <Icon aria-hidden="true" className="h-8 w-8 drop-shadow-[0_0_10px_rgba(10,196,255,0.75)]" />
+                <Reveal key={service.title} delay={index * 0.06} className="h-full">
+                  <article className={`group/service relative flex h-full min-h-52 gap-5 overflow-hidden py-8 transition-colors duration-500 motion-reduce:transition-none sm:gap-7 sm:py-10 lg:min-h-[15rem] lg:px-10 ${index % 2 === 1 ? 'lg:border-l lg:border-secondary/20' : ''} ${hasMobileDivider ? 'border-b border-secondary/20' : ''} ${hasDesktopRowDivider ? 'lg:border-b' : 'lg:border-b-0'}`}>
+                    <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,rgba(10,196,255,.09),transparent_48%,rgba(139,108,255,.06))] opacity-0 transition-opacity duration-500 group-hover/service:opacity-100 motion-reduce:transition-none" />
+                    <div className="relative z-10 flex shrink-0 flex-col items-center gap-4">
+                      <span className="font-mono text-[0.65rem] font-bold tracking-[0.18em] text-white/28 transition-colors duration-500 group-hover/service:text-secondary/75 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
+                      <Icon aria-hidden="true" className={`h-10 w-10 transition-[color,filter] duration-500 motion-reduce:transition-none sm:h-12 sm:w-12 ${index % 3 === 1 ? 'text-purple-200 drop-shadow-[0_0_13px_rgba(139,108,255,.5)] group-hover/service:drop-shadow-[0_0_20px_rgba(139,108,255,.8)]' : index % 3 === 2 ? 'text-[#ff805f] drop-shadow-[0_0_13px_rgba(255,107,69,.45)] group-hover/service:drop-shadow-[0_0_20px_rgba(255,107,69,.75)]' : 'text-secondary drop-shadow-[0_0_13px_rgba(10,196,255,.5)] group-hover/service:drop-shadow-[0_0_20px_rgba(10,196,255,.8)]'}`} />
                     </div>
-                    <h3 className="mt-7 font-display text-xl font-black uppercase leading-tight text-white lg:text-[1.45rem]">{service.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-white/62 lg:text-base">{service.description}</p>
-                    <TransitionLink href="/contact" className="mt-6 inline-flex w-fit items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100">Learn more <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></TransitionLink>
-                  </GlassCard>
+                    <div className="relative z-10">
+                      <h3 className="font-display text-xl font-black uppercase leading-tight text-white lg:text-[1.45rem]">{service.title}</h3>
+                      <p className="mt-4 max-w-xl text-sm leading-7 text-white/62 transition-colors duration-500 group-hover/service:text-white/76 motion-reduce:transition-none lg:text-base">{service.description}</p>
+                      <span aria-hidden="true" className="mt-6 block h-px w-20 origin-left bg-[linear-gradient(90deg,rgba(10,196,255,.72),rgba(139,108,255,.35),transparent)] transition-transform duration-500 group-hover/service:scale-x-150 motion-reduce:transition-none" />
+                    </div>
+                  </article>
                 </Reveal>
               );
             })}
@@ -132,18 +137,22 @@ export default function HubSpotPage() {
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="How I Build HubSpot Systems" description="A practical process for turning messy portals into clean, scalable systems." />
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4 xl:gap-12">
+          <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-20 lg:h-px lg:w-auto" />
             {hubspotProcess.map((step, index) => {
               const Icon = processIcons[index];
               return (
-                <Reveal key={step.number} delay={index * 0.07} className="relative">
-                  <GlassCard className="home-module flex h-full min-h-64 flex-col items-center justify-center border-secondary/30 p-7 text-center" interactive={false}>
-                    <span className="grid h-16 w-16 place-items-center rounded-full border border-secondary/45 bg-[#07112d] font-mono text-lg font-bold text-secondary shadow-[0_0_28px_rgba(10,196,255,0.18)]">{step.number}</span>
-                    <div className="mt-5 grid h-12 w-12 place-items-center rounded-xl border border-purple/35 bg-purple/[0.08] text-purple-100"><Icon aria-hidden="true" className="h-6 w-6" /></div>
-                    <h3 className="mt-5 font-display text-xl font-black uppercase text-white">{step.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-white/60">{step.description}</p>
-                  </GlassCard>
-                  {index < hubspotProcess.length - 1 ? <ArrowRight aria-hidden="true" className="absolute -right-9 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-secondary drop-shadow-[0_0_8px_rgba(10,196,255,0.7)] xl:block" /> : null}
+                <Reveal key={step.number} delay={index * 0.07} className="relative z-10 h-full">
+                  <article className={`group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 lg:min-h-[17rem] lg:flex-col lg:items-center lg:px-7 lg:py-0 lg:text-center xl:px-10 ${index > 0 ? 'lg:border-l lg:border-secondary/15' : ''}`}>
+                    <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/45 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.18),inset_0_0_18px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/process:border-[#ff805f]/70 group-hover/process:text-white group-hover/process:shadow-[0_0_32px_rgba(10,196,255,.3),0_0_25px_rgba(255,107,69,.22),inset_0_0_20px_rgba(255,107,69,.12)] motion-reduce:transition-none lg:h-20 lg:w-20">
+                      <Icon aria-hidden="true" className="h-6 w-6 lg:h-8 lg:w-8" />
+                    </div>
+                    <div className="relative z-10 pt-0.5 lg:pt-0">
+                      <span className="font-mono text-xs font-bold tracking-[0.2em] text-secondary/70">Stage {step.number}</span>
+                      <h3 className="mt-3 font-display text-xl font-black uppercase text-white lg:text-[1.35rem]">{step.title}</h3>
+                      <p className="mt-4 max-w-sm text-sm leading-7 text-white/60 transition-colors duration-500 group-hover/process:text-white/76 motion-reduce:transition-none">{step.description}</p>
+                    </div>
+                  </article>
                 </Reveal>
               );
             })}
@@ -152,18 +161,21 @@ export default function HubSpotPage() {
 
         <section id="tools" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="Tools & Integrations" description="HubSpot works best when the rest of your stack is connected cleanly." />
-          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+          <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
+            <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.28),rgba(139,108,255,.32),transparent)]" />
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {hubspotTools.map(([label, icon], index) => {
               const Icon = toolIcons[icon];
               return (
-                <Reveal key={label} delay={Math.min(index * 0.035, 0.32)}>
-                  <div className="home-module interactive-card flex min-h-32 flex-col items-center justify-center rounded-card border-secondary/20 p-4 text-center">
-                    <Icon aria-hidden="true" className={`h-8 w-8 ${index % 4 === 0 ? 'text-[#ff805f]' : index % 3 === 0 ? 'text-purple-200' : 'text-secondary'} drop-shadow-[0_0_10px_currentColor]`} />
-                    <span className="mt-4 text-sm font-bold text-white/78">{label}</span>
+                <Reveal key={label} delay={Math.min(index * 0.035, 0.32)} className="h-full">
+                  <div className={`group/tool relative flex min-h-28 items-center gap-4 border-secondary/15 px-4 py-5 transition-colors duration-500 hover:bg-secondary/[0.045] motion-reduce:transition-none sm:min-h-32 sm:flex-col sm:justify-center sm:text-center ${index % 2 !== 0 ? 'border-l' : ''} ${index >= 2 ? 'border-t sm:border-t-0' : ''} ${index % 3 !== 0 ? 'sm:border-l' : 'sm:border-l-0'} ${index >= 3 ? 'sm:border-t' : ''} ${index % 4 !== 0 ? 'lg:border-l' : 'lg:border-l-0'} ${index >= 4 ? 'lg:border-t' : 'lg:border-t-0'} ${index % 6 !== 0 ? 'xl:border-l' : 'xl:border-l-0'} ${index >= 6 ? 'xl:border-t' : 'xl:border-t-0'}`}>
+                    <Icon aria-hidden="true" className={`h-7 w-7 shrink-0 transition-[color,filter] duration-500 group-hover/tool:brightness-125 motion-reduce:transition-none sm:h-8 sm:w-8 ${index % 4 === 0 ? 'text-[#ff805f] drop-shadow-[0_0_10px_rgba(255,107,69,.55)]' : index % 3 === 0 ? 'text-purple-200 drop-shadow-[0_0_10px_rgba(139,108,255,.55)]' : 'text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,.55)]'}`} />
+                    <span className="text-sm font-bold text-white/70 transition-colors duration-500 group-hover/tool:text-white motion-reduce:transition-none">{label}</span>
                   </div>
                 </Reveal>
               );
             })}
+            </div>
           </div>
         </section>
 
