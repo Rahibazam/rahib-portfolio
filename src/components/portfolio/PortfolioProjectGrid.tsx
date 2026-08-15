@@ -161,7 +161,7 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
           ))}
         </div>
       ) : (
-        <div className="home-module mt-7 rounded-card border-secondary/20 p-8 text-center sm:p-12">
+        <div className="home-module mt-7 rounded-row border-secondary/20 p-8 text-center sm:p-12">
           <p className="font-display text-xl font-black uppercase text-white">No projects match those filters yet.</p>
           <p className="mt-3 text-sm text-white/55">Try clearing the filters or choosing a different system.</p>
           <button

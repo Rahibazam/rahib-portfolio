@@ -10,7 +10,7 @@ export function FooterContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-6 rounded-card border border-secondary/25 bg-[linear-gradient(145deg,rgba(2,5,17,0.72),rgba(8,13,35,0.92))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_26px_rgba(10,196,255,0.07)]">
+    <form onSubmit={handleSubmit} className="mt-6 rounded-row border border-secondary/25 bg-[linear-gradient(145deg,rgba(2,5,17,0.72),rgba(8,13,35,0.92))] p-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_0_26px_rgba(10,196,255,0.07)]">
       <label htmlFor="footer-project" className="sr-only">Tell me about your project</label>
       <div className="flex items-center gap-3 rounded-lg border border-secondary/20 bg-white/[0.025] px-4 transition duration-300 ease-premium focus-within:border-secondary/55 focus-within:bg-[#050b1d]/55 focus-within:shadow-[0_0_0_3px_rgba(10,196,255,0.09),0_0_26px_rgba(10,196,255,0.13)]">
         <input

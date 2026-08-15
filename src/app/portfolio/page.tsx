@@ -38,11 +38,11 @@ export default function PortfolioPage() {
               A collection of projects, experiments, and systems I’ve built to solve real problems, automate the boring stuff, and create experiences that convert.
             </p>
             <div className="mt-8 grid max-w-[39rem] gap-4 sm:grid-cols-2">
-              <div className="home-module flex min-h-24 items-center gap-5 rounded-card border-secondary/25 px-6 py-5">
+              <div className="home-module flex min-h-24 items-center gap-5 rounded-row border-secondary/25 px-6 py-5">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-secondary/30 bg-secondary/[0.08] text-secondary"><Sparkles className="h-6 w-6" /></div>
                 <div><p className="font-display text-3xl font-black text-white">25+</p><p className="text-sm text-white/55">Projects Shipped</p></div>
               </div>
-              <div className="home-module flex min-h-24 items-center gap-5 rounded-card border-secondary/25 px-6 py-5">
+              <div className="home-module flex min-h-24 items-center gap-5 rounded-row border-secondary/25 px-6 py-5">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-purple/35 bg-purple/[0.08] text-purple-100"><Rocket className="h-6 w-6" /></div>
                 <div><p className="font-display text-3xl font-black text-white">5+</p><p className="text-sm text-white/55">Years Building</p></div>
               </div>
@@ -93,7 +93,7 @@ export default function PortfolioPage() {
             {systems.map(({ title, description, Icon }, index) => (
               <Reveal key={title} delay={index * 0.07}>
                 <GlassCard className="home-module flex h-full min-h-64 flex-col justify-center border-secondary/30 p-7">
-                  <div className="grid h-16 w-16 place-items-center rounded-card border border-secondary/35 bg-secondary/[0.08] text-secondary shadow-[0_0_28px_rgba(10,196,255,0.16)]"><Icon aria-hidden="true" className="h-8 w-8" /></div>
+                  <div className="grid h-16 w-16 place-items-center rounded-row border border-secondary/35 bg-secondary/[0.08] text-secondary shadow-[0_0_28px_rgba(10,196,255,0.16)]"><Icon aria-hidden="true" className="h-8 w-8" /></div>
                   <h3 className="mt-7 font-display text-xl font-black uppercase text-white">{title}</h3>
                   <p className="mt-4 text-sm leading-7 text-white/62">{description}</p>
                 </GlassCard>

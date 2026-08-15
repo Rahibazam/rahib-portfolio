@@ -68,7 +68,7 @@ export function HeroOrbitVisual({ ariaLabel, center, floatingIcons, accent = 'pu
 
         return (
           <div key={label} aria-label={label} className={`home-icon-float absolute ${slot.position}`} style={{ animationDelay: `${index * -1.4}s` }}>
-            <div className={`glass-panel grid h-16 w-16 place-items-center rounded-card border sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem] ${slot.surface}`}>
+            <div className={`glass-panel grid h-16 w-16 place-items-center rounded-row border sm:h-20 sm:w-20 lg:h-[5.5rem] lg:w-[5.5rem] ${slot.surface}`}>
               <Icon aria-hidden="true" className={`h-7 w-7 drop-shadow-[0_0_11px_currentColor] sm:h-9 sm:w-9 ${iconClassName ?? ''}`} />
             </div>
           </div>

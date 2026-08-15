@@ -253,14 +253,14 @@ export default function AboutPage() {
 
                     <article
                       className={[
-                        'group relative overflow-hidden rounded-[2rem] p-px transition duration-500 ease-premium hover:-translate-y-1',
+                        'group relative overflow-hidden rounded-row p-px transition duration-500 ease-premium hover:-translate-y-1',
                         cardGlow
                       ].join(' ')}
                     >
-                      <div aria-hidden="true" className={`absolute inset-0 rounded-[2rem] opacity-80 transition duration-500 group-hover:opacity-100 ${borderGradient}`} />
+                      <div aria-hidden="true" className={`absolute inset-0 rounded-row opacity-80 transition duration-500 group-hover:opacity-100 ${borderGradient}`} />
 
-                      <div className="relative overflow-hidden rounded-[calc(2rem-1px)] bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.96),rgba(8,10,34,.94))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,.1),inset_0_-1px_0_rgba(10,196,255,.08)] backdrop-blur-[22px] sm:p-8">
-                        <div aria-hidden="true" className={`pointer-events-none absolute inset-0 rounded-[calc(2rem-1px)] ${isPurple ? 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(108,76,255,.08)]' : 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.06)]'}`} />
+                      <div className="relative overflow-hidden rounded-[calc(0.75rem_-_1px)] bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.96),rgba(8,10,34,.94))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,.1),inset_0_-1px_0_rgba(10,196,255,.08)] backdrop-blur-[22px] sm:p-8">
+                        <div aria-hidden="true" className={`pointer-events-none absolute inset-0 rounded-[calc(0.75rem_-_1px)] ${isPurple ? 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(108,76,255,.08)]' : 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.06)]'}`} />
                         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,.1),transparent_28%,transparent_68%,rgba(108,76,255,.08))] opacity-50" />
                         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(10,196,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(10,196,255,.22)_1px,transparent_1px)] [background-size:44px_44px]" />
                         <div aria-hidden="true" className={`pointer-events-none absolute -right-20 bottom-0 h-48 w-48 rounded-full blur-[84px] ${isPurple ? 'bg-purple/20' : 'bg-secondary/16'}`} />

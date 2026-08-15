@@ -51,9 +51,10 @@ const config: Config = {
         focus: '0 0 0 4px rgba(10,196,255,0.14)'
       },
       borderRadius: {
-        card: '1.125rem',
-        panel: '1.375rem',
-        'panel-lg': '1.625rem'
+        row: '0.75rem',
+        card: '1rem',
+        panel: '1.5rem',
+        'panel-lg': '1.875rem'
       },
       backgroundImage: {
         'panel-gradient': 'linear-gradient(135deg, rgba(10,196,255,0.1), rgba(66,42,213,0.1))',
