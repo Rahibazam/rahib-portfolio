@@ -71,7 +71,7 @@ export default function HomePage() {
               const Icon = homeIcons[problem.icon];
               return (
                 <Reveal key={problem.title} delay={index * 0.08} className="h-full">
-                  <article className={`group/problem relative flex h-full min-h-56 flex-col justify-center overflow-hidden py-8 transition-colors duration-500 motion-reduce:transition-none sm:py-10 md:px-8 lg:min-h-[17rem] lg:px-10 ${index > 0 ? 'border-t border-secondary/20 md:border-l md:border-t-0' : ''}`}>
+                  <article className={`system-rail-item group/problem relative flex h-full min-h-56 flex-col justify-center overflow-hidden px-5 py-8 transition-colors duration-500 motion-reduce:transition-none sm:px-6 sm:py-10 md:px-8 lg:min-h-[17rem] lg:px-10 ${index > 0 ? 'border-t border-secondary/20 md:border-l md:border-t-0' : ''}`}>
                     <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_50%,rgba(10,196,255,.09),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover/problem:opacity-100 motion-reduce:transition-none" />
                     <div className="relative z-10 flex items-center justify-between gap-5">
                       <span className="font-mono text-sm font-bold tracking-[0.2em] text-white/28 transition-colors duration-500 group-hover/problem:text-secondary/80 motion-reduce:transition-none">
@@ -172,12 +172,12 @@ export default function HomePage() {
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>How I <HeadingAccent>Work</HeadingAccent></>} description="A clean, practical, systems-first process designed for long-term results." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 md:grid md:grid-cols-3 md:py-10">
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-20 md:h-px md:w-auto" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-28 md:h-px md:w-auto" />
             {homeProcess.map((step, index) => {
               const Icon = homeIcons[step.icon];
               return (
                 <Reveal key={step.number} delay={index * 0.08} className="relative z-10 h-full">
-                  <article className={`group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 md:min-h-[17rem] md:flex-col md:items-center md:px-8 md:py-0 md:text-center lg:px-12 ${index > 0 ? 'md:border-l md:border-secondary/15' : ''}`}>
+                  <article className={`system-rail-item group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 md:min-h-[17rem] md:flex-col md:items-center md:px-8 md:py-8 md:text-center lg:px-12 ${index > 0 ? 'md:border-l md:border-secondary/15' : ''}`}>
                     <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/45 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.18),inset_0_0_18px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/process:border-purple/70 group-hover/process:text-white group-hover/process:shadow-[0_0_32px_rgba(10,196,255,.34),0_0_24px_rgba(139,108,255,.24),inset_0_0_20px_rgba(108,76,255,.16)] motion-reduce:transition-none md:h-20 md:w-20">
                       <Icon aria-hidden="true" className="h-6 w-6 md:h-8 md:w-8" />
                     </div>

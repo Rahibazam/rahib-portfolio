@@ -58,7 +58,7 @@ export default function AboutPage() {
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutIntroCards.map(({ title, Icon, paragraphs }, index) => (
               <Reveal key={title} delay={index * 0.07} className="h-full">
-                <article className={`group/intro relative h-full min-h-72 overflow-hidden py-9 transition-colors duration-500 motion-reduce:transition-none sm:py-11 lg:min-h-[23rem] lg:px-9 lg:py-12 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
+                <article className={`system-rail-item group/intro relative h-full min-h-72 overflow-hidden px-5 py-9 transition-colors duration-500 motion-reduce:transition-none sm:px-7 sm:py-11 lg:min-h-[23rem] lg:px-9 lg:py-12 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
                   <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(10,196,255,.1),transparent_48%)] opacity-0 transition-opacity duration-500 group-hover/intro:opacity-100 motion-reduce:transition-none" />
                   <div className="relative z-10 flex items-center justify-between gap-5">
                     <span className="font-mono text-xs font-bold tracking-[0.2em] text-white/28 transition-colors duration-500 group-hover/intro:text-secondary/80 motion-reduce:transition-none">Profile / 0{index + 1}</span>
@@ -78,7 +78,7 @@ export default function AboutPage() {
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
               <Reveal key={title} delay={index * 0.07} className="h-full">
-                <article className={`group/principle relative flex h-full min-h-56 items-start gap-6 overflow-hidden py-9 transition-colors duration-500 motion-reduce:transition-none sm:py-10 lg:min-h-64 lg:px-9 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
+                <article className={`system-rail-item group/principle relative flex h-full min-h-56 items-start gap-6 overflow-hidden px-5 py-9 transition-colors duration-500 motion-reduce:transition-none sm:px-7 sm:py-10 lg:min-h-64 lg:px-9 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
                   <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(108,76,255,.055))] opacity-0 transition-opacity duration-500 group-hover/principle:opacity-100 motion-reduce:transition-none" />
                   <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/40 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.15),inset_0_0_16px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/principle:border-purple/65 group-hover/principle:text-white group-hover/principle:shadow-[0_0_30px_rgba(10,196,255,.28),0_0_22px_rgba(139,108,255,.2)] motion-reduce:transition-none"><Icon className="h-7 w-7" /></div>
                   <div className="relative z-10">
@@ -142,7 +142,7 @@ export default function AboutPage() {
                   key={title}
                   className="group relative overflow-hidden transition-colors duration-500 ease-premium hover:bg-white/[0.012] motion-reduce:transition-none"
                 >
-                  <div className="relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.065),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.09),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.42),rgba(8,10,34,.32))] backdrop-blur-[12px]">
+                  <div className="system-rail-item relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.065),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.09),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.42),rgba(8,10,34,.32))] backdrop-blur-[12px]">
                     <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${isPurple ? 'shadow-[inset_0_0_34px_rgba(108,76,255,.055)]' : 'shadow-[inset_0_0_34px_rgba(10,196,255,.045)]'}`} />
                     <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,.1),transparent_28%,transparent_68%,rgba(108,76,255,.08))] opacity-50" />
                     <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(10,196,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(10,196,255,.22)_1px,transparent_1px)] [background-size:44px_44px]" />

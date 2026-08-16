@@ -112,7 +112,7 @@ export default function HubSpotPage() {
               const hasDesktopRowDivider = index < hubspotServices.length - 2;
               return (
                 <Reveal key={service.title} delay={index * 0.06} className="h-full">
-                  <article className={`group/service relative flex h-full min-h-52 gap-5 overflow-hidden py-8 transition-colors duration-500 motion-reduce:transition-none sm:gap-7 sm:py-10 lg:min-h-[15rem] lg:px-10 ${index % 2 === 1 ? 'lg:border-l lg:border-secondary/20' : ''} ${hasMobileDivider ? 'border-b border-secondary/20' : ''} ${hasDesktopRowDivider ? 'lg:border-b' : 'lg:border-b-0'}`}>
+                  <article className={`system-rail-item group/service relative flex h-full min-h-52 gap-5 overflow-hidden px-5 py-8 transition-colors duration-500 motion-reduce:transition-none sm:gap-7 sm:px-7 sm:py-10 lg:min-h-[15rem] lg:px-10 ${index % 2 === 1 ? 'lg:border-l lg:border-secondary/20' : ''} ${hasMobileDivider ? 'border-b border-secondary/20' : ''} ${hasDesktopRowDivider ? 'lg:border-b' : 'lg:border-b-0'}`}>
                     <span aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(110deg,rgba(10,196,255,.09),transparent_48%,rgba(139,108,255,.06))] opacity-0 transition-opacity duration-500 group-hover/service:opacity-100 motion-reduce:transition-none" />
                     <div className="relative z-10 flex shrink-0 flex-col items-center gap-4">
                       <span className="font-mono text-[0.65rem] font-bold tracking-[0.18em] text-white/28 transition-colors duration-500 group-hover/service:text-secondary/75 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
@@ -138,12 +138,12 @@ export default function HubSpotPage() {
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="How I Build HubSpot Systems" description="A practical process for turning messy portals into clean, scalable systems." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-20 lg:h-px lg:w-auto" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {hubspotProcess.map((step, index) => {
               const Icon = processIcons[index];
               return (
                 <Reveal key={step.number} delay={index * 0.07} className="relative z-10 h-full">
-                  <article className={`group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 lg:min-h-[17rem] lg:flex-col lg:items-center lg:px-7 lg:py-0 lg:text-center xl:px-10 ${index > 0 ? 'lg:border-l lg:border-secondary/15' : ''}`}>
+                  <article className={`system-rail-item group/process relative flex h-full min-h-52 gap-6 px-2 py-7 sm:px-5 lg:min-h-[17rem] lg:flex-col lg:items-center lg:px-7 lg:py-8 lg:text-center xl:px-10 ${index > 0 ? 'lg:border-l lg:border-secondary/15' : ''}`}>
                     <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/45 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.18),inset_0_0_18px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/process:border-[#ff805f]/70 group-hover/process:text-white group-hover/process:shadow-[0_0_32px_rgba(10,196,255,.3),0_0_25px_rgba(255,107,69,.22),inset_0_0_20px_rgba(255,107,69,.12)] motion-reduce:transition-none lg:h-20 lg:w-20">
                       <Icon aria-hidden="true" className="h-6 w-6 lg:h-8 lg:w-8" />
                     </div>
@@ -168,7 +168,7 @@ export default function HubSpotPage() {
               const Icon = toolIcons[icon];
               return (
                 <Reveal key={label} delay={Math.min(index * 0.035, 0.32)} className="h-full">
-                  <div className={`group/tool relative flex min-h-28 items-center gap-4 border-secondary/15 px-4 py-5 transition-colors duration-500 hover:bg-secondary/[0.045] motion-reduce:transition-none sm:min-h-32 sm:flex-col sm:justify-center sm:text-center ${index % 2 !== 0 ? 'border-l' : ''} ${index >= 2 ? 'border-t sm:border-t-0' : ''} ${index % 3 !== 0 ? 'sm:border-l' : 'sm:border-l-0'} ${index >= 3 ? 'sm:border-t' : ''} ${index % 4 !== 0 ? 'lg:border-l' : 'lg:border-l-0'} ${index >= 4 ? 'lg:border-t' : 'lg:border-t-0'} ${index % 6 !== 0 ? 'xl:border-l' : 'xl:border-l-0'} ${index >= 6 ? 'xl:border-t' : 'xl:border-t-0'}`}>
+                  <div className={`system-rail-item group/tool relative flex min-h-28 items-center gap-4 border-secondary/15 px-4 py-5 transition-colors duration-500 motion-reduce:transition-none sm:min-h-32 sm:flex-col sm:justify-center sm:text-center ${index % 2 !== 0 ? 'border-l' : ''} ${index >= 2 ? 'border-t sm:border-t-0' : ''} ${index % 3 !== 0 ? 'sm:border-l' : 'sm:border-l-0'} ${index >= 3 ? 'sm:border-t' : ''} ${index % 4 !== 0 ? 'lg:border-l' : 'lg:border-l-0'} ${index >= 4 ? 'lg:border-t' : 'lg:border-t-0'} ${index % 6 !== 0 ? 'xl:border-l' : 'xl:border-l-0'} ${index >= 6 ? 'xl:border-t' : 'xl:border-t-0'}`}>
                     <Icon aria-hidden="true" className={`h-7 w-7 shrink-0 transition-[color,filter] duration-500 group-hover/tool:brightness-125 motion-reduce:transition-none sm:h-8 sm:w-8 ${index % 4 === 0 ? 'text-[#ff805f] drop-shadow-[0_0_10px_rgba(255,107,69,.55)]' : index % 3 === 0 ? 'text-purple-200 drop-shadow-[0_0_10px_rgba(139,108,255,.55)]' : 'text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,.55)]'}`} />
                     <span className="text-sm font-bold text-white/70 transition-colors duration-500 group-hover/tool:text-white motion-reduce:transition-none">{label}</span>
                   </div>
