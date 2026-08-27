@@ -29,6 +29,7 @@ import {
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Container } from '@/components/ui/Container';
 import { Badge } from '@/components/ui/Badge';
@@ -82,7 +83,7 @@ export default function HubSpotPage() {
   return (
     <PageShell>
       <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
-        <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[0.95fr_1.05fr] xl:gap-8">
+        <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[0.95fr_1.05fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-48 top-1/4 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.08] blur-[120px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display max-w-[52rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.025em] text-white">
@@ -101,7 +102,7 @@ export default function HubSpotPage() {
           <FloatingSection className="relative z-0 xl:-mr-3" distance={5} duration={11}>
             <HubSpotHeroVisual />
           </FloatingSection>
-        </section>
+        </ScrollFadeHero>
 
         <section id="services" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="What I Do In HubSpot" description="From CRM architecture to reporting and automation, I build HubSpot systems that are clean, scalable, and actually usable." />

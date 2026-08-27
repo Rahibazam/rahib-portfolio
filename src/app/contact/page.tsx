@@ -11,6 +11,7 @@ import {
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { ButtonLink, ButtonTransitionLink } from '@/components/ui/Button';
@@ -107,7 +108,7 @@ export default function ContactPage() {
   return (
     <PageShell>
       <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
-        <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 lg:pb-28 xl:min-h-[52rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
+        <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 lg:pb-28 xl:min-h-[52rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
           <Reveal className="relative z-10">
@@ -132,7 +133,7 @@ export default function ContactPage() {
           <FloatingSection className="relative z-0 xl:-mr-2" distance={6} duration={10}>
             <ContactHeroVisual />
           </FloatingSection>
-        </section>
+        </ScrollFadeHero>
 
         <section id="contact-form" className="scroll-mt-28 py-14 sm:py-16">
           <Reveal>

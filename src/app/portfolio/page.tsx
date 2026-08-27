@@ -4,6 +4,7 @@ import { ArrowRight, BarChart3, Database, GitBranch, PanelsTopLeft, Rocket, Send
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -28,7 +29,7 @@ export default function PortfolioPage() {
   return (
     <PageShell>
       <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
-        <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-20 xl:min-h-[47rem] xl:grid-cols-[0.92fr_1.08fr] xl:gap-8">
+        <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-20 xl:min-h-[47rem] xl:grid-cols-[0.92fr_1.08fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[35rem] w-[35rem] rounded-full bg-secondary/[0.08] blur-[125px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.96] tracking-[-0.025em] text-white">
@@ -56,7 +57,7 @@ export default function PortfolioPage() {
           <FloatingSection className="relative z-0 xl:-mr-4" distance={5} duration={10}>
             <PortfolioHeroVisual />
           </FloatingSection>
-        </section>
+        </ScrollFadeHero>
 
         <section id="featured-work" className="scroll-mt-28 py-14 sm:py-16">
           <Reveal>

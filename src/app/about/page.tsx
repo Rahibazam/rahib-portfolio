@@ -8,6 +8,7 @@ import { AboutPersonalityGrid } from '@/components/about/AboutPersonalityGrid';
 import { BrandMark } from '@/components/brand/BrandMark';
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { TransitionLink } from '@/components/motion/TransitionLink';
@@ -38,7 +39,7 @@ export default function AboutPage() {
   return (
     <PageShell>
       <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
-        <section className="relative grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
+        <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display max-w-[58rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white">
@@ -51,7 +52,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <FloatingSection className="relative z-0 xl:-mr-2" distance={5} duration={10}><AboutHeroVisual /></FloatingSection>
-        </section>
+        </ScrollFadeHero>
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader title={<>The Real <HeadingAccent>Version</HeadingAccent></>} description="A little less corporate, a little more useful." />
