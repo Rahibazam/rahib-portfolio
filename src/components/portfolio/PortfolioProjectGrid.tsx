@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import type { Project } from '@/data/projects';
 import { Reveal } from '@/components/motion/Reveal';
+import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Badge } from '@/components/ui/Badge';
 import { PortfolioProjectVisual } from './PortfolioProjectVisual';
 
@@ -154,7 +155,13 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
                   <p className="mt-4 text-sm leading-7 text-white/62">{project.summary}</p>
                   <p className="mt-5 flex items-start gap-2 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{project.impact[0]}</p>
                   <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
-                  <span className="mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/42">Case study draft</span>
+                  {project.href ? (
+                    <TransitionLink href={project.href} className="premium-underline-link mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100">
+                      Read case study <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
+                    </TransitionLink>
+                  ) : (
+                    <span className="mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/42">Case study draft</span>
+                  )}
                 </div>
               </article>
             </Reveal>

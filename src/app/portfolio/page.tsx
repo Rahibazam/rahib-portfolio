@@ -74,7 +74,13 @@ export default function PortfolioPage() {
                   {featuredProject.impact.map((impact) => <span key={impact} className="flex items-start gap-3 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{impact}</span>)}
                 </div>
                 <div className="mt-7 flex flex-wrap gap-2">{featuredProject.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}</div>
-                <span className="mt-8 inline-flex w-fit items-center rounded-lg border border-white/10 bg-white/[0.025] px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/48">Case study draft</span>
+                {featuredProject.href ? (
+                  <ButtonTransitionLink href={featuredProject.href} variant="secondary" className="mt-8 w-fit rounded-lg px-6">
+                    Read case study <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                  </ButtonTransitionLink>
+                ) : (
+                  <span className="mt-8 inline-flex w-fit items-center rounded-lg border border-white/10 bg-white/[0.025] px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/48">Case study draft</span>
+                )}
               </div>
             </article>
           </Reveal>

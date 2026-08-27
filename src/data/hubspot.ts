@@ -50,7 +50,8 @@ export const hubspotProjects = [
     description: 'Rebuilt and cleaned a complex HubSpot CRM setup with pipelines, properties, reporting, business units, and governance improvements.',
     tags: ['HubSpot', 'CRM', 'Pipelines', 'Reporting', 'Data Cleanup'],
     visual: 'crm',
-    status: 'Draft case study'
+    status: 'Published case study',
+    href: '/portfolio/hubspot-crm-rebuild'
   },
   {
     title: 'Duplicate Deal Prevention System',
@@ -58,7 +59,8 @@ export const hubspotProjects = [
     description: 'Designed workflow logic to prevent duplicate deals while preserving multiple lead creation flows and vendor-specific routing requirements.',
     tags: ['Workflows', 'Deals', 'Lead Routing', 'QA'],
     visual: 'workflow',
-    status: 'Draft case study'
+    status: 'Draft case study',
+    href: undefined
   },
   {
     title: 'Campaign Workflow & Reporting Support',
@@ -66,6 +68,7 @@ export const hubspotProjects = [
     description: 'Supported campaign properties, nurture logic, lifecycle tracking, forms, and reporting visibility for CRM-driven marketing operations.',
     tags: ['Automation', 'Forms', 'Lifecycle', 'Reporting'],
     visual: 'reporting',
-    status: 'Draft case study'
+    status: 'Draft case study',
+    href: undefined
   }
 ] as const;

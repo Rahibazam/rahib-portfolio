@@ -8,6 +8,7 @@ export type Project = {
   image?: string;
   featured: boolean;
   status?: string;
+  href?: string;
 };
 
 export const projects: Project[] = [
@@ -21,7 +22,8 @@ export const projects: Project[] = [
     tags: ['HubSpot', 'CRM', 'Business Units', 'Reporting'],
     image: '/images/projects/project-placeholder.svg',
     featured: true,
-    status: 'Draft case study'
+    status: 'Published case study',
+    href: '/portfolio/hubspot-crm-rebuild'
   },
   {
     title: 'Duplicate Deal Prevention System',
@@ -82,3 +84,7 @@ export const projects: Project[] = [
     status: 'Draft case study'
   }
 ];
+
+export function getProjectBySlug(slug: string) {
+  return projects.find((project) => project.slug === slug);
+}

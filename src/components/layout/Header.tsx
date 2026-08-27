@@ -12,6 +12,7 @@ import { navItems, siteConfig } from '@/data/site';
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isActiveRoute = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -33,7 +34,7 @@ export function Header() {
 
           <div className="hidden items-center gap-4 lg:flex xl:gap-7">
             {navItems.map((item) => (
-              <TransitionLink key={item.href} href={item.href} aria-current={pathname === item.href ? 'page' : undefined} className={`premium-underline-link px-2 py-3 text-xs font-bold uppercase tracking-[0.16em] ${pathname === item.href ? 'text-secondary' : 'text-white/68'}`}>
+              <TransitionLink key={item.href} href={item.href} aria-current={isActiveRoute(item.href) ? 'page' : undefined} className={`premium-underline-link px-2 py-3 text-xs font-bold uppercase tracking-[0.16em] ${isActiveRoute(item.href) ? 'text-secondary' : 'text-white/68'}`}>
                 {item.label}
               </TransitionLink>
             ))}
@@ -57,7 +58,7 @@ export function Header() {
         {open ? (
           <div className="glass-panel mt-3 grid rounded-[1.5rem] border-white/10 p-3 lg:hidden">
             {navItems.map((item) => (
-              <TransitionLink key={item.href} href={item.href} aria-current={pathname === item.href ? 'page' : undefined} onClick={() => setOpen(false)} className={`premium-underline-link rounded-2xl px-4 py-3 text-sm font-bold uppercase tracking-[0.16em] ${pathname === item.href ? 'bg-secondary/[0.08] text-secondary' : 'text-white/70 hover:bg-white/[0.06]'}`}>
+              <TransitionLink key={item.href} href={item.href} aria-current={isActiveRoute(item.href) ? 'page' : undefined} onClick={() => setOpen(false)} className={`premium-underline-link rounded-2xl px-4 py-3 text-sm font-bold uppercase tracking-[0.16em] ${isActiveRoute(item.href) ? 'bg-secondary/[0.08] text-secondary' : 'text-white/70 hover:bg-white/[0.06]'}`}>
                 {item.label}
               </TransitionLink>
             ))}
