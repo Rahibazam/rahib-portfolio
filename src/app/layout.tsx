@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from 'next';
 import { Orbitron, Quantico, Space_Grotesk } from 'next/font/google';
+import 'lenis/dist/lenis.css';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SystemBootLoader } from '@/components/layout/SystemBootLoader';
 import { AnimatedBackground } from '@/components/motion/AnimatedBackground';
 import { PageTransitionProvider } from '@/components/motion/PageTransitionProvider';
+import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { siteConfig } from '@/data/site';
 
 const spaceGrotesk = Space_Grotesk({
@@ -48,14 +50,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <body className="antialiased">
         <SystemBootLoader />
-        <PageTransitionProvider>
-          <div className="site-shell">
-            <AnimatedBackground />
-            <Header />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
-        </PageTransitionProvider>
+        <SmoothScrollProvider>
+          <PageTransitionProvider>
+            <div className="site-shell">
+              <AnimatedBackground />
+              <Header />
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
+          </PageTransitionProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );
