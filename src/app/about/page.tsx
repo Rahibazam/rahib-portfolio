@@ -13,6 +13,7 @@ import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { ButtonTransitionLink } from '@/components/ui/Button';
+import { BuildTogetherBackground } from '@/components/ui/BuildTogetherBackground';
 import { Container } from '@/components/ui/Container';
 import { aboutExperience, aboutIntroCards, aboutPrinciples, aboutSnapshots, aboutToolkit } from '@/data/about';
 
@@ -432,14 +433,7 @@ export default function AboutPage() {
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
 
               <div className="relative min-h-[620px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[590px] lg:h-[470px] lg:min-h-0">
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(145deg,rgba(7,17,38,0.985),rgba(8,19,48,0.975)_45%,rgba(19,15,61,0.965)_100%)]" />
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_14%_0%,rgba(10,196,255,.18),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.20),transparent_40%)]" />
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.30),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(108,76,255,.34),transparent_44%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-
-                <div aria-hidden="true" className="absolute inset-x-0 -inset-y-32 z-10 translate-y-28 overflow-hidden transition-transform duration-1000 ease-out [mask-image:radial-gradient(ellipse_at_center,white,transparent)] motion-safe:group-hover:translate-y-16">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(10,196,255,.30),transparent_74%)]" />
-                  <div className="absolute -left-1/2 top-1/2 w-[200%] aspect-[1/1.7] rounded-[50%] border border-[#0A0F26]/70 bg-[#070B1D] shadow-[0_-30px_90px_rgba(10,196,255,.18),0_-12px_36px_rgba(108,76,255,.10)]" />
-                </div>
+                <BuildTogetherBackground />
 
                 <div aria-hidden="true" className="pointer-events-none absolute right-[2%] top-1/2 z-20 hidden h-[29rem] w-[29rem] -translate-y-1/2 items-center justify-center lg:flex xl:right-[5%] xl:h-[32rem] xl:w-[32rem]">
                   <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.20),rgba(108,76,255,.16)_42%,transparent_68%)] blur-2xl" />

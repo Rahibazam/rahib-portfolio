@@ -16,6 +16,7 @@ import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionH
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { ButtonTransitionLink } from '@/components/ui/Button';
+import { BuildTogetherBackground } from '@/components/ui/BuildTogetherBackground';
 import { Container } from '@/components/ui/Container';
 
 type CaseStudyTemplateProps = {
@@ -185,17 +186,30 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <Reveal>
-          <section className="home-module-strong relative my-14 overflow-hidden rounded-panel border-secondary/35 p-7 sm:p-10 lg:grid lg:min-h-[23rem] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 lg:p-14">
-            <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(105deg,rgba(10,196,255,.08),transparent_48%,rgba(108,76,255,.15))]" />
-            <div className="relative z-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">System note / final</p>
-              <h2 className="home-display mt-5 text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4rem]">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
-              <p className="mt-6 max-w-3xl text-base leading-8 text-white/66">{caseStudy.reflection}</p>
-              <p className="mt-5 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/36">{caseStudy.confidentiality}</p>
-            </div>
-            <div className="relative z-10 mt-9 flex flex-col gap-3 lg:mt-0">
-              <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-8">Discuss a CRM project <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
-              <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="w-full rounded-lg px-8">Back to project archive <ArrowLeft aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+          <section className="group relative my-14 overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+            <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+
+            <div className="relative min-h-[31rem] overflow-hidden rounded-[calc(2rem-1px)]">
+              <BuildTogetherBackground />
+
+              <div className="relative z-30 flex min-h-[31rem] items-center justify-center px-6 py-16 text-center sm:px-10 lg:px-14">
+                <div className="mx-auto w-full max-w-5xl">
+                  <div className="flex items-center justify-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">
+                    <span aria-hidden="true" className="h-px w-8 bg-gradient-to-l from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
+                    <span>System note / final</span>
+                    <span aria-hidden="true" className="h-px w-8 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
+                  </div>
+
+                  <h2 className="home-display mt-6 text-[clamp(2.5rem,8vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.045em] text-white">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
+                  <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
+                  <p className="mx-auto mt-5 max-w-3xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/40">{caseStudy.confidentiality}</p>
+
+                  <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                    <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-8 sm:w-auto">Discuss a CRM project <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+                    <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="w-full rounded-lg px-8 sm:w-auto">Back to project archive <ArrowLeft aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </Reveal>
