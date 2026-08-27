@@ -3,7 +3,6 @@ import {
   ArrowRight,
   Check,
   CircleDotDashed,
-  Database,
   GitBranch,
   Layers3,
   ScanSearch
@@ -12,6 +11,7 @@ import type { CaseStudy } from '@/data/caseStudies';
 import type { Project } from '@/data/projects';
 import { siteConfig } from '@/data/site';
 import { CaseStudyTextHero } from '@/components/case-study/CaseStudyTextHero';
+import { CaseStudySystemSpine } from '@/components/case-study/CaseStudySystemSpine';
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
@@ -144,25 +144,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
           <Reveal className="mt-10">
             <div className="home-module-strong relative overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-8 lg:p-10">
               <div aria-hidden="true" className="absolute inset-0 technical-paper-overlay opacity-70" />
-              <div className="relative z-10 grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-center">
-                <div className="border-b border-secondary/20 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10">
-                  <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-secondary">Architecture core</p>
-                  <div className="mt-6 grid aspect-square max-w-[17rem] place-items-center rounded-full border border-secondary/35 bg-[radial-gradient(circle,rgba(10,196,255,.12),rgba(7,12,32,.86)_68%)] shadow-[0_0_48px_rgba(10,196,255,.14),inset_0_0_38px_rgba(139,108,255,.08)]">
-                    <Database aria-hidden="true" className="h-20 w-20 text-secondary drop-shadow-[0_0_24px_rgba(10,196,255,.55)]" />
-                  </div>
-                  <p className="mt-6 max-w-sm text-sm leading-7 text-white/58">Good automation and reporting sit on top of a governed data and process model—not the other way around.</p>
-                </div>
-
-                <div className="divide-y divide-secondary/15 border-y border-secondary/20">
-                  {caseStudy.layers.map((layer, index) => (
-                    <div key={layer.title} className="system-rail-item grid gap-3 px-3 py-6 sm:px-5 lg:grid-cols-[7rem_0.34fr_0.66fr] lg:items-center lg:gap-6">
-                      <p className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-secondary/60">{layer.label}</p>
-                      <h3 className="font-display text-xl font-black uppercase text-white">{layer.title}</h3>
-                      <p className="text-sm leading-7 text-white/62">{layer.description}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <CaseStudySystemSpine layers={caseStudy.layers} />
             </div>
           </Reveal>
         </section>
