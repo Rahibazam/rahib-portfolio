@@ -429,8 +429,8 @@ export default function AboutPage() {
 
         <section className="py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
-            <div className="group relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
-              <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="group/build-cta relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+              <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
               <div className="relative min-h-[620px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[590px] lg:h-[470px] lg:min-h-0">
                 <BuildTogetherBackground />

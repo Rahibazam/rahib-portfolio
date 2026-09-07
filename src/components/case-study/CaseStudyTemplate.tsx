@@ -186,14 +186,14 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <Reveal>
-          <section className="group relative my-14 overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
-            <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+          <section className="group/build-cta relative my-14 overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+            <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
             <div className="relative min-h-[31rem] overflow-hidden rounded-[calc(2rem-1px)]">
               <BuildTogetherBackground />
 
               <div className="relative z-30 flex min-h-[31rem] items-center justify-center px-6 py-16 text-center sm:px-10 lg:px-14">
-                <div className="mx-auto w-full max-w-5xl">
+                <div className="mx-auto w-full max-w-6xl">
                   <div className="flex items-center justify-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">
                     <span aria-hidden="true" className="h-px w-8 bg-gradient-to-l from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     <span>System note / final</span>
@@ -201,8 +201,8 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
                   </div>
 
                   <h2 className="home-display mt-6 text-[clamp(2.5rem,8vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.045em] text-white">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
-                  <p className="mx-auto mt-7 max-w-3xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
-                  <p className="mx-auto mt-5 max-w-3xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/40">{caseStudy.confidentiality}</p>
+                  <p className="mx-auto mt-7 max-w-5xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
+                  <p className="mx-auto mt-5 max-w-5xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white">{caseStudy.confidentiality}</p>
 
                   <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
                     <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-8 sm:w-auto">Discuss a CRM project <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
