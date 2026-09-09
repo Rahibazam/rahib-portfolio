@@ -39,6 +39,7 @@ import { HubSpotMark } from '@/components/brand/HubSpotMark';
 import { HubSpotProjectVisual } from '@/components/hubspot/HubSpotProjectVisual';
 import { HubSpotSectionHeader } from '@/components/hubspot/HubSpotSectionHeader';
 import { HubSpotProblemMap } from '@/components/hubspot/HubSpotProblemMap';
+import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
 import {
   hubspotProcess,
   hubspotProjects,
@@ -46,6 +47,7 @@ import {
   hubspotTools,
   type HubSpotIconName
 } from '@/data/hubspot';
+import { hubspotTestimonials } from '@/data/testimonials';
 
 const serviceIcons: Record<HubSpotIconName, LucideIcon> = {
   setup: Database,
@@ -158,6 +160,16 @@ export default function HubSpotPage() {
               );
             })}
           </div>
+        </section>
+
+        <section id="client-signals" className="scroll-mt-28 py-14 sm:py-16">
+          <HubSpotSectionHeader
+            title="What HubSpot Clients Say"
+            description="Signals from the teams who used the systems, joined the walkthroughs, and carried the work forward after delivery."
+          />
+          <Reveal variant="panel">
+            <HomeTestimonialsDeck testimonials={hubspotTestimonials} />
+          </Reveal>
         </section>
 
         <section id="tools" className="scroll-mt-28 py-14 sm:py-16">

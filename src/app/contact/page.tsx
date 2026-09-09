@@ -15,11 +15,13 @@ import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { ButtonLink, ButtonTransitionLink } from '@/components/ui/Button';
-import { HomeSectionHeader } from '@/components/home/HomeSectionHeader';
+import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { HomeCTAVisual } from '@/components/home/HomeCTAVisual';
+import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
 import { HeroOrbitVisual } from '@/components/visuals/HeroOrbitVisual';
 import { ContactFaqSection } from '@/components/contact/ContactFaqSection';
 import { contactQuickInfo, contactSocialLinks, contactStats } from '@/data/contact';
+import { contactTestimonials } from '@/data/testimonials';
 import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
@@ -279,6 +281,16 @@ export default function ContactPage() {
                 ))}
               </div>
             </div>
+          </Reveal>
+        </section>
+
+        <section id="client-signals" className="scroll-mt-28 py-14 sm:py-16">
+          <HomeSectionHeader
+            title={<>What Clients <HeadingAccent>Noticed</HeadingAccent></>}
+            description="A final signal check from clients who valued clear thinking, careful listening, and delivery without the theatre."
+          />
+          <Reveal variant="panel">
+            <HomeTestimonialsDeck testimonials={contactTestimonials} />
           </Reveal>
         </section>
 

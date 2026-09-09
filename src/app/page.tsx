@@ -13,7 +13,9 @@ import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionH
 import { HomeCTAVisual } from '@/components/home/HomeCTAVisual';
 import { FeaturedWorkCard } from '@/components/home/FeaturedWorkCard';
 import { HomeSystemIcon } from '@/components/home/HomeSystemIcon';
+import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
 import { homeExperience, homeFeaturedWork, homeProblems, homeProcess, homeSystems, type HomeIconName } from '@/data/home';
+import { homeTestimonials } from '@/data/testimonials';
 
 const homeIcons: Record<HomeIconName, LucideIcon> = {
   database: Database,
@@ -168,6 +170,16 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
+        </section>
+
+        <section id="testimonials" className="scroll-mt-28 py-14 sm:py-16">
+          <HomeSectionHeader
+            title={<>What Clients <HeadingAccent>Say</HeadingAccent></>}
+            description="A few signals from the people closest to the work — the systems, the process, and what changed after delivery."
+          />
+          <Reveal variant="panel">
+            <HomeTestimonialsDeck testimonials={homeTestimonials} />
+          </Reveal>
         </section>
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
