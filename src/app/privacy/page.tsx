@@ -6,6 +6,7 @@ import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Rahib Azam',
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
   }
 };
 
-const privacyEmail = 'rahib.azam180@gmail.com';
+const privacyEmail = siteConfig.email;
 
 const sections = [
   { id: 'scope', label: 'Who controls your information' },

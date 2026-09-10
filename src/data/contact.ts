@@ -1,9 +1,10 @@
 import { Clock3, Coffee, Gauge, Linkedin, Mail, Music2, Rocket, ShieldCheck, TimerReset, Wifi, Zap, type LucideIcon } from 'lucide-react';
+import { siteConfig } from './site';
 
 export const contactQuickInfo = [
   {
     label: 'Email',
-    value: 'rahib.azam180@gmail.com',
+    value: siteConfig.email,
     note: 'I reply to every email.',
     icon: Mail,
     accent: 'cyan'

@@ -7,6 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
+import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Rahib Azam',
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   }
 };
 
-const contactEmail = 'rahib.azam180@gmail.com';
+const contactEmail = siteConfig.email;
 
 const sections = [
   { id: 'scope', label: 'Website purpose and scope' },
