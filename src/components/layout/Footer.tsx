@@ -86,9 +86,14 @@ export function Footer() {
               <FooterContactForm />
             </div>
           </div>
-          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs uppercase tracking-[0.1em] text-white/42 sm:flex-row sm:justify-between">
+          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs uppercase tracking-[0.1em] text-white/42 sm:flex-row sm:items-center sm:justify-between">
             <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
-            <span>Built with care, systems, and coffee.</span>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <TransitionLink href="/privacy" className="premium-underline-link py-1 text-white/58">
+                Privacy Policy
+              </TransitionLink>
+              <span>Built with care, systems, and coffee.</span>
+            </div>
           </div>
           </div>
         </div>
