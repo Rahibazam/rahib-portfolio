@@ -92,6 +92,9 @@ export function Footer() {
               <TransitionLink href="/privacy" className="premium-underline-link py-1 text-white/58">
                 Privacy Policy
               </TransitionLink>
+              <TransitionLink href="/terms" className="premium-underline-link py-1 text-white/58">
+                Terms &amp; Conditions
+              </TransitionLink>
               <span>Built with care, systems, and coffee.</span>
             </div>
           </div>
