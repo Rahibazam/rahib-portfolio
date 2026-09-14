@@ -5,7 +5,7 @@ import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
 import { getProjectBySlug } from '@/data/projects';
 
 type CaseStudyPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export const dynamicParams = false;
@@ -14,7 +14,8 @@ export function generateStaticParams() {
   return caseStudies.map(({ slug }) => ({ slug }));
 }
 
-export function generateMetadata({ params }: CaseStudyPageProps): Metadata {
+export async function generateMetadata(props: CaseStudyPageProps): Promise<Metadata> {
+  const params = await props.params;
   const caseStudy = getCaseStudyBySlug(params.slug);
   const project = getProjectBySlug(params.slug);
 
@@ -34,7 +35,8 @@ export function generateMetadata({ params }: CaseStudyPageProps): Metadata {
   };
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
+export default async function CaseStudyPage(props: CaseStudyPageProps) {
+  const params = await props.params;
   const caseStudy = getCaseStudyBySlug(params.slug);
   const project = getProjectBySlug(params.slug);
 

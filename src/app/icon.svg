@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <defs>
+    <linearGradient id="rahib-favicon-gradient" x1="10" y1="10" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#20D7FF" />
+      <stop offset="0.5" stop-color="#168BFF" />
+      <stop offset="1" stop-color="#6C4CFF" />
+    </linearGradient>
+  </defs>
+  <rect width="72" height="72" rx="16" fill="#070B1D" />
+  <path d="M8 12h36.5C55.3 12 62 18.1 62 27.5c0 7.4-4.1 12.7-11 15.2L64 61H47.4L35.9 44.7H25.5L34 32h9.6c3.7 0 5.9-1.7 5.9-4.5 0-2.9-2.2-4.6-5.9-4.6H15.4L8 12Z" fill="url(#rahib-favicon-gradient)" />
+  <path d="M8 29h18.5l-8.2 12H8V29Z" fill="url(#rahib-favicon-gradient)" />
+  <path d="M22.5 47h14L47 61H33L22.5 47Z" fill="url(#rahib-favicon-gradient)" />
+</svg>

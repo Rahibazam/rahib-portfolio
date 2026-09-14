@@ -5,7 +5,6 @@ import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
 import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
-import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { Badge } from '@/components/ui/Badge';

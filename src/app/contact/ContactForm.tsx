@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Button } from '@/components/ui/Button';
+import { submitHubSpotForm } from '@/lib/submitHubSpotForm';
 
 const fieldShellClass = 'relative w-full';
 
@@ -29,32 +31,78 @@ const textareaFloatingLabelClass =
 
 export function ContactForm() {
   const [status, setStatus] = useState('Usually replies within 12 hours');
+  const [statusType, setStatusType] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [projectType, setProjectType] = useState('');
   const [budgetTimeline, setBudgetTimeline] = useState('');
   const [bestTime, setBestTime] = useState('');
+  const startedAt = useRef(0);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  useEffect(() => {
+    startedAt.current = Date.now();
+  }, []);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus(
-      'This form is not connected to a backend yet. For now, please reach me through email or one of the contact links below.'
-    );
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmitting(true);
+    setStatusType('idle');
+    setStatus('Sending your message...');
+
+    try {
+      const result = await submitHubSpotForm({
+        formType: 'contact',
+        fields: {
+          firstname: String(formData.get('firstname') ?? ''),
+          lastname: String(formData.get('lastname') ?? ''),
+          email: String(formData.get('email') ?? ''),
+          project_type: String(formData.get('project_type') ?? ''),
+          budget_or_timeline: String(formData.get('budget_or_timeline') ?? ''),
+          best_time_to_reach_you: String(formData.get('best_time_to_reach_you') ?? ''),
+          project_details: String(formData.get('project_details') ?? '')
+        },
+        startedAt: startedAt.current,
+        honeypot: String(formData.get('company_website') ?? ''),
+        pageName: 'Contact Rahib Azam'
+      });
+
+      form.reset();
+      setProjectType('');
+      setBudgetTimeline('');
+      setBestTime('');
+      setStatusType('success');
+      setStatus(result.message ?? 'Thanks — your message has been sent.');
+      startedAt.current = Date.now();
+    } catch (error) {
+      setStatusType('error');
+      setStatus(error instanceof Error ? error.message : 'Your message could not be sent. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
-    <form className="grid gap-3.5" onSubmit={handleSubmit}>
+    <form className="relative grid gap-3.5" onSubmit={handleSubmit}>
+      <div aria-hidden="true" className="pointer-events-none absolute left-[-10000px] top-auto h-px w-px overflow-hidden opacity-0">
+        <label htmlFor="contact-company-website">Company website</label>
+        <input id="contact-company-website" name="company_website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-3.5 sm:grid-cols-2">
         <div className={fieldShellClass}>
           <label className="sr-only" htmlFor="firstName">
             First Name
           </label>
-          <input id="firstName" name="firstName" className={fieldClass} autoComplete="given-name" placeholder=" " />
+          <input id="firstName" name="firstname" className={fieldClass} autoComplete="given-name" placeholder=" " required maxLength={80} />
           <span className={floatingLabelClass}>First Name</span>
         </div>
         <div className={fieldShellClass}>
           <label className="sr-only" htmlFor="lastName">
             Last Name
           </label>
-          <input id="lastName" name="lastName" className={fieldClass} autoComplete="family-name" placeholder=" " />
+          <input id="lastName" name="lastname" className={fieldClass} autoComplete="family-name" placeholder=" " required maxLength={80} />
           <span className={floatingLabelClass}>Last Name</span>
         </div>
       </div>
@@ -64,7 +112,7 @@ export function ContactForm() {
           <label className="sr-only" htmlFor="email">
             Email Address
           </label>
-          <input id="email" name="email" type="email" className={fieldClass} autoComplete="email" placeholder=" " />
+          <input id="email" name="email" type="email" className={fieldClass} autoComplete="email" placeholder=" " required maxLength={254} />
           <span className={floatingLabelClass}>Email Address</span>
         </div>
         <div className="group relative w-full">
@@ -73,10 +121,11 @@ export function ContactForm() {
           </label>
           <select
             id="projectType"
-            name="projectType"
+            name="project_type"
             className={`${selectFieldClass} appearance-none pr-12 ${projectType ? 'text-white/90' : 'text-transparent'}`}
             value={projectType}
             onChange={(event) => setProjectType(event.target.value)}
+            required
           >
             <option value="" disabled hidden aria-hidden="true" />
             <option className="bg-[#071126] text-white">HubSpot / CRM</option>
@@ -101,10 +150,11 @@ export function ContactForm() {
           </label>
           <select
             id="budgetTimeline"
-            name="budgetTimeline"
+            name="budget_or_timeline"
             className={`${selectFieldClass} appearance-none pr-12 ${budgetTimeline ? 'text-white/90' : 'text-transparent'}`}
             value={budgetTimeline}
             onChange={(event) => setBudgetTimeline(event.target.value)}
+            required
           >
             <option value="" disabled hidden aria-hidden="true" />
             <option className="bg-[#071126] text-white">Small fix</option>
@@ -125,10 +175,11 @@ export function ContactForm() {
           </label>
           <select
             id="bestTime"
-            name="bestTime"
+            name="best_time_to_reach_you"
             className={`${selectFieldClass} appearance-none pr-12 ${bestTime ? 'text-white/90' : 'text-transparent'}`}
             value={bestTime}
             onChange={(event) => setBestTime(event.target.value)}
+            required
           >
             <option value="" disabled hidden aria-hidden="true" />
             <option className="bg-[#071126] text-white">Morning</option>
@@ -151,25 +202,43 @@ export function ContactForm() {
         </label>
         <textarea
           id="message"
-          name="message"
+          name="project_details"
           rows={4}
           className={`${fieldClass} min-h-32 resize-y leading-6`}
           placeholder=" "
+          required
+          maxLength={4000}
         />
         <span className={textareaFloatingLabelClass}>Tell me about your project...</span>
       </div>
+
+      <p className="text-xs leading-5 text-white/52">
+        By submitting this form, you agree that I may process your information to respond to your inquiry. Your data is not sold, and you may request deletion at any time. See the{' '}
+        <TransitionLink href="/privacy" className="premium-underline-link text-cyan-100/85 hover:text-cyan-100">
+          Privacy Policy
+        </TransitionLink>{' '}
+        for details.
+      </p>
 
       <div className="mt-1.5 flex flex-col gap-3 sm:flex-row sm:items-center">
         <Button
           type="submit"
           size="md"
+          disabled={isSubmitting}
+          aria-busy={isSubmitting}
           className="group min-h-12 w-full rounded-lg px-7 text-sm shadow-[0_12px_30px_rgba(37,107,255,.30),0_0_28px_rgba(108,76,255,.22)] sm:w-auto"
         >
-          Send Message
+          {isSubmitting ? 'Sending...' : 'Send Message'}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
         <p aria-live="polite" className="flex items-start gap-2 text-sm leading-6 text-white/58">
-          <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,.9)]" />
+          <span
+            className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
+              statusType === 'error'
+                ? 'bg-rose-300 shadow-[0_0_12px_rgba(253,164,175,.9)]'
+                : 'bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,.9)]'
+            }`}
+          />
           {status}
         </p>
       </div>

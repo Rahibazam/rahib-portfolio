@@ -22,6 +22,8 @@ export function SystemBootLoader() {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // Motion preferences are only available after the client mounts.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReducedMotion(prefersReduced);
 
     try {

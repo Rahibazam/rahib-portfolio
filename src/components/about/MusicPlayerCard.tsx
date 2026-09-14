@@ -86,6 +86,8 @@ export function MusicPlayerCard({ availableAudio = {}, availableArtwork = {} }: 
   }, [activeTrackIndex, volume]);
 
   useEffect(() => {
+    // Reset the transport state whenever the selected audio source changes.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentTime(0);
     setDuration(0);
     setAudioError(false);
@@ -97,6 +99,8 @@ export function MusicPlayerCard({ availableAudio = {}, availableArtwork = {} }: 
 
     if (!activeAudioAvailable) {
       audio.pause();
+      // Keep the UI synchronized when the selected source cannot be played.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsPlaying(false);
       return;
     }

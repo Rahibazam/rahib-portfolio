@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Orbitron, Quantico, Space_Grotesk } from 'next/font/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
+import { HubSpotTracking } from '@/components/analytics/HubSpotTracking';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SystemBootLoader } from '@/components/layout/SystemBootLoader';
@@ -9,6 +10,7 @@ import { AnimatedBackground } from '@/components/motion/AnimatedBackground';
 import { PageTransitionProvider } from '@/components/motion/PageTransitionProvider';
 import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { siteConfig } from '@/data/site';
+import { getSiteUrl } from '@/lib/siteUrl';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -32,7 +34,7 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: siteConfig.metaTitle,
   description: siteConfig.metaDescription,
-  metadataBase: new URL('http://localhost:3000')
+  metadataBase: new URL(getSiteUrl())
 };
 
 export const viewport: Viewport = {
@@ -45,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${spaceGrotesk.variable} ${quantico.variable} ${orbitron.variable}`}
       suppressHydrationWarning
     >
@@ -60,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </PageTransitionProvider>
         </SmoothScrollProvider>
+        <HubSpotTracking />
       </body>
     </html>
   );
