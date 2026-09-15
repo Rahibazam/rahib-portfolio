@@ -5,21 +5,21 @@ export const contactQuickInfo = [
   {
     label: 'Email',
     value: siteConfig.email,
-    note: 'I reply to every email.',
+    note: 'Best for full project context',
     icon: Mail,
     accent: 'cyan'
   },
   {
     label: 'LinkedIn',
     value: 'linkedin.com/in/rahib-azam',
-    note: 'Let’s connect professionally.',
+    note: 'For professionally shaped sentences',
     icon: Linkedin,
     accent: 'blue'
   },
   {
     label: 'Timezone',
-    value: 'Bangladesh Standard Time (BST)',
-    note: 'GMT +6',
+    value: 'BST / UTC+6',
+    note: 'Dhaka, Bangladesh',
     icon: Clock3,
     accent: 'violet'
   }
@@ -75,34 +75,30 @@ export const contactFaqTabs = [
     label: 'HubSpot',
     icon: 'hubspot',
     accent: 'orange',
-    eyebrow: 'Orange ecosystem, slightly less cursed.',
-    title: 'HubSpot Systems',
-    description:
-      'Workflows, CMS pages, reporting, CRM cleanup, and the little portal gremlins that need taming.',
+    eyebrow: 'THE ORANGE PORTAL',
+    title: 'HubSpot Implementation Questions',
+    description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, lead routing, lifecycle stages, forms, and property naming conventions that stopped making sense three admins ago.',
     questions: [
       {
         question: 'What areas of HubSpot do you work in?',
         answer:
-          'Marketing Hub and CMS Hub — I do workflows, emails, landing pages, reports, dashboards, and integrations. Basically, if it’s in the orange ecosystem and not behind an Ops paywall, I’ve probably wrangled it.'
+          'I work across HubSpot CRM implementation, Marketing Hub, Sales Hub, Service Hub, forms, lists, workflow automation, properties, pipelines, reporting, lifecycle stages, imports, lead routing, integrations, and connected tools. Basically the parts where one “small change” can unexpectedly acquire a family tree.'
       },
       {
-        question: 'Can you build custom HubSpot pages from scratch?',
-        answer:
-          'Yes. I can build HubSpot CMS pages, landing pages, modules, and responsive layouts using the HubSpot design system and custom code when needed.'
+        question: 'Can you clean up an existing HubSpot portal?',
+        answer: 'Yes. HubSpot CRM cleanup includes auditing properties, duplicates, lists, lifecycle logic, pipelines, associations, workflows, reporting, and whatever keeps generating the mess again. Cleaning the symptom while leaving the machine that creates it is just scheduled disappointment.'
       },
       {
-        question: 'Are you familiar with HubSpot reports and dashboards?',
-        answer:
-          'Yes. I work with CRM data, lifecycle reporting, pipeline visibility, campaign reporting, attribution cleanup, and dashboard structure.'
+        question: 'Can you build workflows and lead routing?',
+        answer: 'Yes. I build HubSpot workflow automation for routing, nurture, lifecycle updates, tasks, notifications, deal logic, suppression, and data maintenance. I test enrollment and edge cases first because live contacts are not an appropriate sandbox, despite what chaos suggests.'
       },
       {
-        question: 'Can you automate things in HubSpot without paying for Ops Hub?',
-        answer:
-          'Sometimes, yes. It depends on the use case. I usually start with native workflows, lists, properties, and integrations before reaching for custom code.'
+        question: 'Do you handle HubSpot reports and dashboards?',
+        answer: 'Yes. I build and troubleshoot HubSpot reporting and dashboards around lifecycle stages, sources, campaigns, deals, funnels, operational KPIs, and custom properties. Sometimes the dashboard is broken. Sometimes it is reporting exactly what the CRM told it, which is somehow worse.'
       },
       {
-        question: 'Do you talk to your workflows like they’re sentient?',
-        answer: 'Only when they break for no reason. So yes, occasionally.'
+        question: 'Can you work with HubSpot integrations?',
+        answer: 'Yes. I have worked with Zapier, Aircall, Calendly, DocuSign, Attentive, Google Ads, Bettermode, Koalify, Salesforce, Pardot, and other connected systems. I care about field behavior, data flow, failure points, and leaving enough documentation for the next human.'
       }
     ]
   },
@@ -111,35 +107,29 @@ export const contactFaqTabs = [
     label: 'Web',
     icon: 'web',
     accent: 'cyan',
-    eyebrow: 'Pages that do not collapse under pressure.',
-    title: 'Web Builds',
-    description:
-      'Landing pages, responsive sections, frontend polish, performance cleanup, and web UI that feels intentional.',
+    eyebrow: 'THE 834PX PROBLEM',
+    title: 'Web Development Questions',
+    description: 'Website development, landing pages, WordPress, HubSpot CMS, front-end implementation, responsive behavior, accessibility, performance, and screen widths with deeply held beliefs.',
     questions: [
       {
-        question: 'Can you build landing pages from a design?',
-        answer:
-          'Yes. I can turn a design reference into a responsive page or section and keep the build close to the original instead of “close enough and slightly cursed.”'
+        question: 'What kind of web development work do you take on?',
+        answer: 'I build responsive websites, landing pages, CMS pages, front-end components, forms, and implementation-heavy web projects. I am especially useful when the website has to cooperate with CRM, analytics, technical SEO, accessibility, performance, or a form that has somehow become organizationally significant.'
       },
       {
-        question: 'Do you work with React and Next.js?',
-        answer:
-          'Yes. I work with React and Next.js for structured frontend builds, reusable components, responsive layouts, and polished UI interactions.'
+        question: 'Do you work with WordPress websites?',
+        answer: 'Yes. I handle WordPress development, page updates, CMS implementation, technical SEO changes, schema, internal linking, QA, and troubleshooting. I can work inside an existing site without immediately suggesting we burn it down and begin a new civilization.'
       },
       {
-        question: 'Can you fix sections that already exist?',
-        answer:
-          'Yes. A lot of my work is improving existing pages: spacing, responsiveness, component structure, hover states, broken layouts, and the small details that make a site feel finished.'
+        question: 'Can you build HubSpot CMS pages?',
+        answer: 'Yes. I provide HubSpot CMS development for responsive pages, landing pages, forms, modules, content updates, and CRM-connected experiences. I keep the implementation editable because “only I know how this works” is not a maintenance plan.'
       },
       {
-        question: 'Do you handle responsive QA?',
-        answer:
-          'Yes. I check common desktop, tablet, and mobile widths, then fix the awkward breakpoints before users find them first.'
+        question: 'Do you build with Next.js too?',
+        answer: 'Yes. I use Next.js, TypeScript, Tailwind CSS, and modern front-end tooling for custom web development where a traditional CMS is not the right fit. I also make personal projects needlessly cinematic, which is technically unrelated but spiritually relevant.'
       },
       {
-        question: 'Can you work inside WordPress or HubSpot CMS?',
-        answer:
-          'Yes. I can work in both, including page updates, landing pages, CMS structure, forms, and front-end cleanup.'
+        question: 'Can you handle technical SEO implementation?',
+        answer: 'Yes, on the implementation side. Metadata rollouts, internal linking, schema changes, canonical and robots checks, live verification, and QA across large URL sets are all familiar. Strategy can stay with the SEO lead; I make the approved changes survive reality.'
       }
     ]
   },
@@ -148,35 +138,29 @@ export const contactFaqTabs = [
     label: 'General',
     icon: 'general',
     accent: 'violet',
-    eyebrow: 'The “before we both overthink it” lane.',
-    title: 'General Questions',
-    description:
-      'How projects start, how communication works, and what happens before anything becomes a scary scope document.',
+    eyebrow: 'LOGISTICS, THE FINAL BOSS',
+    title: 'Working Together',
+    description: 'Project scope, remote collaboration, communication, and how to prevent the first message from becoming a scavenger hunt.',
     questions: [
       {
-        question: 'What kind of projects are a good fit?',
-        answer:
-          'HubSpot setup, CRM cleanup, automation, reporting, CMS pages, landing pages, frontend sections, and messy systems that need structure.'
+        question: 'What kind of projects are the best fit?',
+        answer: 'Defined implementation problems are ideal—HubSpot cleanup, CRM architecture, workflow automation, reporting, CMS work, landing pages, technical SEO changes, integrations, or custom web development. Messy is completely fine. “We will discover the scope together for six months” is less romantic.'
       },
       {
-        question: 'How do you usually communicate?',
-        answer:
-          'Async-first works best for me. Clear notes, screenshots, Looms, docs, and focused calls when needed. Basically, less meeting theatre, more useful progress.'
+        question: 'Do you work remotely with other teams?',
+        answer: 'Yes. I work remotely from Dhaka and collaborate asynchronously across time zones. Clear written context, screenshots, documented decisions, and fewer surprise meetings generally produce better work and preserve the local introvert population.'
       },
       {
-        question: 'Can we start small?',
-        answer:
-          'Yes. Starting with one workflow, one page, one audit, or one cleanup sprint is often the best way to see if the working style fits.'
+        question: 'Do you handle strategy or implementation?',
+        answer: 'Implementation is the center of my work. I can audit, identify structural issues, map the technical path, and flag risks, but I do not cosplay as your entire marketing department. Clear ownership is attractive. Professionally speaking.'
       },
       {
-        question: 'Do you work with teams in different time zones?',
-        answer:
-          'Yes. I work remotely from Bangladesh and can coordinate with async updates, planned check-ins, and clear handoffs.'
+        question: 'How do you usually communicate during projects?',
+        answer: 'Mostly written, concise, and specific. Links, screenshots, acceptance criteria, and documented decisions are beautiful. When something is complex, I break it into steps and report what changed, what was verified, and what remains suspicious.'
       },
       {
-        question: 'What happens after I reach out?',
-        answer:
-          'I’ll review what you sent, ask for any missing context, and suggest the cleanest next step. No pressure, no weird sales performance.'
+        question: 'What should I include in the first message?',
+        answer: 'Send the platform, the problem, what you tried, the deadline, and the outcome you need. Mention access limits, approvals, or systems that cannot be disturbed. If the explanation needs twelve screenshots, congratulations, you have correctly identified my preferred genre.'
       }
     ]
   }
@@ -185,54 +169,14 @@ export const contactFaqTabs = [
 export const contactFaqs = contactFaqTabs[0].questions;
 
 export const contactStats = [
-  {
-    label: 'Projects Launched',
-    value: '25+',
-    note: 'Systems shipped that solve real problems.',
-    icon: Rocket
-  },
-  {
-    label: 'Average Response Time',
-    value: '< 12 hours',
-    note: 'Quick replies. No ghosting.',
-    icon: TimerReset
-  },
-  {
-    label: 'Workflow Deploy Success',
-    value: '98%',
-    note: 'Automations that run reliably.',
-    icon: Zap
-  },
-  {
-    label: 'Remote Setup',
-    value: '100%',
-    note: 'Built remotely, delivered globally.',
-    icon: Wifi
-  },
-  {
-    label: 'Listening To',
-    value: 'Lo-fi / Focus Beats',
-    note: 'Keeps the brain in flow.',
-    icon: Music2
-  },
-  {
-    label: 'Coffee Intake',
-    value: '2–3 cups/day',
-    note: 'Function > addiction (maybe).',
-    icon: Coffee
-  },
-  {
-    label: 'Notifications Handling',
-    value: 'Zero red dot policy',
-    note: 'Focus over fluff.',
-    icon: Gauge
-  },
-  {
-    label: 'System Uptime',
-    value: '99%',
-    note: 'I build for reliability.',
-    icon: ShieldCheck
-  }
+  { label: 'Working Since', value: '2021', note: 'CRM, HubSpot, and web systems', icon: Rocket },
+  { label: 'HubSpot Onboardings', value: '50+', note: 'Supported during INSIDEA work', icon: TimerReset },
+  { label: 'Pages & Emails', value: '100+', note: 'Optimized during earlier client work', icon: Zap },
+  { label: 'CRM Backfill', value: '307 deals', note: 'Normalized for reporting consistency', icon: Wifi },
+  { label: 'Nurture QA', value: '41 tests', note: 'Run before production activation', icon: Music2 },
+  { label: 'SEO Rollout', value: '137 URLs', note: 'Tracked through implementation workbook', icon: Coffee },
+  { label: 'Links Implemented', value: '444', note: 'Across one internal-linking rollout', icon: Gauge },
+  { label: 'Prospecting Pilot', value: '25 leads', note: '19 identified as viable prospects', icon: ShieldCheck }
 ] as const satisfies ReadonlyArray<{
   label: string;
   value: string;

@@ -15,73 +15,59 @@ export const projects: Project[] = [
   {
     title: 'HubSpot CRM Rebuild',
     slug: 'hubspot-crm-rebuild',
-    category: 'HubSpot / CRM Architecture',
-    summary:
-      'Rebuilt and cleaned a complex HubSpot CRM setup with business units, lifecycle logic, pipelines, properties, reporting, deduplication, and governance improvements.',
-    impact: ['Cleaner CRM structure', 'Improved reporting visibility', 'Reduced messy data', 'Better pipeline clarity'],
-    tags: ['HubSpot', 'CRM', 'Business Units', 'Reporting'],
+    category: 'CRM Architecture',
+    summary: 'Reworked a complex HubSpot environment across properties, lifecycle logic, pipelines, deduplication, governance, automation, and reporting to create a cleaner, more dependable operating foundation.',
+    impact: ['Cleaner data model', 'Clearer pipeline logic', 'Better reporting structure'],
+    tags: ['HubSpot', 'CRM', 'Pipelines', 'Reporting', 'Data Cleanup'],
     image: '/images/projects/project-placeholder.svg',
     featured: true,
     status: 'Published case study',
     href: '/portfolio/hubspot-crm-rebuild'
   },
   {
-    title: 'Duplicate Deal Prevention System',
-    slug: 'duplicate-deal-prevention-system',
-    category: 'HubSpot Automation',
-    summary:
-      'Designed workflow logic to prevent duplicate deals while preserving multiple lead creation flows and vendor-specific routing requirements.',
-    impact: ['Reduced duplicate deals', 'Protected existing workflows', 'Improved sales ops hygiene'],
-    tags: ['Workflows', 'Deals', 'Automation', 'QA'],
-    image: '/images/projects/project-placeholder.svg',
-    featured: true,
-    status: 'Draft case study'
+    title: 'Duplicate Deal Prevention System', slug: 'duplicate-deal-prevention-system', category: 'HubSpot Automation',
+    summary: 'Designed workflow logic that prevented duplicate deals while preserving multiple lead-creation paths, vendor routing requirements, company-association edge cases, and the workflows already depending on them.',
+    impact: ['Duplicate prevention', 'Existing flows protected', 'Edge cases handled'], tags: ['HubSpot', 'Workflows', 'Deals', 'Lead Routing', 'QA'], featured: true, status: 'Draft case study'
   },
   {
-    title: 'Private Memory Album Web App',
-    slug: 'private-memory-album-web-app',
-    category: 'Next.js / Personal Web App',
-    summary:
-      'Built a private password-gated memory archive with seasons, galleries, videos, protected routes, responsive media handling, and a polished personal interface.',
-    impact: ['Private protected routes', 'Season-based media structure', 'Responsive images and videos'],
-    tags: ['Next.js', 'TypeScript', 'Tailwind', 'Media'],
-    image: '/images/projects/project-placeholder.svg',
-    featured: true,
-    status: 'Draft case study'
+    title: 'AI Prospecting Agent Pilot', slug: 'ai-prospecting-agent-pilot', category: 'CRM Automation',
+    summary: 'Configured and tested HubSpot AI prospecting workflows against CRM, activity, company, deal, and industry context, enrolling 25 leads and identifying 19 viable prospects for outreach.',
+    impact: ['25 leads enrolled', '19 viable prospects', 'Controlled credit usage'], tags: ['HubSpot', 'AI', 'Prospecting', 'CRM', 'Automation'], featured: true, status: 'Draft case study'
   },
   {
-    title: 'Landing Page and CMS Execution',
-    slug: 'landing-page-cms-execution',
-    category: 'Web / CMS',
-    summary:
-      'Created and supported responsive pages, HubSpot CMS modules, content updates, QA fixes, and conversion-focused page structures.',
-    impact: ['Responsive implementation', 'CMS-friendly structure', 'Cleaner handoff process'],
-    tags: ['HTML', 'CSS', 'HubSpot CMS', 'Responsive QA'],
-    image: '/images/projects/project-placeholder.svg',
-    featured: false,
-    status: 'Draft case study'
+    title: 'Audit Nurture Automation', slug: 'audit-nurture-automation', category: 'Lifecycle Automation',
+    summary: 'Built and QA’d a multi-touch audit nurture with reply and booking stops, production isolation safeguards, webhook ingestion, deal creation, scheduling logic, reconciliation, and error alerts.',
+    impact: ['41 QA tests', 'Production safeguards', 'Automated deal creation'], tags: ['HubSpot', 'Workflows', 'Webhooks', 'Nurture', 'QA'], featured: false, status: 'Draft case study'
   },
   {
-    title: 'Campaign Workflow & Reporting Support',
-    slug: 'campaign-workflow-reporting-support',
-    category: 'HubSpot / Marketing Operations',
-    summary:
-      'Supported campaign properties, nurture logic, lifecycle tracking, forms, and reporting visibility for CRM-driven marketing operations.',
-    impact: ['Cleaner campaign structure', 'More reliable lifecycle tracking', 'Improved reporting visibility'],
-    tags: ['HubSpot', 'Automation', 'Forms', 'Lifecycle', 'Reporting'],
-    featured: false,
-    status: 'Draft case study'
+    title: 'CRM Reporting Cleanup', slug: 'crm-reporting-cleanup', category: 'Reporting Operations',
+    summary: 'Created a deal-level reporting property and backfilled 307 matching records so one vendor-specific lead-generation segment had a cleaner, more consistent source of truth for reporting.',
+    impact: ['307 deals backfilled', 'Single reporting field', 'Cleaner segmentation'], tags: ['HubSpot', 'Deals', 'Properties', 'Reporting', 'Data Cleanup'], featured: false, status: 'Draft case study'
   },
   {
-    title: 'Analytics Dashboard / Reporting System',
-    slug: 'analytics-dashboard-reporting-system',
-    category: 'Reporting / Analytics',
-    summary:
-      'Structured a dashboard-style reporting system for clearer campaign, source, funnel, and operational visibility.',
-    impact: ['Clearer reporting views', 'Consolidated operational signals', 'Decision-ready dashboard structure'],
-    tags: ['Reporting', 'Dashboards', 'Analytics', 'Data'],
-    featured: false,
-    status: 'Draft case study'
+    title: 'Technical SEO Metadata Rollout', slug: 'technical-seo-metadata-rollout', category: 'Technical SEO Implementation',
+    summary: 'Worked through a 137-URL implementation workbook, updating more than 120 title and meta-description targets with live verification, canonical checks, and deployment QA across WordPress pages.',
+    impact: ['137 URLs tracked', '120+ updates completed', 'Live QA verified'], tags: ['WordPress', 'Technical SEO', 'Metadata', 'QA', 'CMS'], featured: false, status: 'Draft case study'
+  },
+  {
+    title: 'Internal Linking Rollout', slug: 'internal-linking-rollout', category: 'Technical SEO Implementation',
+    summary: 'Reconciled a large internal-linking audit into an implementation ledger, completed 444 approved link changes, documented 14 skips, and re-verified the live site after rollout.',
+    impact: ['444 links implemented', '14 skips documented', 'Live re-verification'], tags: ['Internal Linking', 'SEO', 'WordPress', 'QA', 'Content Ops'], featured: false, status: 'Draft case study'
+  },
+  {
+    title: 'Website QA Crawler', slug: 'website-qa-crawler', category: 'Web Development Tooling',
+    summary: 'Built a TypeScript crawler with Crawlee to inspect page, location, industry, city, and case-study sitemap URLs for repeatable website QA and implementation checks.',
+    impact: ['Multi-sitemap crawling', 'Repeatable QA checks', 'TypeScript tooling'], tags: ['TypeScript', 'Crawlee', 'Web QA', 'Automation', 'Sitemaps'], featured: false, status: 'Draft case study'
+  },
+  {
+    title: 'Private Memory Album Web App', slug: 'private-memory-album-web-app', category: 'Next.js Web App',
+    summary: 'Built a password-gated private memory archive with season pages, galleries, videos, protected routes, responsive media handling, and a custom interface designed around a personal storytelling system.',
+    impact: ['Protected experience', 'Responsive media', 'Custom archive structure'], tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Protected Routes', 'Media'], featured: false, status: 'Draft case study'
+  },
+  {
+    title: 'Landing Page & CMS Execution', slug: 'landing-page-cms-execution', category: 'Web Development & CMS',
+    summary: 'Built and supported responsive landing pages, HubSpot CMS modules, WordPress updates, form experiences, technical QA fixes, and conversion-focused page structures across client implementation work.',
+    impact: ['Responsive builds', 'CMS-ready execution', 'Structured QA'], tags: ['HubSpot CMS', 'WordPress', 'HTML', 'CSS', 'Responsive QA'], featured: false, status: 'Draft case study'
   }
 ];
 

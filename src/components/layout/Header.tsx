@@ -41,7 +41,7 @@ export function Header() {
           </div>
 
           <ButtonTransitionLink href="/contact" variant="secondary" className="hidden min-h-12 rounded-lg border-white/25 bg-black/20 px-7 text-xs shadow-[0_0_24px_rgba(10,196,255,0.08)] hover:border-secondary/75 hover:bg-secondary/[0.08] hover:text-cyan-50 hover:shadow-[0_0_36px_rgba(10,196,255,0.28)] lg:inline-flex">
-            Work with me <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
+            Bring Me A Problem <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" />
           </ButtonTransitionLink>
 
           <button
@@ -62,7 +62,7 @@ export function Header() {
                 {item.label}
               </TransitionLink>
             ))}
-            <ButtonTransitionLink href="/contact" onClick={() => setOpen(false)} className="mt-2 w-full rounded-xl">Work with me <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+            <ButtonTransitionLink href="/contact" onClick={() => setOpen(false)} className="mt-2 w-full rounded-xl">Bring Me A Problem <ArrowUpRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
           </div>
         ) : null}
       </Container>

@@ -26,7 +26,7 @@ export function Footer() {
   const systemLinks = [
     { label: 'CRM Architecture', href: '/portfolio?tags=crm#project-grid' },
     { label: 'HubSpot Automation', href: '/portfolio?tags=hubspot,automation#project-grid' },
-    { label: 'Web Experiences', href: '/portfolio?tags=web-cms,landing-pages#project-grid' },
+    { label: 'Web Development', href: '/portfolio?tags=web-cms,landing-pages#project-grid' },
     { label: 'Data & Reporting', href: '/portfolio?tags=reporting,data-cleanup#project-grid' }
   ];
 
@@ -44,7 +44,7 @@ export function Footer() {
                   <span aria-hidden="true" className="mt-3 block h-1.5 w-44 max-w-full -rotate-1 rounded-full bg-[linear-gradient(90deg,var(--secondary),#8b6cff,transparent)] shadow-[0_0_18px_rgba(10,196,255,.55),0_0_28px_rgba(139,108,255,.42)]" />
                 </div>
               </div>
-              <p className="mt-6 max-w-md text-base leading-7 text-white/62">I build and streamline CRM and digital systems that help businesses automate, scale, and achieve more.</p>
+              <p className="mt-6 max-w-md text-base leading-7 text-white/62">I build CRM, automation, reporting, and web systems. Then I check them again because apparently trust has to be earned.</p>
               <div className="mt-6 flex flex-wrap gap-3">
                 {socialIcons.map(({ label, href, Icon }) => (
                   <a
@@ -81,8 +81,8 @@ export function Footer() {
               </div>
             </div>
             <div className="lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Let’s talk</p>
-              <p className="mt-5 text-base leading-7 text-white/62">Have a project in mind? Let’s build something outstanding.</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Got A Weird One?</p>
+              <p className="mt-5 text-base leading-7 text-white/62">Send the context. Screenshots help. A dramatic backstory is optional but rarely wasted.</p>
               <FooterContactForm />
             </div>
           </div>
@@ -95,7 +95,7 @@ export function Footer() {
               <TransitionLink href="/terms" className="premium-underline-link py-1 text-white/58">
                 Terms &amp; Conditions
               </TransitionLink>
-              <span>Built with care, systems, and coffee.</span>
+              <span>Built with caffeine, suspicious amounts of QA, and tabs I am emotionally unable to close.</span>
             </div>
           </div>
           </div>

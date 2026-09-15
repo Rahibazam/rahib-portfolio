@@ -26,9 +26,6 @@ const selectFloatingLabelClass = (hasValue: boolean) =>
       : 'top-1/2 -translate-y-1/2 text-sm font-medium tracking-normal text-[rgba(255,255,255,0.9)]'
   ].join(' ');
 
-const textareaFloatingLabelClass =
-  'pointer-events-none absolute left-4 top-4 z-10 translate-y-0 text-sm font-medium leading-none tracking-normal text-[rgba(255,255,255,0.9)] transition-all duration-200 ease-out peer-focus:top-1.5 peer-focus:text-[0.68rem] peer-focus:font-semibold peer-focus:tracking-[0.04em] peer-focus:text-[#0AC4FF] peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-[0.68rem] peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:tracking-[0.04em] peer-[:not(:placeholder-shown)]:text-white/65';
-
 export function ContactForm() {
   const [status, setStatus] = useState('Usually replies within 12 hours');
   const [statusType, setStatusType] = useState<'idle' | 'success' | 'error'>('idle');
@@ -52,13 +49,16 @@ export function ContactForm() {
     setStatus('Sending your message...');
 
     try {
-      const result = await submitHubSpotForm({
+      await submitHubSpotForm({
         formType: 'contact',
         fields: {
           firstname: String(formData.get('firstname') ?? ''),
           lastname: String(formData.get('lastname') ?? ''),
           email: String(formData.get('email') ?? ''),
-          project_type: String(formData.get('project_type') ?? ''),
+          project_type:
+            projectType === 'Ongoing Support' || projectType === 'Other / Difficult To Explain'
+              ? 'Not sure yet'
+              : String(formData.get('project_type') ?? ''),
           budget_or_timeline: String(formData.get('budget_or_timeline') ?? ''),
           best_time_to_reach_you: String(formData.get('best_time_to_reach_you') ?? ''),
           project_details: String(formData.get('project_details') ?? '')
@@ -73,11 +73,11 @@ export function ContactForm() {
       setBudgetTimeline('');
       setBestTime('');
       setStatusType('success');
-      setStatus(result.message ?? 'Thanks — your message has been sent.');
+      setStatus('It arrived safely. I will now begin the ceremonial opening of too many tabs.');
       startedAt.current = Date.now();
-    } catch (error) {
+    } catch {
       setStatusType('error');
-      setStatus(error instanceof Error ? error.message : 'Your message could not be sent. Please try again.');
+      setStatus('Perfect. The contact form has also decided to become part of the project.');
     } finally {
       setIsSubmitting(false);
     }
@@ -117,7 +117,7 @@ export function ContactForm() {
         </div>
         <div className="group relative w-full">
           <label className="sr-only" htmlFor="projectType">
-            Project Type
+            What has happened?
           </label>
           <select
             id="projectType"
@@ -128,13 +128,14 @@ export function ContactForm() {
             required
           >
             <option value="" disabled hidden aria-hidden="true" />
-            <option className="bg-[#071126] text-white">HubSpot / CRM</option>
-            <option className="bg-[#071126] text-white">Website / Landing Page</option>
-            <option className="bg-[#071126] text-white">Automation / AI Workflow</option>
-            <option className="bg-[#071126] text-white">Frontend Build</option>
-            <option className="bg-[#071126] text-white">Not sure yet</option>
+            <option value="HubSpot / CRM" className="bg-[#071126] text-white">HubSpot / CRM</option>
+            <option value="Automation / AI Workflow" className="bg-[#071126] text-white">Automation / Reporting</option>
+            <option value="Website / Landing Page" className="bg-[#071126] text-white">Website / Landing Page</option>
+            <option value="Frontend Build" className="bg-[#071126] text-white">Technical SEO / CMS</option>
+            <option value="Ongoing Support" className="bg-[#071126] text-white">Ongoing Support</option>
+            <option value="Other / Difficult To Explain" className="bg-[#071126] text-white">Other / Difficult To Explain</option>
           </select>
-          <span className={selectFloatingLabelClass(Boolean(projectType))}>Project Type</span>
+          <span className={selectFloatingLabelClass(Boolean(projectType))}>What has happened?</span>
           <ChevronDown
             aria-hidden="true"
             className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/65"
@@ -146,7 +147,7 @@ export function ContactForm() {
       <div className="grid gap-3.5 sm:grid-cols-2">
         <div className="group relative w-full">
           <label className="sr-only" htmlFor="budgetTimeline">
-            Budget or Timeline
+            Budget / Timeline
           </label>
           <select
             id="budgetTimeline"
@@ -162,7 +163,7 @@ export function ContactForm() {
             <option className="bg-[#071126] text-white">Ongoing support</option>
             <option className="bg-[#071126] text-white">Not sure yet</option>
           </select>
-          <span className={selectFloatingLabelClass(Boolean(budgetTimeline))}>Budget or Timeline</span>
+          <span className={selectFloatingLabelClass(Boolean(budgetTimeline))}>Budget / Timeline</span>
           <ChevronDown
             aria-hidden="true"
             className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/65"
@@ -198,18 +199,17 @@ export function ContactForm() {
 
       <div className={fieldShellClass}>
         <label className="sr-only" htmlFor="message">
-          Tell me about your project...
+          Project Context
         </label>
         <textarea
           id="message"
           name="project_details"
           rows={4}
           className={`${fieldClass} min-h-32 resize-y leading-6`}
-          placeholder=" "
+          placeholder="Tell me what is broken, weird, slow, duplicated, manual, held together by vibes, or named FINAL-final-v3. Context is beautiful."
           required
           maxLength={4000}
         />
-        <span className={textareaFloatingLabelClass}>Tell me about your project...</span>
       </div>
 
       <p className="text-xs leading-5 text-white/52">
@@ -228,10 +228,10 @@ export function ContactForm() {
           aria-busy={isSubmitting}
           className="group min-h-12 w-full rounded-lg px-7 text-sm shadow-[0_12px_30px_rgba(37,107,255,.30),0_0_28px_rgba(108,76,255,.22)] sm:w-auto"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? 'Sending...' : 'Send The Situation'}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
-        <p aria-live="polite" className="flex items-start gap-2 text-sm leading-6 text-white/58">
+        <div aria-live="polite" className="flex items-start gap-2 text-sm leading-6 text-white/58">
           <span
             className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
               statusType === 'error'
@@ -239,8 +239,11 @@ export function ContactForm() {
                 : 'bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,.9)]'
             }`}
           />
-          {status}
-        </p>
+          <span>
+            {statusType === 'success' ? <strong className="mb-0.5 block font-mono text-xs uppercase tracking-[0.14em] text-emerald-200">Situation Acquired</strong> : null}
+            {status}
+          </span>
+        </div>
       </div>
     </form>
   );

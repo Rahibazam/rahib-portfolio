@@ -25,7 +25,7 @@ export function FooterContactForm() {
     setStatus(null);
 
     try {
-      const result = await submitHubSpotForm({
+      await submitHubSpotForm({
         formType: 'footer',
         fields: {
           email: String(formData.get('email') ?? ''),
@@ -37,12 +37,12 @@ export function FooterContactForm() {
       });
 
       form.reset();
-      setStatus({ type: 'success', message: result.message ?? 'Thanks — your message has been sent.' });
+      setStatus({ type: 'success', message: 'Message received. I will now open seven tabs and pretend this is a normal response.' });
       startedAt.current = Date.now();
-    } catch (error) {
+    } catch {
       setStatus({
         type: 'error',
-        message: error instanceof Error ? error.message : 'Your message could not be sent. Please try again.'
+        message: 'Perfect. The contact form has also decided to become part of the project.'
       });
     } finally {
       setIsSubmitting(false);
@@ -147,7 +147,7 @@ export function FooterContactForm() {
               aria-busy={isSubmitting}
               className="w-full rounded-lg shadow-[0_0_24px_rgba(10,196,255,0.14)] hover:brightness-110 hover:shadow-[0_0_34px_rgba(10,196,255,0.28)] focus-visible:border-cyan-100/70 focus-visible:shadow-[0_0_0_3px_rgba(10,196,255,0.1),0_0_30px_rgba(10,196,255,0.24)] active:brightness-95 sm:w-auto"
             >
-              {isSubmitting ? 'Sending...' : 'Send inquiry'}
+              {isSubmitting ? 'Sending...' : 'Send The Situation'}
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Button>
           </div>

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, BarChart3, Database, Gauge, PanelsTopLeft, Search, UserRoundCog, Workflow, Wrench } from 'lucide-react';
 import { PageShell } from '@/components/motion/PageShell';
@@ -36,6 +37,12 @@ const problemIconStyles = [
 
 const systemIconTypes = ['crm', 'automation', 'growth'] as const;
 
+export const metadata: Metadata = {
+  title: 'Rahib Azam | HubSpot, CRM & Web Development Specialist',
+  description:
+    'HubSpot consulting, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, and digital systems by Rahib Azam.'
+};
+
 export default function HomePage() {
   return (
     <PageShell>
@@ -44,20 +51,20 @@ export default function HomePage() {
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
           <Reveal className="relative z-10">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.55)] sm:text-sm">Welcome to my portfolio</p>
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.55)] sm:text-sm">Web • HubSpot • CRM • Automation</p>
             <h1 className="home-display mt-7 max-w-[59rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white">
-              <span className="block xl:whitespace-nowrap"><span className="block sm:inline">I build</span><span className="block sm:ml-[0.18em] sm:inline">systems</span></span>
-              <span className="block xl:whitespace-nowrap"><span className="block sm:inline">that drive</span><HeadingAccent className="block sm:ml-[0.18em] sm:inline">growth.</HeadingAccent></span>
+              <span className="block xl:whitespace-nowrap">I build systems.</span>
+              <span className="block xl:whitespace-nowrap">Then I <HeadingAccent>stare at them.</HeadingAccent></span>
             </h1>
             <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">
-              I craft and streamline CRM &amp; digital systems that help businesses automate, scale and achieve more.
+              HubSpot implementation, CRM architecture, workflow automation, reporting, and web development for businesses whose “temporary workaround” has somehow developed tenure.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-5">
               <ButtonTransitionLink href="/portfolio" size="lg" className="w-full min-h-16 rounded-lg px-10 text-sm sm:w-auto">
-                View my work <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                See The Work <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </ButtonTransitionLink>
               <ButtonTransitionLink href="/contact" variant="secondary" size="lg" className="w-full min-h-16 rounded-lg px-10 text-sm sm:w-auto">
-                Work with me <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                Bring Me The Mess <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </ButtonTransitionLink>
             </div>
           </Reveal>
@@ -68,7 +75,7 @@ export default function HomePage() {
         </ScrollFadeHero>
 
         <section id="problems" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>What I Actually <HeadingAccent>Fix</HeadingAccent></>} description="The operational and web problems I solve — so your business runs smoother and grows faster." />
+          <HomeSectionHeader title={<>How This Usually <HeadingAccent>Starts</HeadingAccent></>} description="Nobody wakes up excited to commission CRM cleanup, workflow automation, or website repair. Usually something finally gets annoying enough to receive a budget. Sometimes it has been “temporary” since 2022." />
           <div className="mt-10 border-y border-secondary/25 md:grid md:grid-cols-3">
             {homeProblems.map((problem, index) => {
               const Icon = homeIcons[problem.icon];
@@ -93,7 +100,7 @@ export default function HomePage() {
         </section>
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Systems I <HeadingAccent>Build</HeadingAccent></>} description="I design and build systems that connect data, automate operations and create clarity across your business." />
+          <HomeSectionHeader title={<>What I Actually <HeadingAccent>Build</HeadingAccent></>} description="Most of my work lives where HubSpot, CRM automation, reporting, data, and web development start touching each other without adult supervision." />
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {homeSystems.map((system, index) => {
               return (
@@ -105,7 +112,7 @@ export default function HomePage() {
                         <h3 className="font-display text-xl font-black uppercase leading-tight text-white lg:text-[1.5rem]">{system.title}</h3>
                         <p className="mt-4 text-sm leading-7 text-white/64 lg:text-base">{system.description}</p>
                         <TransitionLink href={system.href} className="mt-6 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-secondary hover:text-cyan-100">
-                          Explore <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
+                          {system.linkLabel} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                         </TransitionLink>
                       </div>
                     </div>
@@ -117,7 +124,7 @@ export default function HomePage() {
         </section>
 
         <section id="experience" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Professional <HeadingAccent>Experience</HeadingAccent></>} description="A quick overview of where I’ve been, and the work that shaped the systems I build today." />
+          <HomeSectionHeader title={<>How I Got <HeadingAccent>Here</HeadingAccent></>} description="I started with web development, touched HubSpot, and made the classic mistake of being useful around complicated systems." />
           <div className="relative mt-10 grid gap-4 pl-5 sm:pl-10">
             <div aria-hidden="true" className="absolute bottom-7 left-[0.28rem] top-7 w-px bg-gradient-to-b from-secondary via-secondary/70 to-purple shadow-[0_0_13px_rgba(10,196,255,0.65)] sm:left-[0.88rem]" />
             {homeExperience.map((experience, index) => (
@@ -174,8 +181,8 @@ export default function HomePage() {
 
         <section id="testimonials" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader
-            title={<>What Clients <HeadingAccent>Say</HeadingAccent></>}
-            description="A few signals from the people closest to the work — the systems, the process, and what changed after delivery."
+            title={<>Apparently I Need <HeadingAccent>Witnesses</HeadingAccent></>}
+            description="Approved client quotes live here. Apparently a portfolio cannot cite its own vibes as an independent source."
           />
           <Reveal variant="panel">
             <HomeTestimonialsDeck testimonials={homeTestimonials} />
@@ -183,7 +190,7 @@ export default function HomePage() {
         </section>
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>How I <HeadingAccent>Work</HeadingAccent></>} description="A clean, practical, systems-first process designed for long-term results." />
+          <HomeSectionHeader title={<>The Very Exciting <HeadingAccent>Process</HeadingAccent></>} description="Find the problem. Fix the problem. Check whether the fix invented a new problem. Repeat responsibly." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 md:grid md:grid-cols-3 md:py-10">
             <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-28 md:h-px md:w-auto" />
             {homeProcess.map((step, index) => {
@@ -210,21 +217,21 @@ export default function HomePage() {
           <section id="home-cta" className="home-module-strong relative my-14 scroll-mt-28 overflow-hidden rounded-panel border-secondary/40 p-7 sm:p-10 lg:grid lg:min-h-[23rem] lg:grid-cols-[0.95fr_0.8fr_0.9fr] lg:items-center lg:gap-12 lg:p-14">
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(100deg,rgba(10,196,255,0.06),transparent_42%,rgba(108,76,255,0.08))]" />
             <div className="relative z-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Let’s build something</p>
-              <h2 className="home-display mt-5 text-5xl font-black uppercase leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl lg:text-[4.5rem]">Let’s work <HeadingAccent>together</HeadingAccent></h2>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Your Turn, Unfortunately</p>
+              <h2 className="home-display mt-5 text-5xl font-black uppercase leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl lg:text-[4.5rem]">Show Me The Weird <HeadingAccent>Thing</HeadingAccent></h2>
               <div aria-hidden="true" className="mt-7 h-2 w-72 -rotate-2 rounded-full bg-gradient-to-r from-secondary via-purple to-transparent shadow-[0_0_26px_rgba(108,76,255,0.8)]" />
             </div>
             <div className="relative z-10 mt-7 lg:mt-0">
-              <p className="text-sm leading-6 text-white/62">Need a trusted partner to fix, build or scale your CRM and digital systems?</p>
-              <p className="mt-2 text-sm leading-6 text-white/48">Let’s create systems that drive clarity, automation and growth.</p>
-              <ButtonTransitionLink href="/contact" size="lg" className="mt-7 rounded-lg px-9">Let’s talk <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <p className="text-sm leading-6 text-white/62">Send the HubSpot portal, CRM workflow, website, report, or suspicious spreadsheet that has started consuming meetings.</p>
+              <p className="mt-2 text-sm leading-6 text-white/48">Screenshots welcome. Long context welcome. “It just does this sometimes” is also a completely usable starting point.</p>
+              <ButtonTransitionLink href="/contact" size="lg" className="mt-7 rounded-lg px-9">Send It Over <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
             <div className="relative z-10 mt-4 lg:mt-0"><HomeCTAVisual /></div>
           </section>
         </Reveal>
 
         <section id="featured" className="scroll-mt-28 pb-10 pt-14 sm:pb-12 sm:pt-16">
-          <HomeSectionHeader title={<>Featured <HeadingAccent>Work</HeadingAccent></>} description="A few projects I’m proud of — clean setups, automations and websites that perform." />
+          <HomeSectionHeader title={<>Selected Things I <HeadingAccent>Fixed</HeadingAccent></>} description="A few HubSpot, CRM automation, web development, and tooling projects that eventually stopped being problems and became portfolio content." />
           <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1fr_0.22fr]">
             {homeFeaturedWork.map((project, index) => (
               <Reveal key={project.title} delay={index * 0.08} className="h-full">

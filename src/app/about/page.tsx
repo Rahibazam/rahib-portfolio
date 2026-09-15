@@ -18,8 +18,8 @@ import { Container } from '@/components/ui/Container';
 import { aboutExperience, aboutIntroCards, aboutPrinciples, aboutSnapshots, aboutToolkit } from '@/data/about';
 
 export const metadata: Metadata = {
-  title: 'About — Rahib Azam',
-  description: 'Learn about Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, reporting, and digital systems.'
+  title: 'About Rahib Azam | CRM, HubSpot & Web Technologist',
+  description: 'Meet Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, CRM architecture, reporting, web development, CMS builds, and landing pages.'
 };
 
 export default function AboutPage() {
@@ -44,19 +44,19 @@ export default function AboutPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display max-w-[58rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white">
-              Who I am,<br />what I <span className="text-gradient">build.</span>
+              There is a person.<br />Management <HeadingAccent>regrets this.</HeadingAccent>
             </h1>
-            <p className="mt-8 max-w-[46rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">I’m Rahib Azam — a CRM &amp; Web Technologist and HubSpot Specialist who builds clean systems, thoughtful experiences, and websites that actually work.</p>
+            <p className="mt-8 max-w-[46rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">I’m Rahib Azam, a CRM &amp; Web Technologist, HubSpot Specialist, and web developer from Dhaka. I build CRM, automation, reporting, CMS, and front-end systems, fix weird things, and occasionally lose a measurable amount of time to three pixels.</p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-5">
-              <ButtonTransitionLink href="/contact" size="lg" className="min-h-16 w-full px-9 sm:w-auto">Let’s work together <ArrowRight className="h-4 w-4" /></ButtonTransitionLink>
-              <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="min-h-16 w-full px-9 sm:w-auto">View my work <ArrowRight className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/portfolio" size="lg" className="min-h-16 w-full px-9 sm:w-auto">See The Work <ArrowRight className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/contact" variant="secondary" size="lg" className="min-h-16 w-full px-9 sm:w-auto">Send A Problem <ArrowRight className="h-4 w-4" /></ButtonTransitionLink>
             </div>
           </Reveal>
           <FloatingSection className="relative z-0 xl:-mr-2" distance={5} duration={10}><AboutHeroVisual /></FloatingSection>
         </ScrollFadeHero>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title={<>The Real <HeadingAccent>Version</HeadingAccent></>} description="A little less corporate, a little more useful." />
+          <HomeSectionHeader title={<>The Non-LinkedIn <HeadingAccent>Version</HeadingAccent></>} description="The professional summary is useful. Unfortunately, I also have a personality." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutIntroCards.map(({ title, Icon, paragraphs }, index) => (
               <Reveal key={title} delay={index * 0.07} className="h-full">
@@ -76,7 +76,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title={<>What Defines My <HeadingAccent>Work</HeadingAccent></>} description="The principles behind how I build systems, pages, automations, and CRM experiences." />
+          <HomeSectionHeader title={<>Things I Keep <HeadingAccent>Doing</HeadingAccent></>} description="Less manifesto, more recurring behavior that has somehow become professionally useful." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
               <Reveal key={title} delay={index * 0.07} className="h-full">
@@ -95,7 +95,7 @@ export default function AboutPage() {
         </section>
 
         <section className="py-14 sm:py-16">
-          <HomeSectionHeader title={<>Personality <HeadingAccent>Stack</HeadingAccent></>} description="A slightly chaotic but accurate snapshot of the tools, habits, obsessions, and weird little details behind how I build." />
+          <HomeSectionHeader title={<>Patch Notes: <HeadingAccent>Human</HeadingAccent></>} description="Introvert, heavy music, games, side projects, clean UI, questionable sleep, and a known tendency to overengineer harmless objects." />
           <div aria-hidden="true" className="mt-7 h-px w-full bg-gradient-to-r from-secondary/65 via-secondary/20 to-transparent shadow-[0_0_10px_rgba(10,196,255,.2)]" />
           <div className="mt-8"><AboutPersonalityGrid videoSources={videoSources} availableAudio={availableAudio} availableArtwork={availableArtwork} /></div>
           <div className="mt-8 flex items-center justify-center gap-5 text-center font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/35 before:h-px before:w-24 before:bg-gradient-to-r before:from-transparent before:to-secondary/65 after:h-px after:w-24 after:bg-gradient-to-r after:from-secondary/65 after:to-transparent">Tools change. Principles don’t. Curiosity never stops.</div>
@@ -103,8 +103,9 @@ export default function AboutPage() {
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader
-            title={<HeadingAccent>Toolkit</HeadingAccent>}
-            description="The tools, systems, and platforms I use to turn ideas into working infrastructure."
+            title={<>CRM, Web &amp; Automation <HeadingAccent>Toolkit</HeadingAccent></>}
+            personalityLabel="Things I Click"
+            description="The stack changes by problem. These are tools I have used for HubSpot implementation, CRM systems, automation, web development, CMS work, and QA. They are currently aware of my existence."
           />
 
           <div className="mt-10 divide-y divide-secondary/20 border-y border-secondary/25">
@@ -220,8 +221,9 @@ export default function AboutPage() {
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader
-            title={<>Experience <HeadingAccent>Snapshot</HeadingAccent></>}
-            description="A quick view of the work that shaped how I think about CRM, automation, and web systems."
+            title={<>CRM, HubSpot &amp; Web <HeadingAccent>Experience</HeadingAccent></>}
+            personalityLabel="Previously On Rahib"
+            description="Hands-on HubSpot, CRM automation, web development, CMS, reporting, SEO, and implementation work. Apparently “he kept fixing stuff” is not considered sufficient professional history."
           />
 
           <div className="relative mt-10 space-y-5">
@@ -313,8 +315,8 @@ export default function AboutPage() {
 
         <section className="py-14 sm:py-16">
           <HomeSectionHeader
-            title={<HeadingAccent>Snapshot</HeadingAccent>}
-            description="A few details behind the person building the systems."
+            title={<>Character <HeadingAccent>Sheet</HeadingAccent></>}
+            description="Useful facts, plus several details that explain why the rest of the website sounds like this."
           />
 
           <Reveal>
@@ -452,20 +454,19 @@ export default function AboutPage() {
                 <div className="absolute left-0 top-0 z-30 flex h-full w-full items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
                   <div className="max-w-[720px] text-left lg:max-w-[660px] xl:max-w-[720px]">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
-                      <span>LET’S BUILD TOGETHER</span>
+                      <span>ENOUGH CHARACTER DEVELOPMENT</span>
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
                     <h2 className="home-display text-[clamp(2.35rem,10vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.055em] text-white sm:text-[clamp(3rem,6vw,4.7rem)]">
-                      HAVE A SYSTEM THAT <br className="hidden sm:block" />
-                      NEEDS{' '}
+                      BACK TO THE{' '}
                       <span className="bg-gradient-to-r from-[#06C2FF] via-[#1BA6FF] to-[#8B5CFF] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(10,196,255,.24)]">
-                        STRUCTURE?
+                        PROBLEMS
                       </span>
                     </h2>
 
                     <p className="mt-7 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-                      Let’s turn the messy parts into something cleaner, smarter, and easier to run.
+                      If you have a HubSpot system, CRM workflow, website, CMS build, or technical implementation behaving strangely, send it over. I have made worse decisions voluntarily.
                     </p>
 
                     <div aria-hidden="true" className="pointer-events-none relative mt-9 flex h-40 w-full items-center justify-start overflow-hidden lg:hidden">
@@ -484,14 +485,14 @@ export default function AboutPage() {
                         href="/contact"
                         className="group/btn inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-xl border border-cyan-100/25 bg-[linear-gradient(90deg,#08B8FF_0%,#256BFF_55%,#6C4CFF_100%)] px-7 font-display text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_34px_rgba(10,196,255,.28),0_0_26px_rgba(108,76,255,.20)] transition duration-300 hover:shadow-[0_16px_44px_rgba(10,196,255,.38),0_0_44px_rgba(108,76,255,.28)] motion-safe:hover:-translate-y-0.5 sm:w-auto"
                       >
-                        LET’S TALK
+                        SEND A PROBLEM
                         <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </TransitionLink>
                       <TransitionLink
                         href="/portfolio"
                         className="group/btn inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-xl border border-[#0AC4FF]/50 bg-[#08152d] px-7 font-display text-sm font-black uppercase tracking-[0.16em] text-white shadow-[inset_0_1px_0_rgba(255,255,255,.06),0_0_18px_rgba(10,196,255,.10)] transition duration-300 hover:border-[#0AC4FF]/80 hover:bg-[#0b1b3a] hover:shadow-[0_0_34px_rgba(10,196,255,.24)] motion-safe:hover:-translate-y-0.5 sm:w-auto"
                       >
-                        VIEW PORTFOLIO
+                        SEE THE WORK
                         <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </TransitionLink>
                     </div>

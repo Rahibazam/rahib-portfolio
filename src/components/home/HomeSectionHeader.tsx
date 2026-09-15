@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 type HomeSectionHeaderProps = {
   title: ReactNode;
   description: string;
+  personalityLabel?: string;
   className?: string;
 };
 
@@ -26,7 +27,7 @@ export function HeadingAccent({ children, className }: HeadingAccentProps) {
   );
 }
 
-export function HomeSectionHeader({ title, description, className }: HomeSectionHeaderProps) {
+export function HomeSectionHeader({ title, description, personalityLabel, className }: HomeSectionHeaderProps) {
   return (
     <div className={cn('relative grid gap-5 border-t border-secondary/20 pt-8 before:absolute before:left-0 before:top-[-1px] before:h-px before:w-40 before:bg-gradient-to-r before:from-secondary before:to-transparent md:grid-cols-[minmax(0,1fr)_minmax(22rem,0.68fr)] md:items-start', className)}>
       <div className="flex items-center gap-4">
@@ -35,7 +36,10 @@ export function HomeSectionHeader({ title, description, className }: HomeSection
         </span>
         <h2 className="home-display text-[1.7rem] font-black uppercase tracking-[0.025em] text-white sm:text-[2rem] lg:text-[2.35rem]">{title}</h2>
       </div>
-      <p className="max-w-xl text-sm leading-7 text-white/62 md:justify-self-end lg:text-base">{description}</p>
+      <div className="max-w-xl md:justify-self-end">
+        {personalityLabel ? <p className="mb-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">{personalityLabel}</p> : null}
+        <p className="text-sm leading-7 text-white/62 lg:text-base">{description}</p>
+      </div>
     </div>
   );
 }

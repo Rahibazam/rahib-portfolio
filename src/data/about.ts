@@ -1,15 +1,12 @@
 import {
-  BarChart3,
   Bot,
   Box,
   Boxes,
   Braces,
   Code2,
-  Cpu,
   Database,
   Eye,
   FileCode2,
-  GitBranch,
   Github,
   Globe2,
   Headphones,
@@ -17,10 +14,8 @@ import {
   ListChecks,
   MapPin,
   MessagesSquare,
-  MonitorSmartphone,
   Music2,
   Network,
-  Orbit,
   PanelsTopLeft,
   SlidersHorizontal,
   Sparkles,
@@ -36,46 +31,46 @@ import {
 
 export const aboutIntroCards = [
   {
-    title: 'The Short Version',
+    title: 'How This Happened',
     Icon: UserRound,
     paragraphs: [
-      'I build CRM systems, automate operations, and design websites that don’t just look good — they create clarity and drive growth.',
-      'I love turning messy processes into clean, reliable systems that make life easier for businesses and their teams.'
+      'I started working early, mostly by building whatever needed building: websites, landing pages, CRM setups, workflows, reports, and fixes that kept revealing a larger problem underneath. Very considerate of them.',
+      'Eventually I landed in the overlap between HubSpot, CRM architecture, automation, reporting, CMS work, and front-end implementation. Apparently my career strategy was “keep touching adjacent systems until the title becomes difficult to explain.”'
     ]
   },
   {
-    title: 'What I Care About',
+    title: 'Brain Configuration',
     Icon: Heart,
     paragraphs: [
-      'Clarity over complexity. Systems over spreadsheets. Experience over noise.',
-      'I care about building things that are useful, maintainable, and built to make a real impact — not just to impress.'
+      'I notice systems before surfaces: who owns the data, what triggers what, where the handoff breaks, which field matters, and why there are four properties called “Lead Source.” This is useful professionally and annoying recreationally.',
+      'I am detail-focused enough to spend too long on edge cases, spacing, and naming. Sometimes that is quality control. Sometimes I am moving a button two pixels at 2:13 AM. Both statements can coexist.'
     ]
   },
   {
-    title: 'Outside the Build',
+    title: 'Offline, Allegedly',
     Icon: Music2,
     paragraphs: [
-      'I’m an introvert at heart. I recharge in quiet spaces, think in systems, and find inspiration in heavy riffs and honest lyrics.',
-      'Metalcore, rock, and a good bassline help me focus, reset, and stay in the zone.'
+      'I am introverted, remote-first, and suspicious of meetings that could have contained three bullet points. Give me a clear problem, enough context, and a quiet block of time and I am extremely easy to manage.',
+      'Outside work, it is heavy music, games, side projects, Obsidian, and occasionally building systems to organize the systems I built to organize other systems. The situation is under control. Do not investigate.'
     ]
   }
 ] as const satisfies ReadonlyArray<{ title: string; Icon: LucideIcon; paragraphs: readonly string[] }>;
 
 export const aboutPrinciples = [
   {
-    title: 'Systems-First',
+    title: 'Understand First',
     Icon: Boxes,
-    description: 'I start with structure. Good systems remove guesswork, scale with you, and keep everything running smooth.'
+    description: 'Trace the system before touching it. Production is a terrible place to begin a character-development arc.'
   },
   {
-    title: 'Clean Execution',
+    title: 'Leave Receipts',
     Icon: Zap,
-    description: 'I believe in simple, elegant solutions. Clean code, clean design, clean data. Details make the difference.'
+    description: 'Test, document, verify, and make the work understandable to someone who was not present for the suffering.'
   },
   {
-    title: 'Quiet Obsession',
+    title: 'Care Too Much',
     Icon: Target,
-    description: 'I don’t chase trends. I obsess over getting things right, refining, and building work I’m proud of.'
+    description: 'Tiny inconsistencies bother me until they stop, which is occasionally exhausting and frequently useful.'
   }
 ] as const satisfies ReadonlyArray<{ title: string; Icon: LucideIcon; description: string }>;
 
@@ -95,74 +90,67 @@ export type ToolkitCategory = {
 export const aboutToolkit: ToolkitCategory[] = [
   {
     title: 'WEB DEVELOPMENT',
-    description: 'Building responsive, accessible, and high-performance web experiences.',
+    description: 'Front-end development, responsive interfaces, landing pages, accessibility, performance, and custom applications where the pixels must answer for themselves.',
     image: '/images/about/toolkit/web-development.png',
     accent: 'cyan',
     items: [
-      { label: 'HTML', Icon: FileCode2 },
-      { label: 'CSS', Icon: Braces },
-      { label: 'Tailwind', Icon: Waves },
-      { label: 'Bootstrap', Icon: Box },
-      { label: 'DaisyUI', Icon: Sparkles },
       { label: 'Next.js', Icon: Code2 },
       { label: 'TypeScript', Icon: Braces },
-      { label: 'Responsive QA', Icon: MonitorSmartphone }
+      { label: 'JavaScript', Icon: Code2 },
+      { label: 'HTML', Icon: FileCode2 },
+      { label: 'CSS', Icon: Braces },
+      { label: 'Tailwind CSS', Icon: Waves },
+      { label: 'Bootstrap', Icon: Box },
+      { label: 'DaisyUI', Icon: Sparkles }
     ]
   },
   {
     title: 'CRM & CMS',
-    description: 'Designing and optimizing CRM systems, content platforms, and automated workflows.',
+    description: 'HubSpot, customer data, content, forms, pages, workflows, and the places where “just one field” becomes seventeen.',
     image: '/images/about/toolkit/crm-and-cms.png',
     accent: 'purple',
     items: [
       { label: 'HubSpot', Icon: Network },
+      { label: 'HubSpot CMS', Icon: PanelsTopLeft },
+      { label: 'HubL', Icon: Code2 },
       { label: 'WordPress', Icon: Globe2 },
       { label: 'Elementor', Icon: PanelsTopLeft },
-      { label: 'Square Space', Icon: Box },
-      { label: 'MailChimp', Icon: MessagesSquare },
-      { label: 'Eventbrite', Icon: ListChecks },
-      { label: 'Attentive', Icon: Sparkles },
-      { label: 'CRM Architecture', Icon: Database },
-      { label: 'Workflows', Icon: Workflow },
-      { label: 'Reporting', Icon: BarChart3 }
+      { label: 'Salesforce', Icon: Database },
+      { label: 'Pardot', Icon: Network }
     ]
   },
   {
-    title: 'AI TOOLS',
-    description: 'Leveraging AI to research, automate, create, and ship faster.',
+    title: 'AUTOMATION & OPS',
+    description: 'Workflow automation, lead routing, integrations, scheduling, communication, documentation, and getting humans out of repetitive copy-paste loops.',
     image: '/images/about/toolkit/ai-tools.png',
     accent: 'blue',
     items: [
-      { label: 'OpenAI', Icon: Bot },
-      { label: 'Codex', Icon: Code2 },
-      { label: 'Claude', Icon: Sparkles },
-      { label: 'Claude Cowork', Icon: MessagesSquare },
-      { label: 'Cowork', Icon: Bot },
-      { label: 'Perplexity', Icon: Cpu },
-      { label: 'Gemini', Icon: Orbit },
-      { label: 'Copilot', Icon: Bot },
-      { label: 'Instantly', Icon: Zap }
+      { label: 'HubSpot Workflows', Icon: Workflow },
+      { label: 'Zapier', Icon: Zap },
+      { label: 'Aircall', Icon: MessagesSquare },
+      { label: 'Calendly', Icon: ListChecks },
+      { label: 'DocuSign', Icon: FileCode2 },
+      { label: 'Google Sheets', Icon: Table2 },
+      { label: 'Attentive', Icon: Sparkles },
+      { label: 'Bettermode', Icon: Network }
     ]
   },
   {
-    title: 'TOOLS & PLATFORMS',
-    description: 'Essential tools and platforms that power productivity and streamline delivery.',
+    title: 'AI & DEV TOOLS',
+    description: 'Coding, research, QA, content operations, automation experiments, and projects that started with “this would be funny.”',
     image: '/images/about/toolkit/tools-and-platforms.png',
     accent: 'purple',
     items: [
-      { label: 'Git', Icon: GitBranch },
-      { label: 'VS Code', Icon: Code2 },
+      { label: 'ChatGPT', Icon: Bot },
+      { label: 'OpenAI', Icon: Bot },
+      { label: 'Claude', Icon: Sparkles },
+      { label: 'Claude Code', Icon: Code2 },
+      { label: 'Codex', Icon: Code2 },
       { label: 'GitHub', Icon: Github },
-      { label: 'Vercel', Icon: Orbit },
-      { label: 'Zapier', Icon: Zap },
-      { label: 'Google Sheets', Icon: Table2 },
-      { label: 'Slack', Icon: MessagesSquare },
-      { label: 'Asana', Icon: ListChecks },
-      { label: 'Eventhunt', Icon: Target },
-      { label: 'Wise', Icon: Globe2 },
-      { label: 'Payoneer', Icon: Network },
-      { label: 'OBS', Icon: MonitorSmartphone },
-      { label: 'Spotify', Icon: Headphones }
+      { label: 'VS Code', Icon: Code2 },
+      { label: 'Crawlee', Icon: Network },
+      { label: 'Firecrawl', Icon: Globe2 },
+      { label: 'Obsidian', Icon: Braces }
     ]
   }
 ];
@@ -171,58 +159,58 @@ export const aboutExperience = [
   {
     role: 'CRM & Web Technologist',
     company: 'Digital Authority Partners',
-    date: 'Dec 2025 – Present',
-    description: 'Built and supported CRM systems, HubSpot operations, workflows, reporting, and web execution across client projects.'
+    date: 'Current',
+    description: 'Build and QA CRM, automation, web, reporting, SEO, and implementation systems across client work, with a strong production and verification focus.'
   },
   {
     role: 'HubSpot Specialist & CMS Expert',
     company: 'INSIDEA',
-    date: 'Jun 2024 – Dec 2025',
-    description: 'Implemented HubSpot portals, workflows, landing pages, reporting, integrations, and CRM systems.'
+    date: '2024–2026',
+    description: 'Handled HubSpot onboarding, workflows, CMS execution, reporting, and client implementations in a high-volume environment supporting more than 50 onboardings.'
   },
   {
     role: 'HubSpot Specialist & Web Technologist',
-    company: 'Inbouncy',
-    date: 'Nov 2021 – Jun 2024',
-    description: 'Built HubSpot systems, web experiences, landing pages, workflows, and CRM automation for client projects.'
+    company: 'Inbouncy LLC',
+    date: 'Nov 2021–Jun 2024',
+    description: 'Customized CRM setups, automated marketing processes, and optimized more than 100 landing pages and emails across HubSpot and WordPress engagements.'
   },
   {
-    role: 'Freelance / Personal Builds',
+    role: 'Freelance Web & HubSpot Specialist',
     company: 'Independent',
-    date: 'Feb 2021 – Jun 2024',
-    description: 'Built personal and freelance web projects, experiments, automations, and systems that shaped my technical foundation.'
+    date: '2021–Present',
+    description: 'Build websites, landing pages, CRM workflows, and technical fixes for smaller engagements where understanding the whole system matters.'
   }
 ] as const;
 
 export const aboutSnapshots = [
   {
-    title: 'Based in Bangladesh',
+    title: 'Dhaka, Bangladesh',
     Icon: MapPin,
-    description: 'Working remotely from Dhaka, building for clients and teams around the world.'
+    description: 'Remote from UTC+6, where the coffee is strong and the browser tabs remain internationally distributed.'
   },
   {
-    title: 'Remote-First',
+    title: 'Remote First',
     Icon: Wifi,
-    description: 'I work best in async environments with clear systems, trust, and clean communication.'
+    description: 'Async messages, written context, and fewer surprise calls. Civilization has made remarkable progress.'
   },
   {
-    title: 'Quiet, Observant, Detail-Focused',
+    title: 'CRM & Web',
     Icon: Eye,
-    description: 'I like understanding how things connect, finding what is broken, and making it cleaner.'
+    description: 'I live between customer systems, automation, reporting, CMS platforms, and front-end implementation.'
   },
   {
-    title: 'CRM & Web Technologist',
+    title: 'Quiet By Default',
     Icon: Network,
-    description: 'I build systems that reduce chaos and digital experiences that support growth.'
+    description: 'I talk less than the average NPC. This website has been forced to compensate.'
   },
   {
-    title: 'Music Keeps Me Locked In',
+    title: 'Heavy Music',
     Icon: Headphones,
-    description: 'Metalcore, rock, and heavy riffs help me focus, reset, and stay in the zone.'
+    description: 'Metalcore and heavier alternatives make repetitive implementation feel like an unnecessarily dramatic montage.'
   },
   {
-    title: 'Systems Over Noise',
+    title: 'Second Brain',
     Icon: SlidersHorizontal,
-    description: 'I prefer clarity, structure, and useful work over flashy complexity.'
+    description: 'I built an AI-assisted notes system because apparently one brain had reached its operational limit.'
   }
 ] as const satisfies ReadonlyArray<{ title: string; Icon: LucideIcon; description: string }>;

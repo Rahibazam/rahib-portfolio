@@ -210,22 +210,22 @@ export function ContactFaqSection() {
         <div className="border-t border-secondary/25 pt-10">
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.8fr] lg:items-start lg:gap-10">
             <div>
+              <p className="mb-3 font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-secondary">Questions Before The Question</p>
               <div className="flex items-center gap-3">
                 <span
                   aria-hidden="true"
                   className="h-3 w-3 shrink-0 rounded-[0.2rem] bg-secondary shadow-[0_0_18px_rgba(10,196,255,.75)]"
                 />
                 <h2 className="home-display text-[clamp(1.45rem,2.4vw,2.15rem)] font-black uppercase leading-tight tracking-[-0.025em] text-white">
-                  Stuff you’re{' '}
+                  HubSpot, Web &amp; Project{' '}
                   <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
-                    Probably
-                  </span>{' '}
-                  Wondering
+                    FAQ
+                  </span>
                 </h2>
               </div>
             </div>
             <p className="max-w-[42rem] text-sm leading-6 text-white/66 sm:text-base sm:leading-7 lg:justify-self-end lg:pt-0">
-              Straight answers to the usual suspects. No fluff, just the stuff you probably want to know.
+              Practical answers about HubSpot consulting, CRM implementation, web development, CMS work, and collaboration—because scheduling a meeting to discover that yes, I work with WordPress would be hostile.
             </p>
           </div>
         </div>

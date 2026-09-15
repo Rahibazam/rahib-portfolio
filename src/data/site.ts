@@ -10,9 +10,9 @@ export const siteConfig = {
   metaTitle: 'Rahib Azam — CRM & Web Technologist',
   metaDescription:
     'Portfolio of Rahib Azam, a CRM & Web Technologist specialising in HubSpot, automation, CRM architecture, reporting, and web systems.',
-  primaryMessage: 'I build systems that drive growth.',
+  primaryMessage: 'I build systems. Then I stare at them.',
   secondaryMessage:
-    'I craft and streamline CRM and digital systems that help businesses automate, scale, and achieve more.'
+    'HubSpot implementation, CRM architecture, workflow automation, reporting, and web development for businesses whose “temporary workaround” has somehow developed tenure.'
 };
 
 export const navItems = [

@@ -2,67 +2,70 @@ export type HomeIconName = 'database' | 'handoff' | 'performance' | 'automation'
 
 export const homeProblems = [
   {
-    title: 'Messy CRM Data',
-    description: 'Duplicate records, broken properties, unclear lifecycle stages, and reporting that never adds up.',
+    title: 'The CRM Has Lore',
+    description: 'Duplicate records, mystery properties, strange associations, and one field everyone fears but nobody remembers creating.',
     icon: 'database'
   },
   {
-    title: 'Broken Lead Handoffs',
-    description: 'Disconnected forms, workflows, deals, notifications, and weak sales follow-up.',
+    title: 'Humans Are The Workflow',
+    description: 'Someone is copying data between tools because “it only takes five minutes.” It has taken five minutes 900 times.',
     icon: 'handoff'
   },
   {
-    title: 'Slow / Weak Web Experiences',
-    description: 'Slow pages, poor conversions, weak UX, and hard-to-maintain web experiences.',
+    title: 'The Website Has Opinions',
+    description: 'Slow pages, brittle CMS sections, odd forms, and one mobile breakpoint apparently designed during a personal crisis.',
     icon: 'performance'
   }
 ] satisfies Array<{ title: string; description: string; icon: HomeIconName }>;
 
 export const homeSystems = [
   {
-    title: 'CRM Systems',
-    description: 'HubSpot, Zoho, Salesforce workflows, automations, reports, onboarding.',
+    title: 'CRM Architecture',
+    description: 'Objects, properties, pipelines, lifecycle stages, associations, governance, cleanup, and fewer existential questions.',
     icon: 'database',
-    href: '/hubspot'
+    href: '/hubspot',
+    linkLabel: 'Explore CRM Architecture'
   },
   {
-    title: 'Automation & Data',
-    description: 'Clean data, smart workflows, integrations, routing, dashboards, reporting.',
+    title: 'HubSpot Automation & Data',
+    description: 'Workflows, lead routing, nurture, integrations, data quality, dashboards, and robots doing the repetitive bits.',
     icon: 'automation',
-    href: '/hubspot'
+    href: '/hubspot',
+    linkLabel: 'Explore HubSpot Automation'
   },
   {
-    title: 'Websites & Growth',
-    description: 'High-performance websites, landing pages, CRO integrations, tracking.',
+    title: 'Web Development',
+    description: 'Responsive websites, landing pages, HubSpot CMS, WordPress, Next.js, forms, accessibility, performance, and pixels being politely contained.',
     icon: 'web',
-    href: '/portfolio'
+    href: '/portfolio',
+    linkLabel: 'View Web Development Work'
   }
-] satisfies Array<{ title: string; description: string; icon: HomeIconName; href: string }>;
+] satisfies Array<{ title: string; description: string; icon: HomeIconName; href: string; linkLabel: string }>;
 
 export const homeExperience = [
   {
-    role: 'Senior CRM Technical Lead',
+    role: 'CRM & Web Technologist',
     company: 'Digital Authority Partners',
-    period: '2023 – Present',
-    description: 'Led CRM builds, data architecture, workflow design & reporting for global clients. Built scalable systems that improved visibility, automation and business outcomes.'
+    period: 'Current',
+    description: 'Build and QA CRM, automation, web, reporting, SEO, and implementation systems across client work, usually near whatever has the most tabs open.'
   },
   {
-    role: 'HubSpot Specialist & Eng. Expert',
+    role: 'HubSpot Specialist & CMS Expert',
     company: 'INSIDEA',
-    period: '2022 – 2023',
-    description: 'Designed & implemented HubSpot portals, complex workflows, integrations and dashboards. Delivered systems that simplified operations and accelerated growth.'
+    period: '2024–2026',
+    description: 'Delivered HubSpot onboarding, workflows, CMS execution, reporting, and client implementations across a high-volume environment supporting more than 50 onboardings.'
   },
   {
-    role: 'HubSpot Specialist @ Web Technologies',
-    company: 'iMagency LLC',
-    period: '2021 – 2022',
-    description: 'Managed client portals, built workflows, landing pages and reports that drove impact. Streamlined processes and improved performance.'
+    role: 'HubSpot Specialist & Web Technologist',
+    company: 'Inbouncy LLC',
+    period: 'Nov 2021–Jun 2024',
+    description: 'Customized CRM setups, automated marketing processes, and optimized more than 100 landing pages and emails across HubSpot and WordPress work.'
   },
   {
     role: 'Freelance Web & HubSpot Specialist',
     company: 'Independent',
-    period: '2020 – Present',
-    description: 'Worked with startups and brands to build clean websites, automate pipelines and fine-tune HubSpot setups.'
+    period: '2021–Present',
+    description: 'Build websites, landing pages, CRM workflows, and technical fixes for smaller projects where one person eventually has to know why everything is connected to everything else.'
   }
 ];
 
@@ -70,34 +73,34 @@ export const homeProcess = [
   {
     number: '01',
     title: 'Diagnose',
-    description: 'Auditing the current setup, finding what’s broken, and mapping what needs to happen.',
+    description: 'Trace the current CRM, automation, website, dependencies, edge cases, and the exact point where everyone stopped asking questions.',
     icon: 'diagnose'
   },
   {
     number: '02',
     title: 'Build',
-    description: 'Creating clean CRM structures, workflows, reports, pages, and automation systems.',
+    description: 'Implement the cleanest practical fix without turning one problem into a 47-step cinematic universe.',
     icon: 'build'
   },
   {
     number: '03',
-    title: 'Optimise',
-    description: 'Testing, refining, documenting, and improving the system for long-term reliability.',
+    title: 'Validate',
+    description: 'Test the normal path, the weird path, and the path nobody mentioned until five minutes before launch.',
     icon: 'optimise'
   }
 ] satisfies Array<{ number: string; title: string; description: string; icon: HomeIconName }>;
 
 export const homeFeaturedWork = [
   {
-    title: 'A team house of first design has a striking appearance',
+    title: 'HubSpot CRM Rebuild',
     image: '/images/projects/featured-architecture.svg',
-    tags: ['CRM Setup', 'Automation', 'Reporting'],
-    href: '/portfolio'
+    tags: ['HubSpot', 'CRM Architecture', 'Reporting'],
+    href: '/portfolio/hubspot-crm-rebuild'
   },
   {
-    title: 'Extreme Surfing',
+    title: 'Website QA Crawler',
     image: '/images/projects/featured-surfing.svg',
-    tags: ['Landing Page', 'CRO', 'Website'],
-    href: '/portfolio'
+    tags: ['TypeScript', 'Crawlee', 'Web QA'],
+    href: '/portfolio#project-grid'
   }
 ];

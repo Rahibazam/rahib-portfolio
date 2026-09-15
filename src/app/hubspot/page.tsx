@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import type { Metadata } from 'next';
 import {
   ArrowRight,
   BarChart3,
@@ -40,6 +41,7 @@ import { HubSpotProjectVisual } from '@/components/hubspot/HubSpotProjectVisual'
 import { HubSpotSectionHeader } from '@/components/hubspot/HubSpotSectionHeader';
 import { HubSpotProblemMap } from '@/components/hubspot/HubSpotProblemMap';
 import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
+import { HeadingAccent } from '@/components/home/HomeSectionHeader';
 import {
   hubspotProcess,
   hubspotProjects,
@@ -67,6 +69,11 @@ const serviceIcons: Record<HubSpotIconName, LucideIcon> = {
 const processIcons = [ShieldCheck, Sparkles, Wrench, BarChart3];
 
 const toolIcons: Record<string, LucideIcon> = {
+  hubspot: Database,
+  pardot: Cloud,
+  attentive: MessageSquare,
+  bettermode: Blocks,
+  koalify: ShieldCheck,
   slack: MessageSquare,
   gmail: Mail,
   ads: Megaphone,
@@ -81,6 +88,11 @@ const toolIcons: Record<string, LucideIcon> = {
   sheets: Sheet
 };
 
+export const metadata: Metadata = {
+  title: 'HubSpot CRM Implementation Consultant | Rahib Azam',
+  description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, pipelines, properties, forms, and integrations, designed and built hands-on.'
+};
+
 export default function HubSpotPage() {
   return (
     <PageShell>
@@ -89,15 +101,15 @@ export default function HubSpotPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -left-48 top-1/4 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.08] blur-[120px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display max-w-[52rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.025em] text-white">
-              <span className="block xl:whitespace-nowrap">I build HubSpot</span>
-              <span className="block xl:whitespace-nowrap">systems that <span className="text-gradient">scale.</span></span>
+              <span className="block xl:whitespace-nowrap">I live in HubSpot.</span>
+              <span className="block xl:whitespace-nowrap">Rent is <HeadingAccent>terrible.</HeadingAccent></span>
             </h1>
-            <p className="mt-8 max-w-[45rem] text-base leading-7 text-white/70 sm:text-lg lg:text-[1.16rem] lg:leading-8">
-              From CRM setup to automation, reporting, and growth systems — I help businesses get the most out of HubSpot.
+            <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">
+              I am a HubSpot Implementation Consultant working across CRM architecture, workflow automation, reporting, pipelines, forms, lead routing, lifecycle automation, integrations, data quality, and cleanup for portals with history, mystery, and one workflow called FINAL_v2_USE_THIS.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-5">
-              <ButtonTransitionLink href="/contact" size="lg" className="min-h-16 w-full rounded-lg px-10 text-sm sm:w-auto">Let’s talk <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
-              <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="min-h-16 w-full rounded-lg px-10 text-sm sm:w-auto">View case studies <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/contact" size="lg" className="min-h-16 w-full rounded-lg px-10 text-sm sm:w-auto">Show Me The Portal <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="min-h-16 w-full rounded-lg px-10 text-sm sm:w-auto">See The Work <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
           </Reveal>
 
@@ -107,7 +119,7 @@ export default function HubSpotPage() {
         </ScrollFadeHero>
 
         <section id="services" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="What I Do In HubSpot" description="From CRM architecture to reporting and automation, I build HubSpot systems that are clean, scalable, and actually usable." />
+          <HubSpotSectionHeader title="HubSpot Implementation & Automation" personalityLabel="Things I Do In There" description="I handle HubSpot CRM implementation, workflow automation, reporting, cleanup, forms, pipelines, lifecycle stages, lead routing, integrations, and connected HubSpot CMS work. HubSpot is very powerful, which is a beautiful way of saying there are many places to accidentally create consequences." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-2">
             {hubspotServices.map((service, index) => {
               const Icon = serviceIcons[service.icon];
@@ -134,12 +146,12 @@ export default function HubSpotPage() {
         </section>
 
         <section id="problems" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="HubSpot Problems I Fix" description="Most HubSpot issues are not tool problems. They are structure, data, process, and visibility problems." />
+          <HubSpotSectionHeader title="HubSpot CRM Cleanup & Data Quality" personalityLabel="Signs Your Portal Has Been Busy" description="These are common HubSpot CRM cleanup, workflow, reporting, lead-handoff, and integration problems. If any feel personal, I am not judging you. The portal and I will discuss it privately." />
           <HubSpotProblemMap />
         </section>
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="How I Build HubSpot Systems" description="A practical process for turning messy portals into clean, scalable systems." />
+          <HubSpotSectionHeader title="How I Handle HubSpot Implementation" personalityLabel="My Highly Dramatic Method" description="Audit the existing portal, map the safe path, build the approved changes, and validate production behavior. The method is intentionally boring. The drama is supplied by the existing portal." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
             <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {hubspotProcess.map((step, index) => {
@@ -164,8 +176,8 @@ export default function HubSpotPage() {
 
         <section id="client-signals" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader
-            title="What HubSpot Clients Say"
-            description="Signals from the teams who used the systems, joined the walkthroughs, and carried the work forward after delivery."
+            title="Alleged Satisfied Humans"
+            description="Approved client quotes belong here verbatim. Until then, the workflows can quietly continue doing their jobs."
           />
           <Reveal variant="panel">
             <HomeTestimonialsDeck testimonials={hubspotTestimonials} />
@@ -173,7 +185,7 @@ export default function HubSpotPage() {
         </section>
 
         <section id="tools" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="Tools & Integrations" description="HubSpot works best when the rest of your stack is connected cleanly." />
+          <HubSpotSectionHeader title="HubSpot Integrations & Connected Systems" personalityLabel="The Extended Cast" description="HubSpot rarely operates alone. I have connected, supported, or validated data flows involving these systems; several have appeared in previous episodes." />
           <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
             <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.28),rgba(139,108,255,.32),transparent)]" />
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
@@ -193,7 +205,7 @@ export default function HubSpotPage() {
         </section>
 
         <section id="projects" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="Featured HubSpot Projects" description="A few examples of HubSpot systems, automations, and CRM improvements I’ve worked on." />
+          <HubSpotSectionHeader title="Selected HubSpot Implementation Work" personalityLabel="Previously In HubSpot" description="Structural CRM cleanup, duplicate prevention, lifecycle automation, and several moments of staring quietly at enrollment history." />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {hubspotProjects.map((project, index) => (
               <Reveal key={project.title} delay={index * 0.07} className="h-full">
@@ -219,12 +231,11 @@ export default function HubSpotPage() {
           <section id="hubspot-cta" className="home-module-strong relative my-14 grid min-h-[22rem] overflow-hidden rounded-panel border-secondary/35 p-7 sm:p-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:p-14">
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(105deg,rgba(10,196,255,0.08),transparent_48%,rgba(108,76,255,0.14))]" />
             <div className="relative z-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#ff805f]">HubSpot systems, built cleanly</p>
-              <h2 className="home-display mt-5 max-w-4xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4.3rem]">Ready to make HubSpot <span className="text-gradient">actually work?</span></h2>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-white/64 lg:text-lg">Let’s build a cleaner CRM, smarter workflows, and reporting your team can trust.</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#ff805f]">HubSpot doing a thing?</p>
+              <h2 className="home-display mt-5 max-w-4xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4.3rem]">Please show me the <span className="text-gradient">thing.</span></h2>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/64 lg:text-lg">Send the HubSpot portal problem: workflow names, suspicious properties, reporting gaps, integration failures, screenshots, and “this only happens sometimes” are all perfectly valid ways to begin.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-9 sm:w-auto">Let’s talk <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
-                <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="w-full rounded-lg px-9 sm:w-auto">View portfolio <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+                <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-9 sm:w-auto">Show Me The Portal <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
               </div>
             </div>
             <div className="relative mt-10 grid place-items-center lg:mt-0">

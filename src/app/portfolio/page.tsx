@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { ArrowRight, BarChart3, Database, GitBranch, PanelsTopLeft, Rocket, Send, Sparkles } from 'lucide-react';
 import { PageShell } from '@/components/motion/PageShell';
@@ -15,15 +16,21 @@ import { PortfolioProjectGrid } from '@/components/portfolio/PortfolioProjectGri
 import { PortfolioProjectVisual } from '@/components/portfolio/PortfolioProjectVisual';
 import { projects } from '@/data/projects';
 
+export const metadata: Metadata = {
+  title: 'HubSpot, CRM & Web Development Portfolio | Rahib Azam',
+  description: 'Selected HubSpot, CRM, automation, reporting, web development, CMS, landing page, technical SEO, and implementation projects built by Rahib Azam.'
+};
+
 const systems: Array<{ title: string; description: string; Icon: LucideIcon }> = [
-  { title: 'CRM Architecture', description: 'Properties, lifecycle stages, pipelines, associations, governance, and data quality.', Icon: Database },
-  { title: 'Workflow Automation', description: 'Lead routing, notifications, nurture flows, task automation, and operational cleanup.', Icon: GitBranch },
-  { title: 'Reporting & Visibility', description: 'Dashboards, funnel views, campaign performance, source tracking, and decision-ready data.', Icon: BarChart3 },
-  { title: 'Web & CMS Execution', description: 'Responsive pages, HubSpot CMS modules, landing pages, forms, and conversion-focused experiences.', Icon: PanelsTopLeft }
+  { title: 'CRM Architecture', description: 'Objects, properties, pipelines, lifecycle stages, associations, governance, migrations, and less archaeology.', Icon: Database },
+  { title: 'Automation Systems', description: 'Workflows, routing, nurture, alerts, webhooks, integrations, and fewer people doing robot jobs.', Icon: GitBranch },
+  { title: 'Reporting & Data', description: 'Dashboards, segmentation, source tracking, cleanup, backfills, imports, and arguments settled by definitions.', Icon: BarChart3 },
+  { title: 'Web Development & CMS', description: 'Next.js, WordPress development, HubSpot CMS development, landing pages, responsive builds, accessibility, performance, QA, and browser diplomacy.', Icon: PanelsTopLeft }
 ];
 
 export default function PortfolioPage() {
   const featuredProject = projects.find((project) => project.slug === 'hubspot-crm-rebuild') ?? projects[0];
+  const featuredImpact = ['Cleaner CRM structure', 'Stronger reporting foundation', 'Clearer pipeline logic', 'Safer automation'];
 
   return (
     <PageShell>
@@ -32,24 +39,25 @@ export default function PortfolioPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[35rem] w-[35rem] rounded-full bg-secondary/[0.08] blur-[125px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.96] tracking-[-0.025em] text-white">
-              Selected <span className="text-gradient">Work</span>
+              <span className="block">Things I Built.</span>
+              <span className="block"><HeadingAccent>They Mostly Survived.</HeadingAccent></span>
             </h1>
-            <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/70 sm:text-lg lg:text-[1.16rem] lg:leading-8">
-              A collection of projects, experiments, and systems I’ve built to solve real problems, automate the boring stuff, and create experiences that convert.
+            <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">
+              HubSpot implementation, CRM automation, reporting, web development, technical SEO implementation, and internal tools. Each one began with a sentence containing “quick question.”
             </p>
             <div className="mt-8 grid max-w-[39rem] gap-4 sm:grid-cols-2">
               <div className="home-module flex min-h-24 items-center gap-5 rounded-row border-secondary/25 px-6 py-5">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-secondary/30 bg-secondary/[0.08] text-secondary"><Sparkles className="h-6 w-6" /></div>
-                <div><p className="font-display text-3xl font-black text-white">25+</p><p className="text-sm text-white/55">Projects Shipped</p></div>
+                <div><p className="font-display text-xl font-black uppercase text-white">CRM + Web</p><p className="text-sm text-white/55">Main Habitat</p></div>
               </div>
               <div className="home-module flex min-h-24 items-center gap-5 rounded-row border-secondary/25 px-6 py-5">
                 <div className="grid h-12 w-12 place-items-center rounded-xl border border-purple/35 bg-purple/[0.08] text-purple-100"><Rocket className="h-6 w-6" /></div>
-                <div><p className="font-display text-3xl font-black text-white">5+</p><p className="text-sm text-white/55">Years Building</p></div>
+                <div><p className="font-display text-xl font-black uppercase text-white">Mystery Logic</p><p className="text-sm text-white/55">Natural Enemy</p></div>
               </div>
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-5">
-              <ButtonTransitionLink href="/contact" size="lg" className="min-h-16 w-full rounded-lg px-9 sm:w-auto">Start a project <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
-              <ButtonTransitionLink href="/hubspot" variant="secondary" size="lg" className="min-h-16 w-full rounded-lg px-9 sm:w-auto">Explore HubSpot work <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="#project-grid" size="lg" className="min-h-16 w-full rounded-lg px-9 sm:w-auto">Browse The Work <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/contact" variant="secondary" size="lg" className="min-h-16 w-full rounded-lg px-9 sm:w-auto">Bring A Problem <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
           </Reveal>
 
@@ -64,19 +72,19 @@ export default function PortfolioPage() {
               <PortfolioProjectVisual slug={featuredProject.slug} featured />
               <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
                 <div className="flex flex-wrap items-center gap-3">
-                  <Badge className="rounded-lg"><Sparkles aria-hidden="true" className="mr-2 h-3.5 w-3.5" />Featured Work</Badge>
+                  <Badge className="rounded-lg"><Sparkles aria-hidden="true" className="mr-2 h-3.5 w-3.5" />Featured Project</Badge>
                   {featuredProject.status ? <Badge variant="soft">{featuredProject.status}</Badge> : null}
                 </div>
                 <p className="mt-7 font-mono text-xs font-bold uppercase tracking-[0.16em] text-secondary">{featuredProject.category}</p>
                 <h2 className="mt-4 font-display text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">{featuredProject.title}</h2>
-                <p className="mt-5 text-base leading-8 text-white/64">{featuredProject.summary}</p>
+                <p className="mt-5 text-base leading-8 text-white/64">Reworked a complex HubSpot setup across CRM structure, lifecycle logic, pipelines, properties, deduplication, governance, automation, and reporting so the portal became easier to operate and trust.</p>
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
-                  {featuredProject.impact.map((impact) => <span key={impact} className="flex items-start gap-3 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{impact}</span>)}
+                  {featuredImpact.map((impact) => <span key={impact} className="flex items-start gap-3 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{impact}</span>)}
                 </div>
                 <div className="mt-7 flex flex-wrap gap-2">{featuredProject.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}</div>
                 {featuredProject.href ? (
                   <ButtonTransitionLink href={featuredProject.href} variant="secondary" className="mt-8 w-fit rounded-lg px-6">
-                    Read case study <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                    View Project <ArrowRight aria-hidden="true" className="h-4 w-4" />
                   </ButtonTransitionLink>
                 ) : (
                   <span className="mt-8 inline-flex w-fit items-center rounded-lg border border-white/10 bg-white/[0.025] px-5 py-3 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/48">Case study draft</span>
@@ -87,14 +95,14 @@ export default function PortfolioPage() {
         </section>
 
         <section id="project-grid" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Project <HeadingAccent>Archive</HeadingAccent></>} description="Filter the work by system, platform, or execution type." />
+          <HomeSectionHeader title={<>Project <HeadingAccent>Archive</HeadingAccent></>} description="HubSpot CRM, automation, reporting, web development, CMS, technical SEO, and internal-tool projects. Also several perfectly normal amounts of documentation." />
           <Suspense fallback={null}>
             <PortfolioProjectGrid projects={projects} />
           </Suspense>
         </section>
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Systems Behind the <HeadingAccent>Work</HeadingAccent></>} description="Every project is built around structure, clarity, automation, and maintainability." />
+          <HomeSectionHeader title={<>Recurring Themes, <HeadingAccent>Somehow</HeadingAccent></>} description="The work repeatedly crosses CRM architecture, automation systems, reporting and data, and web development. Different briefs; same four ecosystems finding new ways to become each other’s problem." />
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {systems.map(({ title, description, Icon }, index) => (
               <Reveal key={title} delay={index * 0.07}>
@@ -116,13 +124,12 @@ export default function PortfolioPage() {
               <div className="relative grid h-40 w-40 place-items-center rounded-[2rem] border border-secondary/40 bg-[linear-gradient(145deg,rgba(13,39,75,0.76),rgba(14,8,45,0.8))] shadow-[inset_1px_1px_0_rgba(255,255,255,0.12),0_0_48px_rgba(10,196,255,0.22)] [transform:rotate(-5deg)]"><Send className="h-20 w-20 text-secondary drop-shadow-[0_0_24px_rgba(10,196,255,0.65)]" /></div>
             </div>
             <div className="relative z-10 mt-8 lg:mt-0">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Have a project in mind?</p>
-              <h2 className="home-display mt-5 text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4rem]">Let’s build something that <span className="text-gradient">actually works.</span></h2>
-              <p className="mt-6 text-base leading-7 text-white/64">I help businesses streamline operations, automate workflows, and build high-performing digital experiences.</p>
+              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Want to contribute a problem?</p>
+              <h2 className="home-display mt-5 text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4rem]">Send me the weird <span className="text-gradient">one.</span></h2>
+              <p className="mt-6 text-base leading-7 text-white/64">Send the CRM, automation, reporting, or web development task that “should be simple.” Historically, that phrase has not performed well under observation.</p>
             </div>
             <div className="relative z-10 mt-8 flex flex-col gap-3 lg:mt-0">
-              <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-8">Start a project <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
-              <ButtonTransitionLink href="/hubspot" variant="secondary" size="lg" className="w-full rounded-lg px-8">Explore HubSpot <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
+              <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-8">Send The Situation <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
           </section>
         </Reveal>

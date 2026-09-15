@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import {
   ArrowRight,
-  CalendarDays,
   Clock3,
   Linkedin,
   Mail,
@@ -14,7 +13,7 @@ import { FloatingSection } from '@/components/motion/FloatingSection';
 import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { ButtonLink, ButtonTransitionLink } from '@/components/ui/Button';
+import { ButtonTransitionLink } from '@/components/ui/Button';
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { HomeCTAVisual } from '@/components/home/HomeCTAVisual';
 import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
@@ -25,9 +24,8 @@ import { contactTestimonials } from '@/data/testimonials';
 import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact | Rahib Azam',
-  description:
-    'Contact Rahib Azam for HubSpot, CRM, CMS, web, landing page, reporting, and automation projects.'
+  title: 'Hire a HubSpot, CRM & Web Specialist | Rahib Azam',
+  description: 'Need help with HubSpot, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, or data cleanup? Contact Rahib Azam.'
 };
 
 const quickInfoIconClass = {
@@ -115,20 +113,19 @@ export default function ContactPage() {
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
           <Reveal className="relative z-10">
             <h1 className="home-display max-w-[59rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white">
-              <span className="block">Let’s skip the</span>
-              <span className="block text-gradient drop-shadow-[0_0_24px_rgba(108,76,255,0.2)]">small talk.</span>
+              <span className="block">Let’s skip</span>
+              <span className="block"><HeadingAccent>the human rituals.</HeadingAccent></span>
               </h1>
               <p className="mt-8 max-w-[43rem] text-base leading-7 text-white/72 sm:text-lg lg:text-[1.18rem] lg:leading-8">
-                Let’s be honest — I’m not the “networking event” type. This form is introvert-approved.
-                Low risk, high reward. No bots. No spam. Just real replies.
+                Contact me for HubSpot implementation, CRM cleanup, workflow automation, reporting, integrations, web development, WordPress, HubSpot CMS, landing pages, or technical SEO implementation. No networking event. Just tell me what is broken, weird, manual, or inexplicably dependent on one spreadsheet.
               </p>
               <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:gap-5">
                 <ButtonTransitionLink href="#contact-form" size="lg" className="w-full min-h-16 rounded-lg px-10 text-sm sm:w-auto">
-                  Start a Project <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                  Send The Situation <ArrowRight aria-hidden="true" className="h-4 w-4" />
                 </ButtonTransitionLink>
-                <ButtonLink href="#" variant="secondary" size="lg" className="w-full min-h-16 rounded-lg px-10 text-sm sm:w-auto">
-                  Book a Call <CalendarDays aria-hidden="true" className="h-4 w-4" />
-                </ButtonLink>
+                <ButtonTransitionLink href="/portfolio" variant="secondary" size="lg" className="w-full min-h-16 rounded-lg px-10 text-sm sm:w-auto">
+                  Inspect My Work <ArrowRight aria-hidden="true" className="h-4 w-4" />
+                </ButtonTransitionLink>
               </div>
           </Reveal>
 
@@ -149,16 +146,16 @@ export default function ContactPage() {
                     <Send className="h-8 w-8 drop-shadow-[0_0_14px_rgba(10,196,255,.62)]" strokeWidth={1.75} />
                   </div>
                   <div>
-                    <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Send a Message</h2>
-                    <p className="mt-1.5 text-sm leading-6 text-white/58 lg:text-base">Share a few details and I’ll get back to you soon.</p>
+                    <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Send The Situation</h2>
+                    <p className="mt-1.5 text-sm leading-6 text-white/58 lg:text-base">Project context, links, screenshots, and constraints. Give me the director’s cut.</p>
                   </div>
                 </div>
                 <ContactForm />
               </div>
 
               <aside className="mt-8 flex h-full flex-col border-t border-white/10 pt-7 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-0">
-                <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Quick Info</h2>
-                <p className="mt-2 text-sm leading-6 text-white/58 lg:text-base">Prefer a quicker ping? Reach out directly.</p>
+                <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Useful Coordinates</h2>
+                <p className="mt-2 text-sm leading-6 text-white/58 lg:text-base">Details for contacting the person this website has been overselling.</p>
                 <div className="mt-7 grid flex-1 content-start gap-6">
                   {contactQuickInfo.map(({ label, value, note, icon: Icon, accent }) => (
                     <div key={label} className="flex gap-4">
@@ -173,7 +170,7 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
-                <p className="mt-auto border-t border-white/10 pt-5 text-sm text-white/62 lg:text-base">Available Mon – Fri, 9AM – 9PM (BST)</p>
+                <p className="mt-auto border-t border-white/10 pt-5 text-sm text-white/62 lg:text-base">Remote-first, with project timing coordinated around UTC+6.</p>
               </aside>
             </GlassCard>
           </Reveal>
@@ -213,15 +210,15 @@ export default function ContactPage() {
                       className="h-3 w-3 shrink-0 rounded-[0.2rem] bg-secondary shadow-[0_0_18px_rgba(10,196,255,.75)]"
                     />
                     <h2 className="home-display text-[clamp(1.4rem,2.1vw,2rem)] font-black uppercase leading-[1.08] tracking-[-0.025em] text-white">
-                      Find me online,{' '}
+                      Alternative Human{' '}
                       <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
-                        awkwardly
+                        Contact
                       </span>
                     </h2>
                   </div>
 
                   <p className="mt-3 max-w-2xl text-sm leading-6 text-white/66 sm:text-base sm:leading-7">
-                    The less formal corners of the internet where I exist, occasionally post, and pretend networking is not terrifying.
+                    Email and LinkedIn both work. Both are conveniently compatible with not making small talk.
                   </p>
                 </div>
 
@@ -255,13 +252,14 @@ export default function ContactPage() {
             <HomeSectionHeader
               title={
                 <>
-                  Stats &{' '}
+                  Selected Delivery{' '}
                   <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
-                    Specs
+                    Metrics
                   </span>
                 </>
               }
-              description="A quick signal check for response speed, working style, and systems-first defaults."
+              personalityLabel="Some Actual Numbers"
+              description="A few measurable implementation results from real work. No motivational arithmetic required."
             />
           </Reveal>
           <Reveal delay={0.08}>
@@ -286,8 +284,8 @@ export default function ContactPage() {
 
         <section id="client-signals" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader
-            title={<>What Clients <HeadingAccent>Noticed</HeadingAccent></>}
-            description="A final signal check from clients who valued clear thinking, careful listening, and delivery without the theatre."
+            title={<>Other People Have <HeadingAccent>Spoken</HeadingAccent></>}
+            description="Approved client quotations appear here verbatim. Apparently interviewing myself was considered a methodology issue."
           />
           <Reveal variant="panel">
             <HomeTestimonialsDeck testimonials={contactTestimonials} />
@@ -317,20 +315,19 @@ export default function ContactPage() {
                 <div className="absolute left-0 top-0 z-30 flex h-full w-full items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
                   <div className="max-w-[720px] text-left lg:max-w-[660px] xl:max-w-[720px]">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
-                      <span>YOU MADE IT THIS FAR</span>
+                      <span>YOU READ ALL THAT?</span>
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
                     <h2 className="home-display text-[clamp(2.25rem,9vw,4.35rem)] font-black uppercase leading-[0.96] tracking-[-0.045em] text-white sm:text-[clamp(2.85rem,5.35vw,4.35rem)]">
-                      LET’S BUILD SOMETHING <br className="hidden sm:block" />
-                      THAT{' '}
+                      YOU MAY AS WELL{' '}<br className="hidden sm:block" />
                       <span className="bg-gradient-to-r from-[#06C2FF] via-[#1BA6FF] to-[#8B5CFF] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(10,196,255,.24)]">
-                        ACTUALLY WORKS.
+                        MESSAGE ME
                       </span>
                     </h2>
 
                     <p className="mt-7 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-                      Great ideas deserve clean systems, smart automations, and a partner who gets it.
+                      Tell me about the HubSpot, CRM, automation, reporting, CMS, web development, or technical SEO problem. Best case, I can help. Worst case, we both learn why that workflow exists.
                     </p>
 
                     <div aria-hidden="true" className="pointer-events-none relative mt-9 flex h-40 w-full items-center justify-start overflow-hidden lg:hidden">
@@ -344,7 +341,7 @@ export default function ContactPage() {
                         href="#contact-form"
                         className="group/btn inline-flex min-h-14 w-full items-center justify-center gap-3 rounded-xl border border-cyan-100/25 bg-[linear-gradient(90deg,#08B8FF_0%,#256BFF_55%,#6C4CFF_100%)] px-7 font-display text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_12px_34px_rgba(10,196,255,.28),0_0_26px_rgba(108,76,255,.20)] transition duration-300 hover:shadow-[0_16px_44px_rgba(10,196,255,.38),0_0_44px_rgba(108,76,255,.28)] motion-safe:hover:-translate-y-0.5 sm:w-auto"
                       >
-                        START A PROJECT
+                        SEND THE SITUATION
                         <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                       </ButtonTransitionLink>
                     </div>
