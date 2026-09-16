@@ -4,8 +4,8 @@ export const siteConfig = {
   secondaryRole: 'HubSpot Specialist / Web Systems Builder',
   location: 'Dhaka, Bangladesh',
   email: 'rahib.azam18@gmail.com',
-  linkedin: '',
-  github: '',
+  linkedin: 'https://www.linkedin.com/in/rahib-azam/',
+  github: 'https://github.com/Rahibazam/',
   resumePath: '/resume/Rahib-Azam-Resume.pdf',
   metaTitle: 'Rahib Azam — CRM & Web Technologist',
   metaDescription:

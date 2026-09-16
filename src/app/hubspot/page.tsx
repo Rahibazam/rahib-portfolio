@@ -90,7 +90,10 @@ const toolIcons: Record<string, LucideIcon> = {
 
 export const metadata: Metadata = {
   title: 'HubSpot CRM Implementation Consultant | Rahib Azam',
-  description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, pipelines, properties, forms, and integrations, designed and built hands-on.'
+  description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, pipelines, properties, forms, and integrations, designed and built hands-on.',
+  alternates: {
+    canonical: '/hubspot'
+  }
 };
 
 export default function HubSpotPage() {

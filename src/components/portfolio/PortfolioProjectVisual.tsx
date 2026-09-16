@@ -1,6 +1,14 @@
 import { BarChart3, Check, GitBranch, Image as ImageIcon, PanelsTopLeft, Workflow } from 'lucide-react';
 
-export function PortfolioProjectVisual({ slug, featured = false }: { slug: string; featured?: boolean }) {
+export function PortfolioProjectVisual({
+  slug,
+  featured = false,
+  visualMode
+}: {
+  slug: string;
+  featured?: boolean;
+  visualMode?: 'code-preview';
+}) {
   const heightClass = featured ? 'h-72 sm:h-96 lg:h-full lg:min-h-[30rem]' : 'h-56';
 
   if (slug === 'duplicate-deal-prevention-system' || slug === 'campaign-workflow-reporting-support') {
@@ -24,7 +32,7 @@ export function PortfolioProjectVisual({ slug, featured = false }: { slug: strin
     );
   }
 
-  if (slug === 'landing-page-cms-execution') {
+  if (visualMode === 'code-preview' || slug === 'landing-page-cms-execution') {
     return (
       <div aria-hidden="true" className={`relative overflow-hidden bg-[linear-gradient(145deg,#0b1935,#080a1d)] p-5 ${heightClass}`}>
         <div className="h-full overflow-hidden rounded-xl border border-white/15 bg-[#080d21] shadow-[0_0_30px_rgba(10,196,255,0.1)]">

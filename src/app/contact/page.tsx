@@ -25,7 +25,10 @@ import { ContactForm } from './ContactForm';
 
 export const metadata: Metadata = {
   title: 'Hire a HubSpot, CRM & Web Specialist | Rahib Azam',
-  description: 'Need help with HubSpot, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, or data cleanup? Contact Rahib Azam.'
+  description: 'Need help with HubSpot, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, or data cleanup? Contact Rahib Azam.',
+  alternates: {
+    canonical: '/contact'
+  }
 };
 
 const quickInfoIconClass = {

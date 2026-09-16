@@ -18,7 +18,10 @@ import { projects } from '@/data/projects';
 
 export const metadata: Metadata = {
   title: 'HubSpot, CRM & Web Development Portfolio | Rahib Azam',
-  description: 'Selected HubSpot, CRM, automation, reporting, web development, CMS, landing page, technical SEO, and implementation projects built by Rahib Azam.'
+  description: 'Selected HubSpot, CRM, automation, reporting, web development, CMS, landing page, technical SEO, and implementation projects built by Rahib Azam.',
+  alternates: {
+    canonical: '/portfolio'
+  }
 };
 
 const systems: Array<{ title: string; description: string; Icon: LucideIcon }> = [

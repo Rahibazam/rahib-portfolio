@@ -40,7 +40,10 @@ const systemIconTypes = ['crm', 'automation', 'growth'] as const;
 export const metadata: Metadata = {
   title: 'Rahib Azam | HubSpot, CRM & Web Development Specialist',
   description:
-    'HubSpot consulting, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, and digital systems by Rahib Azam.'
+    'HubSpot consulting, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, and digital systems by Rahib Azam.',
+  alternates: {
+    canonical: '/'
+  }
 };
 
 export default function HomePage() {

@@ -19,7 +19,10 @@ import { aboutExperience, aboutIntroCards, aboutPrinciples, aboutSnapshots, abou
 
 export const metadata: Metadata = {
   title: 'About Rahib Azam | CRM, HubSpot & Web Technologist',
-  description: 'Meet Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, CRM architecture, reporting, web development, CMS builds, and landing pages.'
+  description: 'Meet Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, CRM architecture, reporting, web development, CMS builds, and landing pages.',
+  alternates: {
+    canonical: '/about'
+  }
 };
 
 export default function AboutPage() {

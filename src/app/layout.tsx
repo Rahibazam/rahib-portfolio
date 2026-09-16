@@ -6,11 +6,13 @@ import { HubSpotTracking } from '@/components/analytics/HubSpotTracking';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SystemBootLoader } from '@/components/layout/SystemBootLoader';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { AnimatedBackground } from '@/components/motion/AnimatedBackground';
 import { PageTransitionProvider } from '@/components/motion/PageTransitionProvider';
 import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { siteConfig } from '@/data/site';
 import { getSiteUrl } from '@/lib/siteUrl';
+import { getSiteStructuredData } from '@/lib/structuredData';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <body className="antialiased">
+        <JsonLd id="site-structured-data" data={getSiteStructuredData()} />
         <SystemBootLoader />
         <SmoothScrollProvider>
           <PageTransitionProvider>

@@ -145,7 +145,7 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
           {visibleProjects.map((project, index) => (
             <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full">
               <article className="home-module interactive-card flex h-full min-h-[35rem] flex-col overflow-hidden rounded-card border-secondary/30">
-                <PortfolioProjectVisual slug={project.slug} />
+                <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
@@ -155,7 +155,16 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
                   <p className="mt-4 text-sm leading-7 text-white/62">{project.summary}</p>
                   <p className="mt-5 flex items-start gap-2 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{project.impact[0]}</p>
                   <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
-                  {project.href ? (
+                  {project.href && project.linkType === 'external' ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="nofollow noopener noreferrer"
+                      className="premium-underline-link mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b1d]"
+                    >
+                      {project.buttonLabel ?? 'View Live Site ↗'}
+                    </a>
+                  ) : project.href ? (
                     <TransitionLink href={project.href} className="premium-underline-link mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100">
                       Read case study <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                     </TransitionLink>
