@@ -31,11 +31,11 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative z-10 pb-12 pt-10">
+    <footer className="mobile-footer relative z-10 pb-12 pt-10">
       <Container className="max-w-[108rem] px-5 sm:px-8 xl:px-10">
-        <div className="relative isolate overflow-hidden rounded-panel p-px shadow-[0_26px_90px_rgba(0,0,0,.42),0_0_34px_rgba(10,196,255,.18),0_0_54px_rgba(139,108,255,.16)] before:absolute before:-inset-2 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] before:opacity-30 before:blur-2xl after:absolute after:inset-0 after:-z-10 after:rounded-[inherit] after:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] after:opacity-55">
-          <div className="home-module-strong relative overflow-hidden rounded-[inherit] border-secondary/35 p-7 sm:p-10 lg:p-14">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.72fr_0.92fr_1.2fr] lg:gap-0">
+        <div className="mobile-footer-shell relative isolate overflow-hidden rounded-panel p-px shadow-[0_26px_90px_rgba(0,0,0,.42),0_0_34px_rgba(10,196,255,.18),0_0_54px_rgba(139,108,255,.16)] before:absolute before:-inset-2 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] before:opacity-30 before:blur-2xl after:absolute after:inset-0 after:-z-10 after:rounded-[inherit] after:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] after:opacity-55">
+          <div className="mobile-footer-panel home-module-strong relative overflow-hidden rounded-[inherit] border-secondary/35 p-7 sm:p-10 lg:p-14">
+          <div className="mobile-footer-grid grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.72fr_0.92fr_1.2fr] lg:gap-0">
             <div>
               <div className="flex items-center gap-4">
                 <BrandMark className="h-16 w-16 drop-shadow-[0_0_18px_rgba(10,196,255,0.45)]" />
@@ -86,7 +86,7 @@ export function Footer() {
               <FooterContactForm />
             </div>
           </div>
-          <div className="mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs uppercase tracking-[0.1em] text-white/42 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mobile-footer-bottom mt-12 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs uppercase tracking-[0.1em] text-white/42 sm:flex-row sm:items-center sm:justify-between">
             <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               <TransitionLink href="/privacy" className="premium-underline-link py-1 text-white/58">

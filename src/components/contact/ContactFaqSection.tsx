@@ -232,7 +232,7 @@ export function ContactFaqSection() {
       </Reveal>
 
       <Reveal delay={0.08}>
-        <div className="relative z-20 mt-8 -mb-px flex flex-wrap items-end gap-3" role="tablist" aria-label="Contact FAQ categories">
+        <div className="mobile-faq-tabs relative z-20 mt-8 -mb-px flex flex-wrap items-end gap-3" role="tablist" aria-label="Contact FAQ categories">
           {contactFaqTabs.map((tab) => {
             const isActive = activeTab.id === tab.id;
             const accent = accentStyles[tab.accent];

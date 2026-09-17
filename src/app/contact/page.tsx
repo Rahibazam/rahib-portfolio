@@ -110,7 +110,7 @@ function ContactHeroVisual() {
 export default function ContactPage() {
   return (
     <PageShell>
-      <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
+      <Container className="mobile-page mobile-page-contact max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 lg:pb-28 xl:min-h-[52rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
@@ -156,13 +156,13 @@ export default function ContactPage() {
                 <ContactForm />
               </div>
 
-              <aside className="mt-8 flex h-full flex-col border-t border-white/10 pt-7 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-0">
+              <aside className="mobile-contact-info mt-8 flex h-full flex-col border-t border-white/10 pt-7 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-0">
                 <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Useful Coordinates</h2>
                 <p className="mt-2 text-sm leading-6 text-white/58 lg:text-base">Details for contacting the person this website has been overselling.</p>
                 <div className="mt-7 grid flex-1 content-start gap-6">
                   {contactQuickInfo.map(({ label, value, note, icon: Icon, accent }) => (
-                    <div key={label} className="flex gap-4">
-                      <div className={quickInfoIconClass[accent]}>
+                    <div key={label} className="mobile-contact-info-row flex gap-4">
+                      <div className={`mobile-contact-info-icon ${quickInfoIconClass[accent]}`}>
                         <Icon className="h-7 w-7 drop-shadow-[0_0_12px_currentColor]" strokeWidth={1.75} />
                       </div>
                       <div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
           />
 
           <Reveal>
-            <div className="relative overflow-hidden border-y border-secondary/25 px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
+            <div className="mobile-social-dock relative overflow-hidden border-y border-secondary/25 px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,196,255,.055),transparent_42%,rgba(139,108,255,.06))]" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 {socialDockParticles.map((particle, index) => (
@@ -233,7 +233,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={ariaLabel}
-                      className={socialTileClass}
+                      className={`mobile-social-link ${socialTileClass}`}
                     >
                       <span
                         aria-hidden="true"
@@ -268,7 +268,7 @@ export default function ContactPage() {
           <Reveal delay={0.08}>
             <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
               <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.3),rgba(139,108,255,.3),transparent)]" />
-              <div className="relative z-10 grid sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mobile-stats-grid relative z-10 grid sm:grid-cols-2 lg:grid-cols-4">
                 {contactStats.map(({ label, value, note, icon: Icon }, index) => (
                   <div key={label} className="system-rail-item group/stat relative flex min-h-40 gap-5 overflow-hidden border-b border-secondary/15 p-6 transition-colors duration-500 motion-reduce:transition-none sm:border-r lg:[&:nth-child(4n)]:border-r-0 [&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0 lg:min-h-44 lg:p-8">
                     <span aria-hidden="true" className="pointer-events-none absolute right-4 top-4 font-mono text-[0.58rem] font-bold tracking-[0.16em] text-white/20 transition-colors duration-500 group-hover/stat:text-secondary/65 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>

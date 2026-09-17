@@ -26,11 +26,11 @@ export function CaseStudyTextHero({ category, heroStatement, status, tags, title
   const scale = useTransform(scrollY, [0, 560], [1, 0.96]);
 
   return (
-    <section className="relative min-h-[165svh]">
+    <section className="mobile-case-hero relative min-h-[165svh]">
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[42%] h-[28rem] w-[min(70rem,92vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse,rgba(10,196,255,.09),rgba(108,76,255,.055)_42%,transparent_72%)] blur-3xl" />
 
       <motion.div
-        className="sticky top-0 flex min-h-svh flex-col items-center justify-center px-1 pb-16 pt-28 text-center sm:px-5 sm:pb-20 sm:pt-32"
+        className="mobile-case-hero-panel sticky top-0 flex min-h-svh flex-col items-center justify-center px-1 pb-16 pt-28 text-center sm:px-5 sm:pb-20 sm:pt-32"
         style={reducedMotion ? undefined : { opacity, scale, y }}
       >
         <TransitionLink href="/portfolio" className="premium-underline-link inline-flex items-center gap-2 py-2 font-mono text-[0.66rem] font-bold uppercase tracking-[0.18em] text-white/48">

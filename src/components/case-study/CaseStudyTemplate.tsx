@@ -45,7 +45,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
       />
 
-      <Container className="max-w-[108rem] px-5 sm:px-8 xl:px-10">
+      <Container className="mobile-page mobile-page-case-study max-w-[108rem] px-5 sm:px-8 xl:px-10">
         <CaseStudyTextHero
           category={project.category}
           heroStatement={caseStudy.heroStatement}
@@ -143,7 +143,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         <section id="architecture" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>Target System <HeadingAccent>Architecture</HeadingAccent></>} description="Four connected layers turned the portal from a collection of tools into an operating system." />
           <Reveal className="mt-10">
-            <div className="home-module-strong relative overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-8 lg:p-10">
+            <div className="mobile-architecture-module home-module-strong relative overflow-hidden rounded-panel border-secondary/35 p-5 sm:p-8 lg:p-10">
               <div aria-hidden="true" className="absolute inset-0 technical-paper-overlay opacity-70" />
               <CaseStudySystemSpine layers={caseStudy.layers} />
             </div>
@@ -186,7 +186,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <Reveal>
-          <section className="group/build-cta relative my-14 overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+          <section className="mobile-case-final-cta group/build-cta relative my-14 overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
             <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
             <div className="relative min-h-[31rem] overflow-hidden rounded-[calc(2rem-1px)]">

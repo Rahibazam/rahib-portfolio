@@ -44,7 +44,7 @@ export function HomeTestimonialsDeck({ testimonials }: HomeTestimonialsDeckProps
 
   return (
     <div
-      className="relative isolate mt-10 overflow-hidden border-y border-secondary/25 py-7 outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-background sm:py-9"
+      className="mobile-testimonial-deck relative isolate mt-10 overflow-hidden border-y border-secondary/25 py-7 outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-background sm:py-9"
       role="region"
       aria-roledescription="carousel"
       aria-label="Anonymous client testimonials"
@@ -73,7 +73,7 @@ export function HomeTestimonialsDeck({ testimonials }: HomeTestimonialsDeckProps
           </div>
         </div>
 
-        <div className="relative grid min-h-[28rem] items-stretch md:min-h-[27rem] lg:grid-cols-[10rem_minmax(0,1fr)_10rem] xl:grid-cols-[13rem_minmax(0,1fr)_13rem]">
+        <div className="mobile-testimonial-stage relative grid min-h-[28rem] items-stretch md:min-h-[27rem] lg:grid-cols-[10rem_minmax(0,1fr)_10rem] xl:grid-cols-[13rem_minmax(0,1fr)_13rem]">
           <button
             type="button"
             onClick={showPrevious}

@@ -813,4 +813,515 @@ select {
     -webkit-backdrop-filter: blur(14px) saturate(115%);
     backdrop-filter: blur(14px) saturate(115%);
   }
+
+  /* Mobile density system: preserve feature moments, quiet supporting modules. */
+  .mobile-page {
+    padding-inline: 1rem !important;
+  }
+
+  .mobile-page > section:not(:first-child),
+  .mobile-page > div > section {
+    scroll-margin-top: 5.5rem;
+  }
+
+  .mobile-page section[class*="py-14"],
+  .mobile-page section[class*="py-16"] {
+    padding-block: 2.75rem;
+  }
+
+  .mobile-page-home #problems .system-rail-item,
+  .mobile-page-home #process .system-rail-item,
+  .mobile-page-hubspot #services .system-rail-item,
+  .mobile-page-hubspot #process .system-rail-item,
+  .mobile-page-case-study .system-rail-item,
+  .mobile-about-editorial .system-rail-item {
+    min-height: 0;
+    padding: 1.25rem 1rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.85rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item > div:first-of-type {
+    gap: 0.65rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item svg {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item p {
+    margin-top: 0.65rem;
+    line-height: 1.5;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item h3 {
+    font-size: 1.05rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item span[aria-hidden="true"] + div,
+  .mobile-page-hubspot #services .system-rail-item > div:last-child > span:last-child {
+    margin-top: 0.85rem;
+  }
+
+  .mobile-page-home #problems .system-rail-item,
+  .mobile-about-editorial .system-rail-item {
+    justify-content: flex-start;
+  }
+
+  .mobile-page-home #problems .system-rail-item h3,
+  .mobile-page-hubspot #services .system-rail-item h3,
+  .mobile-page-home #process .system-rail-item h3,
+  .mobile-page-hubspot #process .system-rail-item h3,
+  .mobile-page-case-study .system-rail-item h3 {
+    margin-top: 0;
+  }
+
+  .mobile-page-home #problems .system-rail-item p,
+  .mobile-page-hubspot #services .system-rail-item p,
+  .mobile-page-home #process .system-rail-item p,
+  .mobile-page-hubspot #process .system-rail-item p,
+  .mobile-page-case-study .system-rail-item p {
+    line-height: 1.55;
+  }
+
+  /* Home: three supporting cards read as one composed module. */
+  .mobile-support-group {
+    gap: 0;
+    overflow: hidden;
+    border-block: 1px solid rgba(10, 196, 255, 0.24);
+    background: linear-gradient(135deg, rgba(10, 196, 255, 0.045), rgba(139, 108, 255, 0.035));
+  }
+
+  .mobile-support-group > * + * {
+    border-top: 1px solid rgba(10, 196, 255, 0.17);
+  }
+
+  .mobile-support-card {
+    min-height: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 1.15rem !important;
+  }
+
+  .mobile-support-card::after {
+    display: none;
+  }
+
+  .mobile-support-card > div {
+    min-height: 0 !important;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .mobile-page-home #experience article,
+  .mobile-page-home #process article,
+  .mobile-page-hubspot #process article,
+  .mobile-page-case-study article.system-rail-item {
+    box-shadow: none;
+  }
+
+  .mobile-page-home #experience article {
+    min-height: 0;
+    padding: 1.2rem;
+  }
+
+  .mobile-page-home #home-cta,
+  .mobile-page-hubspot #hubspot-cta,
+  .mobile-page-portfolio #portfolio-cta {
+    min-height: 0;
+    padding: 1.5rem;
+  }
+
+  .mobile-testimonial-deck {
+    margin-top: 2rem;
+  }
+
+  .mobile-testimonial-stage {
+    min-height: 24rem !important;
+  }
+
+  /* HubSpot: convert the dense problem-card wall into a single diagnostic stack. */
+  .mobile-problem-map {
+    margin-top: 2rem;
+  }
+
+  .mobile-problem-map-grid {
+    gap: 0;
+    overflow: hidden;
+    border-block: 1px solid rgba(10, 196, 255, 0.24);
+    background: linear-gradient(135deg, rgba(10, 196, 255, 0.045), rgba(255, 107, 69, 0.025));
+  }
+
+  .mobile-problem-map-grid > * + * {
+    border-top: 1px solid rgba(10, 196, 255, 0.16);
+  }
+
+  .mobile-problem-card {
+    min-height: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 1.2rem 1rem 1.25rem !important;
+  }
+
+  .mobile-problem-card > div:nth-of-type(2) {
+    max-width: none;
+    padding-right: 3rem;
+  }
+
+  .mobile-problem-card h3 {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .mobile-problem-card p {
+    margin-top: 0.65rem;
+    line-height: 1.6;
+  }
+
+  .mobile-problem-card > div:last-child {
+    bottom: 0.8rem;
+    right: 0.5rem;
+    height: 4.25rem;
+    width: 5.5rem;
+    opacity: 0.28;
+  }
+
+  .mobile-page-hubspot #tools .grid {
+    gap: 0.65rem;
+  }
+
+  .mobile-page-hubspot #tools article {
+    min-height: 0;
+    padding: 1rem 0.65rem;
+    box-shadow: none;
+  }
+
+  .mobile-page-hubspot #tools article > div:first-child {
+    height: 2.75rem;
+    width: 2.75rem;
+  }
+
+  .mobile-page-hubspot #tools article h3 {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  .mobile-page-hubspot #tools + section article,
+  .mobile-page-hubspot article[class*="min-h-[35rem]"] {
+    min-height: 0;
+  }
+
+  /* Portfolio: filters become a compact horizontal rail and archive cards reveal depth on demand. */
+  .mobile-filter-rail {
+    margin-inline: -1rem;
+    overflow-x: auto;
+    padding-inline: 1rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-filter-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-filter-rail > * {
+    flex: 0 0 auto;
+  }
+
+  .mobile-project-card {
+    min-height: 0 !important;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .mobile-project-body {
+    padding: 1.15rem !important;
+  }
+
+  .mobile-project-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+    padding-top: 0.85rem;
+  }
+
+  .mobile-project-details summary {
+    min-height: 2.75rem;
+    cursor: pointer;
+    list-style: none;
+    color: rgba(216, 248, 255, 0.82);
+    font-family: var(--font-mono), monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .mobile-project-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-project-details summary::after {
+    content: "+";
+    float: right;
+    color: #0ac4ff;
+    font-size: 1rem;
+  }
+
+  .mobile-project-details[open] summary::after {
+    content: "−";
+  }
+
+  /* About: editorial rows stay varied, while secondary controls lose excess air. */
+  .mobile-about-editorial article {
+    min-height: 0 !important;
+    padding: 1.35rem 1rem !important;
+  }
+
+  .mobile-about-principles article,
+  .mobile-about-toolkit article,
+  .mobile-about-experience article,
+  .mobile-about-snapshots article {
+    box-shadow: none;
+  }
+
+  .mobile-about-toolkit article > .system-rail-item > .relative.z-10.grid {
+    min-height: 0;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .mobile-about-toolkit article > .system-rail-item > .relative.z-10.grid > div:first-child {
+    min-height: 9.5rem;
+  }
+
+  .mobile-about-snapshots article > div {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .mobile-about-cta > div,
+  .mobile-about-cta > div > div {
+    min-height: 0 !important;
+  }
+
+  /* Contact: keep the form primary; supporting coordinates and metrics become concise. */
+  .mobile-contact-info-row {
+    gap: 0.85rem;
+    padding-block: 0.8rem;
+  }
+
+  .mobile-contact-info-row + .mobile-contact-info-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-contact-info-icon {
+    height: 3rem !important;
+    width: 3rem !important;
+    border-radius: 0.75rem !important;
+  }
+
+  .mobile-contact-info-icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  .mobile-social-dock {
+    padding: 1.25rem 1rem;
+  }
+
+  .mobile-social-dock .mobile-social-link {
+    height: 3.1rem;
+    width: 3.1rem;
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  .mobile-faq-tabs {
+    margin-inline: -1rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-inline: 1rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-faq-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-faq-tabs > button {
+    flex: 0 0 auto;
+  }
+
+  .mobile-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mobile-stats-grid > * {
+    min-height: 0 !important;
+    padding: 1rem 0.75rem !important;
+  }
+
+  .mobile-stats-grid > *:nth-child(even) {
+    border-left: 1px solid rgba(10, 196, 255, 0.16);
+  }
+
+  .mobile-stats-grid > *:nth-child(n + 3) {
+    border-top: 1px solid rgba(10, 196, 255, 0.16);
+  }
+
+  /* Case studies: shorten the scroll-performance hero and tighten supporting systems. */
+  .mobile-case-hero {
+    min-height: 125svh !important;
+  }
+
+  .mobile-case-hero-panel {
+    min-height: 92svh !important;
+  }
+
+  .mobile-architecture-module {
+    padding: 0.9rem !important;
+  }
+
+  .mobile-case-final-cta,
+  .mobile-case-final-cta > div,
+  .mobile-case-final-cta > div > div:last-child {
+    min-height: 0 !important;
+  }
+
+  .mobile-case-final-cta > div > div:last-child {
+    padding: 3rem 1.15rem;
+  }
+
+  /* Legal pages: editorial body stays open; only navigation and overview are compact. */
+  .legal-mobile-index {
+    border-block: 1px solid rgba(10, 196, 255, 0.22);
+    background: linear-gradient(90deg, rgba(10, 196, 255, 0.045), rgba(139, 108, 255, 0.035));
+    padding: 0.25rem 0;
+  }
+
+  .legal-mobile-index summary {
+    min-height: 3rem;
+    cursor: pointer;
+    list-style: none;
+    padding: 0.9rem 0.75rem;
+    color: #d8f8ff;
+    font-family: var(--font-mono), monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .legal-mobile-index summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .legal-mobile-index summary::after {
+    content: "+";
+    float: right;
+    color: #0ac4ff;
+  }
+
+  .legal-mobile-index[open] summary::after {
+    content: "−";
+  }
+
+  .legal-mobile-index nav {
+    display: grid;
+    gap: 0;
+    padding: 0 0.75rem 0.75rem;
+  }
+
+  .legal-mobile-index a {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0.72rem 0.25rem;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.78rem;
+  }
+
+  .mobile-page-legal article,
+  .mobile-page-legal section {
+    box-shadow: none;
+  }
+
+  .mobile-page-legal table {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  /* Footer: navigation becomes a compact two-column directory. */
+  .mobile-footer-shell {
+    padding-inline: 1rem;
+  }
+
+  .mobile-footer-panel {
+    padding: 1.25rem !important;
+  }
+
+  .mobile-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1rem;
+  }
+
+  .mobile-footer-grid > :first-child,
+  .mobile-footer-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-footer-grid > * {
+    border-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .mobile-footer-bottom {
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+  }
+}
+
+@media (max-width: 339px) {
+  .mobile-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-stats-grid > *:nth-child(even) {
+    border-left: 0;
+  }
+
+  .mobile-stats-grid > *:nth-child(n + 2) {
+    border-top: 1px solid rgba(10, 196, 255, 0.16);
+  }
+}
+
+@media (min-width: 360px) and (max-width: 639px) {
+  .mobile-page-hubspot #tools .relative.z-10.grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mobile-page-hubspot #tools .system-rail-item {
+    min-height: 6.75rem;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+    border-left: 0;
+    border-top: 0;
+    text-align: center;
+  }
+
+  .mobile-page-hubspot #tools .relative.z-10.grid > *:not(:nth-child(3n + 1)) .system-rail-item {
+    border-left: 1px solid rgba(10, 196, 255, 0.15);
+  }
+
+  .mobile-page-hubspot #tools .relative.z-10.grid > *:nth-child(n + 4) .system-rail-item {
+    border-top: 1px solid rgba(10, 196, 255, 0.15);
+  }
 }

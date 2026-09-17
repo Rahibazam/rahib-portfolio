@@ -9,7 +9,7 @@ export function PortfolioProjectVisual({
   featured?: boolean;
   visualMode?: 'code-preview';
 }) {
-  const heightClass = featured ? 'h-72 sm:h-96 lg:h-full lg:min-h-[30rem]' : 'h-56';
+  const heightClass = featured ? 'h-64 sm:h-96 lg:h-full lg:min-h-[30rem]' : 'h-44 sm:h-56';
 
   if (slug === 'duplicate-deal-prevention-system' || slug === 'campaign-workflow-reporting-support') {
     return (

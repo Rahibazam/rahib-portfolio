@@ -121,7 +121,7 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
 
   return (
     <>
-      <div aria-label="Filter projects by system" role="group" className="-mx-5 mt-10 overflow-x-auto px-5 pb-3 sm:-mx-8 sm:px-8 xl:mx-0 xl:px-0">
+      <div aria-label="Filter projects by system" role="group" className="mobile-filter-rail -mx-5 mt-10 overflow-x-auto px-5 pb-3 sm:-mx-8 sm:px-8 xl:mx-0 xl:px-0">
         <div className="flex min-w-max gap-3 rounded-2xl border border-secondary/15 bg-[#05091b]/55 p-2 backdrop-blur-xl xl:min-w-0 xl:flex-wrap">
           {portfolioFilters.map((filter) => {
             const active = filter.slug === 'all' ? selectedTags.length === 0 : selectedTags.includes(filter.slug);
@@ -144,17 +144,42 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
         <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleProjects.map((project, index) => (
             <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full">
-              <article className="home-module interactive-card flex h-full min-h-[35rem] flex-col overflow-hidden rounded-card border-secondary/30">
+              <article className="mobile-project-card home-module interactive-card flex h-full min-h-[35rem] flex-col overflow-hidden rounded-card border-secondary/30">
                 <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <div className="mobile-project-body flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
-                    {project.status ? <Badge variant="soft" className="text-[0.58rem]">{project.status}</Badge> : null}
+                    {project.status ? <Badge variant="soft" className="hidden text-[0.58rem] sm:inline-flex">{project.status}</Badge> : null}
                   </div>
                   <h3 className="mt-5 font-display text-2xl font-black uppercase leading-tight text-white">{project.title}</h3>
                   <p className="mt-4 text-sm leading-7 text-white/62">{project.summary}</p>
                   <p className="mt-5 flex items-start gap-2 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{project.impact[0]}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
+                  <div className="mt-5 flex flex-wrap gap-2 sm:hidden">{project.tags.slice(0, 2).map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
+                  <div className="mt-5 hidden flex-wrap gap-2 sm:flex">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
+
+                  {(project.status || project.tags.length > 2 || project.impact.length > 1) ? (
+                    <details className="mobile-project-details mt-5 sm:hidden">
+                      <summary>Project details</summary>
+                      <div className="mt-4 border-t border-white/10 pt-4">
+                        {project.status ? <p className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white/48">Status / {project.status}</p> : null}
+                        {project.impact.length > 1 ? (
+                          <ul className="mt-3 grid gap-2.5">
+                            {project.impact.slice(1).map((impact) => (
+                              <li key={impact} className="flex items-start gap-2 text-sm leading-6 text-white/58">
+                                <ArrowRight aria-hidden="true" className="mt-1 h-3.5 w-3.5 shrink-0 text-secondary/70" />
+                                {impact}
+                              </li>
+                            ))}
+                          </ul>
+                        ) : null}
+                        {project.tags.length > 2 ? (
+                          <div className="mt-4 flex flex-wrap gap-2">
+                            {project.tags.slice(2).map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}
+                          </div>
+                        ) : null}
+                      </div>
+                    </details>
+                  ) : null}
                   {project.href && project.linkType === 'external' ? (
                     <a
                       href={project.href}

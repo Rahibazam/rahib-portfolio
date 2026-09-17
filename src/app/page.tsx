@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <PageShell>
-      <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
+      <Container className="mobile-page mobile-page-home max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 lg:pb-28 xl:min-h-[52rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
@@ -104,11 +104,11 @@ export default function HomePage() {
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>What I Actually <HeadingAccent>Build</HeadingAccent></>} description="Most of my work lives where HubSpot, CRM automation, reporting, data, and web development start touching each other without adult supervision." />
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mobile-support-group mt-10 grid gap-6 md:grid-cols-3">
             {homeSystems.map((system, index) => {
               return (
                 <Reveal key={system.title} delay={index * 0.08}>
-                  <GlassCard className="home-module h-full min-h-64 border-secondary/35 p-7 lg:min-h-[16.5rem] lg:p-9">
+                  <GlassCard className="mobile-support-card home-module h-full min-h-64 border-secondary/35 p-7 lg:min-h-[16.5rem] lg:p-9">
                     <div className="flex min-h-[12.5rem] items-center gap-7 lg:min-h-[12rem]">
                       <HomeSystemIcon type={systemIconTypes[index]} />
                       <div>

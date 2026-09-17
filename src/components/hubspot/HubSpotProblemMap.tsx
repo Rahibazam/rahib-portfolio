@@ -111,7 +111,7 @@ function ProblemMotif({ type }: { type: HubSpotIconName }) {
 
 export function HubSpotProblemMap() {
   return (
-    <div className="relative mt-10">
+    <div className="mobile-problem-map relative mt-10">
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-[16%] inset-y-[17%] hidden xl:block">
         <span className="absolute left-0 right-0 top-[25%] h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.32)_12%,rgba(10,196,255,.32)_43%,rgba(255,107,69,.52)_50%,rgba(139,108,255,.3)_57%,rgba(139,108,255,.3)_88%,transparent)]" />
         <span className="absolute bottom-[25%] left-0 right-0 h-px bg-[linear-gradient(90deg,transparent,rgba(139,108,255,.28)_12%,rgba(139,108,255,.28)_43%,rgba(255,107,69,.46)_50%,rgba(10,196,255,.28)_57%,rgba(10,196,255,.28)_88%,transparent)]" />
@@ -119,14 +119,14 @@ export function HubSpotProblemMap() {
         <span className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#ff6b45]/55 bg-[#081029] shadow-[0_0_18px_rgba(255,107,69,.4)]" />
       </div>
 
-      <div className="relative grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mobile-problem-map-grid relative grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {hubspotProblems.map((problem, index) => {
           const Icon = problemIcons[problem.icon];
           if (!Icon) return null;
 
           return (
             <Reveal key={problem.title} delay={index * 0.05}>
-              <article className="group/problem relative isolate h-full min-h-60 overflow-hidden rounded-card border border-secondary/25 bg-[radial-gradient(circle_at_0%_0%,rgba(10,196,255,.12),transparent_17rem),radial-gradient(circle_at_100%_100%,rgba(255,107,69,.075),transparent_15rem),linear-gradient(135deg,rgba(15,29,70,.94),rgba(7,11,31,.92))] p-6 shadow-[0_0_0_1px_rgba(10,196,255,.06),0_22px_72px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.08)] transition-[border-color,box-shadow] duration-500 ease-premium hover:border-[#ff6b45]/75 hover:shadow-[0_0_0_1px_rgba(255,107,69,.22),0_26px_78px_rgba(0,0,0,.48),0_0_34px_rgba(255,107,69,.2),0_0_46px_rgba(10,196,255,.16),inset_0_1px_0_rgba(255,255,255,.12),inset_0_0_42px_rgba(10,196,255,.07)] motion-reduce:transition-none sm:p-7">
+              <article className="mobile-problem-card group/problem relative isolate h-full min-h-60 overflow-hidden rounded-card border border-secondary/25 bg-[radial-gradient(circle_at_0%_0%,rgba(10,196,255,.12),transparent_17rem),radial-gradient(circle_at_100%_100%,rgba(255,107,69,.075),transparent_15rem),linear-gradient(135deg,rgba(15,29,70,.94),rgba(7,11,31,.92))] p-6 shadow-[0_0_0_1px_rgba(10,196,255,.06),0_22px_72px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.08)] transition-[border-color,box-shadow] duration-500 ease-premium hover:border-[#ff6b45]/75 hover:shadow-[0_0_0_1px_rgba(255,107,69,.22),0_26px_78px_rgba(0,0,0,.48),0_0_34px_rgba(255,107,69,.2),0_0_46px_rgba(10,196,255,.16),inset_0_1px_0_rgba(255,255,255,.12),inset_0_0_42px_rgba(10,196,255,.07)] motion-reduce:transition-none sm:p-7">
                 <span aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_8%_4%,rgba(10,196,255,.22),transparent_45%),radial-gradient(circle_at_94%_92%,rgba(255,107,69,.18),transparent_48%),linear-gradient(135deg,rgba(10,196,255,.055),rgba(139,108,255,.06))] opacity-0 transition-opacity duration-500 group-hover/problem:opacity-100 motion-reduce:transition-none" />
                 <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.9),rgba(255,107,69,.95),transparent)] opacity-60 shadow-[0_0_14px_rgba(255,107,69,.45)] transition-opacity duration-500 group-hover/problem:opacity-100" />
                 <span aria-hidden="true" className="pointer-events-none absolute -right-16 -top-20 h-44 w-44 rounded-full bg-[#ff6b45]/0 blur-3xl transition-colors duration-500 group-hover/problem:bg-[#ff6b45]/[0.16] motion-reduce:transition-none" />

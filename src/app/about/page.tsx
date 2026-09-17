@@ -42,7 +42,7 @@ export default function AboutPage() {
 
   return (
     <PageShell>
-      <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
+      <Container className="mobile-page mobile-page-about max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />
           <Reveal className="relative z-10">
@@ -58,7 +58,7 @@ export default function AboutPage() {
           <FloatingSection className="relative z-0 xl:-mr-2" distance={5} duration={10}><AboutHeroVisual /></FloatingSection>
         </ScrollFadeHero>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-editorial py-14 sm:py-16">
           <HomeSectionHeader title={<>The Non-LinkedIn <HeadingAccent>Version</HeadingAccent></>} description="The professional summary is useful. Unfortunately, I also have a personality." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutIntroCards.map(({ title, Icon, paragraphs }, index) => (
@@ -78,7 +78,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-principles py-14 sm:py-16">
           <HomeSectionHeader title={<>Things I Keep <HeadingAccent>Doing</HeadingAccent></>} description="Less manifesto, more recurring behavior that has somehow become professionally useful." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
@@ -97,14 +97,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-personality py-14 sm:py-16">
           <HomeSectionHeader title={<>Patch Notes: <HeadingAccent>Human</HeadingAccent></>} description="Introvert, heavy music, games, side projects, clean UI, questionable sleep, and a known tendency to overengineer harmless objects." />
           <div aria-hidden="true" className="mt-7 h-px w-full bg-gradient-to-r from-secondary/65 via-secondary/20 to-transparent shadow-[0_0_10px_rgba(10,196,255,.2)]" />
           <div className="mt-8"><AboutPersonalityGrid videoSources={videoSources} availableAudio={availableAudio} availableArtwork={availableArtwork} /></div>
           <div className="mt-8 flex items-center justify-center gap-5 text-center font-mono text-[0.62rem] uppercase tracking-[0.12em] text-white/35 before:h-px before:w-24 before:bg-gradient-to-r before:from-transparent before:to-secondary/65 after:h-px after:w-24 after:bg-gradient-to-r after:from-secondary/65 after:to-transparent">Tools change. Principles don’t. Curiosity never stops.</div>
         </section>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-toolkit py-14 sm:py-16">
           <HomeSectionHeader
             title={<>CRM, Web &amp; Automation <HeadingAccent>Toolkit</HeadingAccent></>}
             personalityLabel="Things I Click"
@@ -222,7 +222,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-experience py-14 sm:py-16">
           <HomeSectionHeader
             title={<>CRM, HubSpot &amp; Web <HeadingAccent>Experience</HeadingAccent></>}
             personalityLabel="Previously On Rahib"
@@ -316,7 +316,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section className="py-14 sm:py-16">
+        <section className="mobile-about-snapshots py-14 sm:py-16">
           <HomeSectionHeader
             title={<>Character <HeadingAccent>Sheet</HeadingAccent></>}
             description="Useful facts, plus several details that explain why the rest of the website sounds like this."
@@ -432,7 +432,7 @@ export default function AboutPage() {
           </Reveal>
         </section>
 
-        <section className="py-14 pb-24 sm:py-16 sm:pb-28">
+        <section className="mobile-about-cta py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
             <div className="group/build-cta relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />

@@ -78,7 +78,7 @@ function Bullet({ children }: { children: ReactNode }) {
 export default function PrivacyPage() {
   return (
     <PageShell>
-      <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
+      <Container className="mobile-page mobile-page-legal mobile-page-privacy max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <Reveal variant="plain">
           <header className="relative overflow-hidden border-y border-secondary/25 px-0 py-14 sm:py-16 lg:py-20">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_10%,rgba(10,196,255,.12),transparent_28rem),radial-gradient(circle_at_92%_85%,rgba(108,76,255,.14),transparent_32rem)]" />
@@ -127,19 +127,32 @@ export default function PrivacyPage() {
 
         <div className="grid gap-12 py-14 lg:grid-cols-[17rem_minmax(0,1fr)] lg:items-start lg:gap-16 lg:py-20 xl:grid-cols-[20rem_minmax(0,1fr)] xl:gap-20">
           <aside className="lg:sticky lg:top-32">
-            <p className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.18em] text-secondary">Policy index</p>
-            <nav aria-label="Privacy policy sections" className="mt-5 border-l border-secondary/25">
-              {sections.map((section, index) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className="group flex gap-3 border-b border-white/[0.055] py-3 pl-4 text-sm leading-5 text-white/52 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70"
-                >
-                  <span className="font-mono text-[0.62rem] text-secondary/55 transition-colors group-hover:text-secondary">{String(index + 1).padStart(2, '0')}</span>
-                  <span>{section.label}</span>
-                </a>
-              ))}
-            </nav>
+            <details className="legal-mobile-index sm:hidden">
+              <summary>Jump to a section</summary>
+              <nav aria-label="Privacy policy sections" className="mt-3 border-l border-secondary/25">
+                {sections.map((section, index) => (
+                  <a key={section.id} href={`#${section.id}`} className="group flex min-h-11 gap-3 border-b border-white/[0.055] py-3 pl-4 text-sm leading-5 text-white/64 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70">
+                    <span className="font-mono text-[0.62rem] text-secondary/65">{String(index + 1).padStart(2, '0')}</span>
+                    <span>{section.label}</span>
+                  </a>
+                ))}
+              </nav>
+            </details>
+            <div className="max-sm:hidden">
+              <p className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.18em] text-secondary">Policy index</p>
+              <nav aria-label="Privacy policy sections" className="mt-5 border-l border-secondary/25">
+                {sections.map((section, index) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className="group flex gap-3 border-b border-white/[0.055] py-3 pl-4 text-sm leading-5 text-white/52 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70"
+                  >
+                    <span className="font-mono text-[0.62rem] text-secondary/55 transition-colors group-hover:text-secondary">{String(index + 1).padStart(2, '0')}</span>
+                    <span>{section.label}</span>
+                  </a>
+                ))}
+              </nav>
+            </div>
             <div className="mt-8 border-l border-purple/45 pl-4">
               <p className="text-sm leading-6 text-white/52">Need to exercise a privacy right?</p>
               <a className="premium-underline-link mt-2 inline-flex break-all text-sm font-semibold text-secondary" href={`mailto:${privacyEmail}?subject=Privacy%20Request`}>

@@ -37,7 +37,7 @@ export default function PortfolioPage() {
 
   return (
     <PageShell>
-      <Container className="max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
+      <Container className="mobile-page mobile-page-portfolio max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-20 xl:min-h-[47rem] xl:grid-cols-[0.92fr_1.08fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[35rem] w-[35rem] rounded-full bg-secondary/[0.08] blur-[125px]" />
           <Reveal className="relative z-10">
