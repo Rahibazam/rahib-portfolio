@@ -143,10 +143,12 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
       {visibleProjects.length ? (
         <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleProjects.map((project, index) => (
-            <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full">
-              <article className="mobile-project-card home-module interactive-card flex h-full min-h-[35rem] flex-col overflow-hidden rounded-card border-secondary/30">
-                <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
-                <div className="mobile-project-body flex flex-1 flex-col p-6 sm:p-7">
+            <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0">
+              <article className="mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
+                <div className="overflow-hidden rounded-t-[inherit]">
+                  <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
+                </div>
+                <div className="mobile-project-body flex min-w-0 flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
                     {project.status ? <Badge variant="soft" className="hidden text-[0.58rem] sm:inline-flex">{project.status}</Badge> : null}
@@ -190,7 +192,7 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
                       {project.buttonLabel ?? 'View Live Site ↗'}
                     </a>
                   ) : project.href ? (
-                    <TransitionLink href={project.href} className="premium-underline-link mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100">
+                    <TransitionLink href={project.href} className="premium-underline-link mt-auto inline-flex w-fit max-w-full flex-wrap items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b1d]">
                       Read case study <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" />
                     </TransitionLink>
                   ) : (

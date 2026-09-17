@@ -71,9 +71,11 @@ export default function PortfolioPage() {
 
         <section id="featured-work" className="scroll-mt-28 py-14 sm:py-16">
           <Reveal>
-            <article className="home-module-strong grid overflow-hidden rounded-panel border-secondary/40 lg:min-h-[34rem] lg:grid-cols-[1.08fr_0.92fr]">
-              <PortfolioProjectVisual slug={featuredProject.slug} featured />
-              <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+            <article className="home-module-strong grid min-w-0 overflow-visible rounded-panel border-secondary/40 lg:min-h-[34rem] lg:grid-cols-[1.08fr_0.92fr]">
+              <div className="overflow-hidden rounded-t-[inherit] lg:rounded-l-[inherit] lg:rounded-tr-none">
+                <PortfolioProjectVisual slug={featuredProject.slug} featured />
+              </div>
+              <div className="flex min-w-0 flex-col justify-center p-7 sm:p-10 lg:p-12">
                 <div className="flex flex-wrap items-center gap-3">
                   <Badge className="rounded-lg"><Sparkles aria-hidden="true" className="mr-2 h-3.5 w-3.5" />Featured Project</Badge>
                   {featuredProject.status ? <Badge variant="soft">{featuredProject.status}</Badge> : null}

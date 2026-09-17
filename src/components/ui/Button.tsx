@@ -48,7 +48,7 @@ export function buttonClasses({
   className?: string;
 } = {}) {
   return cn(
-    'group relative isolate inline-flex shrink-0 items-center justify-center gap-2 overflow-hidden rounded-[0.85rem] border font-bold uppercase tracking-[0.12em] transition duration-300 ease-premium disabled:pointer-events-none disabled:opacity-45 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0AC4FF]/65 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B1D]',
+    'group relative isolate inline-flex max-w-full items-center justify-center gap-2 overflow-hidden rounded-[0.85rem] border font-bold uppercase tracking-[0.12em] transition duration-300 ease-premium disabled:pointer-events-none disabled:opacity-45 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0AC4FF]/65 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B1D]',
     variantClasses[variant],
     sizeClasses[size],
     className
@@ -78,7 +78,7 @@ function ButtonEffects({ variant }: { variant: ButtonVariant }) {
 }
 
 function ButtonContent({ children }: { children: ReactNode }) {
-  return <span className="relative z-10 inline-flex items-center justify-center gap-2">{children}</span>;
+  return <span className="relative z-10 inline-flex min-w-0 max-w-full flex-wrap items-center justify-center gap-2 whitespace-normal break-words text-center [&_svg]:shrink-0">{children}</span>;
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

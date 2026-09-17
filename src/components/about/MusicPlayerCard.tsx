@@ -211,7 +211,7 @@ export function MusicPlayerCard({ availableAudio = {}, availableArtwork = {} }: 
         </div>
         <div className="min-w-0 self-center lg:max-w-[22rem] xl:max-w-[23rem]">
           <div className="min-w-0">
-            <span className="block truncate font-display text-2xl font-black leading-tight text-white lg:text-[1.78rem]" title={activeTrack.title}>{activeTrack.title}</span>
+            <span className="block whitespace-normal break-words font-display text-2xl font-black leading-tight text-white sm:truncate lg:text-[1.78rem]" title={activeTrack.title}>{activeTrack.title}</span>
             <MarqueeText text={activeTrack.artist} className="mt-1 text-sm text-white/67 lg:text-base" />
           </div>
           <MarqueeText text={activeTrack.album} className="mt-3 text-xs leading-5 text-white/48 lg:text-sm" />

@@ -270,7 +270,7 @@ export function ContactFaqSection() {
       </Reveal>
 
       <Reveal delay={0.12}>
-        <GlassCard interactive={false} className="home-module-strong relative mt-0 overflow-hidden rounded-panel rounded-tl-none border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9">
+        <GlassCard interactive={false} className="home-module-strong relative mt-0 overflow-visible rounded-panel rounded-tl-none border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={activeTab.id}

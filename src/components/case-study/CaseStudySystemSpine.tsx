@@ -17,12 +17,12 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
   return (
     <div className="relative z-10 grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-stretch">
       <div className="border-b border-secondary/20 pb-8 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-10">
-        <div className="flex items-end justify-between gap-5">
-          <div>
+        <div className="flex flex-wrap items-end justify-between gap-3 sm:gap-5">
+          <div className="min-w-0">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-secondary">System spine</p>
             <p className="mt-2 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-white/34">Target-state sequence</p>
           </div>
-          <span className="font-mono text-[0.58rem] font-bold uppercase tracking-[0.15em] text-purple-200/55">
+          <span className="max-w-full font-mono text-[0.58rem] font-bold uppercase tracking-[0.15em] text-purple-200/55">
             {String(layers.length).padStart(2, '0')} connected layers
           </span>
         </div>
@@ -38,7 +38,7 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
               return (
                 <div
                   key={layer.title}
-                  className="group/spine relative grid cursor-default grid-cols-[2.75rem_1fr] items-center gap-4"
+                  className="group/spine relative grid min-w-0 cursor-default grid-cols-[2.75rem_minmax(0,1fr)] items-center gap-3 sm:gap-4"
                   onMouseEnter={() => setActiveIndex(index)}
                   onPointerDown={() => setActiveIndex(index)}
                 >
@@ -55,10 +55,10 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
 
                   <div
                     className={cn(
-                      'relative overflow-hidden border-y px-4 py-3 transition-[border-color,background-color,box-shadow,transform] duration-500 [clip-path:polygon(0_0,calc(100%_-_0.75rem)_0,100%_50%,calc(100%_-_0.75rem)_100%,0_100%,0.5rem_50%)] motion-reduce:transform-none motion-reduce:transition-none',
+                      'relative min-w-0 overflow-visible border-y px-3 py-3 transition-[border-color,background-color,box-shadow,transform] duration-500 motion-reduce:transform-none motion-reduce:transition-none sm:overflow-hidden sm:px-4 sm:[clip-path:polygon(0_0,calc(100%_-_0.75rem)_0,100%_50%,calc(100%_-_0.75rem)_100%,0_100%,0.5rem_50%)]',
                       isActive
-                        ? 'translate-x-1 border-secondary/55 bg-[linear-gradient(90deg,rgba(10,196,255,.13),rgba(139,108,255,.08),transparent)] shadow-[inset_3px_0_0_rgba(10,196,255,.82),0_0_28px_rgba(10,196,255,.08)]'
-                        : 'border-white/[0.08] bg-white/[0.015] group-hover/spine:translate-x-0.5 group-hover/spine:border-secondary/30'
+                        ? 'border-secondary/55 bg-[linear-gradient(90deg,rgba(10,196,255,.13),rgba(139,108,255,.08),transparent)] shadow-[inset_3px_0_0_rgba(10,196,255,.82),0_0_28px_rgba(10,196,255,.08)] sm:translate-x-1'
+                        : 'border-white/[0.08] bg-white/[0.015] group-hover/spine:border-secondary/30 sm:group-hover/spine:translate-x-0.5'
                     )}
                   >
                     <span
@@ -67,8 +67,8 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
                         isActive ? 'opacity-100' : 'opacity-0'
                       )}
                     />
-                    <div className="relative flex items-center justify-between gap-4">
-                      <p className={cn('font-display text-sm font-black uppercase tracking-[0.04em] transition-colors duration-500 motion-reduce:transition-none', isActive ? 'text-white' : 'text-white/52')}>
+                    <div className="relative flex min-w-0 flex-wrap items-center justify-between gap-2 sm:gap-4">
+                      <p className={cn('min-w-0 break-words font-display text-sm font-black uppercase tracking-[0.04em] transition-colors duration-500 motion-reduce:transition-none', isActive ? 'text-white' : 'text-white/52')}>
                         {layer.title}
                       </p>
                       <span className={cn('font-mono text-[0.56rem] font-bold tracking-[0.16em] transition-colors duration-500 motion-reduce:transition-none', isActive ? 'text-secondary' : 'text-white/24')}>
@@ -81,9 +81,9 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
             })}
           </div>
 
-          <div className="ml-[4.25rem] mt-5 flex items-center gap-3 border-t border-secondary/20 pt-4">
+          <div className="ml-[3.5rem] mt-5 flex min-w-0 flex-wrap items-center gap-3 border-t border-secondary/20 pt-4 sm:ml-[4.25rem]">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary shadow-[0_0_12px_rgba(10,196,255,.78)]" />
-            <span className="font-mono text-[0.56rem] font-bold uppercase tracking-[0.16em] text-secondary/65">Governed operating system</span>
+            <span className="min-w-0 break-words font-mono text-[0.56rem] font-bold uppercase tracking-[0.16em] text-secondary/65">Governed operating system</span>
             <span className="h-px flex-1 bg-[linear-gradient(90deg,rgba(10,196,255,.32),transparent)]" />
           </div>
         </div>
@@ -99,15 +99,15 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
             <div
               key={layer.title}
               className={cn(
-                'system-rail-item grid gap-3 px-3 py-6 transition-[background-color,box-shadow] duration-500 motion-reduce:transition-none sm:px-5 lg:grid-cols-[7rem_0.34fr_0.66fr] lg:items-center lg:gap-6',
+                'system-rail-item grid min-w-0 gap-3 px-3 py-6 transition-[background-color,box-shadow] duration-500 motion-reduce:transition-none sm:px-5 lg:grid-cols-[7rem_0.34fr_0.66fr] lg:items-center lg:gap-6',
                 isActive && 'bg-secondary/[0.055] shadow-[inset_3px_0_0_rgba(10,196,255,.72),inset_0_0_42px_rgba(10,196,255,.045)]'
               )}
               onMouseEnter={() => setActiveIndex(index)}
               onPointerDown={() => setActiveIndex(index)}
             >
               <p className={cn('font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] transition-colors duration-500 motion-reduce:transition-none', isActive ? 'text-secondary' : 'text-secondary/60')}>{layer.label}</p>
-              <h3 className="font-display text-xl font-black uppercase text-white">{layer.title}</h3>
-              <p className="text-sm leading-7 text-white/62">{layer.description}</p>
+              <h3 className="min-w-0 break-words font-display text-xl font-black uppercase text-white">{layer.title}</h3>
+              <p className="min-w-0 break-words text-sm leading-7 text-white/62">{layer.description}</p>
             </div>
           );
         })}

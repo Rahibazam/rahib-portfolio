@@ -45,11 +45,11 @@ const overview = [
 function PolicySection({ id, number, title, children }: { id: string; number: string; title: string; children: ReactNode }) {
   return (
     <section id={id} className="scroll-mt-32 border-t border-secondary/20 py-10 sm:py-12">
-      <div className="grid gap-5 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-8">
+      <div className="grid min-w-0 gap-5 md:grid-cols-[8rem_minmax(0,1fr)] md:gap-8">
         <p className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.18em] text-secondary/75">
           Protocol / {number}
         </p>
-        <div>
+        <div className="min-w-0">
           <h2 className="font-display text-[clamp(1.45rem,2.4vw,2.15rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-white">
             {title}
           </h2>
@@ -233,7 +233,7 @@ export default function PrivacyPage() {
 
             <PolicySection id="retention" number="06" title="How long I keep information">
               <p>I keep personal information only for as long as reasonably necessary for the purpose for which it was collected, including legal, accounting, security, and dispute-resolution needs. My default retention targets are:</p>
-              <div className="overflow-x-auto border-y border-secondary/20">
+              <div role="region" aria-label="Default data retention periods" tabIndex={0} className="w-full max-w-full overflow-x-auto overscroll-x-contain border-y border-secondary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70">
                 <table className="w-full min-w-[38rem] border-collapse text-left text-sm leading-6">
                   <thead className="font-mono text-[0.62rem] uppercase tracking-[0.15em] text-secondary">
                     <tr>

@@ -205,7 +205,7 @@ export default function AboutPage() {
                           <span
                             key={label}
                             className={[
-                              'group/chip inline-flex h-10 items-center gap-2 whitespace-nowrap rounded-xl px-3 text-[0.82rem] font-semibold text-white/[0.92] shadow-[inset_0_1px_0_rgba(255,255,255,.10),0_0_18px_rgba(10,196,255,.08)] backdrop-blur-xl transition duration-300 hover:text-white sm:h-12 sm:gap-2.5 sm:rounded-2xl sm:px-4 sm:text-[0.92rem] motion-safe:hover:-translate-y-0.5',
+                              'group/chip inline-flex min-h-10 min-w-0 max-w-full items-center gap-2 whitespace-normal break-words rounded-xl px-3 py-2 text-[0.82rem] font-semibold text-white/[0.92] shadow-[inset_0_1px_0_rgba(255,255,255,.10),0_0_18px_rgba(10,196,255,.08)] backdrop-blur-xl transition duration-300 hover:text-white sm:min-h-12 sm:gap-2.5 sm:rounded-2xl sm:px-4 sm:text-[0.92rem] motion-safe:hover:-translate-y-0.5',
                               chipAccent
                             ].join(' ')}
                           >
@@ -260,13 +260,13 @@ export default function AboutPage() {
 
                     <article
                       className={[
-                        'group relative overflow-hidden rounded-row p-px transition duration-500 ease-premium hover:-translate-y-1',
+                        'group relative min-w-0 overflow-visible rounded-row p-px transition duration-500 ease-premium hover:-translate-y-1 sm:overflow-hidden',
                         cardGlow
                       ].join(' ')}
                     >
                       <div aria-hidden="true" className={`absolute inset-0 rounded-row opacity-80 transition duration-500 group-hover:opacity-100 ${borderGradient}`} />
 
-                      <div className="relative overflow-hidden rounded-[calc(0.75rem_-_1px)] bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.96),rgba(8,10,34,.94))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,.1),inset_0_-1px_0_rgba(10,196,255,.08)] backdrop-blur-[22px] sm:p-8">
+                      <div className="relative min-w-0 overflow-visible rounded-[calc(0.75rem_-_1px)] bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.96),rgba(8,10,34,.94))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,.1),inset_0_-1px_0_rgba(10,196,255,.08)] backdrop-blur-[22px] sm:overflow-hidden sm:p-8">
                         <div aria-hidden="true" className={`pointer-events-none absolute inset-0 rounded-[calc(0.75rem_-_1px)] ${isPurple ? 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(108,76,255,.08)]' : 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.06)]'}`} />
                         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,.1),transparent_28%,transparent_68%,rgba(108,76,255,.08))] opacity-50" />
                         <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(10,196,255,.22)_1px,transparent_1px),linear-gradient(90deg,rgba(10,196,255,.22)_1px,transparent_1px)] [background-size:44px_44px]" />
@@ -291,8 +291,8 @@ export default function AboutPage() {
                             </div>
                             <p className="mt-5 max-w-4xl text-sm leading-7 text-white/66 sm:text-[0.95rem]">{item.description}</p>
                             <div className="mt-5 flex flex-wrap gap-2.5 lg:hidden">
-                              <span className={`inline-flex h-12 w-fit items-center gap-2.5 whitespace-nowrap rounded-2xl border px-4 font-mono text-[0.72rem] font-bold uppercase tracking-[0.22em] backdrop-blur-xl transition duration-300 motion-safe:hover:-translate-y-0.5 ${dateBadge}`}>{item.date}</span>
-                              <span className={`inline-flex h-10 w-fit items-center gap-2 whitespace-nowrap rounded-2xl border px-3.5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.24em] backdrop-blur-xl transition duration-300 motion-safe:hover:-translate-y-0.5 ${categoryBadge}`}>
+                              <span className={`inline-flex min-h-12 w-fit max-w-full items-center gap-2.5 whitespace-normal break-words rounded-2xl border px-4 py-2 font-mono text-[0.72rem] font-bold uppercase tracking-[0.22em] backdrop-blur-xl transition duration-300 motion-safe:hover:-translate-y-0.5 ${dateBadge}`}>{item.date}</span>
+                              <span className={`inline-flex min-h-10 w-fit max-w-full items-center gap-2 whitespace-normal break-words rounded-2xl border px-3.5 py-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.24em] backdrop-blur-xl transition duration-300 motion-safe:hover:-translate-y-0.5 ${categoryBadge}`}>
                                 <Sparkles className={`h-3.5 w-3.5 ${accentText} drop-shadow-[0_0_9px_currentColor]`} />
                                 Experience
                               </span>
@@ -434,10 +434,10 @@ export default function AboutPage() {
 
         <section className="mobile-about-cta py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
-            <div className="group/build-cta relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+            <div className="group/build-cta relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
-              <div className="relative min-h-[620px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[590px] lg:h-[470px] lg:min-h-0">
+              <div className="relative min-h-[620px] min-w-0 overflow-visible rounded-[calc(2rem-1px)] sm:min-h-[590px] lg:h-[470px] lg:min-h-0">
                 <BuildTogetherBackground />
 
                 <div aria-hidden="true" className="pointer-events-none absolute right-[2%] top-1/2 z-20 hidden h-[29rem] w-[29rem] -translate-y-1/2 items-center justify-center lg:flex xl:right-[5%] xl:h-[32rem] xl:w-[32rem]">
@@ -454,8 +454,8 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <div className="absolute left-0 top-0 z-30 flex h-full w-full items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
-                  <div className="max-w-[720px] text-left lg:max-w-[660px] xl:max-w-[720px]">
+                <div className="absolute left-0 top-0 z-30 flex h-full w-full min-w-0 items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
+                  <div className="w-full min-w-0 max-w-[720px] text-left [overflow-wrap:anywhere] lg:max-w-[660px] xl:max-w-[720px]">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
                       <span>ENOUGH CHARACTER DEVELOPMENT</span>
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />

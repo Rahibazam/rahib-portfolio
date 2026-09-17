@@ -211,10 +211,12 @@ export default function HubSpotPage() {
           <HubSpotSectionHeader title="Selected HubSpot Implementation Work" personalityLabel="Previously In HubSpot" description="Structural CRM cleanup, duplicate prevention, lifecycle automation, and several moments of staring quietly at enrollment history." />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {hubspotProjects.map((project, index) => (
-              <Reveal key={project.title} delay={index * 0.07} className="h-full">
-                <article className="home-module interactive-card flex h-full min-h-[35rem] flex-col overflow-hidden rounded-card border-secondary/30">
-                  <HubSpotProjectVisual variant={project.visual} />
-                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+              <Reveal key={project.title} delay={index * 0.07} className="h-full min-w-0">
+                <article className="home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
+                  <div className="overflow-hidden rounded-t-[inherit]">
+                    <HubSpotProjectVisual variant={project.visual} />
+                  </div>
+                  <div className="flex min-w-0 flex-1 flex-col p-6 sm:p-7">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
                       <Badge variant="soft" className="text-[0.58rem]">{project.status}</Badge>
@@ -222,7 +224,7 @@ export default function HubSpotPage() {
                     <h3 className="mt-5 font-display text-2xl font-black uppercase leading-tight text-white">{project.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-white/62">{project.description}</p>
                     <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
-                    <TransitionLink href={project.href ?? '/portfolio'} className="mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100">{project.href ? 'Read case study' : 'View project archive'} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></TransitionLink>
+                    <TransitionLink href={project.href ?? '/portfolio'} className="mt-auto inline-flex w-fit max-w-full flex-wrap items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b1d]">{project.href ? 'Read case study' : 'View project archive'} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0" /></TransitionLink>
                   </div>
                 </article>
               </Reveal>

@@ -266,14 +266,14 @@ export default function ContactPage() {
             />
           </Reveal>
           <Reveal delay={0.08}>
-            <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
+            <div className="relative mt-10 overflow-visible border-y border-secondary/25">
               <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.3),rgba(139,108,255,.3),transparent)]" />
               <div className="mobile-stats-grid relative z-10 grid sm:grid-cols-2 lg:grid-cols-4">
                 {contactStats.map(({ label, value, note, icon: Icon }, index) => (
-                  <div key={label} className="system-rail-item group/stat relative flex min-h-40 gap-5 overflow-hidden border-b border-secondary/15 p-6 transition-colors duration-500 motion-reduce:transition-none sm:border-r lg:[&:nth-child(4n)]:border-r-0 [&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0 lg:min-h-44 lg:p-8">
+                  <div key={label} className="system-rail-item group/stat relative flex min-w-0 min-h-40 gap-5 overflow-visible border-b border-secondary/15 p-6 transition-colors duration-500 motion-reduce:transition-none sm:border-r lg:[&:nth-child(4n)]:border-r-0 [&:nth-last-child(-n+1)]:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+4)]:border-b-0 lg:min-h-44 lg:p-8">
                     <span aria-hidden="true" className="pointer-events-none absolute right-4 top-4 font-mono text-[0.58rem] font-bold tracking-[0.16em] text-white/20 transition-colors duration-500 group-hover/stat:text-secondary/65 motion-reduce:transition-none">{String(index + 1).padStart(2, '0')}</span>
                     <Icon className="mt-1 h-8 w-8 shrink-0 text-secondary drop-shadow-[0_0_12px_rgba(10,196,255,.55)] transition-[color,filter] duration-500 group-hover/stat:text-cyan-100 group-hover/stat:drop-shadow-[0_0_19px_rgba(10,196,255,.8)] motion-reduce:transition-none" strokeWidth={1.7} />
-                    <div className="relative z-10 pr-5">
+                    <div className="relative z-10 min-w-0 pr-5">
                       <p className="text-sm font-semibold text-white/62">{label}</p>
                       <p className="mt-3 font-display text-xl font-black text-white lg:text-2xl">{value}</p>
                       <p className="mt-2 text-sm leading-6 text-white/46 transition-colors duration-500 group-hover/stat:text-white/64 motion-reduce:transition-none">{note}</p>
@@ -297,10 +297,10 @@ export default function ContactPage() {
 
         <section className="py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
-            <div className="group relative mx-auto overflow-hidden rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+            <div className="group relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <div className="relative min-h-[650px] overflow-hidden rounded-[calc(2rem-1px)] sm:min-h-[610px] lg:min-h-[38rem]">
+              <div className="relative min-h-[650px] min-w-0 overflow-visible rounded-[calc(2rem-1px)] sm:min-h-[610px] lg:min-h-[38rem]">
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(145deg,rgba(7,17,38,0.985),rgba(8,19,48,0.975)_45%,rgba(19,15,61,0.965)_100%)]" />
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_14%_0%,rgba(10,196,255,.18),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.20),transparent_40%)]" />
                 <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.30),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(108,76,255,.34),transparent_44%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
@@ -315,8 +315,8 @@ export default function ContactPage() {
                   <HomeCTAVisual expression="wink" ringTilt="dramatic" />
                 </div>
 
-                <div className="absolute left-0 top-0 z-30 flex h-full w-full items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
-                  <div className="max-w-[720px] text-left lg:max-w-[660px] xl:max-w-[720px]">
+                <div className="absolute left-0 top-0 z-30 flex h-full w-full min-w-0 items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
+                  <div className="w-full min-w-0 max-w-[720px] text-left [overflow-wrap:anywhere] lg:max-w-[660px] xl:max-w-[720px]">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
                       <span>YOU READ ALL THAT?</span>
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />

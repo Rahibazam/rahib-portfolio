@@ -33,8 +33,8 @@ export function Footer() {
   return (
     <footer className="mobile-footer relative z-10 pb-12 pt-10">
       <Container className="max-w-[108rem] px-5 sm:px-8 xl:px-10">
-        <div className="mobile-footer-shell relative isolate overflow-hidden rounded-panel p-px shadow-[0_26px_90px_rgba(0,0,0,.42),0_0_34px_rgba(10,196,255,.18),0_0_54px_rgba(139,108,255,.16)] before:absolute before:-inset-2 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] before:opacity-30 before:blur-2xl after:absolute after:inset-0 after:-z-10 after:rounded-[inherit] after:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] after:opacity-55">
-          <div className="mobile-footer-panel home-module-strong relative overflow-hidden rounded-[inherit] border-secondary/35 p-7 sm:p-10 lg:p-14">
+        <div className="mobile-footer-shell relative isolate overflow-visible rounded-panel p-px shadow-[0_26px_90px_rgba(0,0,0,.42),0_0_34px_rgba(10,196,255,.18),0_0_54px_rgba(139,108,255,.16)] before:pointer-events-none before:absolute before:-inset-2 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] before:opacity-30 before:blur-2xl after:pointer-events-none after:absolute after:inset-0 after:-z-10 after:rounded-[inherit] after:bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] after:opacity-55">
+          <div className="mobile-footer-panel home-module-strong relative min-w-0 overflow-visible rounded-[inherit] border-secondary/35 p-7 sm:p-10 lg:p-14">
           <div className="mobile-footer-grid grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.72fr_0.92fr_1.2fr] lg:gap-0">
             <div>
               <div className="flex items-center gap-4">

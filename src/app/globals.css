@@ -892,7 +892,7 @@ select {
   /* Home: three supporting cards read as one composed module. */
   .mobile-support-group {
     gap: 0;
-    overflow: hidden;
+    overflow: visible;
     border-block: 1px solid rgba(10, 196, 255, 0.24);
     background: linear-gradient(135deg, rgba(10, 196, 255, 0.045), rgba(139, 108, 255, 0.035));
   }
@@ -954,7 +954,7 @@ select {
 
   .mobile-problem-map-grid {
     gap: 0;
-    overflow: hidden;
+    overflow: visible;
     border-block: 1px solid rgba(10, 196, 255, 0.24);
     background: linear-gradient(135deg, rgba(10, 196, 255, 0.045), rgba(255, 107, 69, 0.025));
   }
@@ -1023,8 +1023,11 @@ select {
   /* Portfolio: filters become a compact horizontal rail and archive cards reveal depth on demand. */
   .mobile-filter-rail {
     margin-inline: -1rem;
+    width: calc(100% + 2rem);
+    max-width: calc(100% + 2rem);
     overflow-x: auto;
-    padding-inline: 1rem;
+    overscroll-behavior-inline: contain;
+    padding: 0.25rem 1rem 0.75rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -1145,9 +1148,12 @@ select {
 
   .mobile-faq-tabs {
     margin-inline: -1rem;
+    width: calc(100% + 2rem);
+    max-width: calc(100% + 2rem);
     flex-wrap: nowrap;
     overflow-x: auto;
-    padding-inline: 1rem;
+    overscroll-behavior-inline: contain;
+    padding: 0.25rem 1rem 0.0625rem;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
   }
@@ -1156,12 +1162,19 @@ select {
     display: none;
   }
 
+  .mobile-case-nav {
+    width: calc(100% + 2rem);
+    max-width: calc(100% + 2rem);
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .mobile-faq-tabs > button {
     flex: 0 0 auto;
   }
 
   .mobile-stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .mobile-stats-grid > * {
@@ -1170,10 +1183,10 @@ select {
   }
 
   .mobile-stats-grid > *:nth-child(even) {
-    border-left: 1px solid rgba(10, 196, 255, 0.16);
+    border-left: 0;
   }
 
-  .mobile-stats-grid > *:nth-child(n + 3) {
+  .mobile-stats-grid > *:nth-child(n + 2) {
     border-top: 1px solid rgba(10, 196, 255, 0.16);
   }
 
