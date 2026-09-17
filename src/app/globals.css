@@ -1257,9 +1257,9 @@ select {
     line-height: 1.45;
   }
 
-  /* Footer: navigation becomes a compact two-column directory. */
+  /* Footer: mobile directory uses full-width, clearly separated navigation groups. */
   .mobile-footer-shell {
-    padding-inline: 1rem;
+    padding-inline: 0;
   }
 
   .mobile-footer-panel {
@@ -1267,8 +1267,8 @@ select {
   }
 
   .mobile-footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.75rem 1rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
   }
 
   .mobile-footer-grid > :first-child,
@@ -1279,6 +1279,67 @@ select {
   .mobile-footer-grid > * {
     border-left: 0 !important;
     padding-left: 0 !important;
+  }
+
+  .mobile-footer-section-heading {
+    border-bottom: 1px solid rgba(10, 196, 255, 0.24);
+    padding-bottom: 0.7rem;
+  }
+
+  .mobile-footer-nav-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 1.25rem;
+  }
+
+  .mobile-footer-nav-links a {
+    width: fit-content;
+    min-height: 2.35rem;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .mobile-footer-nav-links a:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .mobile-footer-nav-links a:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .mobile-footer-nav-links a:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .mobile-footer-nav-links a:nth-child(4) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .mobile-footer-nav-links a:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .mobile-footer-system-links {
+    gap: 0;
+  }
+
+  .mobile-footer-system-link {
+    display: flex;
+    width: 100%;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-footer-system-link svg {
+    display: block;
+    color: rgba(10, 196, 255, 0.78);
   }
 
   .mobile-footer-bottom {

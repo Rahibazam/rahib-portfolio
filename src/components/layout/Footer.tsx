@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react';
-import { Facebook, Github, Instagram, Linkedin } from 'lucide-react';
+import { ArrowUpRight, Facebook, Github, Instagram, Linkedin } from 'lucide-react';
 import { BrandMark } from '@/components/brand/BrandMark';
 import { Container } from '@/components/ui/Container';
 import { TransitionLink } from '@/components/motion/TransitionLink';
@@ -60,9 +60,9 @@ export function Footer() {
                 ))}
               </div>
             </div>
-            <div className="lg:border-l lg:border-white/10 lg:px-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Navigation</p>
-              <div className="mt-5 grid gap-3.5">
+            <div className="mobile-footer-nav lg:border-l lg:border-white/10 lg:px-10">
+              <p className="mobile-footer-section-heading font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Navigation</p>
+              <div className="mobile-footer-nav-links mt-5 grid gap-3.5">
               {navItems.map((item) => (
                 <TransitionLink key={item.href} href={item.href} className="premium-underline-link w-fit py-1 text-sm font-semibold uppercase tracking-[0.1em] text-white/58">
                   {item.label}
@@ -70,12 +70,13 @@ export function Footer() {
               ))}
               </div>
             </div>
-            <div className="lg:border-l lg:border-white/10 lg:px-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Systems</p>
-              <div className="mt-5 grid gap-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-white/52">
+            <div className="mobile-footer-systems lg:border-l lg:border-white/10 lg:px-10">
+              <p className="mobile-footer-section-heading font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Systems</p>
+              <div className="mobile-footer-system-links mt-5 grid gap-3.5 text-sm font-semibold uppercase tracking-[0.08em] text-white/52">
                 {systemLinks.map((item) => (
-                  <TransitionLink key={item.href} href={item.href} className="premium-underline-link w-fit py-1">
-                    {item.label}
+                  <TransitionLink key={item.href} href={item.href} className="mobile-footer-system-link premium-underline-link w-fit py-1">
+                    <span>{item.label}</span>
+                    <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0 sm:hidden" />
                   </TransitionLink>
                 ))}
               </div>
