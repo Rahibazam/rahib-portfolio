@@ -51,7 +51,8 @@ export function buttonClasses({
     'group relative isolate inline-flex max-w-full items-center justify-center gap-2 overflow-hidden rounded-[0.85rem] border font-bold uppercase tracking-[0.12em] transition duration-300 ease-premium disabled:pointer-events-none disabled:opacity-45 motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0 motion-safe:active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0AC4FF]/65 focus-visible:ring-offset-2 focus-visible:ring-offset-[#070B1D]',
     variantClasses[variant],
     sizeClasses[size],
-    className
+    className,
+    size !== 'icon' && 'max-[430px]:gap-1.5 max-[430px]:px-4 max-[430px]:text-[0.68rem] max-[430px]:tracking-[0.075em]'
   );
 }
 
@@ -78,7 +79,7 @@ function ButtonEffects({ variant }: { variant: ButtonVariant }) {
 }
 
 function ButtonContent({ children }: { children: ReactNode }) {
-  return <span className="relative z-10 inline-flex min-w-0 max-w-full flex-wrap items-center justify-center gap-2 whitespace-normal break-words text-center [&_svg]:shrink-0">{children}</span>;
+  return <span className="relative z-10 inline-flex min-w-0 max-w-full flex-nowrap items-center justify-center gap-2 whitespace-nowrap text-center max-[430px]:gap-1.5 [&_svg]:shrink-0">{children}</span>;
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
