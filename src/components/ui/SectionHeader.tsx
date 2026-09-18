@@ -15,7 +15,7 @@ export function SectionHeader({ eyebrow, title, description, headingLevel = 'h2'
   return (
     <div className={`${align === 'center' ? 'mx-auto text-center' : ''} max-w-3xl ${className ?? ''}`}>
       <Badge>{eyebrow}</Badge>
-      <Heading className="mt-5 font-display text-balance text-3xl font-black uppercase leading-[1] tracking-[-0.055em] text-white sm:text-5xl lg:text-6xl">
+      <Heading className={headingLevel === 'h2' ? 'site-h2-section mt-5 text-balance' : 'mt-5 font-display text-balance text-3xl font-black uppercase leading-[1] tracking-[-0.055em] text-white sm:text-5xl lg:text-6xl'}>
         {title}
       </Heading>
       {description ? <p className="mt-5 text-sm leading-7 text-white/62 sm:text-base">{description}</p> : null}

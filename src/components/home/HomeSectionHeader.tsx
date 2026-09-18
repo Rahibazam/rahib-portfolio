@@ -34,7 +34,7 @@ export function HomeSectionHeader({ title, description, personalityLabel, classN
         <span className="relative grid h-8 w-8 shrink-0 translate-y-px place-items-center text-secondary before:absolute before:inset-0 before:rounded-full before:bg-secondary/25 before:blur-md">
           <Triangle aria-hidden="true" className="relative h-[1.05rem] w-[1.05rem] rotate-90 fill-current drop-shadow-[0_0_12px_rgba(10,196,255,1)]" />
         </span>
-        <h2 className="home-display text-[1.7rem] font-black uppercase tracking-[0.025em] text-white sm:text-[2rem] lg:text-[2.35rem]">{title}</h2>
+        <h2 className="site-h2-section">{title}</h2>
       </div>
       <div className="max-w-xl md:justify-self-end">
         {personalityLabel ? <p className="mb-2 font-mono text-[0.68rem] font-bold uppercase tracking-[0.2em] text-secondary">{personalityLabel}</p> : null}

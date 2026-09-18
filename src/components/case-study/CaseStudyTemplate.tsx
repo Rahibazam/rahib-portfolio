@@ -86,7 +86,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
             <Reveal className="h-full">
               <div className="h-full px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-14">
                 <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#ff805f]">Root cause / 01</p>
-                <h2 className="mt-5 max-w-2xl font-display text-3xl font-black uppercase leading-tight text-white sm:text-4xl">{caseStudy.challenge.title}</h2>
+                <h2 className="site-h2-section mt-5 max-w-2xl">{caseStudy.challenge.title}</h2>
                 {caseStudy.challenge.paragraphs.map((paragraph) => (
                   <p key={paragraph} className="mt-6 max-w-2xl text-base leading-8 text-white/66">{paragraph}</p>
                 ))}
@@ -204,7 +204,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
                     <span aria-hidden="true" className="h-px w-8 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                   </div>
 
-                  <h2 className="home-display mt-6 text-[clamp(2.5rem,8vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.045em] text-white">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
+                  <h2 className="site-h2-statement mt-6">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
                   <p className="mx-auto mt-7 max-w-5xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
                   <p className="mx-auto mt-5 max-w-5xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white">{caseStudy.confidentiality}</p>
 

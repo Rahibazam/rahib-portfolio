@@ -70,7 +70,7 @@ export default function AboutPage() {
                     <Icon className={`h-11 w-11 transition-[filter,color] duration-500 motion-reduce:transition-none ${index === 1 ? 'text-purple-200 drop-shadow-[0_0_13px_rgba(139,108,255,.55)] group-hover/intro:drop-shadow-[0_0_21px_rgba(139,108,255,.8)]' : 'text-secondary drop-shadow-[0_0_13px_rgba(10,196,255,.55)] group-hover/intro:drop-shadow-[0_0_21px_rgba(10,196,255,.8)]'}`} />
                   </div>
                   <span aria-hidden="true" className="relative z-10 mt-6 block h-px bg-[linear-gradient(90deg,rgba(10,196,255,.55),rgba(139,108,255,.3),transparent)]" />
-                  <h2 className="relative z-10 mt-7 font-display text-2xl font-black text-white">{title}</h2>
+                  <h2 className="site-h2-module relative z-10 mt-7">{title}</h2>
                   {paragraphs.map((paragraph) => <p key={paragraph} className="relative z-10 mt-5 text-sm leading-7 text-white/66 transition-colors duration-500 group-hover/intro:text-white/76 motion-reduce:transition-none lg:text-base">{paragraph}</p>)}
                 </article>
               </Reveal>
@@ -88,7 +88,7 @@ export default function AboutPage() {
                   <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/40 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.15),inset_0_0_16px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/principle:border-purple/65 group-hover/principle:text-white group-hover/principle:shadow-[0_0_30px_rgba(10,196,255,.28),0_0_22px_rgba(139,108,255,.2)] motion-reduce:transition-none"><Icon className="h-7 w-7" /></div>
                   <div className="relative z-10">
                     <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.18em] text-secondary/60">Principle 0{index + 1}</span>
-                    <h2 className="mt-3 font-display text-xl font-black text-white">{title}</h2>
+                    <h2 className="site-h2-module mt-3">{title}</h2>
                     <p className="mt-4 text-sm leading-7 text-white/64 transition-colors duration-500 group-hover/principle:text-white/76 motion-reduce:transition-none">{description}</p>
                   </div>
                 </article>
@@ -195,7 +195,7 @@ export default function AboutPage() {
                       <div aria-hidden="true" className={`hidden h-32 w-[2px] rounded-full bg-gradient-to-b from-transparent via-current to-transparent opacity-85 shadow-[0_0_20px_currentColor,0_0_40px_currentColor] lg:block ${accentText}`} />
 
                       <div className="mobile-image-card-content relative min-w-0">
-                        <h2 className="font-display text-[1.65rem] font-black uppercase leading-[1.08] tracking-[0.03em] text-white sm:text-3xl lg:text-[1.85rem] xl:text-[2rem]">{title}</h2>
+                        <h2 className="site-h2-module">{title}</h2>
                         <span aria-hidden="true" className={`mt-3 block h-[3px] w-12 rounded-full ${accentLine}`} />
                         <p className="mt-5 max-w-[19rem] text-base leading-[1.55] text-white/72 lg:text-[1.03rem]">{description}</p>
                       </div>
@@ -285,7 +285,7 @@ export default function AboutPage() {
                             <p className={`font-mono text-[0.64rem] font-bold uppercase tracking-[0.2em] ${accentText}`}>System log 0{index + 1}</p>
                             <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between lg:block">
                               <div>
-                                <h2 className="font-display text-xl font-black uppercase leading-tight tracking-[0.02em] text-white sm:text-2xl lg:text-[1.7rem]">{item.role}</h2>
+                                <h2 className="site-h2-module">{item.role}</h2>
                                 <p className="mt-2 font-semibold text-cyan-100/78">{item.company}</p>
                               </div>
                             </div>
@@ -461,7 +461,7 @@ export default function AboutPage() {
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
-                    <h2 className="home-display text-[clamp(2.35rem,10vw,4.7rem)] font-black uppercase leading-[0.98] tracking-[-0.055em] text-white sm:text-[clamp(3rem,6vw,4.7rem)]">
+                    <h2 className="site-h2-statement">
                       BACK TO THE{' '}
                       <span className="bg-gradient-to-r from-[#06C2FF] via-[#1BA6FF] to-[#8B5CFF] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(10,196,255,.24)]">
                         PROBLEMS

@@ -53,7 +53,7 @@ function TermsSection({ id, number, title, children }: { id: string; number: str
           Protocol / {number}
         </p>
         <div>
-          <h2 className="font-display text-[clamp(1.45rem,2.4vw,2.15rem)] font-bold uppercase leading-[1.08] tracking-[-0.02em] text-white">
+          <h2 className="site-h2-section">
             {title}
           </h2>
           <div className="mt-6 space-y-5 text-[0.98rem] leading-7 text-white/72 sm:text-base sm:leading-8">

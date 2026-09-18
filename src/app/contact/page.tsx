@@ -149,7 +149,7 @@ export default function ContactPage() {
                     <Send className="h-8 w-8 drop-shadow-[0_0_14px_rgba(10,196,255,.62)]" strokeWidth={1.75} />
                   </div>
                   <div>
-                    <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Send The Situation</h2>
+                    <h2 className="site-h2-module">Send The Situation</h2>
                     <p className="mt-1.5 text-sm leading-6 text-white/58 lg:text-base">Project context, links, screenshots, and constraints. Give me the director’s cut.</p>
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export default function ContactPage() {
               </div>
 
               <aside className="mobile-contact-info mt-8 flex h-full flex-col border-t border-white/10 pt-7 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-0">
-                <h2 className="font-display text-2xl font-black uppercase tracking-[0.02em] text-white lg:text-[1.85rem]">Useful Coordinates</h2>
+                <h2 className="site-h2-module">Useful Coordinates</h2>
                 <p className="mt-2 text-sm leading-6 text-white/58 lg:text-base">Details for contacting the person this website has been overselling.</p>
                 <div className="mt-7 grid flex-1 content-start gap-6">
                   {contactQuickInfo.map(({ label, value, note, icon: Icon, accent }) => (
@@ -212,7 +212,7 @@ export default function ContactPage() {
                       aria-hidden="true"
                       className="h-3 w-3 shrink-0 rounded-[0.2rem] bg-secondary shadow-[0_0_18px_rgba(10,196,255,.75)]"
                     />
-                    <h2 className="home-display text-[clamp(1.4rem,2.1vw,2rem)] font-black uppercase leading-[1.08] tracking-[-0.025em] text-white">
+                    <h2 className="site-h2-section">
                       Alternative Human{' '}
                       <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
                         Contact
@@ -322,7 +322,7 @@ export default function ContactPage() {
                       <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
-                    <h2 className="home-display text-[clamp(2.25rem,9vw,4.35rem)] font-black uppercase leading-[0.96] tracking-[-0.045em] text-white sm:text-[clamp(2.85rem,5.35vw,4.35rem)]">
+                    <h2 className="site-h2-statement">
                       YOU MAY AS WELL{' '}<br className="hidden sm:block" />
                       <span className="bg-gradient-to-r from-[#06C2FF] via-[#1BA6FF] to-[#8B5CFF] bg-clip-text text-transparent drop-shadow-[0_0_22px_rgba(10,196,255,.24)]">
                         MESSAGE ME

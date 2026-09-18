@@ -237,7 +237,7 @@ export default function HubSpotPage() {
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(105deg,rgba(10,196,255,0.08),transparent_48%,rgba(108,76,255,0.14))]" />
             <div className="relative z-10 max-[430px]:order-2">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#ff805f]">HubSpot doing a thing?</p>
-              <h2 className="home-display mt-5 max-w-4xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4.3rem]">Please show me the <span className="text-gradient">thing.</span></h2>
+              <h2 className="site-h2-statement mt-5 max-w-4xl">Please show me the <span className="text-gradient">thing.</span></h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/64 lg:text-lg">Send the HubSpot portal problem: workflow names, suspicious properties, reporting gaps, integration failures, screenshots, and “this only happens sometimes” are all perfectly valid ways to begin.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-9 sm:w-auto">Show Me The Portal <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>

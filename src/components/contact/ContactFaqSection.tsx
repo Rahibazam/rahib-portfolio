@@ -216,7 +216,7 @@ export function ContactFaqSection() {
                   aria-hidden="true"
                   className="h-3 w-3 shrink-0 rounded-[0.2rem] bg-secondary shadow-[0_0_18px_rgba(10,196,255,.75)]"
                 />
-                <h2 className="home-display text-[clamp(1.45rem,2.4vw,2.15rem)] font-black uppercase leading-tight tracking-[-0.025em] text-white">
+                <h2 className="site-h2-section">
                   HubSpot, Web &amp; Project{' '}
                   <span className="bg-[linear-gradient(90deg,var(--secondary),#8b6cff)] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(10,196,255,.55)] [filter:drop-shadow(0_0_18px_rgba(10,196,255,.42))_drop-shadow(0_0_24px_rgba(139,108,255,.34))]">
                     FAQ

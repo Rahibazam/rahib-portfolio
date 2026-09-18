@@ -221,7 +221,7 @@ export default function HomePage() {
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(100deg,rgba(10,196,255,0.06),transparent_42%,rgba(108,76,255,0.08))]" />
             <div className="relative z-10 max-[430px]:order-2">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Your Turn, Unfortunately</p>
-              <h2 className="home-display mt-5 text-5xl font-black uppercase leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl lg:text-[4.5rem]">Show Me The Weird <HeadingAccent>Thing</HeadingAccent></h2>
+              <h2 className="site-h2-statement mt-5">Show Me The Weird <HeadingAccent>Thing</HeadingAccent></h2>
               <div aria-hidden="true" className="mt-7 h-2 w-72 -rotate-2 rounded-full bg-gradient-to-r from-secondary via-purple to-transparent shadow-[0_0_26px_rgba(108,76,255,0.8)]" />
             </div>
             <div className="relative z-10 mt-7 max-[430px]:order-3 lg:mt-0">

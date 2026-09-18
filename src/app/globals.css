@@ -133,6 +133,57 @@ select {
     font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   }
 
+  /* Site-wide H2 hierarchy: section, module, and statement roles only. */
+  .site-h2-section {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--text-main);
+  }
+
+  .site-h2-module {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.45rem;
+    font-weight: 900;
+    line-height: 1.12;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-main);
+  }
+
+  .site-h2-statement {
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+    font-size: clamp(2rem, 9vw, 4.35rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: var(--text-main);
+  }
+
+  @media (min-width: 640px) {
+    .site-h2-section {
+      font-size: 2rem;
+    }
+
+    .site-h2-module {
+      font-size: 1.65rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-h2-section {
+      font-size: 2.35rem;
+    }
+
+    .site-h2-module {
+      font-size: 1.85rem;
+    }
+  }
+
   .glass-panel {
     border: 1px solid var(--border);
     background:

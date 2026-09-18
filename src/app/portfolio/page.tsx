@@ -81,7 +81,7 @@ export default function PortfolioPage() {
                   {featuredProject.status ? <Badge variant="soft">{featuredProject.status}</Badge> : null}
                 </div>
                 <p className="mt-7 font-mono text-xs font-bold uppercase tracking-[0.16em] text-secondary">{featuredProject.category}</p>
-                <h2 className="mt-4 font-display text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">{featuredProject.title}</h2>
+                <h2 className="site-h2-section mt-4">{featuredProject.title}</h2>
                 <p className="mt-5 text-base leading-8 text-white/64">Reworked a complex HubSpot setup across CRM structure, lifecycle logic, pipelines, properties, deduplication, governance, automation, and reporting so the portal became easier to operate and trust.</p>
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   {featuredImpact.map((impact) => <span key={impact} className="flex items-start gap-3 text-sm leading-6 text-cyan-100/75"><ArrowRight aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-secondary" />{impact}</span>)}
@@ -130,7 +130,7 @@ export default function PortfolioPage() {
             </div>
             <div className="relative z-10 mt-8 lg:mt-0">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Want to contribute a problem?</p>
-              <h2 className="home-display mt-5 text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4rem]">Send me the weird <span className="text-gradient">one.</span></h2>
+              <h2 className="site-h2-statement mt-5">Send me the weird <span className="text-gradient">one.</span></h2>
               <p className="mt-6 text-base leading-7 text-white/64">Send the CRM, automation, reporting, or web development task that “should be simple.” Historically, that phrase has not performed well under observation.</p>
             </div>
             <div className="relative z-10 mt-8 flex flex-col gap-3 lg:mt-0">
