@@ -53,11 +53,23 @@ export function PortfolioProjectVisual({
   }
 
   return (
-    <div aria-hidden="true" className={`relative overflow-hidden bg-[linear-gradient(145deg,#09172f,#08091e)] p-5 ${heightClass}`}>
-      <div className="grid h-full grid-cols-3 gap-3">
-        {['New', 'Qualified', 'Active'].map((label, index) => <div key={label} className="rounded-xl border border-white/10 bg-white/[0.025] p-3"><p className="font-mono text-[0.55rem] uppercase tracking-widest text-white/40">{label}</p><div className="mt-4 grid gap-2">{Array.from({ length: index + 2 }, (_, item) => <span key={item} className="flex h-7 items-center gap-2 rounded-md border border-secondary/15 bg-secondary/[0.04] px-2"><Check className="h-3 w-3 text-secondary" /><span className="h-1 w-8 rounded bg-white/20" /></span>)}</div></div>)}
+    <div aria-hidden="true" className={`relative overflow-hidden bg-[linear-gradient(145deg,#09172f,#08091e)] p-3 sm:p-5 ${heightClass}`}>
+      <div className="grid h-full grid-rows-3 gap-2 sm:grid-cols-3 sm:grid-rows-1 sm:gap-3">
+        {['New', 'Qualified', 'Active'].map((label, index) => (
+          <div key={label} className="grid min-w-0 grid-cols-[4.75rem_minmax(0,1fr)] items-center gap-2 rounded-lg border border-white/10 bg-white/[0.025] px-3 py-2 sm:block sm:rounded-xl sm:p-3">
+            <p className="font-mono text-[0.52rem] uppercase tracking-widest text-white/40 sm:text-[0.55rem]">{label}</p>
+            <div className="flex min-w-0 gap-1.5 sm:mt-4 sm:grid sm:gap-2">
+              {Array.from({ length: index + 2 }, (_, item) => (
+                <span key={item} className="flex h-6 min-w-0 flex-1 items-center gap-1.5 rounded-md border border-secondary/15 bg-secondary/[0.04] px-1.5 sm:h-7 sm:gap-2 sm:px-2">
+                  <Check className="h-2.5 w-2.5 shrink-0 text-secondary sm:h-3 sm:w-3" />
+                  <span className="h-1 min-w-0 flex-1 rounded bg-white/20 sm:w-8" />
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
-      <GitBranch className="absolute bottom-3 right-3 h-8 w-8 text-purple-200/75" />
+      <GitBranch className="absolute bottom-2 right-2 h-6 w-6 text-purple-200/75 sm:bottom-3 sm:right-3 sm:h-8 sm:w-8" />
     </div>
   );
 }
