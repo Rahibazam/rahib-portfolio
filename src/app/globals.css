@@ -1194,19 +1194,15 @@ select {
   }
 
   .mobile-faq-tabs {
-    margin-inline: -1rem;
-    width: calc(100% + 2rem);
-    max-width: calc(100% + 2rem);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    padding: 0.25rem 1rem 0.0625rem;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .mobile-faq-tabs::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: visible;
   }
 
   .mobile-case-nav {
@@ -1217,7 +1213,70 @@ select {
   }
 
   .mobile-faq-tabs > button {
-    flex: 0 0 auto;
+    display: flex;
+    min-width: 0;
+    height: 4.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border-bottom-width: 1px;
+    border-radius: 0.75rem;
+    padding-inline: 0.35rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-faq-tabs > button svg {
+    height: 1.1rem;
+    width: 1.1rem;
+  }
+
+  .mobile-faq-panel {
+    margin-top: 0.75rem;
+    border-top-left-radius: var(--radius-panel);
+    padding: 1rem !important;
+  }
+
+  .mobile-faq-trigger {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.85rem;
+    padding: 1rem;
+  }
+
+  .mobile-faq-number {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .mobile-faq-toggle {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    margin-top: 0;
+  }
+
+  .mobile-faq-copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .mobile-faq-question {
+    min-height: 0;
+    align-items: flex-start;
+    font-size: 1.18rem;
+    line-height: 1.12;
+  }
+
+  .mobile-faq-answer {
+    line-height: 1.75;
+  }
+
+  .mobile-faq-answer > span {
+    padding-top: 1rem;
   }
 
   .mobile-stats-grid {

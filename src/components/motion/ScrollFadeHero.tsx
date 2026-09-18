@@ -15,6 +15,7 @@ export function ScrollFadeHero({ children, className }: ScrollFadeHeroProps) {
   const [naturalFadeEnd, setNaturalFadeEnd] = useState(900);
   const [heroHeight, setHeroHeight] = useState(0);
   const [pinned, setPinned] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const fadeEnd = pinned ? 560 : naturalFadeEnd;
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, Math.min(180, fadeEnd * 0.24), fadeEnd], [1, 0.88, 0]);
@@ -43,13 +44,23 @@ export function ScrollFadeHero({ children, className }: ScrollFadeHeroProps) {
   }, []);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 1280px)');
-    const updatePinnedState = () => setPinned(mediaQuery.matches);
+    const pinnedQuery = window.matchMedia('(min-width: 1280px)');
+    const mobileQuery = window.matchMedia('(max-width: 639px)');
+    const updateResponsiveState = () => {
+      setPinned(pinnedQuery.matches);
+      setMobile(mobileQuery.matches);
+    };
 
-    updatePinnedState();
-    mediaQuery.addEventListener('change', updatePinnedState);
-    return () => mediaQuery.removeEventListener('change', updatePinnedState);
+    updateResponsiveState();
+    pinnedQuery.addEventListener('change', updateResponsiveState);
+    mobileQuery.addEventListener('change', updateResponsiveState);
+    return () => {
+      pinnedQuery.removeEventListener('change', updateResponsiveState);
+      mobileQuery.removeEventListener('change', updateResponsiveState);
+    };
   }, []);
+
+  const shouldAnimate = !reducedMotion && !mobile;
 
   return (
     <section
@@ -58,8 +69,8 @@ export function ScrollFadeHero({ children, className }: ScrollFadeHeroProps) {
     >
       <motion.div
         ref={heroRef}
-        className={cn('relative', !reducedMotion && 'xl:sticky xl:top-0', className)}
-        style={reducedMotion ? undefined : { opacity, scale, y }}
+        className={cn('relative', shouldAnimate && 'xl:sticky xl:top-0', className)}
+        style={shouldAnimate ? { opacity, scale, y } : undefined}
       >
         {children}
       </motion.div>

@@ -270,7 +270,7 @@ export function ContactFaqSection() {
       </Reveal>
 
       <Reveal delay={0.12}>
-        <GlassCard interactive={false} className="home-module-strong relative mt-0 overflow-visible rounded-panel rounded-tl-none border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9">
+        <GlassCard interactive={false} className="mobile-faq-panel home-module-strong relative mt-0 overflow-visible rounded-panel rounded-tl-none border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={activeTab.id}
@@ -304,7 +304,7 @@ export function ContactFaqSection() {
                         layout={!reducedMotion}
                         transition={{ duration: reducedMotion ? 0 : 0.46, ease: [0.16, 1, 0.3, 1] }}
                         key={`${activeTab.id}-${faq.question}`}
-                        className={`relative overflow-hidden rounded-[1rem] border transition duration-300 ${
+                        className={`mobile-faq-card relative overflow-hidden rounded-[1rem] border transition duration-300 ${
                           isActive
                             ? `${accent.border} bg-[linear-gradient(135deg,rgba(10,196,255,.07),rgba(139,108,255,.08))] shadow-[0_0_28px_rgba(10,196,255,.10),inset_0_1px_0_rgba(255,255,255,.06)]`
                             : `${accent.ring} bg-white/[0.025]`
@@ -312,20 +312,20 @@ export function ContactFaqSection() {
                       >
                         <button
                           type="button"
-                          className="flex w-full items-start gap-4 p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-inset sm:gap-5 sm:p-5"
+                          className="mobile-faq-trigger flex w-full items-start gap-4 p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-inset sm:gap-5 sm:p-5"
                           aria-expanded={isActive}
                           onClick={() => setActiveQuestionIndex((current) => (current === index ? -1 : index))}
                         >
-                          <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.65rem] border font-mono text-sm font-bold ${isActive ? accent.badge : `${accent.ring} bg-white/[0.035] text-white/54`}`}>
+                          <span className={`mobile-faq-number flex h-10 w-10 shrink-0 items-center justify-center rounded-[0.65rem] border font-mono text-sm font-bold ${isActive ? accent.badge : `${accent.ring} bg-white/[0.035] text-white/54`}`}>
                             {String(index + 1).padStart(2, '0')}
                           </span>
-                          <span className="min-w-0 flex-1">
-                            <span className={`home-display flex min-h-10 items-center text-[1.25rem] font-black leading-[1.05] tracking-[-0.015em] sm:text-[1.55rem] lg:text-[1.65rem] ${isActive ? 'text-white' : 'text-white/82'}`}>{faq.question}</span>
+                          <span className="mobile-faq-copy min-w-0 flex-1">
+                            <span className={`mobile-faq-question home-display flex min-h-10 items-center text-[1.25rem] font-black leading-[1.05] tracking-[-0.015em] sm:text-[1.55rem] lg:text-[1.65rem] ${isActive ? 'text-white' : 'text-white/82'}`}>{faq.question}</span>
                             <AnimatePresence initial={false}>
                               {isActive ? (
                                 <motion.span
                                   key="answer"
-                                  className="block overflow-hidden text-sm leading-7 text-white/62 sm:text-base sm:leading-8"
+                                  className="mobile-faq-answer block overflow-hidden text-sm leading-7 text-white/62 sm:text-base sm:leading-8"
                                   initial={reducedMotion ? false : { height: 0, opacity: 0, y: -4 }}
                                   animate={reducedMotion ? { opacity: 1 } : { height: 'auto', opacity: 1, y: 0 }}
                                   exit={reducedMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: -4 }}
@@ -337,7 +337,7 @@ export function ContactFaqSection() {
                             </AnimatePresence>
                           </span>
                           <motion.span
-                            className={`mt-2.5 shrink-0 ${isActive ? accent.text : 'text-white/58'}`}
+                            className={`mobile-faq-toggle mt-2.5 shrink-0 ${isActive ? accent.text : 'text-white/58'}`}
                             animate={reducedMotion ? { rotate: isActive ? 45 : 0 } : { rotate: isActive ? 45 : 0 }}
                             transition={{ duration: reducedMotion ? 0 : 0.46, ease: [0.16, 1, 0.3, 1] }}
                           >
