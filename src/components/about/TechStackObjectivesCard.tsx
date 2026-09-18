@@ -26,8 +26,8 @@ export function TechStackObjectivesCard() {
           {techStack.map((item, index) => {
             const complete = index < 5;
             return (
-              <li key={item} className="relative grid grid-cols-[1fr_2.75rem_1fr] items-center text-[0.95rem] font-bold text-white/88 sm:text-base lg:text-[1.05rem]">
-                <span className={index % 2 ? 'col-start-3 pl-3 text-left' : 'col-start-1 pr-3 text-right'}>{item}</span>
+              <li key={item} className="relative grid grid-cols-[1fr_2.75rem_1fr] items-center text-[0.95rem] font-bold text-white/88 max-[430px]:grid-cols-[minmax(0,1fr)_2.75rem_minmax(0,1fr)] sm:text-base lg:text-[1.05rem]">
+                <span className={`${index % 2 ? 'col-start-3 pl-3 text-left' : 'col-start-1 pr-3 text-right'} max-[430px]:min-w-0 max-[430px]:break-words`}>{item}</span>
                 <span className={`relative z-10 col-start-2 row-start-1 mx-auto grid h-8 w-8 place-items-center rounded-full border bg-[#081027] lg:h-9 lg:w-9 ${complete ? 'border-secondary text-secondary shadow-[0_0_15px_5px_rgba(10,196,255,.3)]' : 'border-cyan-100/80 text-cyan-100 shadow-[0_0_11px_rgba(10,196,255,.24)]'}`}>
                   {complete ? <Check aria-hidden="true" className="h-[1.05rem] w-[1.05rem] lg:h-5 lg:w-5" /> : <Circle aria-hidden="true" className="h-3.5 w-3.5 lg:h-4 lg:w-4" />}
                 </span>

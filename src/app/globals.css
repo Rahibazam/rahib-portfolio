@@ -1036,10 +1036,6 @@ select {
     display: none;
   }
 
-  .mobile-filter-rail > * {
-    flex: 0 0 auto;
-  }
-
   .mobile-project-card {
     min-height: 0 !important;
     box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
@@ -1373,6 +1369,82 @@ select {
 
   .mobile-stats-grid > *:nth-child(n + 2) {
     border-top: 1px solid rgba(10, 196, 255, 0.16);
+  }
+}
+
+/* Image-bearing cards must read vertically on phone viewports: media, copy, action. */
+@media (max-width: 430px) {
+  /* Keep the filter shell fixed while the pills scroll inside it. */
+  .mobile-filter-rail {
+    overflow-x: visible;
+  }
+
+  .mobile-filter-rail > div {
+    min-width: 0;
+  }
+
+  .mobile-filter-pill-track {
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-filter-pill-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-image-card,
+  .mobile-image-card-layout {
+    min-width: 0;
+    max-width: 100%;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .mobile-image-card-layout {
+    display: grid !important;
+  }
+
+  .mobile-image-card-media,
+  .mobile-image-card-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Large illustrative icons follow the same visual-first card hierarchy. */
+  .mobile-icon-card-layout {
+    min-width: 0;
+    max-width: 100%;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .mobile-icon-card-visual,
+  .mobile-icon-card-content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* HubSpot service cards: visual header, then heading and description. */
+  .mobile-page-hubspot #services .system-rail-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.1rem;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item > div:first-of-type {
+    width: 100%;
+    min-width: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mobile-page-hubspot #services .system-rail-item > div:last-of-type {
+    width: 100%;
+    min-width: 0;
   }
 }
 

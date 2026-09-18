@@ -156,7 +156,7 @@ export default function HubSpotPage() {
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HubSpotSectionHeader title="How I Handle HubSpot Implementation" personalityLabel="My Highly Dramatic Method" description="Audit the existing portal, map the safe path, build the approved changes, and validate production behavior. The method is intentionally boring. The drama is supplied by the existing portal." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] max-[430px]:left-11 sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {hubspotProcess.map((step, index) => {
               const Icon = processIcons[index];
               return (
@@ -212,11 +212,11 @@ export default function HubSpotPage() {
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {hubspotProjects.map((project, index) => (
               <Reveal key={project.title} delay={index * 0.07} className="h-full min-w-0">
-                <article className="home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
-                  <div className="overflow-hidden rounded-t-[inherit]">
+                <article className="mobile-image-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
+                  <div className="mobile-image-card-media overflow-hidden rounded-t-[inherit]">
                     <HubSpotProjectVisual variant={project.visual} />
                   </div>
-                  <div className="flex min-w-0 flex-1 flex-col p-6 sm:p-7">
+                  <div className="mobile-image-card-content flex min-w-0 flex-1 flex-col p-6 sm:p-7">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
                       <Badge variant="soft" className="text-[0.58rem]">{project.status}</Badge>
@@ -235,7 +235,7 @@ export default function HubSpotPage() {
         <Reveal>
           <section id="hubspot-cta" className="home-module-strong relative my-14 grid min-h-[22rem] overflow-hidden rounded-panel border-secondary/35 p-7 sm:p-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:p-14">
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(105deg,rgba(10,196,255,0.08),transparent_48%,rgba(108,76,255,0.14))]" />
-            <div className="relative z-10">
+            <div className="relative z-10 max-[430px]:order-2">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[#ff805f]">HubSpot doing a thing?</p>
               <h2 className="home-display mt-5 max-w-4xl text-4xl font-black uppercase leading-[0.98] text-white sm:text-5xl lg:text-[4.3rem]">Please show me the <span className="text-gradient">thing.</span></h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/64 lg:text-lg">Send the HubSpot portal problem: workflow names, suspicious properties, reporting gaps, integration failures, screenshots, and “this only happens sometimes” are all perfectly valid ways to begin.</p>
@@ -243,7 +243,7 @@ export default function HubSpotPage() {
                 <ButtonTransitionLink href="/contact" size="lg" className="w-full rounded-lg px-9 sm:w-auto">Show Me The Portal <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
               </div>
             </div>
-            <div className="relative mt-10 grid place-items-center lg:mt-0">
+            <div className="relative mt-10 grid place-items-center max-[430px]:order-1 max-[430px]:mb-8 max-[430px]:mt-0 lg:mt-0">
               <div aria-hidden="true" className="absolute h-52 w-52 rounded-full bg-purple/25 blur-3xl" />
               <div className="relative grid h-52 w-52 place-items-center rounded-[2.2rem] border border-purple/45 bg-[linear-gradient(145deg,rgba(13,30,68,0.76),rgba(14,8,45,0.8))] shadow-[inset_1px_1px_0_rgba(255,255,255,0.12),0_0_60px_rgba(108,76,255,0.28)] [transform:rotate(6deg)] sm:h-64 sm:w-64">
                 <HubSpotMark className="h-28 w-28 text-[#ff7a59] drop-shadow-[0_0_28px_rgba(255,92,53,0.55)] sm:h-36 sm:w-36" />

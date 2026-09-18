@@ -94,12 +94,14 @@ export const homeFeaturedWork = [
   {
     title: 'HubSpot CRM Rebuild',
     image: '/images/projects/featured-architecture.svg',
+    description: 'Rebuilt CRM structure, lifecycle logic, automation, and reporting so the portal became easier to operate and trust.',
     tags: ['HubSpot', 'CRM Architecture', 'Reporting'],
     href: '/portfolio/hubspot-crm-rebuild'
   },
   {
     title: 'Website QA Crawler',
     image: '/images/projects/featured-surfing.svg',
+    description: 'Built a repeatable crawler that checks page health, visible output, and technical issues across large website inventories.',
     tags: ['TypeScript', 'Crawlee', 'Web QA'],
     href: '/portfolio#project-grid'
   }

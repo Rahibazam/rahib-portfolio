@@ -83,7 +83,7 @@ export default function AboutPage() {
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-3">
             {aboutPrinciples.map(({ title, Icon, description }, index) => (
               <Reveal key={title} delay={index * 0.07} className="h-full">
-                <article className={`system-rail-item group/principle relative flex h-full min-h-56 items-start gap-6 overflow-hidden px-5 py-9 transition-colors duration-500 motion-reduce:transition-none sm:px-7 sm:py-10 lg:min-h-64 lg:px-9 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
+                <article className={`mobile-icon-card-layout system-rail-item group/principle relative flex h-full min-h-56 items-start gap-6 overflow-hidden px-5 py-9 transition-colors duration-500 motion-reduce:transition-none sm:px-7 sm:py-10 lg:min-h-64 lg:px-9 ${index > 0 ? 'border-t border-secondary/20 lg:border-l lg:border-t-0' : ''}`}>
                   <span aria-hidden="true" className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-[linear-gradient(180deg,transparent,rgba(108,76,255,.055))] opacity-0 transition-opacity duration-500 group-hover/principle:opacity-100 motion-reduce:transition-none" />
                   <div className="relative z-10 grid h-14 w-14 shrink-0 place-items-center rounded-full border border-secondary/40 bg-[#07112d] text-secondary shadow-[0_0_24px_rgba(10,196,255,.15),inset_0_0_16px_rgba(10,196,255,.08)] transition-[border-color,box-shadow,color] duration-500 group-hover/principle:border-purple/65 group-hover/principle:text-white group-hover/principle:shadow-[0_0_30px_rgba(10,196,255,.28),0_0_22px_rgba(139,108,255,.2)] motion-reduce:transition-none"><Icon className="h-7 w-7" /></div>
                   <div className="relative z-10">
@@ -146,7 +146,7 @@ export default function AboutPage() {
               return (
                 <article
                   key={title}
-                  className="group relative overflow-hidden transition-colors duration-500 ease-premium hover:bg-white/[0.012] motion-reduce:transition-none"
+                  className="mobile-image-card group relative overflow-hidden transition-colors duration-500 ease-premium hover:bg-white/[0.012] motion-reduce:transition-none"
                 >
                   <div className="system-rail-item relative overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,.065),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.09),transparent_42%),linear-gradient(145deg,rgba(7,15,38,.42),rgba(8,10,34,.32))] backdrop-blur-[12px]">
                     <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${isPurple ? 'shadow-[inset_0_0_34px_rgba(108,76,255,.055)]' : 'shadow-[inset_0_0_34px_rgba(10,196,255,.045)]'}`} />
@@ -168,8 +168,8 @@ export default function AboutPage() {
                       <div className="absolute right-4 top-[58%] h-16 w-20 opacity-30 [background-image:radial-gradient(circle,currentColor_1px,transparent_1.8px)] [background-size:16px_16px]" />
                     </div>
 
-                    <div className="relative z-10 grid gap-7 p-6 md:p-8 lg:min-h-[14.75rem] lg:grid-cols-[minmax(20rem,0.38fr)_auto_1fr] lg:items-center lg:gap-8 xl:grid-cols-[minmax(22.5rem,0.32fr)_auto_minmax(16rem,0.23fr)_1fr] xl:gap-10">
-                      <div className="relative flex min-h-[13.5rem] items-center justify-center overflow-hidden [-webkit-mask-image:radial-gradient(ellipse_at_center,black_48%,rgba(0,0,0,.82)_62%,transparent_82%)] [mask-image:radial-gradient(ellipse_at_center,black_48%,rgba(0,0,0,.82)_62%,transparent_82%)] lg:min-h-[15.5rem]">
+                    <div className="mobile-image-card-layout relative z-10 grid gap-7 p-6 md:p-8 lg:min-h-[14.75rem] lg:grid-cols-[minmax(20rem,0.38fr)_auto_1fr] lg:items-center lg:gap-8 xl:grid-cols-[minmax(22.5rem,0.32fr)_auto_minmax(16rem,0.23fr)_1fr] xl:gap-10">
+                      <div className="mobile-image-card-media relative flex min-h-[13.5rem] items-center justify-center overflow-hidden [-webkit-mask-image:radial-gradient(ellipse_at_center,black_48%,rgba(0,0,0,.82)_62%,transparent_82%)] [mask-image:radial-gradient(ellipse_at_center,black_48%,rgba(0,0,0,.82)_62%,transparent_82%)] lg:min-h-[15.5rem]">
                         <div aria-hidden="true" className={`absolute h-60 w-72 rounded-full blur-[70px] ${imageBloom}`} />
                         <div aria-hidden="true" className={`absolute bottom-7 h-16 w-56 rounded-full blur-2xl ${imageBaseGlow}`} />
                         <div aria-hidden="true" className={`absolute inset-x-10 bottom-10 h-px bg-gradient-to-r from-transparent to-transparent ${imageHorizon}`} />
@@ -194,7 +194,7 @@ export default function AboutPage() {
 
                       <div aria-hidden="true" className={`hidden h-32 w-[2px] rounded-full bg-gradient-to-b from-transparent via-current to-transparent opacity-85 shadow-[0_0_20px_currentColor,0_0_40px_currentColor] lg:block ${accentText}`} />
 
-                      <div className="relative">
+                      <div className="mobile-image-card-content relative min-w-0">
                         <h2 className="font-display text-[1.65rem] font-black uppercase leading-[1.08] tracking-[0.03em] text-white sm:text-3xl lg:text-[1.85rem] xl:text-[2rem]">{title}</h2>
                         <span aria-hidden="true" className={`mt-3 block h-[3px] w-12 rounded-full ${accentLine}`} />
                         <p className="mt-5 max-w-[19rem] text-base leading-[1.55] text-white/72 lg:text-[1.03rem]">{description}</p>
@@ -230,7 +230,7 @@ export default function AboutPage() {
           />
 
           <div className="relative mt-10 space-y-5">
-            <div aria-hidden="true" className="absolute bottom-8 left-[1.18rem] top-8 w-px bg-gradient-to-b from-transparent via-secondary/55 to-purple/45 shadow-[0_0_20px_rgba(10,196,255,.38)] sm:left-[1.45rem]" />
+            <div aria-hidden="true" className="absolute bottom-8 left-[1.18rem] top-8 w-px bg-gradient-to-b from-transparent via-secondary/55 to-purple/45 shadow-[0_0_20px_rgba(10,196,255,.38)] max-[430px]:left-3 sm:left-[1.45rem]" />
 
             {aboutExperience.map((item, index) => {
               const isPurple = index % 2 === 1;
@@ -250,7 +250,7 @@ export default function AboutPage() {
 
               return (
                 <Reveal key={item.role} delay={index * 0.06}>
-                  <div className="relative grid grid-cols-[2.4rem_1fr] items-center gap-4 sm:grid-cols-[2.9rem_1fr]">
+                  <div className="relative grid grid-cols-[2.4rem_1fr] items-center gap-4 max-[430px]:grid-cols-[1.5rem_1fr] max-[430px]:gap-2 sm:grid-cols-[2.9rem_1fr]">
                     <div className="relative z-10 flex items-center justify-center">
                       <span
                         aria-hidden="true"
@@ -350,7 +350,7 @@ export default function AboutPage() {
                                 : 'bg-[linear-gradient(135deg,rgba(10,196,255,.9),rgba(10,196,255,.28)_34%,rgba(108,76,255,.56)_72%,rgba(255,255,255,.2))] shadow-[0_20px_60px_rgba(0,0,0,.34),0_0_34px_rgba(10,196,255,.16)] hover:shadow-[0_24px_72px_rgba(0,0,0,.44),0_0_54px_rgba(10,196,255,.32)]'
                             ].join(' ')}
                           >
-                            <div className="relative grid min-h-[11.25rem] grid-cols-[4.6rem_1fr] gap-4 overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,0.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,0.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,0.96),rgba(8,10,34,0.94))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.07)] [clip-path:polygon(0_0,calc(100%_-_2rem)_0,100%_2rem,100%_100%,2rem_100%,0_calc(100%_-_2rem))] sm:min-h-[12rem] sm:grid-cols-[5rem_1fr] sm:p-7 xl:min-h-[11.5rem] xl:p-8">
+                            <div className="relative grid min-h-[11.25rem] grid-cols-[4.6rem_1fr] gap-4 overflow-hidden bg-[radial-gradient(circle_at_15%_0%,rgba(10,196,255,0.09),transparent_30%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,0.14),transparent_42%),linear-gradient(145deg,rgba(7,15,38,0.96),rgba(8,10,34,0.94))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.07)] [clip-path:polygon(0_0,calc(100%_-_2rem)_0,100%_2rem,100%_100%,2rem_100%,0_calc(100%_-_2rem))] max-[430px]:grid-cols-1 max-[430px]:gap-5 sm:min-h-[12rem] sm:grid-cols-[5rem_1fr] sm:p-7 xl:min-h-[11.5rem] xl:p-8">
                               <div aria-hidden="true" className={`pointer-events-none absolute inset-0 ${isPurple ? 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_30px_rgba(108,76,255,.08)]' : 'shadow-[inset_0_1px_0_rgba(255,255,255,.10),inset_0_0_28px_rgba(10,196,255,.07)]'}`} />
                               {isRightColumn ? (
                                 <>

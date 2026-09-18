@@ -92,7 +92,7 @@ export default function HomePage() {
                       </span>
                       <Icon aria-hidden="true" className={`h-10 w-10 transition-[color,filter] duration-500 motion-reduce:transition-none lg:h-12 lg:w-12 ${problemIconStyles[index]}`} />
                     </div>
-                    <span aria-hidden="true" className="relative z-10 mt-6 h-px w-full origin-left bg-[linear-gradient(90deg,rgba(10,196,255,.5),rgba(139,108,255,.25),transparent)] transition-[transform,opacity] duration-500 group-hover/problem:scale-x-105 group-hover/problem:opacity-100 motion-reduce:transition-none" />
+                    <span aria-hidden="true" className="relative z-10 mt-6 h-px w-full origin-left bg-[linear-gradient(90deg,rgba(10,196,255,.5),rgba(139,108,255,.25),transparent)] transition-[transform,opacity] duration-500 group-hover/problem:scale-x-105 group-hover/problem:opacity-100 motion-reduce:transition-none max-[430px]:hidden" />
                     <h3 className="relative z-10 mt-6 font-display text-xl font-black leading-tight text-white lg:text-[1.55rem]">{problem.title}</h3>
                     <p className="relative z-10 mt-4 max-w-md text-sm leading-7 text-white/64 transition-colors duration-500 group-hover/problem:text-white/76 motion-reduce:transition-none lg:text-base">{problem.description}</p>
                   </article>
@@ -108,10 +108,10 @@ export default function HomePage() {
             {homeSystems.map((system, index) => {
               return (
                 <Reveal key={system.title} delay={index * 0.08}>
-                  <GlassCard className="mobile-support-card home-module h-full min-h-64 border-secondary/35 p-7 lg:min-h-[16.5rem] lg:p-9">
-                    <div className="flex min-h-[12.5rem] items-center gap-7 lg:min-h-[12rem]">
-                      <HomeSystemIcon type={systemIconTypes[index]} />
-                      <div>
+                  <GlassCard className="mobile-support-card mobile-icon-card home-module h-full min-h-64 border-secondary/35 p-7 lg:min-h-[16.5rem] lg:p-9">
+                    <div className="mobile-icon-card-layout flex min-h-[12.5rem] items-center gap-7 lg:min-h-[12rem]">
+                      <div className="mobile-icon-card-visual shrink-0"><HomeSystemIcon type={systemIconTypes[index]} /></div>
+                      <div className="mobile-icon-card-content min-w-0">
                         <h3 className="font-display text-xl font-black uppercase leading-tight text-white lg:text-[1.5rem]">{system.title}</h3>
                         <p className="mt-4 text-sm leading-7 text-white/64 lg:text-base">{system.description}</p>
                         <TransitionLink href={system.href} className="mt-6 inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.16em] text-secondary hover:text-cyan-100">
@@ -195,7 +195,7 @@ export default function HomePage() {
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>The Very Exciting <HeadingAccent>Process</HeadingAccent></>} description="Find the problem. Fix the problem. Check whether the fix invented a new problem. Repeat responsibly." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 md:grid md:grid-cols-3 md:py-10">
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-28 md:h-px md:w-auto" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.65),rgba(139,108,255,.48),rgba(10,196,255,.35))] shadow-[0_0_12px_rgba(10,196,255,.3)] max-[430px]:left-11 sm:left-12 md:bottom-auto md:left-[16.666%] md:right-[16.666%] md:top-28 md:h-px md:w-auto" />
             {homeProcess.map((step, index) => {
               const Icon = homeIcons[step.icon];
               return (
@@ -217,19 +217,19 @@ export default function HomePage() {
         </section>
 
         <Reveal>
-          <section id="home-cta" className="home-module-strong relative my-14 scroll-mt-28 overflow-hidden rounded-panel border-secondary/40 p-7 sm:p-10 lg:grid lg:min-h-[23rem] lg:grid-cols-[0.95fr_0.8fr_0.9fr] lg:items-center lg:gap-12 lg:p-14">
+          <section id="home-cta" className="home-module-strong relative my-14 scroll-mt-28 overflow-hidden rounded-panel border-secondary/40 p-7 max-[430px]:flex max-[430px]:flex-col sm:p-10 lg:grid lg:min-h-[23rem] lg:grid-cols-[0.95fr_0.8fr_0.9fr] lg:items-center lg:gap-12 lg:p-14">
             <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(100deg,rgba(10,196,255,0.06),transparent_42%,rgba(108,76,255,0.08))]" />
-            <div className="relative z-10">
+            <div className="relative z-10 max-[430px]:order-2">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-secondary">Your Turn, Unfortunately</p>
               <h2 className="home-display mt-5 text-5xl font-black uppercase leading-[0.96] tracking-[-0.02em] text-white sm:text-6xl lg:text-[4.5rem]">Show Me The Weird <HeadingAccent>Thing</HeadingAccent></h2>
               <div aria-hidden="true" className="mt-7 h-2 w-72 -rotate-2 rounded-full bg-gradient-to-r from-secondary via-purple to-transparent shadow-[0_0_26px_rgba(108,76,255,0.8)]" />
             </div>
-            <div className="relative z-10 mt-7 lg:mt-0">
+            <div className="relative z-10 mt-7 max-[430px]:order-3 lg:mt-0">
               <p className="text-sm leading-6 text-white/62">Send the HubSpot portal, CRM workflow, website, report, or suspicious spreadsheet that has started consuming meetings.</p>
               <p className="mt-2 text-sm leading-6 text-white/48">Screenshots welcome. Long context welcome. “It just does this sometimes” is also a completely usable starting point.</p>
               <ButtonTransitionLink href="/contact" size="lg" className="mt-7 rounded-lg px-9">Send It Over <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
-            <div className="relative z-10 mt-4 lg:mt-0"><HomeCTAVisual /></div>
+            <div className="relative z-10 mt-4 max-[430px]:order-1 max-[430px]:mb-8 max-[430px]:mt-0 lg:mt-0"><HomeCTAVisual /></div>
           </section>
         </Reveal>
 

@@ -122,21 +122,23 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
   return (
     <>
       <div aria-label="Filter projects by system" role="group" className="mobile-filter-rail -mx-5 mt-10 overflow-x-auto px-5 pb-3 sm:-mx-8 sm:px-8 xl:mx-0 xl:px-0">
-        <div className="flex min-w-max gap-3 rounded-2xl border border-secondary/15 bg-[#05091b]/55 p-2 backdrop-blur-xl xl:min-w-0 xl:flex-wrap">
-          {portfolioFilters.map((filter) => {
-            const active = filter.slug === 'all' ? selectedTags.length === 0 : selectedTags.includes(filter.slug);
-            return (
-              <button
-                key={filter.slug}
-                type="button"
-                aria-pressed={active}
-                onClick={() => handleFilterClick(filter.slug)}
-                className={`min-h-11 shrink-0 rounded-xl border px-5 font-mono text-xs font-bold uppercase tracking-[0.12em] transition duration-300 ${active ? 'border-secondary/55 bg-gradient-to-r from-secondary to-purple text-white shadow-[0_0_24px_rgba(10,196,255,0.28)]' : 'border-white/10 bg-white/[0.025] text-white/58 hover:border-secondary/35 hover:text-cyan-100'}`}
-              >
-                {filter.label}
-              </button>
-            );
-          })}
+        <div className="min-w-max rounded-2xl border border-secondary/15 bg-[#05091b]/55 p-1 backdrop-blur-xl xl:min-w-0">
+          <div className="mobile-filter-pill-track flex min-w-max gap-3 overflow-visible p-1 xl:min-w-0 xl:flex-wrap">
+            {portfolioFilters.map((filter) => {
+              const active = filter.slug === 'all' ? selectedTags.length === 0 : selectedTags.includes(filter.slug);
+              return (
+                <button
+                  key={filter.slug}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => handleFilterClick(filter.slug)}
+                  className={`min-h-11 shrink-0 rounded-xl border px-5 font-mono text-xs font-bold uppercase tracking-[0.12em] transition duration-300 ${active ? 'border-secondary/55 bg-gradient-to-r from-secondary to-purple text-white shadow-[0_0_24px_rgba(10,196,255,0.28)]' : 'border-white/10 bg-white/[0.025] text-white/58 hover:border-secondary/35 hover:text-cyan-100'}`}
+                >
+                  {filter.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
@@ -144,11 +146,11 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
         <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {visibleProjects.map((project, index) => (
             <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0">
-              <article className="mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
-                <div className="overflow-hidden rounded-t-[inherit]">
+              <article className="mobile-image-card mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
+                <div className="mobile-image-card-media overflow-hidden rounded-t-[inherit]">
                   <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
                 </div>
-                <div className="mobile-project-body flex min-w-0 flex-1 flex-col p-6 sm:p-7">
+                <div className="mobile-image-card-content mobile-project-body flex min-w-0 flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <p className="font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary">{project.category}</p>
                     {project.status ? <Badge variant="soft" className="hidden text-[0.58rem] sm:inline-flex">{project.status}</Badge> : null}
