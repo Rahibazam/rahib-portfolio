@@ -437,28 +437,30 @@ export default function AboutPage() {
             <div className="group/build-cta relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
-              <div className="relative min-h-[620px] min-w-0 overflow-visible rounded-[calc(2rem-1px)] sm:min-h-[590px] lg:h-[470px] lg:min-h-0">
-                <BuildTogetherBackground />
-
-                <div aria-hidden="true" className="pointer-events-none absolute right-[2%] top-1/2 z-20 hidden h-[29rem] w-[29rem] -translate-y-1/2 items-center justify-center lg:flex xl:right-[5%] xl:h-[32rem] xl:w-[32rem]">
-                  <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.20),rgba(108,76,255,.16)_42%,transparent_68%)] blur-2xl" />
-                  <span className="about-cta-orbit absolute h-52 w-[27rem] rounded-[50%] border border-[#0AC4FF]/78 shadow-[0_0_34px_rgba(10,196,255,.42)] [--orbit-duration:32s] [--orbit-start:-12deg]" />
-                  <span className="about-cta-orbit about-cta-orbit-reverse absolute h-64 w-[27rem] rounded-[50%] border border-[#4B6BFF]/70 shadow-[0_0_34px_rgba(75,107,255,.36),0_0_28px_rgba(10,196,255,.20)] [--orbit-duration:38s] [--orbit-start:30deg]" />
-                  <span className="about-cta-orbit absolute h-[23rem] w-52 rounded-[50%] border border-[#8B5CF6]/66 shadow-[0_0_32px_rgba(139,92,246,.34),0_0_24px_rgba(108,76,255,.22)] [--orbit-duration:44s] [--orbit-start:18deg]" />
-                  <span className="absolute left-[12%] top-[35%] h-3 w-3 rounded-full bg-[#0AC4FF] shadow-[0_0_22px_rgba(10,196,255,.98)]" />
-                  <span className="absolute right-[16%] top-[45%] h-3 w-3 rounded-full bg-[#9BA7FF] shadow-[0_0_20px_rgba(124,77,255,.72),0_0_14px_rgba(30,167,255,.45)]" />
-                  <span className="absolute bottom-[24%] right-[18%] h-4 w-4 rounded-full bg-[#8B5CFF] shadow-[0_0_26px_rgba(108,76,255,.98)]" />
-                  <div className="relative z-20 flex h-32 w-32 items-center justify-center rounded-full border border-[#0AC4FF]/34 bg-[#071126]/95 shadow-[inset_0_1px_0_rgba(10,196,255,.18),inset_0_0_26px_rgba(10,196,255,.08),0_0_56px_rgba(10,196,255,.32),0_0_70px_rgba(108,76,255,.24)]">
-                    <div aria-hidden="true" className="absolute -inset-4 rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.18),rgba(108,76,255,.12),transparent_72%)]" />
-                    <BrandMark className="relative h-16 w-16 drop-shadow-[0_0_26px_rgba(10,196,255,.76)]" />
-                  </div>
+              <div className="relative min-w-0 overflow-hidden rounded-[calc(2rem-1px)]">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                  <BuildTogetherBackground />
                 </div>
 
-                <div className="absolute left-0 top-0 z-30 flex h-full w-full min-w-0 items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
-                  <div className="w-full min-w-0 max-w-[720px] text-left [overflow-wrap:anywhere] lg:max-w-[660px] xl:max-w-[720px]">
+                <div className="relative z-30 grid min-w-0 gap-8 px-6 py-10 sm:px-10 sm:py-12 lg:min-h-[470px] lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:items-center lg:gap-10 lg:px-16 xl:px-20">
+                  <div aria-hidden="true" className="pointer-events-none relative order-1 mx-auto flex h-56 w-full max-w-[18rem] items-center justify-center sm:h-64 sm:max-w-[22rem] lg:order-2 lg:h-[29rem] lg:max-w-[29rem] xl:h-[32rem] xl:max-w-[32rem]">
+                    <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.20),rgba(108,76,255,.16)_42%,transparent_68%)] blur-2xl" />
+                    <span className="about-cta-orbit absolute h-[42%] w-[92%] rounded-[50%] border border-[#0AC4FF]/78 shadow-[0_0_34px_rgba(10,196,255,.42)] [--orbit-duration:32s] [--orbit-start:-12deg]" />
+                    <span className="about-cta-orbit about-cta-orbit-reverse absolute h-[55%] w-[92%] rounded-[50%] border border-[#4B6BFF]/70 shadow-[0_0_34px_rgba(75,107,255,.36),0_0_28px_rgba(10,196,255,.20)] [--orbit-duration:38s] [--orbit-start:30deg]" />
+                    <span className="about-cta-orbit absolute h-[78%] w-[45%] rounded-[50%] border border-[#8B5CF6]/66 shadow-[0_0_32px_rgba(139,92,246,.34),0_0_24px_rgba(108,76,255,.22)] [--orbit-duration:44s] [--orbit-start:18deg]" />
+                    <span className="absolute left-[8%] top-[34%] h-2.5 w-2.5 rounded-full bg-[#0AC4FF] shadow-[0_0_22px_rgba(10,196,255,.98)] sm:h-3 sm:w-3" />
+                    <span className="absolute right-[10%] top-[43%] h-2.5 w-2.5 rounded-full bg-[#9BA7FF] shadow-[0_0_20px_rgba(124,77,255,.72),0_0_14px_rgba(30,167,255,.45)] sm:h-3 sm:w-3" />
+                    <span className="absolute bottom-[16%] right-[14%] h-3.5 w-3.5 rounded-full bg-[#8B5CFF] shadow-[0_0_26px_rgba(108,76,255,.98)] sm:h-4 sm:w-4" />
+                    <div className="relative z-20 flex h-24 w-24 items-center justify-center rounded-full border border-[#0AC4FF]/34 bg-[#071126]/95 shadow-[inset_0_1px_0_rgba(10,196,255,.18),inset_0_0_26px_rgba(10,196,255,.08),0_0_56px_rgba(10,196,255,.32),0_0_70px_rgba(108,76,255,.24)] sm:h-28 sm:w-28 lg:h-32 lg:w-32">
+                      <div className="absolute -inset-4 rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.18),rgba(108,76,255,.12),transparent_72%)]" />
+                      <BrandMark className="relative h-12 w-12 drop-shadow-[0_0_24px_rgba(10,196,255,.76)] sm:h-14 sm:w-14 lg:h-16 lg:w-16" />
+                    </div>
+                  </div>
+
+                  <div className="order-2 min-w-0 text-left [overflow-wrap:anywhere] lg:order-1">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
                       <span>ENOUGH CHARACTER DEVELOPMENT</span>
-                      <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
+                      <span aria-hidden="true" className="h-px w-10 shrink-0 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
                     <h2 className="site-h2-statement">
@@ -471,17 +473,6 @@ export default function AboutPage() {
                     <p className="mt-7 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
                       If you have a HubSpot system, CRM workflow, website, CMS build, or technical implementation behaving strangely, send it over. I have made worse decisions voluntarily.
                     </p>
-
-                    <div aria-hidden="true" className="pointer-events-none relative mt-9 flex h-40 w-full items-center justify-start overflow-hidden lg:hidden">
-                      <div className="relative flex h-48 w-80 items-center justify-center">
-                        <span className="about-cta-orbit absolute h-32 w-72 rounded-[50%] border border-[#0AC4FF]/72 shadow-[0_0_22px_rgba(10,196,255,.34)] [--orbit-duration:32s] [--orbit-start:-12deg]" />
-                        <span className="about-cta-orbit about-cta-orbit-reverse absolute h-40 w-72 rounded-[50%] border border-[#4B6BFF]/64 shadow-[0_0_24px_rgba(75,107,255,.30),0_0_20px_rgba(10,196,255,.16)] [--orbit-duration:38s] [--orbit-start:30deg]" />
-                        <span className="about-cta-orbit absolute h-52 w-32 rounded-[50%] border border-[#8B5CF6]/58 shadow-[0_0_22px_rgba(139,92,246,.24),0_0_18px_rgba(108,76,255,.18)] [--orbit-duration:44s] [--orbit-start:18deg]" />
-                        <div className="relative z-20 flex h-24 w-24 items-center justify-center rounded-full border border-[#0AC4FF]/34 bg-[#071126]/95 shadow-[inset_0_1px_0_rgba(10,196,255,.18),inset_0_0_20px_rgba(10,196,255,.08),0_0_40px_rgba(10,196,255,.30),0_0_48px_rgba(108,76,255,.20)]">
-                          <BrandMark className="relative h-12 w-12 drop-shadow-[0_0_20px_rgba(10,196,255,.72)]" />
-                        </div>
-                      </div>
-                    </div>
 
                     <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row">
                       <TransitionLink

@@ -295,31 +295,31 @@ export default function ContactPage() {
           </Reveal>
         </section>
 
-        <section className="py-14 pb-24 sm:py-16 sm:pb-28">
+        <section className="mobile-contact-cta py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
-            <div className="group relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
-              <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="group/contact-cta relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+              <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/contact-cta:opacity-100" />
 
-              <div className="relative min-h-[650px] min-w-0 overflow-visible rounded-[calc(2rem-1px)] sm:min-h-[610px] lg:min-h-[38rem]">
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[linear-gradient(145deg,rgba(7,17,38,0.985),rgba(8,19,48,0.975)_45%,rgba(19,15,61,0.965)_100%)]" />
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_14%_0%,rgba(10,196,255,.18),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.20),transparent_40%)]" />
-                <div aria-hidden="true" className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.30),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(108,76,255,.34),transparent_44%)] opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
-
-                <div aria-hidden="true" className="absolute inset-x-0 -inset-y-32 z-10 translate-y-28 overflow-hidden transition-transform duration-1000 ease-out [mask-image:radial-gradient(ellipse_at_center,white,transparent)] motion-safe:group-hover:translate-y-16">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(10,196,255,.30),transparent_74%)]" />
-                  <div className="absolute -left-1/2 top-1/2 aspect-[1/1.7] w-[200%] rounded-[50%] border border-[#0A0F26]/70 bg-[#070B1D] shadow-[0_-30px_90px_rgba(10,196,255,.18),0_-12px_36px_rgba(108,76,255,.10)]" />
+              <div className="relative min-w-0 overflow-hidden rounded-[calc(2rem-1px)]">
+                <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
+                  <div className="absolute inset-0 z-0 bg-[linear-gradient(145deg,rgba(7,17,38,0.985),rgba(8,19,48,0.975)_45%,rgba(19,15,61,0.965)_100%)]" />
+                  <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_14%_0%,rgba(10,196,255,.18),transparent_28%),radial-gradient(circle_at_100%_100%,rgba(108,76,255,.20),transparent_40%)]" />
+                  <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.30),transparent_34%),radial-gradient(circle_at_82%_72%,rgba(108,76,255,.34),transparent_44%)] opacity-0 transition-opacity duration-700 group-hover/contact-cta:opacity-100" />
+                  <div className="absolute inset-x-0 -inset-y-32 z-10 translate-y-28 overflow-hidden transition-transform duration-1000 ease-out [mask-image:radial-gradient(ellipse_at_center,white,transparent)] motion-safe:group-hover/contact-cta:translate-y-16">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_center,rgba(10,196,255,.30),transparent_74%)]" />
+                    <div className="absolute -left-1/2 top-1/2 aspect-[1/1.7] w-[200%] rounded-[50%] border border-[#0A0F26]/70 bg-[#070B1D] shadow-[0_-30px_90px_rgba(10,196,255,.18),0_-12px_36px_rgba(108,76,255,.10)]" />
+                  </div>
                 </div>
 
-                <div aria-hidden="true" className="pointer-events-none absolute right-[2%] top-1/2 z-20 hidden h-[29rem] w-[29rem] -translate-y-1/2 items-center justify-center lg:flex xl:right-[5%] xl:h-[32rem] xl:w-[32rem]">
-                  <div className="absolute inset-[10%] rounded-full bg-[radial-gradient(circle,rgba(10,196,255,.20),rgba(108,76,255,.16)_42%,transparent_68%)] blur-2xl" />
-                  <HomeCTAVisual expression="wink" ringTilt="dramatic" />
-                </div>
+                <div className="relative z-30 grid min-w-0 gap-8 px-6 py-10 sm:px-10 sm:py-12 lg:min-h-[38rem] lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:items-center lg:gap-10 lg:px-16 xl:px-20">
+                  <div aria-hidden="true" className="pointer-events-none order-1 mx-auto w-full max-w-[18rem] sm:max-w-[24rem] lg:order-2 lg:max-w-[32rem] lg:scale-110">
+                    <HomeCTAVisual expression="wink" ringTilt="dramatic" />
+                  </div>
 
-                <div className="absolute left-0 top-0 z-30 flex h-full w-full min-w-0 items-center px-6 py-12 sm:px-10 lg:px-16 xl:px-20">
-                  <div className="w-full min-w-0 max-w-[720px] text-left [overflow-wrap:anywhere] lg:max-w-[660px] xl:max-w-[720px]">
+                  <div className="order-2 min-w-0 text-left [overflow-wrap:anywhere] lg:order-1">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">
                       <span>YOU READ ALL THAT?</span>
-                      <span aria-hidden="true" className="h-px w-10 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
+                      <span aria-hidden="true" className="h-px w-10 shrink-0 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                     </div>
 
                     <h2 className="site-h2-statement">
@@ -332,12 +332,6 @@ export default function ContactPage() {
                     <p className="mt-7 max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
                       Tell me about the HubSpot, CRM, automation, reporting, CMS, web development, or technical SEO problem. Best case, I can help. Worst case, we both learn why that workflow exists.
                     </p>
-
-                    <div aria-hidden="true" className="pointer-events-none relative mt-9 flex h-40 w-full items-center justify-start overflow-hidden lg:hidden">
-                      <div className="relative -ml-6 flex h-48 w-80 items-center justify-center scale-90 sm:ml-0 sm:scale-100">
-                        <HomeCTAVisual expression="wink" ringTilt="dramatic" />
-                      </div>
-                    </div>
 
                     <div className="mt-9 flex flex-col items-start gap-4 sm:flex-row">
                       <ButtonTransitionLink
