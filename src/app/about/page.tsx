@@ -45,7 +45,7 @@ export default function AboutPage() {
       <Container className="mobile-page mobile-page-about max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />
-          <Reveal className="relative z-10">
+          <Reveal priority className="relative z-10">
             <h1 className="home-display max-w-[58rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white">
               There is a person.<br />Management <HeadingAccent>regrets this.</HeadingAccent>
             </h1>

@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import { personalityCardClass } from './personalityStyles';
 
 type VideoFeatureCardProps = {
@@ -26,13 +29,34 @@ function BladeFallback() {
 }
 
 export function VideoFeatureCard({ sources }: VideoFeatureCardProps) {
+  const cardRef = useRef<HTMLElement>(null);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card || !sources.length) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setShouldLoadVideo(true);
+        observer.disconnect();
+      },
+      { rootMargin: '320px 0px' }
+    );
+
+    observer.observe(card);
+    return () => observer.disconnect();
+  }, [sources.length]);
+
   return (
-    <article className={`${personalityCardClass} h-full min-h-[22rem] p-0`}>
-      {sources.length ? (
-        <video aria-hidden="true" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 h-full w-full object-cover">
+    <article ref={cardRef} className={`${personalityCardClass} h-full min-h-[22rem] p-0`}>
+      <BladeFallback />
+      {sources.length && shouldLoadVideo ? (
+        <video aria-hidden="true" autoPlay muted loop playsInline preload="none" className="absolute inset-0 h-full w-full object-cover">
           {sources.map((source) => <source key={source} src={source} type={source.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />)}
         </video>
-      ) : <BladeFallback />}
+      ) : null}
       <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(3,7,18,.12),transparent_55%,rgba(3,5,15,.8)),radial-gradient(circle_at_center,transparent_30%,rgba(2,5,16,.42))]" />
     </article>
   );

@@ -12,7 +12,7 @@ export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
       data-page-content=""
-      initial={reducedMotion ? false : pageEnterStates.hidden}
+      initial={false}
       animate={reducedMotion || !destinationCovered ? pageEnterStates.visible : pageEnterStates.hidden}
       transition={{ duration: reducedMotion ? 0.01 : 0.68, ease: easeOutExpo }}
       className="relative z-10 min-h-screen pb-20"

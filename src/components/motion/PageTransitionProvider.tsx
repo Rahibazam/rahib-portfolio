@@ -122,7 +122,7 @@ export function PageTransitionProvider({ children }: { children: React.ReactNode
         aria-hidden="true"
         data-transition-phase={phase}
         className="fixed inset-0 z-[9999] grid place-items-center overflow-hidden bg-[#030512]"
-        initial={false}
+        initial={{ opacity: 0 }}
         animate={{ opacity: overlayOpacity }}
         transition={{ duration: overlayDuration / 1000, ease: easeInOutSoft }}
         style={{ pointerEvents: phase === 'idle' ? 'none' : 'auto' }}

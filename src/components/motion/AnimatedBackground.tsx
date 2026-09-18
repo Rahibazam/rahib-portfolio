@@ -1,10 +1,23 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { motionDurations } from './variants';
 
 export function AnimatedBackground() {
   const reducedMotion = useReducedMotion();
+  const [mobile, setMobile] = useState(true);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia('(max-width: 639px)');
+    const updateMobileState = () => setMobile(mobileQuery.matches);
+
+    updateMobileState();
+    mobileQuery.addEventListener('change', updateMobileState);
+    return () => mobileQuery.removeEventListener('change', updateMobileState);
+  }, []);
+
+  const shouldAnimate = !reducedMotion && !mobile;
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden bg-background">
@@ -72,7 +85,7 @@ export function AnimatedBackground() {
           <circle cx="1374" cy="808" r="2.5" opacity="0.55" />
         </g>
 
-        {!reducedMotion ? (
+        {shouldAnimate ? (
           <g filter="url(#signal-glow)">
             <motion.circle
               r="3.5"
@@ -91,20 +104,20 @@ export function AnimatedBackground() {
       </svg>
 
       <motion.div
-        className="absolute -left-32 top-8 h-80 w-80 rounded-full bg-secondary/12 blur-3xl will-change-transform sm:h-[32rem] sm:w-[32rem] sm:bg-secondary/18"
-        animate={reducedMotion ? undefined : { x: [0, 24, 0], y: [0, -26, 0], scale: [1, 1.06, 1] }}
-        transition={reducedMotion ? undefined : { duration: motionDurations.background, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -left-32 top-8 h-80 w-80 rounded-full bg-secondary/12 blur-3xl sm:h-[32rem] sm:w-[32rem] sm:bg-secondary/18 sm:will-change-transform"
+        animate={shouldAnimate ? { x: [0, 24, 0], y: [0, -26, 0], scale: [1, 1.06, 1] } : undefined}
+        transition={shouldAnimate ? { duration: motionDurations.background, repeat: Infinity, ease: 'easeInOut' } : undefined}
       />
       <motion.div
-        className="absolute -right-32 top-24 h-80 w-80 rounded-full bg-accent/14 blur-3xl will-change-transform sm:h-[38rem] sm:w-[38rem] sm:bg-accent/22"
-        animate={reducedMotion ? undefined : { x: [0, -24, 0], y: [0, 28, 0], scale: [1, 1.05, 1] }}
-        transition={reducedMotion ? undefined : { duration: 26, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -right-32 top-24 h-80 w-80 rounded-full bg-accent/14 blur-3xl sm:h-[38rem] sm:w-[38rem] sm:bg-accent/22 sm:will-change-transform"
+        animate={shouldAnimate ? { x: [0, -24, 0], y: [0, 28, 0], scale: [1, 1.05, 1] } : undefined}
+        transition={shouldAnimate ? { duration: 26, repeat: Infinity, ease: 'easeInOut' } : undefined}
       />
       <motion.div
         className="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-secondary/8 blur-3xl sm:h-[28rem] sm:w-[28rem] sm:bg-secondary/10"
         style={{ x: '-50%' }}
-        animate={reducedMotion ? undefined : { opacity: [0.34, 0.62, 0.34], scale: [1, 1.08, 1] }}
-        transition={reducedMotion ? undefined : { duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        animate={shouldAnimate ? { opacity: [0.34, 0.62, 0.34], scale: [1, 1.08, 1] } : undefined}
+        transition={shouldAnimate ? { duration: 18, repeat: Infinity, ease: 'easeInOut' } : undefined}
       />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent,rgba(0,0,0,0.58))]" />
     </div>

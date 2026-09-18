@@ -114,7 +114,7 @@ export default function ContactPage() {
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 lg:pb-28 xl:min-h-[52rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.1] blur-[120px]" />
           <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-1/4 h-[38rem] w-[38rem] rounded-full bg-purple/[0.1] blur-[130px]" />
-          <Reveal className="relative z-10">
+          <Reveal priority className="relative z-10">
             <h1 className="home-display max-w-[59rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[1.01] tracking-[-0.027em] text-white">
               <span className="block">Let’s skip</span>
               <span className="block"><HeadingAccent>the human rituals.</HeadingAccent></span>

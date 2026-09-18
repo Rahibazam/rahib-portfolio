@@ -22,9 +22,17 @@ export function SystemBootLoader() {
 
   useEffect(() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isPhoneViewport = window.matchMedia('(max-width: 639px)').matches;
     // Motion preferences are only available after the client mounts.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setReducedMotion(prefersReduced);
+
+    // The full boot sequence is a desktop enhancement. On phones it delays the
+    // first meaningful content and competes with hydration on slower CPUs.
+    if (isPhoneViewport) {
+      setShouldRender(false);
+      return;
+    }
 
     try {
       if (window.sessionStorage.getItem(BOOT_KEY)) {
