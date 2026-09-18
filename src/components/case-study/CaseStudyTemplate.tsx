@@ -118,7 +118,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         <section id="approach" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>Rebuild <HeadingAccent>Sequence</HeadingAccent></>} description="The work moved from diagnosis to architecture, implementation, and governance—in that order." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
-            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
+            <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-[2.8125rem] top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {caseStudy.stages.map((stage, index) => {
               const Icon = stageIcons[index] ?? CircleDotDashed;
               return (

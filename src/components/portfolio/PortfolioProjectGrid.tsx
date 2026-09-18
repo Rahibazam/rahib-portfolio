@@ -1,13 +1,17 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
 import type { Project } from '@/data/projects';
 import { Reveal } from '@/components/motion/Reveal';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
 import { PortfolioProjectVisual } from './PortfolioProjectVisual';
+
+const INITIAL_PROJECT_COUNT = 6;
+const PROJECT_COUNT_INCREMENT = 3;
 
 const portfolioFilters = [
   { label: 'All', slug: 'all' },
@@ -65,6 +69,7 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const [pagination, setPagination] = useState({ filterKey: '', visibleCount: INITIAL_PROJECT_COUNT });
 
   const selectedTags = useMemo(() => {
     const raw = searchParams.get('tags');
@@ -89,6 +94,13 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
     });
   }, [projects, selectedTags]);
 
+  const activeFilterKey = selectedTags.join(',');
+  const visibleCount = pagination.filterKey === activeFilterKey
+    ? pagination.visibleCount
+    : INITIAL_PROJECT_COUNT;
+  const paginatedProjects = visibleProjects.slice(0, visibleCount);
+  const remainingProjectCount = visibleProjects.length - paginatedProjects.length;
+
   function updateTags(nextTags: SelectablePortfolioFilterSlug[]) {
     const params = new URLSearchParams(searchParams.toString());
 
@@ -99,7 +111,15 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
     }
 
     const query = params.toString().replace(/%2C/g, ',');
+    setPagination({ filterKey: nextTags.join(','), visibleCount: INITIAL_PROJECT_COUNT });
     router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  }
+
+  function showMoreProjects() {
+    setPagination({
+      filterKey: activeFilterKey,
+      visibleCount: Math.min(visibleCount + PROJECT_COUNT_INCREMENT, visibleProjects.length)
+    });
   }
 
   function handleFilterClick(slug: PortfolioFilterSlug) {
@@ -143,10 +163,11 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
       </div>
 
       {visibleProjects.length ? (
-        <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {visibleProjects.map((project, index) => (
-            <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0">
-              <article className="mobile-image-card mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
+        <>
+          <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {paginatedProjects.map((project, index) => (
+              <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0">
+                <article className="mobile-image-card mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
                 <div className="mobile-image-card-media overflow-hidden rounded-t-[inherit]">
                   <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />
                 </div>
@@ -201,10 +222,26 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
                     <span className="mt-auto inline-flex w-fit items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-white/42">Case study draft</span>
                   )}
                 </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+
+          {remainingProjectCount > 0 ? (
+            <div className="mt-10 flex justify-center">
+              <Button
+                type="button"
+                variant="secondary"
+                size="lg"
+                onClick={showMoreProjects}
+                aria-label={`Load ${Math.min(PROJECT_COUNT_INCREMENT, remainingProjectCount)} more projects`}
+                className="w-full rounded-lg px-8 sm:w-auto"
+              >
+                Load More <ChevronDown aria-hidden="true" className="h-4 w-4" />
+              </Button>
+            </div>
+          ) : null}
+        </>
       ) : (
         <div className="home-module mt-7 rounded-row border-secondary/20 p-8 text-center sm:p-12">
           <p className="font-display text-xl font-black uppercase text-white">No projects match those filters yet.</p>
