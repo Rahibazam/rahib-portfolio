@@ -475,6 +475,36 @@ select {
   50% { transform: translate3d(0, -7px, 0); }
 }
 
+.viewport-floating-section {
+  animation: viewport-floating-drift var(--floating-duration, 9s) ease-in-out var(--floating-delay, 0s) infinite;
+  will-change: transform;
+}
+
+@keyframes viewport-floating-drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, var(--floating-distance, -4px), 0); }
+}
+
+[data-animation-state="paused"],
+[data-animation-state="paused"] * {
+  animation-play-state: paused !important;
+}
+
+[data-animation-state="paused"].viewport-floating-section,
+[data-animation-state="paused"] .command-orbit-ring,
+[data-animation-state="paused"] .home-icon-float,
+[data-animation-state="paused"] .home-cta-node,
+[data-animation-state="paused"] .about-atom-ring,
+[data-animation-state="paused"] .about-cosmic-orbit,
+[data-animation-state="paused"] .about-cta-orbit,
+[data-animation-state="paused"] .about-cta-star,
+[data-animation-state="paused"] .about-star,
+[data-animation-state="paused"] .about-nucleus,
+[data-animation-state="paused"] .about-marquee-track,
+[data-animation-state="paused"] .animate-social-dock-particle {
+  will-change: auto;
+}
+
 .boot-progress-fill {
   animation: boot-progress 1.8s var(--ease-premium) forwards;
   transform: scaleX(0);

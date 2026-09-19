@@ -10,6 +10,7 @@ import {
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { Container } from '@/components/ui/Container';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -186,7 +187,7 @@ export default function ContactPage() {
           />
 
           <Reveal>
-            <div className="mobile-social-dock relative overflow-hidden border-y border-secondary/25 px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
+            <AnimationVisibilityBoundary className="mobile-social-dock relative overflow-hidden border-y border-secondary/25 px-4 py-8 sm:px-6 sm:py-9 lg:px-8 lg:py-10">
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(10,196,255,.055),transparent_42%,rgba(139,108,255,.06))]" />
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
                 {socialDockParticles.map((particle, index) => (
@@ -244,7 +245,7 @@ export default function ContactPage() {
                   ))}
                 </div>
               </div>
-            </div>
+            </AnimationVisibilityBoundary>
           </Reveal>
         </section>
 
@@ -312,9 +313,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="relative z-30 grid min-w-0 gap-8 px-6 py-10 sm:px-10 sm:py-12 lg:min-h-[38rem] lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:items-center lg:gap-10 lg:px-16 xl:px-20">
-                  <div aria-hidden="true" className="pointer-events-none order-1 mx-auto w-full max-w-[18rem] sm:max-w-[24rem] lg:order-2 lg:max-w-[32rem] lg:scale-110">
+                  <AnimationVisibilityBoundary aria-hidden="true" className="pointer-events-none order-1 mx-auto w-full max-w-[18rem] sm:max-w-[24rem] lg:order-2 lg:max-w-[32rem] lg:scale-110">
                     <HomeCTAVisual expression="wink" ringTilt="dramatic" />
-                  </div>
+                  </AnimationVisibilityBoundary>
 
                   <div className="order-2 min-w-0 text-left [overflow-wrap:anywhere] lg:order-1">
                     <div className="mb-6 flex items-center gap-3 font-mono text-xs font-bold uppercase tracking-[0.24em] text-secondary">

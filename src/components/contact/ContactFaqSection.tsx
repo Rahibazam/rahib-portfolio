@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { HubSpotMark } from '@/components/brand/HubSpotMark';
 import { Reveal } from '@/components/motion/Reveal';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { ButtonLink } from '@/components/ui/Button';
 import { contactFaqTabs } from '@/data/contact';
@@ -124,7 +125,7 @@ function ContactFaqVisual({ tab }: { tab: ContactFaqTab }) {
   const accent = accentStyles[tab.accent];
 
   return (
-    <div>
+    <AnimationVisibilityBoundary>
       <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 bg-[radial-gradient(circle_at_20%_0%,rgba(10,196,255,.12),transparent_46%),linear-gradient(145deg,rgba(7,15,38,.82),rgba(8,10,34,.76))] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,.06)] backdrop-blur-xl sm:p-6">
         <div
           aria-hidden="true"
@@ -185,7 +186,7 @@ function ContactFaqVisual({ tab }: { tab: ContactFaqTab }) {
         </ButtonLink>
         <p className="mt-5 text-sm text-white/48">Usually replies within 12 hours.</p>
       </div>
-    </div>
+    </AnimationVisibilityBoundary>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Reveal } from '@/components/motion/Reveal';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import { CosmicAtomCard } from './CosmicAtomCard';
 import { Glitch404Card } from './Glitch404Card';
 import { MusicPlayerCard } from './MusicPlayerCard';
@@ -44,7 +45,7 @@ type AboutPersonalityGridProps = {
 
 export function AboutPersonalityGrid({ videoSources = [], availableAudio = {}, availableArtwork = {} }: AboutPersonalityGridProps) {
   return (
-    <div data-personality-grid className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[25rem_25rem_25rem]">
+    <AnimationVisibilityBoundary data-personality-grid className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[25rem_25rem_25rem]">
       <Reveal className="order-1 h-full md:row-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-1">
         <TechStackObjectivesCard />
       </Reveal>
@@ -76,6 +77,6 @@ export function AboutPersonalityGrid({ videoSources = [], availableAudio = {}, a
       <Reveal delay={0.12} className="order-7 h-full md:order-6 lg:col-start-1 lg:row-start-3">
         <Glitch404Card />
       </Reveal>
-    </div>
+    </AnimationVisibilityBoundary>
   );
 }

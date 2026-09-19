@@ -8,6 +8,7 @@ import { AboutPersonalityGrid } from '@/components/about/AboutPersonalityGrid';
 import { BrandMark } from '@/components/brand/BrandMark';
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
@@ -434,7 +435,7 @@ export default function AboutPage() {
 
         <section className="mobile-about-cta py-14 pb-24 sm:py-16 sm:pb-28">
           <Reveal>
-            <div className="group/build-cta relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
+            <AnimationVisibilityBoundary className="group/build-cta relative mx-auto overflow-visible rounded-[2rem] p-px shadow-[0_28px_90px_rgba(0,0,0,.45),0_0_42px_rgba(10,196,255,.20),0_0_58px_rgba(108,76,255,.16)]">
               <div aria-hidden="true" className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(10,196,255,.95),rgba(10,196,255,.28)_30%,rgba(108,76,255,.76)_78%,rgba(255,255,255,.16))] opacity-95 transition-opacity duration-500 group-hover/build-cta:opacity-100" />
 
               <div className="relative min-w-0 overflow-hidden rounded-[calc(2rem-1px)]">
@@ -493,7 +494,7 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </AnimationVisibilityBoundary>
           </Reveal>
         </section>
       </Container>

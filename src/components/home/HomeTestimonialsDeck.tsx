@@ -3,6 +3,7 @@
 import { useCallback, useState, type KeyboardEvent } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Radio, ShieldCheck } from 'lucide-react';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import type { Testimonial } from '@/data/testimonials';
 
 type HomeTestimonialsDeckProps = {
@@ -43,7 +44,7 @@ export function HomeTestimonialsDeck({ testimonials }: HomeTestimonialsDeckProps
   const nextIndex = (activeIndex + 1) % total;
 
   return (
-    <div
+    <AnimationVisibilityBoundary
       className="mobile-testimonial-deck relative isolate mt-10 overflow-hidden border-y border-secondary/25 py-7 outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-background sm:py-9"
       role="region"
       aria-roledescription="carousel"
@@ -208,6 +209,6 @@ export function HomeTestimonialsDeck({ testimonials }: HomeTestimonialsDeckProps
           </p>
         </div>
       </div>
-    </div>
+    </AnimationVisibilityBoundary>
   );
 }

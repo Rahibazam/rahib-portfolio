@@ -4,6 +4,7 @@ import { ArrowRight, BarChart3, Database, Gauge, PanelsTopLeft, Search, UserRoun
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
 import { FloatingSection } from '@/components/motion/FloatingSection';
+import { AnimationVisibilityBoundary } from '@/components/motion/AnimationVisibilityBoundary';
 import { ScrollFadeHero } from '@/components/motion/ScrollFadeHero';
 import { TransitionLink } from '@/components/motion/TransitionLink';
 import { Container } from '@/components/ui/Container';
@@ -229,7 +230,7 @@ export default function HomePage() {
               <p className="mt-2 text-sm leading-6 text-white/48">Screenshots welcome. Long context welcome. “It just does this sometimes” is also a completely usable starting point.</p>
               <ButtonTransitionLink href="/contact" size="lg" className="mt-7 rounded-lg px-9">Send It Over <ArrowRight aria-hidden="true" className="h-4 w-4" /></ButtonTransitionLink>
             </div>
-            <div className="relative z-10 mt-4 max-[430px]:order-1 max-[430px]:mb-8 max-[430px]:mt-0 lg:mt-0"><HomeCTAVisual /></div>
+            <AnimationVisibilityBoundary className="relative z-10 mt-4 max-[430px]:order-1 max-[430px]:mb-8 max-[430px]:mt-0 lg:mt-0"><HomeCTAVisual /></AnimationVisibilityBoundary>
           </section>
         </Reveal>
 

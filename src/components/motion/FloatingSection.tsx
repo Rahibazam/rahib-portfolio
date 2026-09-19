@@ -1,7 +1,9 @@
 'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import { cn } from '@/lib/utils';
+import { AnimationVisibilityBoundary } from './AnimationVisibilityBoundary';
 
 type FloatingSectionProps = {
   children: React.ReactNode;
@@ -14,15 +16,19 @@ type FloatingSectionProps = {
 export function FloatingSection({ children, className, delay = 0, duration = 9, distance = 4 }: FloatingSectionProps) {
   const reducedMotion = useReducedMotion();
   const safeDistance = Math.min(Math.max(distance, 2), 8);
+  const floatStyle = {
+    '--floating-distance': `${-safeDistance}px`,
+    '--floating-duration': `${Math.max(duration, 6)}s`,
+    '--floating-delay': `${delay}s`
+  } as CSSProperties;
 
   return (
-    <motion.div
+    <AnimationVisibilityBoundary
       data-floating-element=""
-      className={cn('will-change-transform', className)}
-      animate={reducedMotion ? undefined : { y: [0, -safeDistance, 0] }}
-      transition={reducedMotion ? undefined : { duration: Math.max(duration, 6), delay, repeat: Infinity, ease: 'easeInOut' }}
+      className={cn(!reducedMotion && 'viewport-floating-section', className)}
+      style={floatStyle}
     >
       {children}
-    </motion.div>
+    </AnimationVisibilityBoundary>
   );
 }
