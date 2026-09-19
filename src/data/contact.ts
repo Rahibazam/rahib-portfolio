@@ -52,7 +52,7 @@ export const contactSocialLinks = [
   },
   {
     label: 'Facebook',
-    href: 'https://www.facebook.com/rahib.ahmed.165/',
+    href: 'https://www.facebook.com/rahib.1x1/',
     ariaLabel: 'Open Rahib Azam on Facebook',
     icon: 'facebook'
   },
