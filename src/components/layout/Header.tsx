@@ -8,15 +8,18 @@ import { BrandMark } from '@/components/brand/BrandMark';
 import { Container } from '@/components/ui/Container';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { TransitionLink } from '@/components/motion/TransitionLink';
+import { pageTransitionTimings } from '@/components/motion/variants';
 import { navItems, siteConfig } from '@/data/site';
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [menuHandoff, setMenuHandoff] = useState(false);
   const pathname = usePathname();
   const prefersReducedMotion = useReducedMotion();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuDialogRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const menuHandoffTimerRef = useRef<number | null>(null);
   const isActiveRoute = (href: string) => href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
@@ -41,9 +44,39 @@ export function Header() {
     };
   }, [open]);
 
+  useEffect(() => () => {
+    if (menuHandoffTimerRef.current !== null) {
+      window.clearTimeout(menuHandoffTimerRef.current);
+    }
+  }, []);
+
   function closeMenu({ restoreFocus = true } = {}) {
+    if (menuHandoffTimerRef.current !== null) {
+      window.clearTimeout(menuHandoffTimerRef.current);
+      menuHandoffTimerRef.current = null;
+    }
+
     setOpen(false);
+    setMenuHandoff(false);
     if (restoreFocus) requestAnimationFrame(() => menuButtonRef.current?.focus());
+  }
+
+  function handOffMenuToRoute(href: string) {
+    const destinationPath = href.split(/[?#]/)[0];
+
+    if (destinationPath === pathname) {
+      closeMenu({ restoreFocus: false });
+      return;
+    }
+
+    setMenuHandoff(true);
+    const fadeInMs = prefersReducedMotion ? pageTransitionTimings.reduced.fadeInMs : pageTransitionTimings.standard.fadeInMs;
+
+    menuHandoffTimerRef.current = window.setTimeout(() => {
+      setOpen(false);
+      setMenuHandoff(false);
+      menuHandoffTimerRef.current = null;
+    }, fadeInMs + 50);
   }
 
   function handleMenuKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
@@ -101,7 +134,10 @@ export function Header() {
               aria-label="Open navigation menu"
               aria-controls="mobile-command-menu"
               aria-expanded={open}
-              onClick={() => setOpen(true)}
+              onClick={() => {
+                setMenuHandoff(false);
+                setOpen(true);
+              }}
             >
               <Menu size={18} />
             </button>
@@ -128,22 +164,27 @@ export function Header() {
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 opacity-35 [background-image:linear-gradient(rgba(255,255,255,.025)_1px,transparent_1px)] [background-size:100%_5px]" />
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.85),rgba(139,108,255,.7),transparent)]" />
 
-            <div className="flex shrink-0 items-center justify-between border-b border-white/[0.08] px-5 py-4">
-              <TransitionLink href="/" aria-label={`${siteConfig.name} home`} className="flex items-center gap-3" onClick={() => closeMenu({ restoreFocus: false })}>
-                <BrandMark className="h-11 w-11 drop-shadow-[0_0_16px_rgba(10,196,255,.48)]" />
-                <span className="font-display text-sm font-black uppercase tracking-[0.15em] text-white">Rahib <span className="text-secondary">Azam</span></span>
-              </TransitionLink>
+            <motion.div
+              className="relative flex min-h-0 flex-1 flex-col"
+              animate={{ opacity: menuHandoff ? 0 : 1 }}
+              transition={{ duration: prefersReducedMotion ? 0.01 : 0.08, ease: 'easeOut' }}
+            >
+              <div className="flex shrink-0 items-center justify-between border-b border-white/[0.08] px-5 py-4">
+                <TransitionLink href="/" aria-label={`${siteConfig.name} home`} className="flex items-center gap-3" onClick={() => handOffMenuToRoute('/')}>
+                  <BrandMark className="h-11 w-11 drop-shadow-[0_0_16px_rgba(10,196,255,.48)]" />
+                  <span className="font-display text-sm font-black uppercase tracking-[0.15em] text-white">Rahib <span className="text-secondary">Azam</span></span>
+                </TransitionLink>
 
-              <button
-                ref={closeButtonRef}
-                type="button"
-                className="grid h-11 w-11 place-items-center rounded-lg border border-secondary/35 bg-secondary/[0.06] text-white transition-colors hover:border-secondary/70 hover:bg-secondary/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70"
-                aria-label="Close navigation menu"
-                onClick={() => closeMenu()}
-              >
-                <X aria-hidden="true" size={19} />
-              </button>
-            </div>
+                <button
+                  ref={closeButtonRef}
+                  type="button"
+                  className="grid h-11 w-11 place-items-center rounded-lg border border-secondary/35 bg-secondary/[0.06] text-white transition-colors hover:border-secondary/70 hover:bg-secondary/[0.12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70"
+                  aria-label="Close navigation menu"
+                  onClick={() => closeMenu()}
+                >
+                  <X aria-hidden="true" size={19} />
+                </button>
+              </div>
 
             <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <motion.nav
@@ -172,7 +213,7 @@ export function Header() {
                       <TransitionLink
                         href={item.href}
                         aria-current={active ? 'page' : undefined}
-                        onClick={() => closeMenu({ restoreFocus: false })}
+                        onClick={() => handOffMenuToRoute(item.href)}
                         className={`group relative grid min-h-[3.65rem] grid-cols-[2.5rem_1fr_auto] items-center border-b border-white/[0.08] px-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-secondary/70 ${active ? 'bg-[linear-gradient(90deg,rgba(10,196,255,.13),rgba(139,108,255,.045),transparent)] text-white' : 'text-white/66 hover:bg-white/[0.035] hover:text-white'}`}
                       >
                         <span aria-hidden="true" className={`absolute inset-y-2 left-0 w-px transition-all ${active ? 'bg-secondary shadow-[0_0_14px_rgba(10,196,255,.9)]' : 'bg-transparent group-hover:bg-white/25'}`} />
@@ -194,7 +235,7 @@ export function Header() {
               <div className="mt-auto pt-6">
                 <ButtonTransitionLink
                   href="/contact"
-                  onClick={() => closeMenu({ restoreFocus: false })}
+                  onClick={() => handOffMenuToRoute('/contact')}
                   className="min-h-[3.35rem] w-full rounded-lg px-5 text-xs"
                 >
                   Bring Me A Problem <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
@@ -208,7 +249,8 @@ export function Header() {
                   <span aria-hidden="true" className="hidden min-[360px]:inline">RA / NAV</span>
                 </div>
               </div>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
         ) : null}
       </AnimatePresence>
