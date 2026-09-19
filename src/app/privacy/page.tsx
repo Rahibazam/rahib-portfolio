@@ -92,7 +92,7 @@ export default function PrivacyPage() {
               </p>
               <div className="mt-9 flex flex-wrap gap-x-8 gap-y-3 border-l border-secondary/45 pl-5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.15em] text-white/58">
                 <span>Effective September 11, 2026</span>
-                <span>Last updated September 11, 2026</span>
+                <span>Last updated September 19, 2026</span>
               </div>
             </div>
           </header>
@@ -203,7 +203,7 @@ export default function PrivacyPage() {
               <p>Depending on which site and business features are active, information may be processed by:</p>
               <div className="divide-y divide-white/10 border-y border-secondary/20">
                 {[
-                  ['Vercel', 'Website hosting, delivery, performance, and security infrastructure.'],
+                  ['Vercel', 'Website hosting, delivery, security infrastructure, privacy-focused Web Analytics, and Speed Insights performance measurement.'],
                   ['HubSpot', 'Forms, CRM, contact management, inquiry history, and—when enabled—website analytics or visitor tracking.'],
                   ['Google services', 'Email delivery and, if introduced, Google Analytics 4 for website measurement.'],
                   ['Payoneer', 'Payment processing after a project or professional engagement is agreed.']
@@ -225,6 +225,9 @@ export default function PrivacyPage() {
               </p>
               <p>
                 HubSpot may process form submissions, contact details, pages viewed, referral information, device information, and interaction data when its relevant features are enabled. Google Analytics 4 is not currently represented as an active site service; if it is introduced, this policy and the site’s cookie controls will be updated to identify its use and retention settings.
+              </p>
+              <p>
+                Vercel Web Analytics and Speed Insights measure page visits and real-user performance signals such as page-load responsiveness and visual stability. Vercel may receive information such as the page visited, referral source, browser or device category, approximate region, and performance measurements to provide aggregated site and Core Web Vitals reporting.
               </p>
               <p>
                 You can also restrict cookies through your browser. Blocking necessary technologies may affect site functionality. A persistent Cookie Settings control will be provided if non-essential tracking is activated.

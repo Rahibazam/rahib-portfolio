@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Orbitron, Quantico, Space_Grotesk } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import { HubSpotTracking } from '@/components/analytics/HubSpotTracking';
@@ -69,6 +71,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </PageTransitionProvider>
         </SmoothScrollProvider>
         <HubSpotTracking />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
