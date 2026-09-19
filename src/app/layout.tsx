@@ -3,6 +3,7 @@ import { Orbitron, Quantico, Space_Grotesk } from 'next/font/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import { HubSpotTracking } from '@/components/analytics/HubSpotTracking';
+import { PrivacyNotice } from '@/components/privacy/PrivacyNotice';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SystemBootLoader } from '@/components/layout/SystemBootLoader';
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex-1">{children}</div>
               <Footer />
             </div>
+            <PrivacyNotice />
           </PageTransitionProvider>
         </SmoothScrollProvider>
         <HubSpotTracking />
