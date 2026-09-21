@@ -16,6 +16,7 @@ import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { siteConfig } from '@/data/site';
 import { getSiteUrl } from '@/lib/siteUrl';
 import { getSiteStructuredData } from '@/lib/structuredData';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -39,7 +40,8 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: siteConfig.metaTitle,
   description: siteConfig.metaDescription,
-  metadataBase: new URL(getSiteUrl())
+  metadataBase: new URL(getSiteUrl()),
+  ...getSocialMetadata({ title: siteConfig.metaTitle, description: siteConfig.metaDescription, path: '/' })
 };
 
 export const viewport: Viewport = {

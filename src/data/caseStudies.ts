@@ -24,6 +24,7 @@ export type CaseStudyOutcome = {
 
 export type CaseStudy = {
   slug: string;
+  publicationStatus: 'draft' | 'published' | 'archived';
   status: string;
   client: string;
   confidentiality: string;
@@ -47,7 +48,8 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     "slug": "hubspot-crm-rebuild",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Confidential CRM engagement",
     "confidentiality": "Client identity, internal data model, and sensitive operating rules remain confidential.",
     "year": "2025–2026",
@@ -168,7 +170,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "hvac-lifecycle-automation",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Confidential growth engagement",
     "confidentiality": "Client identity, campaign content, phone data, and internal routing rules remain confidential.",
     "year": "2025–2026",
@@ -289,7 +292,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "audit-nurture-system",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Confidential nurture engagement",
     "confidentiality": "Client identity, message copy, workflow names, and internal notification channels remain confidential.",
     "year": "2026",
@@ -410,7 +414,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "pardot-database-rebuild",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Confidential healthcare engagement",
     "confidentiality": "Client identity, prospect data, email addresses, and internal campaign details remain confidential.",
     "year": "2026",
@@ -531,7 +536,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "website-qa-crawler",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Internal engineering tool",
     "confidentiality": "Client-specific URLs, credentials, screenshots, and private crawl evidence are excluded from public examples.",
     "year": "2026",
@@ -652,7 +658,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "hubspot-form-finder",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Internal marketing-operations tool",
     "confidentiality": "Client URLs, portal identifiers, approved form IDs, and private audit output remain confidential.",
     "year": "2026",
@@ -773,7 +780,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "nero-ai-second-brain",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Personal productivity system",
     "confidentiality": "Private journal content, personal records, connected files, and sensitive memory context are excluded entirely.",
     "year": "2026",
@@ -894,7 +902,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "private-media-archive",
-    "status": "Draft case study",
+    "publicationStatus": "published",
+    "status": "Published case study",
     "client": "Personal product experiment",
     "confidentiality": "Private media, identities, messages, and access credentials are intentionally excluded from the public case study.",
     "year": "2026",
@@ -1015,6 +1024,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     "slug": "legacy-portfolio-website",
+    "publicationStatus": "published",
     "status": "Published case study",
     "client": "Personal portfolio website",
     "confidentiality": "Only public portfolio content is included; private local paths and personal contact details are omitted.",
@@ -1139,4 +1149,3 @@ export const caseStudies: CaseStudy[] = [
 export function getCaseStudyBySlug(slug: string) {
   return caseStudies.find((caseStudy) => caseStudy.slug === slug);
 }
-

@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency,
       priority
     })),
-    ...caseStudies.map(({ slug }) => ({
+    ...caseStudies.filter(({ publicationStatus }) => publicationStatus === 'published').map(({ slug }) => ({
       url: `${siteUrl}/portfolio/${slug}`,
       changeFrequency: 'monthly' as const,
       priority: 0.7

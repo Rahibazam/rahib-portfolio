@@ -7,6 +7,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { siteConfig } from '@/data/site';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Rahib Azam',
@@ -14,7 +15,12 @@ export const metadata: Metadata = {
     'How Rahib Azam collects, uses, stores, and protects personal information submitted through this website.',
   alternates: {
     canonical: '/privacy'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'Privacy Policy | Rahib Azam',
+    description: 'How Rahib Azam collects, uses, stores, and protects personal information submitted through this website.',
+    path: '/privacy'
+  })
 };
 
 const privacyEmail = siteConfig.email;

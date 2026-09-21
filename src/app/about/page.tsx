@@ -17,13 +17,21 @@ import { ButtonTransitionLink } from '@/components/ui/Button';
 import { BuildTogetherBackground } from '@/components/ui/BuildTogetherBackground';
 import { Container } from '@/components/ui/Container';
 import { aboutExperience, aboutIntroCards, aboutPrinciples, aboutSnapshots, aboutToolkit } from '@/data/about';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getBreadcrumbStructuredData, getProfilePageStructuredData } from '@/lib/structuredData';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 export const metadata: Metadata = {
   title: 'About Rahib Azam | CRM, HubSpot & Web Technologist',
   description: 'Meet Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, CRM architecture, reporting, web development, CMS builds, and landing pages.',
   alternates: {
     canonical: '/about'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'About Rahib Azam | CRM, HubSpot & Web Technologist',
+    description: 'Meet Rahib Azam, a CRM & Web Technologist focused on HubSpot, automation, CRM architecture, reporting, web development, CMS builds, and landing pages.',
+    path: '/about'
+  })
 };
 
 export default function AboutPage() {
@@ -43,6 +51,8 @@ export default function AboutPage() {
 
   return (
     <PageShell>
+      <JsonLd data={getBreadcrumbStructuredData([{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }])} />
+      <JsonLd data={getProfilePageStructuredData()} />
       <Container className="mobile-page mobile-page-about max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[1.03fr_0.97fr] xl:gap-4">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.09] blur-[120px]" />

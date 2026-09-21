@@ -14,6 +14,7 @@ type RevealProps = {
   variant?: RevealVariant;
   once?: boolean;
   priority?: boolean;
+  hidden?: boolean;
 };
 
 const revealVariants = {
@@ -39,7 +40,7 @@ const reducedReveal = {
   visible: { opacity: 1 }
 } as const;
 
-export function Reveal({ children, className, delay = 0, amount = 0.18, variant = 'system', once = true, priority = false }: RevealProps) {
+export function Reveal({ children, className, delay = 0, amount = 0.18, variant = 'system', once = true, priority = false, hidden = false }: RevealProps) {
   const reducedMotion = useReducedMotion();
   const reveal = reducedMotion ? reducedReveal : revealVariants[variant];
   const duration = reducedMotion ? 0.2 : revealVariants[variant].duration;
@@ -49,6 +50,7 @@ export function Reveal({ children, className, delay = 0, amount = 0.18, variant 
   return (
     <motion.div
       data-reveal=""
+      hidden={hidden}
       className={cn(showScanline && 'relative isolate', className)}
       initial={priority ? false : reveal.hidden}
       whileInView={priority ? undefined : reveal.visible}

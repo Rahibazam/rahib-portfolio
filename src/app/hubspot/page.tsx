@@ -42,6 +42,9 @@ import { HubSpotSectionHeader } from '@/components/hubspot/HubSpotSectionHeader'
 import { HubSpotProblemMap } from '@/components/hubspot/HubSpotProblemMap';
 import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
 import { HeadingAccent } from '@/components/home/HomeSectionHeader';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getBreadcrumbStructuredData } from '@/lib/structuredData';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 import {
   hubspotProcess,
   hubspotProjects,
@@ -93,12 +96,18 @@ export const metadata: Metadata = {
   description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, pipelines, properties, forms, and integrations, designed and built hands-on.',
   alternates: {
     canonical: '/hubspot'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'HubSpot CRM Implementation Consultant | Rahib Azam',
+    description: 'HubSpot CRM implementation, cleanup, workflow automation, reporting, pipelines, properties, forms, and integrations, designed and built hands-on.',
+    path: '/hubspot'
+  })
 };
 
 export default function HubSpotPage() {
   return (
     <PageShell>
+      <JsonLd data={getBreadcrumbStructuredData([{ name: 'Home', path: '/' }, { name: 'HubSpot', path: '/hubspot' }])} />
       <Container className="mobile-page mobile-page-hubspot max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[0.95fr_1.05fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-48 top-1/4 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.08] blur-[120px]" />

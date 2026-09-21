@@ -9,7 +9,9 @@ import {
 } from 'lucide-react';
 import type { CaseStudy } from '@/data/caseStudies';
 import type { Project } from '@/data/projects';
-import { siteConfig } from '@/data/site';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getBreadcrumbStructuredData, getEntityIds } from '@/lib/structuredData';
+import { getSiteUrl } from '@/lib/siteUrl';
 import { CaseStudyTextHero } from '@/components/case-study/CaseStudyTextHero';
 import { CaseStudySystemSpine } from '@/components/case-study/CaseStudySystemSpine';
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
@@ -27,23 +29,28 @@ type CaseStudyTemplateProps = {
 const stageIcons = [ScanSearch, Layers3, GitBranch, CircleDotDashed];
 
 export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps) {
+  const siteUrl = getSiteUrl();
+  const { personId, websiteId } = getEntityIds();
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'CreativeWork',
+    url: `${siteUrl}/portfolio/${project.slug}`,
     name: project.title,
     description: project.summary,
-    author: { '@type': 'Person', name: siteConfig.name },
+    author: { '@id': personId },
+    isPartOf: { '@id': websiteId },
     keywords: project.tags.join(', '),
-    dateCreated: caseStudy.year,
     genre: project.category
   };
 
   return (
     <PageShell>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, '\\u003c') }}
-      />
+      <JsonLd data={structuredData} />
+      <JsonLd data={getBreadcrumbStructuredData([
+        { name: 'Home', path: '/' },
+        { name: 'Portfolio', path: '/portfolio' },
+        { name: project.title, path: `/portfolio/${project.slug}` }
+      ])} />
 
       <Container className="mobile-page mobile-page-case-study max-w-[108rem] px-5 sm:px-8 xl:px-10">
         <CaseStudyTextHero
@@ -81,7 +88,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </nav>
 
         <section id="challenge" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>The System <HeadingAccent>Problem</HeadingAccent></>} description="A CRM rebuild starts by identifying the connected failures underneath the visible symptoms." />
+          <HomeSectionHeader title={<>The System <HeadingAccent>Problem</HeadingAccent></>} description={`The ${project.category.toLowerCase()} work began by identifying the connected constraints beneath the visible symptoms.`} />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-[0.94fr_1.06fr]">
             <Reveal className="h-full">
               <div className="h-full px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-14">
@@ -141,7 +148,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="architecture" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Target System <HeadingAccent>Architecture</HeadingAccent></>} description="Four connected layers turned the portal from a collection of tools into an operating system." />
+          <HomeSectionHeader title={<>Target System <HeadingAccent>Architecture</HeadingAccent></>} description={`The ${project.category.toLowerCase()} architecture connects the layers that make this project work reliably.`} />
           <Reveal className="mt-10">
             <div className="mobile-architecture-module home-module-strong relative min-w-0 overflow-visible rounded-panel border-secondary/35 p-5 sm:p-8 lg:p-10">
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { CaseStudyTemplate } from '@/components/case-study/CaseStudyTemplate';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
 import { getProjectBySlug } from '@/data/projects';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
@@ -11,7 +12,9 @@ type CaseStudyPageProps = {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return caseStudies.map(({ slug }) => ({ slug }));
+  return caseStudies
+    .filter(({ publicationStatus }) => publicationStatus === 'published')
+    .map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata(props: CaseStudyPageProps): Promise<Metadata> {
@@ -27,11 +30,8 @@ export async function generateMetadata(props: CaseStudyPageProps): Promise<Metad
     title,
     description: caseStudy.heroStatement,
     alternates: { canonical: `/portfolio/${project.slug}` },
-    openGraph: {
-      title,
-      description: caseStudy.heroStatement,
-      type: 'article'
-    }
+    robots: caseStudy.publicationStatus === 'published' ? undefined : { index: false, follow: true },
+    ...getSocialMetadata({ title, description: caseStudy.heroStatement, path: `/portfolio/${project.slug}`, type: 'article' })
   };
 }
 

@@ -18,6 +18,7 @@ import { HomeSystemIcon } from '@/components/home/HomeSystemIcon';
 import { HomeTestimonialsDeck } from '@/components/home/HomeTestimonialsDeck';
 import { homeExperience, homeFeaturedWork, homeProblems, homeProcess, homeSystems, type HomeIconName } from '@/data/home';
 import { homeTestimonials } from '@/data/testimonials';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 const homeIcons: Record<HomeIconName, LucideIcon> = {
   database: Database,
@@ -44,7 +45,12 @@ export const metadata: Metadata = {
     'HubSpot consulting, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, and digital systems by Rahib Azam.',
   alternates: {
     canonical: '/'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'Rahib Azam | HubSpot, CRM & Web Development Specialist',
+    description: 'HubSpot consulting, CRM architecture, automation, reporting, web development, HubSpot CMS, landing pages, and digital systems by Rahib Azam.',
+    path: '/'
+  })
 };
 
 export default function HomePage() {

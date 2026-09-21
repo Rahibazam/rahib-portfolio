@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import type { Project } from '@/data/projects';
 import { Reveal } from '@/components/motion/Reveal';
@@ -65,25 +65,21 @@ function getProjectFilterSlugs(project: Project) {
     .filter((slug) => terms[slug].some((term) => searchable.includes(term) || projectTagSlugs.includes(term)));
 }
 
-export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
+function parseSelectedTags(raw: string) {
+  const requestedTags = raw
+    .split(',')
+    .map((tag) => tag.trim())
+    .filter((tag): tag is SelectablePortfolioFilterSlug => validFilterSlugs.has(tag as SelectablePortfolioFilterSlug));
+
+  return portfolioFilters
+    .map((filter) => filter.slug)
+    .filter((slug): slug is SelectablePortfolioFilterSlug => slug !== 'all' && requestedTags.includes(slug));
+}
+
+export function PortfolioProjectGrid({ projects, rawTags }: { projects: Project[]; rawTags: string }) {
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const [selectedTags, setSelectedTags] = useState(() => parseSelectedTags(rawTags));
   const [pagination, setPagination] = useState({ filterKey: '', visibleCount: INITIAL_PROJECT_COUNT });
-
-  const selectedTags = useMemo(() => {
-    const raw = searchParams.get('tags');
-    if (!raw) return [];
-
-    const requestedTags = raw
-      .split(',')
-      .map((tag) => tag.trim())
-      .filter((tag): tag is SelectablePortfolioFilterSlug => validFilterSlugs.has(tag as SelectablePortfolioFilterSlug));
-
-    return portfolioFilters
-      .map((filter) => filter.slug)
-      .filter((slug): slug is SelectablePortfolioFilterSlug => slug !== 'all' && requestedTags.includes(slug));
-  }, [searchParams]);
 
   const visibleProjects = useMemo(() => {
     if (selectedTags.length === 0) return projects;
@@ -98,11 +94,10 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
   const visibleCount = pagination.filterKey === activeFilterKey
     ? pagination.visibleCount
     : INITIAL_PROJECT_COUNT;
-  const paginatedProjects = visibleProjects.slice(0, visibleCount);
-  const remainingProjectCount = visibleProjects.length - paginatedProjects.length;
+  const remainingProjectCount = Math.max(visibleProjects.length - visibleCount, 0);
 
   function updateTags(nextTags: SelectablePortfolioFilterSlug[]) {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(window.location.search);
 
     if (nextTags.length === 0) {
       params.delete('tags');
@@ -111,8 +106,9 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
     }
 
     const query = params.toString().replace(/%2C/g, ',');
+    setSelectedTags(nextTags);
     setPagination({ filterKey: nextTags.join(','), visibleCount: INITIAL_PROJECT_COUNT });
-    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
+    router.push(query ? `/portfolio?${query}` : '/portfolio', { scroll: false });
   }
 
   function showMoreProjects() {
@@ -165,8 +161,8 @@ export function PortfolioProjectGrid({ projects }: { projects: Project[] }) {
       {visibleProjects.length ? (
         <>
           <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {paginatedProjects.map((project, index) => (
-              <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0">
+            {visibleProjects.map((project, index) => (
+              <Reveal key={project.slug} delay={Math.min(index * 0.055, 0.28)} className="h-full min-w-0" hidden={index >= visibleCount}>
                 <article className="mobile-image-card mobile-project-card home-module interactive-card flex h-full min-w-0 min-h-[35rem] flex-col overflow-visible rounded-card border-secondary/30">
                 <div className="mobile-image-card-media overflow-hidden rounded-t-[inherit]">
                   <PortfolioProjectVisual slug={project.slug} visualMode={project.visualMode} />

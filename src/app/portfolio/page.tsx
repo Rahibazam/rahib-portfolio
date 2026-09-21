@@ -1,6 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 import { ArrowRight, BarChart3, Database, GitBranch, PanelsTopLeft, Rocket, Send, Sparkles } from 'lucide-react';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
@@ -15,13 +14,21 @@ import { PortfolioHeroVisual } from '@/components/portfolio/PortfolioHeroVisual'
 import { PortfolioProjectGrid } from '@/components/portfolio/PortfolioProjectGrid';
 import { PortfolioProjectVisual } from '@/components/portfolio/PortfolioProjectVisual';
 import { projects } from '@/data/projects';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { getBreadcrumbStructuredData } from '@/lib/structuredData';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 export const metadata: Metadata = {
   title: 'HubSpot, CRM & Web Development Portfolio | Rahib Azam',
   description: 'Selected HubSpot, CRM, automation, reporting, web development, CMS, landing page, technical SEO, and implementation projects built by Rahib Azam.',
   alternates: {
     canonical: '/portfolio'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'HubSpot, CRM & Web Development Portfolio | Rahib Azam',
+    description: 'Selected HubSpot, CRM, automation, reporting, web development, CMS, landing page, technical SEO, and implementation projects built by Rahib Azam.',
+    path: '/portfolio'
+  })
 };
 
 const systems: Array<{ title: string; description: string; Icon: LucideIcon }> = [
@@ -31,12 +38,18 @@ const systems: Array<{ title: string; description: string; Icon: LucideIcon }> =
   { title: 'Web Development & CMS', description: 'Next.js, WordPress development, HubSpot CMS development, landing pages, responsive builds, accessibility, performance, QA, and browser diplomacy.', Icon: PanelsTopLeft }
 ];
 
-export default function PortfolioPage() {
+type PortfolioPageProps = {
+  searchParams: Promise<{ tags?: string | string[] }>;
+};
+
+export default async function PortfolioPage({ searchParams }: PortfolioPageProps) {
+  const { tags } = await searchParams;
   const featuredProject = projects.find((project) => project.slug === 'hubspot-crm-rebuild') ?? projects[0];
   const featuredImpact = ['Cleaner CRM structure', 'Stronger reporting foundation', 'Clearer pipeline logic', 'Safer automation'];
 
   return (
     <PageShell>
+      <JsonLd data={getBreadcrumbStructuredData([{ name: 'Home', path: '/' }, { name: 'Portfolio', path: '/portfolio' }])} />
       <Container className="mobile-page mobile-page-portfolio max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-20 xl:min-h-[47rem] xl:grid-cols-[0.92fr_1.08fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-52 top-1/5 h-[35rem] w-[35rem] rounded-full bg-secondary/[0.08] blur-[125px]" />
@@ -101,9 +114,7 @@ export default function PortfolioPage() {
 
         <section id="project-grid" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>Project <HeadingAccent>Archive</HeadingAccent></>} description="HubSpot CRM, automation, reporting, web development, CMS, technical SEO, and internal-tool projects. Also several perfectly normal amounts of documentation." />
-          <Suspense fallback={null}>
-            <PortfolioProjectGrid projects={projects} />
-          </Suspense>
+          <PortfolioProjectGrid key={typeof tags === 'string' ? tags : ''} projects={projects} rawTags={typeof tags === 'string' ? tags : ''} />
         </section>
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">

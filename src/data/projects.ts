@@ -37,7 +37,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": true,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/hubspot-crm-rebuild"
   },
   {
@@ -59,7 +59,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": true,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/hvac-lifecycle-automation"
   },
   {
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": false,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/audit-nurture-system"
   },
   {
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": true,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/pardot-database-rebuild"
   },
   {
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": true,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/website-qa-crawler"
   },
   {
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": true,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/hubspot-form-finder"
   },
   {
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": false,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/nero-ai-second-brain"
   },
   {
@@ -191,7 +191,7 @@ export const projects: Project[] = [
     ],
     "image": "/images/projects/project-placeholder.svg",
     "featured": false,
-    "status": "Draft case study",
+    "status": "Published case study",
     "href": "/portfolio/private-media-archive"
   },
   {
@@ -373,4 +373,3 @@ export const projects: Project[] = [
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
 }
-

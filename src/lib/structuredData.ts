@@ -3,8 +3,7 @@ import { getSiteUrl } from '@/lib/siteUrl';
 
 export function getSiteStructuredData() {
   const siteUrl = getSiteUrl();
-  const personId = `${siteUrl}/#person`;
-  const websiteId = `${siteUrl}/#website`;
+  const { personId, websiteId } = getEntityIds();
 
   return {
     '@context': 'https://schema.org',
@@ -44,5 +43,43 @@ export function getSiteStructuredData() {
         ]
       }
     ]
+  };
+}
+
+export function getEntityIds() {
+  const siteUrl = getSiteUrl();
+  return {
+    personId: `${siteUrl}/#person`,
+    websiteId: `${siteUrl}/#website`
+  };
+}
+
+export function getBreadcrumbStructuredData(items: Array<{ name: string; path: string }>) {
+  const siteUrl = getSiteUrl();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: `${siteUrl}${item.path}`
+    }))
+  };
+}
+
+export function getProfilePageStructuredData() {
+  const siteUrl = getSiteUrl();
+  const { personId, websiteId } = getEntityIds();
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    '@id': `${siteUrl}/about#profile`,
+    name: `About ${siteConfig.name}`,
+    url: `${siteUrl}/about`,
+    mainEntity: { '@id': personId },
+    isPartOf: { '@id': websiteId }
   };
 }

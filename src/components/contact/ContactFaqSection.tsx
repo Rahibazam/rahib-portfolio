@@ -2,7 +2,7 @@
 
 import type { CSSProperties } from 'react';
 import { useMemo, useState } from 'react';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowRight,
   Code2,
@@ -272,39 +272,43 @@ export function ContactFaqSection() {
 
       <Reveal delay={0.12}>
         <GlassCard interactive={false} className="mobile-faq-panel home-module-strong relative mt-0 overflow-visible rounded-panel rounded-tl-none border-secondary/35 p-5 sm:p-6 lg:p-8 xl:p-9">
-          <AnimatePresence mode="wait" initial={false}>
+          {contactFaqTabs.map((tab) => {
+            const isCurrentTab = activeTab.id === tab.id;
+            const accent = accentStyles[tab.accent];
+
+            return (
             <motion.div
-              key={activeTab.id}
-              id={`contact-faq-panel-${activeTab.id}`}
+              key={tab.id}
+              id={`contact-faq-panel-${tab.id}`}
               role="tabpanel"
-              aria-labelledby={`contact-faq-tab-${activeTab.id}`}
-              className="relative z-10 lg:grid lg:grid-cols-[0.42fr_1fr] lg:items-stretch lg:gap-8 xl:gap-10"
-              initial={reducedMotion ? false : { opacity: 0, y: 10, filter: 'blur(8px)' }}
-              animate={reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, filter: 'blur(0px)' }}
-              exit={reducedMotion ? { opacity: 0 } : { opacity: 0, y: -8, filter: 'blur(6px)' }}
+              aria-labelledby={`contact-faq-tab-${tab.id}`}
+              aria-hidden={!isCurrentTab}
+              hidden={!isCurrentTab}
+              className={`relative z-10 lg:grid-cols-[0.42fr_1fr] lg:items-stretch lg:gap-8 xl:gap-10 ${isCurrentTab ? 'lg:grid' : '!hidden'}`}
+              initial={false}
+              animate={isCurrentTab ? (reducedMotion ? { opacity: 1 } : { opacity: 1, y: 0, filter: 'blur(0px)' }) : { opacity: 0 }}
               transition={{ duration: reducedMotion ? 0 : 0.28, ease: [0.22, 1, 0.36, 1] }}
             >
               <div className="relative z-10 lg:border-r lg:border-white/10 lg:pr-8">
-                <ContactFaqVisual tab={activeTab} />
+                <ContactFaqVisual tab={tab} />
               </div>
 
               <div className="relative z-10 mt-8 lg:mt-0">
                 <div className="mb-5 rounded-[1rem] border border-white/10 bg-white/[0.025] p-4 sm:p-5">
-                  <p className={`font-mono text-xs font-bold uppercase tracking-[0.18em] ${accentStyles[activeTab.accent].text}`}>{activeTab.eyebrow}</p>
-                  <h3 className="mt-2 font-display text-2xl font-black uppercase tracking-[-0.01em] text-white">{activeTab.title}</h3>
-                  <p className="mt-2 max-w-3xl text-sm leading-6 text-white/58 sm:text-base">{activeTab.description}</p>
+                  <p className={`font-mono text-xs font-bold uppercase tracking-[0.18em] ${accent.text}`}>{tab.eyebrow}</p>
+                  <h3 className="mt-2 font-display text-2xl font-black uppercase tracking-[-0.01em] text-white">{tab.title}</h3>
+                  <p className="mt-2 max-w-3xl text-sm leading-6 text-white/58 sm:text-base">{tab.description}</p>
                 </div>
 
                 <div className="grid gap-4">
-                  {activeTab.questions.map((faq, index) => {
-                    const isActive = activeQuestionIndex === index;
-                    const accent = accentStyles[activeTab.accent];
+                  {tab.questions.map((faq, index) => {
+                    const isActive = isCurrentTab && activeQuestionIndex === index;
 
                     return (
                       <motion.article
                         layout={!reducedMotion}
                         transition={{ duration: reducedMotion ? 0 : 0.46, ease: [0.16, 1, 0.3, 1] }}
-                        key={`${activeTab.id}-${faq.question}`}
+                        key={`${tab.id}-${faq.question}`}
                         className={`mobile-faq-card relative overflow-hidden rounded-[1rem] border transition duration-300 ${
                           isActive
                             ? `${accent.border} bg-[linear-gradient(135deg,rgba(10,196,255,.07),rgba(139,108,255,.08))] shadow-[0_0_28px_rgba(10,196,255,.10),inset_0_1px_0_rgba(255,255,255,.06)]`
@@ -322,20 +326,15 @@ export function ContactFaqSection() {
                           </span>
                           <span className="mobile-faq-copy min-w-0 flex-1">
                             <span className={`mobile-faq-question home-display flex min-h-10 items-center text-[1.25rem] font-black leading-[1.05] tracking-[-0.015em] sm:text-[1.55rem] lg:text-[1.65rem] ${isActive ? 'text-white' : 'text-white/82'}`}>{faq.question}</span>
-                            <AnimatePresence initial={false}>
-                              {isActive ? (
-                                <motion.span
-                                  key="answer"
-                                  className="mobile-faq-answer block overflow-hidden text-sm leading-7 text-white/62 sm:text-base sm:leading-8"
-                                  initial={reducedMotion ? false : { height: 0, opacity: 0, y: -4 }}
-                                  animate={reducedMotion ? { opacity: 1 } : { height: 'auto', opacity: 1, y: 0 }}
-                                  exit={reducedMotion ? { opacity: 0 } : { height: 0, opacity: 0, y: -4 }}
-                                  transition={{ duration: reducedMotion ? 0 : 0.46, ease: [0.16, 1, 0.3, 1] }}
-                                >
-                                  <span className="block pt-4">{faq.answer}</span>
-                                </motion.span>
-                              ) : null}
-                            </AnimatePresence>
+                            <motion.span
+                              className="mobile-faq-answer block overflow-hidden text-sm leading-7 text-white/62 sm:text-base sm:leading-8"
+                              aria-hidden={!isActive}
+                              initial={false}
+                              animate={isActive ? { height: 'auto', opacity: 1, y: 0 } : { height: 0, opacity: 0, y: -4 }}
+                              transition={{ duration: reducedMotion ? 0 : 0.46, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                              <span className="block pt-4">{faq.answer}</span>
+                            </motion.span>
                           </span>
                           <motion.span
                             className={`mobile-faq-toggle mt-2.5 shrink-0 ${isActive ? accent.text : 'text-white/58'}`}
@@ -351,7 +350,8 @@ export function ContactFaqSection() {
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence>
+            );
+          })}
         </GlassCard>
       </Reveal>
 

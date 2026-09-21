@@ -8,6 +8,7 @@ import { TransitionLink } from '@/components/motion/TransitionLink';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Container';
 import { siteConfig } from '@/data/site';
+import { getSocialMetadata } from '@/lib/socialMetadata';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Rahib Azam',
@@ -15,7 +16,12 @@ export const metadata: Metadata = {
     'The terms governing use of Rahib Azam’s portfolio website, inquiries, portfolio materials, and professional service information.',
   alternates: {
     canonical: '/terms'
-  }
+  },
+  ...getSocialMetadata({
+    title: 'Terms & Conditions | Rahib Azam',
+    description: 'The terms governing use of Rahib Azam’s portfolio website, inquiries, portfolio materials, and professional service information.',
+    path: '/terms'
+  })
 };
 
 const contactEmail = siteConfig.email;
