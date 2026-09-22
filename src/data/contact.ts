@@ -144,7 +144,7 @@ export const contactFaqTabs = [
     questions: [
       {
         question: 'What kind of projects are the best fit?',
-        answer: 'Defined implementation problems are ideal—HubSpot cleanup, CRM architecture, workflow automation, reporting, CMS work, landing pages, technical SEO changes, integrations, or custom web development. Messy is completely fine. “We will discover the scope together for six months” is less romantic.'
+        answer: 'Defined implementation problems are ideal: HubSpot cleanup, CRM architecture, workflow automation, reporting, CMS work, landing pages, technical SEO changes, integrations, or custom web development. Messy is completely fine. “We will discover the scope together for six months” is less romantic.'
       },
       {
         question: 'Do you work remotely with other teams?',

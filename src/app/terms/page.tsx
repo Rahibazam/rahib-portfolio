@@ -229,7 +229,7 @@ export default function TermsPage() {
 
             <TermsSection id="intellectual-property" number="06" title="Intellectual property">
               <p>
-                Unless stated otherwise, original website material I created—including copy, portfolio descriptions, original graphics and illustrations, personal branding, interface designs, custom visual systems, animations, and custom source code—is owned by me or used under an applicable license. Third-party and open-source code remains subject to its own license and ownership terms.
+                Unless stated otherwise, original website material I created, including copy, portfolio descriptions, original graphics and illustrations, personal branding, interface designs, custom visual systems, animations, and custom source code, is owned by me or used under an applicable license. Third-party and open-source code remains subject to its own license and ownership terms.
               </p>
               <p>You may view the site for normal personal or professional evaluation and share links to public pages. Without permission, you may not:</p>
               <TermsList>

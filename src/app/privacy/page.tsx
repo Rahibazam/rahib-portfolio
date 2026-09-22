@@ -210,7 +210,7 @@ export default function PrivacyPage() {
               <div className="divide-y divide-white/10 border-y border-secondary/20">
                 {[
                   ['Vercel', 'Website hosting, delivery, security infrastructure, privacy-focused Web Analytics, and Speed Insights performance measurement.'],
-                  ['HubSpot', 'Forms, CRM, contact management, inquiry history, and—when enabled—website analytics or visitor tracking.'],
+                  ['HubSpot', 'Forms, CRM, contact management, inquiry history, and, when enabled, website analytics or visitor tracking.'],
                   ['Google services', 'Email delivery and, if introduced, Google Analytics 4 for website measurement.'],
                   ['Payoneer', 'Payment processing after a project or professional engagement is agreed.']
                 ].map(([name, purpose]) => (

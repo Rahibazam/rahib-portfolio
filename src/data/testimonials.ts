@@ -18,7 +18,7 @@ export const testimonials = [
     id: 'more-than-a-demo',
     title: 'More than just a demo',
     focus: 'Training & support',
-    quote: 'Rahib didn’t just explain HubSpot — he made sure we understood it. Clear walkthroughs, helpful materials, and actual support between sessions. You could tell he cared.'
+    quote: 'Rahib didn’t just explain HubSpot; he made sure we understood it. Clear walkthroughs, helpful materials, and actual support between sessions. You could tell he cared.'
   },
   {
     id: 'useful-onboarding',
@@ -36,19 +36,19 @@ export const testimonials = [
     id: 'quietly-brilliant',
     title: 'Quietly brilliant',
     focus: 'Problem solving',
-    quote: 'Rahib wasn’t the one making noise — he was the one quietly fixing everything while we were still explaining the problem. Calm, thoughtful, and honestly just really good at what he does. Never felt rushed, never felt lost.'
+    quote: 'Rahib wasn’t the one making noise. He was the one quietly fixing everything while we were still explaining the problem. Calm, thoughtful, and honestly just really good at what he does. Never felt rushed, never felt lost.'
   },
   {
     id: 'young-sharp',
     title: 'Young, sharp, gets it',
     focus: 'Solution delivery',
-    quote: 'We weren’t sure what to expect, but Rahib showed up prepared, listened more than he talked, and absolutely nailed the setup. He didn’t oversell or overtalk — just got straight to the point and made things work. Respect.'
+    quote: 'We weren’t sure what to expect, but Rahib showed up prepared, listened more than he talked, and absolutely nailed the setup. He didn’t oversell or overtalk; he just got straight to the point and made things work. Respect.'
   },
   {
     id: 'wise-beyond-his-age',
     title: 'Wise beyond his age',
     focus: 'HubSpot expertise',
-    quote: 'Honestly? We were surprised by how young Rahib is. But five minutes in, it was clear — he knew more about HubSpot than people twice his age. No fluff, no ego. Just someone who clearly lives in this stuff and quietly gets things done.'
+    quote: 'Honestly? We were surprised by how young Rahib is. But five minutes in, it was clear: he knew more about HubSpot than people twice his age. No fluff, no ego. Just someone who clearly lives in this stuff and quietly gets things done.'
   }
 ] satisfies Testimonial[];
 

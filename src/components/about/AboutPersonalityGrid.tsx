@@ -53,7 +53,7 @@ export function AboutPersonalityGrid({ videoSources = [], availableAudio = {}, a
       <Reveal delay={0.05} className="order-2 h-full lg:col-start-2 lg:row-start-1">
         <article className={`${personalityCardClass} flex min-h-[22rem] flex-col justify-center p-7 sm:min-h-[23rem] sm:p-8 lg:min-h-[25rem] lg:p-9`}>
           <AngularQuoteMark />
-          <p className="mt-6 max-w-lg font-display text-2xl font-bold leading-[1.34] text-white sm:text-[1.7rem] lg:text-[1.85rem]">Every section you see here has been rebuilt at least twice — once because I wasn’t happy, and once because I broke it trying to “<span className="text-gradient">improve</span>” it.</p>
+          <p className="mt-6 max-w-lg font-display text-2xl font-bold leading-[1.34] text-white sm:text-[1.7rem] lg:text-[1.85rem]">Every section you see here has been rebuilt at least twice: once because I wasn’t happy, and once because I broke it trying to “<span className="text-gradient">improve</span>” it.</p>
           <div aria-hidden="true" className="absolute bottom-6 right-7 flex gap-2"><i className="h-1 w-1 rounded-full bg-secondary" /><i className="h-1 w-1 rounded-full bg-secondary/70" /><i className="h-1 w-1 rounded-full bg-purple" /></div>
         </article>
       </Reveal>

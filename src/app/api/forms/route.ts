@@ -193,7 +193,7 @@ export async function POST(request: NextRequest) {
 
   // Silently accept honeypot submissions so automated senders receive no useful signal.
   if (cleanText(body.honeypot)) {
-    return NextResponse.json({ message: 'Thanks — your message has been received.' });
+    return NextResponse.json({ message: 'Thanks, your message has been received.' });
   }
 
   const startedAt = typeof body.startedAt === 'number' ? body.startedAt : 0;
@@ -260,7 +260,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    return NextResponse.json({ message: 'Thanks — your message has been sent.' });
+    return NextResponse.json({ message: 'Thanks, your message has been sent.' });
   } catch (error) {
     console.error('HubSpot form submission request failed', {
       formType,

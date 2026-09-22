@@ -24,7 +24,7 @@ export async function generateMetadata(props: CaseStudyPageProps): Promise<Metad
 
   if (!caseStudy || !project) return {};
 
-  const title = `${project.title} Case Study — Rahib Azam`;
+  const title = `${project.title} Case Study | Rahib Azam`;
 
   return {
     title,

@@ -429,7 +429,7 @@ export default function AboutPage() {
                   <div aria-hidden="true" className="absolute left-1/2 top-0 h-px w-40 -translate-x-1/2 bg-gradient-to-r from-transparent via-secondary/65 to-transparent shadow-[0_0_16px_rgba(10,196,255,.45)]" />
                   <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <span className="text-secondary/90">Baseline</span>
-                    <span className="text-white/30">—</span>
+                    <span className="text-white/30">·</span>
                     <span>Dhaka, BD • Remote-first</span>
                   </p>
                   <p className="flex flex-wrap items-center gap-x-3 gap-y-1 sm:justify-end">

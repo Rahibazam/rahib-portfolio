@@ -123,7 +123,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="approach" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Rebuild <HeadingAccent>Sequence</HeadingAccent></>} description="The work moved from diagnosis to architecture, implementation, and governance—in that order." />
+          <HomeSectionHeader title={<>Rebuild <HeadingAccent>Sequence</HeadingAccent></>} description="The work moved from diagnosis to architecture, implementation, and governance, in that order." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
             <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-[2.8125rem] top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {caseStudy.stages.map((stage, index) => {
@@ -160,7 +160,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="outcomes" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Qualitative <HeadingAccent>Outcomes</HeadingAccent></>} description="The engagement focused on structural improvement, so the strongest results are clearer operations—not invented vanity percentages." />
+          <HomeSectionHeader title={<>Qualitative <HeadingAccent>Outcomes</HeadingAccent></>} description="The engagement focused on structural improvement, so the strongest results are clearer operations, not invented vanity percentages." />
           <div className="mt-10 border-y border-secondary/25">
             <div className="hidden grid-cols-[0.22fr_0.39fr_0.39fr] border-b border-secondary/20 px-6 py-4 font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/38 md:grid">
               <span>System</span><span>Before</span><span>After rebuild</span>

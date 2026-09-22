@@ -12,7 +12,7 @@ export function getSiteStructuredData() {
         '@type': 'WebSite',
         '@id': websiteId,
         url: siteUrl,
-        name: `${siteConfig.name} — ${siteConfig.role}`,
+        name: `${siteConfig.name} | ${siteConfig.role}`,
         description: siteConfig.metaDescription,
         inLanguage: 'en',
         publisher: {

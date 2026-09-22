@@ -88,7 +88,7 @@ export function CaseStudySystemSpine({ layers }: CaseStudySystemSpineProps) {
           </div>
         </div>
 
-        <p className="mt-7 max-w-sm text-sm leading-7 text-white/58">Good automation and reporting sit on top of a governed data and process model—not the other way around.</p>
+        <p className="mt-7 max-w-sm text-sm leading-7 text-white/58">Good automation and reporting sit on top of a governed data and process model, not the other way around.</p>
       </div>
 
       <div className="divide-y divide-secondary/15 border-y border-secondary/20">

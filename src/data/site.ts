@@ -7,7 +7,7 @@ export const siteConfig = {
   linkedin: 'https://www.linkedin.com/in/rahib-azam/',
   github: 'https://github.com/Rahibazam/',
   resumePath: '/resume/Rahib-Azam-Resume.pdf',
-  metaTitle: 'Rahib Azam — CRM & Web Technologist',
+  metaTitle: 'Rahib Azam | CRM & Web Technologist',
   metaDescription:
     'Portfolio of Rahib Azam, a CRM & Web Technologist specialising in HubSpot, automation, CRM architecture, reporting, and web systems.',
   primaryMessage: 'I build systems. Then I stare at them.',

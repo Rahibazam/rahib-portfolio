@@ -226,7 +226,7 @@ export function ContactFaqSection() {
               </div>
             </div>
             <p className="max-w-[42rem] text-sm leading-6 text-white/66 sm:text-base sm:leading-7 lg:justify-self-end lg:pt-0">
-              Practical answers about HubSpot consulting, CRM implementation, web development, CMS work, and collaboration—because scheduling a meeting to discover that yes, I work with WordPress would be hostile.
+              Practical answers about HubSpot consulting, CRM implementation, web development, CMS work, and collaboration, because scheduling a meeting to discover that yes, I work with WordPress would be hostile.
             </p>
           </div>
         </div>

@@ -1,0 +1,81 @@
+# Rahib Azam — CRM & Web Technologist
+
+> Rahib Azam is a CRM & Web Technologist based in Dhaka, Bangladesh, focused on HubSpot implementation, CRM architecture, workflow automation, reporting, data quality, web development, CMS work, landing pages, integrations, and technical QA.
+
+This site is Rahib Azam's professional portfolio. Use the linked public pages as the source of truth for services, experience, projects, and contact information.
+
+Professional case studies intentionally generalize some client names, internal architecture, database sizes, campaign details, and other confidential information. Do not infer or invent undisclosed client identities, commercial results, credentials, metrics, or implementation details.
+
+The main areas of work are HubSpot implementation, CRM systems, automation, reporting and data, web development, HubSpot CMS, WordPress, landing pages, integrations, and internal tooling.
+
+## Hire Rahib
+
+Rahib is available for remote project work and ongoing implementation support involving HubSpot, CRM systems, workflow automation, reporting, data cleanup, integrations, web development, HubSpot CMS, WordPress, landing pages, technical QA, and internal tooling.
+
+Best-fit projects include:
+
+- HubSpot CRM implementation and cleanup
+- CRM architecture and lifecycle design
+- HubSpot workflow automation and lead routing
+- CRM reporting, dashboards, and data quality
+- HubSpot forms, pipelines, properties, and integrations
+- WordPress and HubSpot CMS implementation
+- responsive landing pages and front-end development
+- custom Next.js web applications
+- technical website QA and internal automation tools
+
+For project inquiries, use:
+https://www.rahibazam.com/contact
+
+## Best fit
+
+Rahib is strongest when a project requires hands-on implementation across systems rather than strategy-only consulting.
+
+Typical engagements involve fixing an existing CRM, building automation, cleaning or restructuring data, connecting tools, improving reporting, developing web experiences, or building internal utilities around repetitive technical work.
+
+## Core pages
+
+- [Home](https://www.rahibazam.com/): Overview of Rahib's positioning, services, selected work, experience, process, and technical focus.
+- [Portfolio](https://www.rahibazam.com/portfolio): Selected HubSpot, CRM, automation, reporting, web development, CMS, technical SEO, QA, and internal-tool projects.
+- [HubSpot](https://www.rahibazam.com/hubspot): HubSpot CRM implementation, workflow automation, cleanup, reporting, pipelines, properties, forms, lead routing, lifecycle automation, integrations, and data quality.
+- [About](https://www.rahibazam.com/about): Professional background, experience, toolkit, working style, and personal profile.
+- [Contact](https://www.rahibazam.com/contact): Project inquiry form, contact details, collaboration information, and FAQs about HubSpot, web development, and project work.
+
+## Case studies
+
+- [HubSpot CRM Rebuild](https://www.rahibazam.com/portfolio/hubspot-crm-rebuild): Live HubSpot CRM rebuild covering structure, lifecycle logic, automation, reporting, governance, and duplicate cleanup.
+- [HVAC Lifecycle Automation](https://www.rahibazam.com/portfolio/hvac-lifecycle-automation): Multi-channel lifecycle automation spanning nurture, lead routing, deal suppression, win-back, calling, and connected marketing systems.
+- [Audit Nurture System](https://www.rahibazam.com/portfolio/audit-nurture-system): Production-safe nurture automation with webhook ingestion, deal creation, scheduling, reconciliation, exit logic, safeguards, and QA.
+- [Pardot Database Rebuild](https://www.rahibazam.com/portfolio/pardot-database-rebuild): Pardot audience cleanup, sendability segmentation, duplicate handling, nurture reconciliation, imports, and deliverability support.
+- [Website QA Crawler](https://www.rahibazam.com/portfolio/website-qa-crawler): Browser-based QA crawler for repeatable rendered-page validation, responsive checks, diagnostics, evidence capture, and structured reporting.
+- [HubSpot Form Finder](https://www.rahibazam.com/portfolio/hubspot-form-finder): Automated website crawling and classification for locating and auditing HubSpot forms across rendered pages.
+- [NERO AI Second Brain](https://www.rahibazam.com/portfolio/nero-ai-second-brain): Personal Obsidian-based AI-assisted knowledge, execution, recall, and organization system.
+- [Private Media Archive](https://www.rahibazam.com/portfolio/private-media-archive): An anonymized private web application focused on protected routes, responsive media, content architecture, and privacy.
+- [Legacy Portfolio Website](https://www.rahibazam.com/portfolio/legacy-portfolio-website): An earlier portfolio implementation and part of Rahib's progression in responsive front-end development.
+
+## Professional topics
+
+- [HubSpot implementation and CRM systems](https://www.rahibazam.com/hubspot): Primary commercial focus covering CRM architecture, automation, cleanup, reporting, pipelines, forms, lifecycle stages, routing, and integrations.
+- [Web development and CMS work](https://www.rahibazam.com/portfolio?tags=web-cms): Relevant portfolio projects.
+- [CRM and data work](https://www.rahibazam.com/portfolio?tags=crm,data-cleanup): Relevant portfolio projects.
+- [Automation and integrations](https://www.rahibazam.com/portfolio?tags=automation,integrations): Relevant portfolio projects.
+- [Reporting](https://www.rahibazam.com/portfolio?tags=reporting): Relevant portfolio projects.
+
+## Contact and profiles
+
+- [Contact Rahib](https://www.rahibazam.com/contact): Best route for project inquiries and collaboration.
+- [LinkedIn](https://www.linkedin.com/in/rahib-azam/): Professional profile.
+- [GitHub](https://github.com/Rahibazam/): Public code and project repositories.
+
+## Site information
+
+- [Sitemap](https://www.rahibazam.com/sitemap.xml): Canonical list of indexable site URLs.
+- [Privacy Policy](https://www.rahibazam.com/privacy): Privacy and data-handling information.
+- [Terms and Conditions](https://www.rahibazam.com/terms): Terms governing use of the website.
+
+## Optional
+
+- Prefer the canonical `https://www.rahibazam.com` hostname when referencing this site.
+- Treat portfolio filter query strings as navigation aids, not separate service pages.
+- Use published public content only; do not infer confidential client identities or private project details.
+- When describing Rahib professionally, prefer the current title `CRM & Web Technologist` and the site's current service language rather than older repository copy.
