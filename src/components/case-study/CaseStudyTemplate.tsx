@@ -40,6 +40,8 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
     author: { '@id': personId },
     isPartOf: { '@id': websiteId },
     keywords: project.tags.join(', '),
+    dateCreated: caseStudy.createdAt,
+    dateModified: caseStudy.updatedAt,
     genre: project.category
   };
 
@@ -88,7 +90,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </nav>
 
         <section id="challenge" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>The System <HeadingAccent>Problem</HeadingAccent></>} description={`The ${project.category.toLowerCase()} work began by identifying the connected constraints beneath the visible symptoms.`} />
+          <HomeSectionHeader title={<>{caseStudy.headings.challenge.lead} <HeadingAccent>{caseStudy.headings.challenge.accent}</HeadingAccent></>} description={`The ${project.category.toLowerCase()} work began by identifying the connected constraints beneath the visible symptoms.`} />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-[0.94fr_1.06fr]">
             <Reveal className="h-full">
               <div className="h-full px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-14">
@@ -123,7 +125,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="approach" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Rebuild <HeadingAccent>Sequence</HeadingAccent></>} description="The work moved from diagnosis to architecture, implementation, and governance, in that order." />
+          <HomeSectionHeader title={<>{caseStudy.headings.approach.lead} <HeadingAccent>{caseStudy.headings.approach.accent}</HeadingAccent></>} description="The work moved from diagnosis to architecture, implementation, and governance, in that order." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
             <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-[2.8125rem] top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {caseStudy.stages.map((stage, index) => {
@@ -148,7 +150,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="architecture" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Target System <HeadingAccent>Architecture</HeadingAccent></>} description={`The ${project.category.toLowerCase()} architecture connects the layers that make this project work reliably.`} />
+          <HomeSectionHeader title={<>{caseStudy.headings.architecture.lead} <HeadingAccent>{caseStudy.headings.architecture.accent}</HeadingAccent></>} description={`The ${project.category.toLowerCase()} architecture connects the layers that make this project work reliably.`} />
           <Reveal className="mt-10">
             <div className="mobile-architecture-module home-module-strong relative min-w-0 overflow-visible rounded-panel border-secondary/35 p-5 sm:p-8 lg:p-10">
               <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
@@ -160,7 +162,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="outcomes" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>Qualitative <HeadingAccent>Outcomes</HeadingAccent></>} description="The engagement focused on structural improvement, so the strongest results are clearer operations, not invented vanity percentages." />
+          <HomeSectionHeader title={<>{caseStudy.headings.outcomes.lead} <HeadingAccent>{caseStudy.headings.outcomes.accent}</HeadingAccent></>} description="The engagement focused on structural improvement, so the strongest results are clearer operations, not invented vanity percentages." />
           <div className="mt-10 border-y border-secondary/25">
             <div className="hidden grid-cols-[0.22fr_0.39fr_0.39fr] border-b border-secondary/20 px-6 py-4 font-mono text-[0.62rem] font-bold uppercase tracking-[0.16em] text-white/38 md:grid">
               <span>System</span><span>Before</span><span>After rebuild</span>
@@ -178,7 +180,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
         </section>
 
         <section id="deliverables" className="scroll-mt-28 py-14 sm:py-16">
-          <HomeSectionHeader title={<>What Was <HeadingAccent>Delivered</HeadingAccent></>} description="A reusable case study should make the work tangible without exposing confidential client data." />
+          <HomeSectionHeader title={<>{caseStudy.headings.deliverables.lead} <HeadingAccent>{caseStudy.headings.deliverables.accent}</HeadingAccent></>} description="A reusable case study should make the work tangible without exposing confidential client data." />
           <div className="mt-10 grid border-y border-secondary/25 sm:grid-cols-2 lg:grid-cols-3">
             {caseStudy.deliverables.map((deliverable, index) => (
               <Reveal key={deliverable} delay={Math.min(index * 0.045, 0.25)} className="h-full">
@@ -211,7 +213,7 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
                     <span aria-hidden="true" className="h-px w-8 bg-gradient-to-r from-secondary to-transparent shadow-[0_0_12px_rgba(10,196,255,.8)]" />
                   </div>
 
-                  <h2 className="site-h2-statement mt-6">Architecture before <HeadingAccent>automation.</HeadingAccent></h2>
+                  <h2 className="site-h2-statement mt-6">{caseStudy.headings.closing.lead} <HeadingAccent>{caseStudy.headings.closing.accent}</HeadingAccent></h2>
                   <p className="mx-auto mt-7 max-w-5xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
                   <p className="mx-auto mt-5 max-w-5xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white">{caseStudy.confidentiality}</p>
 

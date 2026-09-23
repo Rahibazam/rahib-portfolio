@@ -22,9 +22,25 @@ export type CaseStudyOutcome = {
   title: string;
 };
 
+export type CaseStudySectionHeading = {
+  lead: string;
+  accent: string;
+};
+
+export type CaseStudySectionHeadings = {
+  challenge: CaseStudySectionHeading;
+  approach: CaseStudySectionHeading;
+  architecture: CaseStudySectionHeading;
+  outcomes: CaseStudySectionHeading;
+  deliverables: CaseStudySectionHeading;
+  closing: CaseStudySectionHeading;
+};
+
 export type CaseStudy = {
   slug: string;
   publicationStatus: 'draft' | 'published' | 'archived';
+  createdAt: string;
+  updatedAt: string;
   status: string;
   client: string;
   confidentiality: string;
@@ -32,6 +48,7 @@ export type CaseStudy = {
   engagement: string;
   role: string;
   heroStatement: string;
+  headings: CaseStudySectionHeadings;
   facts: CaseStudyFact[];
   challenge: {
     title: string;
@@ -49,6 +66,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "hubspot-crm-rebuild",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Confidential CRM engagement",
     "confidentiality": "Client identity, internal data model, and sensitive operating rules remain confidential.",
@@ -56,6 +75,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Live HubSpot CRM rebuild",
     "role": "CRM implementation specialist",
     "heroStatement": "Rebuilt a live HubSpot environment around cleaner data, lifecycle logic, automation, reporting, and governance while removing a large duplicate population from active operations.",
+    "headings": {
+      "challenge": { "lead": "Live HubSpot", "accent": "CRM Repair" },
+      "approach": { "lead": "CRM Cleanup and", "accent": "Rebuild" },
+      "architecture": { "lead": "CRM Data and Lifecycle", "accent": "Architecture" },
+      "outcomes": { "lead": "CRM Governance and", "accent": "Reporting" },
+      "deliverables": { "lead": "HubSpot CRM Rebuild", "accent": "Deliverables" },
+      "closing": { "lead": "CRM Cleanup Is", "accent": "Architecture" }
+    },
     "facts": [
       {
         "label": "Records",
@@ -171,6 +198,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "hvac-lifecycle-automation",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Confidential growth engagement",
     "confidentiality": "Client identity, campaign content, phone data, and internal routing rules remain confidential.",
@@ -178,6 +207,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Multi-channel lifecycle automation",
     "role": "Marketing automation specialist",
     "heroStatement": "Built an HVAC lifecycle system spanning nurture, hot-lead routing, deal suppression, win-back, monthly drip, calling, and cross-platform handoffs across connected marketing tools.",
+    "headings": {
+      "challenge": { "lead": "Disconnected Lead", "accent": "Lifecycle Automation" },
+      "approach": { "lead": "HVAC Lead Lifecycle", "accent": "Build" },
+      "architecture": { "lead": "Cross-Platform Lifecycle", "accent": "Architecture" },
+      "outcomes": { "lead": "Connected Lead Routing", "accent": "and Nurture" },
+      "deliverables": { "lead": "Lifecycle Automation", "accent": "Deliverables" },
+      "closing": { "lead": "Shared State", "accent": "Across Systems" }
+    },
     "facts": [
       {
         "label": "Main Track",
@@ -293,6 +330,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "audit-nurture-system",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Confidential nurture engagement",
     "confidentiality": "Client identity, message copy, workflow names, and internal notification channels remain confidential.",
@@ -300,6 +339,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Production nurture automation",
     "role": "HubSpot automation specialist",
     "heroStatement": "Built a production-safe audit nurture with webhook ingestion, automated deal creation, exit logic, reconciliation, scheduling, and extensive automated QA before activation.",
+    "headings": {
+      "challenge": { "lead": "Production-Safe", "accent": "Nurture Automation" },
+      "approach": { "lead": "Audit Nurture Workflow", "accent": "Build" },
+      "architecture": { "lead": "Nurture Safeguard", "accent": "Architecture" },
+      "outcomes": { "lead": "Reliable Nurture", "accent": "Operations" },
+      "deliverables": { "lead": "Audit Nurture", "accent": "Deliverables" },
+      "closing": { "lead": "Automation Should", "accent": "Fail Closed" }
+    },
     "facts": [
       {
         "label": "QA",
@@ -415,6 +462,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "pardot-database-rebuild",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Confidential healthcare engagement",
     "confidentiality": "Client identity, prospect data, email addresses, and internal campaign details remain confidential.",
@@ -422,6 +471,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Pardot data and nurture cleanup",
     "role": "CRM data specialist",
     "heroStatement": "Rebuilt the Pardot audience foundation by auditing a large prospect database, separating sendable records, resolving duplicates, and supporting cleaner nurture, import, and deliverability operations.",
+    "headings": {
+      "challenge": { "lead": "Recovering a Sendable", "accent": "Pardot Audience" },
+      "approach": { "lead": "Pardot Database", "accent": "Cleanup" },
+      "architecture": { "lead": "Prospect Data Governance", "accent": "Architecture" },
+      "outcomes": { "lead": "Pardot Audience and", "accent": "Deliverability" },
+      "deliverables": { "lead": "Pardot Data Operations", "accent": "Deliverables" },
+      "closing": { "lead": "Database Hygiene", "accent": "Enables Action" }
+    },
     "facts": [
       {
         "label": "Prospects",
@@ -537,6 +594,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "website-qa-crawler",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Internal engineering tool",
     "confidentiality": "Client-specific URLs, credentials, screenshots, and private crawl evidence are excluded from public examples.",
@@ -544,6 +603,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Automated page QA platform",
     "role": "Tool builder and QA engineer",
     "heroStatement": "Built a browser QA crawler that checks five sitemap classes across two viewports, classifies render health, captures evidence, and exports structured reports for repeatable validation.",
+    "headings": {
+      "challenge": { "lead": "Replacing Manual", "accent": "Website QA" },
+      "approach": { "lead": "Browser-Based QA", "accent": "Crawler" },
+      "architecture": { "lead": "Playwright Crawler", "accent": "Architecture" },
+      "outcomes": { "lead": "Repeatable Website QA", "accent": "Evidence" },
+      "deliverables": { "lead": "QA Crawler", "accent": "Deliverables" },
+      "closing": { "lead": "Render Health", "accent": "Before Findings" }
+    },
     "facts": [
       {
         "label": "Sitemaps",
@@ -659,6 +726,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "hubspot-form-finder",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Internal marketing-operations tool",
     "confidentiality": "Client URLs, portal identifiers, approved form IDs, and private audit output remain confidential.",
@@ -666,6 +735,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "HubSpot form usage auditor",
     "role": "Tool builder and QA specialist",
     "heroStatement": "Built a rendered HubSpot form-audit crawler that checked 397 pages, resolved active form IDs, classified mismatches, and produced a review-ready CSV instead of source-code guesses.",
+    "headings": {
+      "challenge": { "lead": "Auditing Active", "accent": "HubSpot Forms" },
+      "approach": { "lead": "Rendered Form Audit", "accent": "Pipeline" },
+      "architecture": { "lead": "HubSpot Form Detection", "accent": "Architecture" },
+      "outcomes": { "lead": "Review-Ready Form Audit", "accent": "Data" },
+      "deliverables": { "lead": "HubSpot Form Audit", "accent": "Deliverables" },
+      "closing": { "lead": "Rendered Evidence", "accent": "Beats Markup" }
+    },
     "facts": [
       {
         "label": "Pages",
@@ -781,6 +858,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "nero-ai-second-brain",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Personal productivity system",
     "confidentiality": "Private journal content, personal records, connected files, and sensitive memory context are excluded entirely.",
@@ -788,6 +867,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "AI-assisted knowledge system",
     "role": "System designer and operator",
     "heroStatement": "Built NERO, an AI-assisted Obsidian second brain with 14 vault sections, five operating modes, protected notes, agent rules, and cross-note recall for real workflows.",
+    "headings": {
+      "challenge": { "lead": "From Notes to", "accent": "Knowledge System" },
+      "approach": { "lead": "Obsidian Second Brain", "accent": "Design" },
+      "architecture": { "lead": "AI Knowledge System", "accent": "Architecture" },
+      "outcomes": { "lead": "Structured Cross-Note", "accent": "Recall" },
+      "deliverables": { "lead": "NERO Knowledge System", "accent": "Deliverables" },
+      "closing": { "lead": "Retrieval Requires", "accent": "Source Discipline" }
+    },
     "facts": [
       {
         "label": "Vault",
@@ -903,6 +990,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "private-media-archive",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Personal product experiment",
     "confidentiality": "Private media, identities, messages, and access credentials are intentionally excluded from the public case study.",
@@ -910,6 +999,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Private media web app",
     "role": "Product designer and developer",
     "heroStatement": "Built a password-protected Next.js media archive with typed content, protected routes, responsive galleries, video lightboxes, long-form story modals, and a structure designed to scale.",
+    "headings": {
+      "challenge": { "lead": "Structuring a Private", "accent": "Media Archive" },
+      "approach": { "lead": "Protected Next.js Archive", "accent": "Build" },
+      "architecture": { "lead": "Protected Media Archive", "accent": "Architecture" },
+      "outcomes": { "lead": "Scalable Private Content", "accent": "Structure" },
+      "deliverables": { "lead": "Media Archive", "accent": "Deliverables" },
+      "closing": { "lead": "Separate Access", "accent": "From Content" }
+    },
     "facts": [
       {
         "label": "Collections",
@@ -1025,6 +1122,8 @@ export const caseStudies: CaseStudy[] = [
   {
     "slug": "legacy-portfolio-website",
     "publicationStatus": "published",
+    "createdAt": "2026-09-16",
+    "updatedAt": "2026-09-16",
     "status": "Published case study",
     "client": "Personal portfolio website",
     "confidentiality": "Only public portfolio content is included; private local paths and personal contact details are omitted.",
@@ -1032,6 +1131,14 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Personal portfolio build",
     "role": "Frontend developer and designer",
     "heroStatement": "Built a three-page personal portfolio with animated backgrounds, responsive UI, drawer navigation, music playback, page transitions, and a local Tailwind production pipeline.",
+    "headings": {
+      "challenge": { "lead": "Building a Maintainable", "accent": "Portfolio" },
+      "approach": { "lead": "Responsive Tailwind Portfolio", "accent": "Build" },
+      "architecture": { "lead": "Static Frontend", "accent": "Architecture" },
+      "outcomes": { "lead": "Responsive Portfolio", "accent": "Experience" },
+      "deliverables": { "lead": "Frontend Website", "accent": "Deliverables" },
+      "closing": { "lead": "Complexity Justified", "accent": "a Framework" }
+    },
     "facts": [
       {
         "label": "Pages",

@@ -68,6 +68,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${spaceGrotesk.variable} ${quantico.variable} ${orbitron.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="describedby" href="/llms.txt" />
+      </head>
       <body className="antialiased">
         <JsonLd id="site-structured-data" data={getSiteStructuredData()} />
         <SystemBootLoader />
