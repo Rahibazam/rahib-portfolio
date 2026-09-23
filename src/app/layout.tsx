@@ -41,6 +41,16 @@ export const metadata: Metadata = {
   title: siteConfig.metaTitle,
   description: siteConfig.metaDescription,
   metadataBase: new URL(getSiteUrl()),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/favicon-96x96.png', type: 'image/png', sizes: '96x96' }
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }
+    ]
+  },
   ...getSocialMetadata({ title: siteConfig.metaTitle, description: siteConfig.metaDescription, path: '/' })
 };
 
