@@ -45,7 +45,7 @@ type AboutPersonalityGridProps = {
 
 export function AboutPersonalityGrid({ videoSources = [], availableAudio = {}, availableArtwork = {} }: AboutPersonalityGridProps) {
   return (
-    <AnimationVisibilityBoundary data-personality-grid className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[25rem_25rem_25rem]">
+    <AnimationVisibilityBoundary data-personality-grid className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-rows-[25rem_25rem_25rem]">
       <Reveal className="order-1 h-full md:row-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-1">
         <TechStackObjectivesCard />
       </Reveal>

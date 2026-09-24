@@ -111,10 +111,10 @@ export default function HomePage() {
 
         <section id="systems" className="scroll-mt-28 py-14 sm:py-16">
           <HomeSectionHeader title={<>What I Actually <HeadingAccent>Build</HeadingAccent></>} description="Most of my work lives where HubSpot, CRM automation, reporting, data, and web development start touching each other without adult supervision." />
-          <div className="mobile-support-group mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mobile-support-group mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {homeSystems.map((system, index) => {
               return (
-                <Reveal key={system.title} delay={index * 0.08}>
+                <Reveal key={system.title} delay={index * 0.08} className={index === homeSystems.length - 1 ? 'md:col-span-2 xl:col-span-1' : undefined}>
                   <GlassCard className="mobile-support-card mobile-icon-card home-module h-full min-h-64 border-secondary/35 p-7 lg:min-h-[16.5rem] lg:p-9">
                     <div className="mobile-icon-card-layout flex min-h-[12.5rem] items-center gap-7 lg:min-h-[12rem]">
                       <div className="mobile-icon-card-visual shrink-0"><HomeSystemIcon type={systemIconTypes[index]} /></div>
