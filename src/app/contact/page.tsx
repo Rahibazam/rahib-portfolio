@@ -271,7 +271,6 @@ export default function ContactPage() {
                   </span>
                 </>
               }
-              personalityLabel="Some Actual Numbers"
               description="A few measurable implementation results from real work. No motivational arithmetic required."
             />
           </Reveal>

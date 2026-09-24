@@ -131,7 +131,7 @@ export default function HubSpotPage() {
         </ScrollFadeHero>
 
         <section id="services" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="HubSpot Implementation & Automation" personalityLabel="Things I Do In There" description="I handle HubSpot CRM implementation, workflow automation, reporting, cleanup, forms, pipelines, lifecycle stages, lead routing, integrations, and connected HubSpot CMS work. HubSpot is very powerful, which is a beautiful way of saying there are many places to accidentally create consequences." />
+          <HubSpotSectionHeader title="HubSpot Implementation & Automation" description="I handle HubSpot CRM implementation, workflow automation, reporting, cleanup, forms, pipelines, lifecycle stages, lead routing, integrations, and connected HubSpot CMS work. HubSpot is very powerful, which is a beautiful way of saying there are many places to accidentally create consequences." />
           <div className="mt-10 border-y border-secondary/25 lg:grid lg:grid-cols-2">
             {hubspotServices.map((service, index) => {
               const Icon = serviceIcons[service.icon];
@@ -158,12 +158,12 @@ export default function HubSpotPage() {
         </section>
 
         <section id="problems" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="HubSpot CRM Cleanup & Data Quality" personalityLabel="Signs Your Portal Has Been Busy" description="These are common HubSpot CRM cleanup, workflow, reporting, lead-handoff, and integration problems. If any feel personal, I am not judging you. The portal and I will discuss it privately." />
+          <HubSpotSectionHeader title="HubSpot CRM Cleanup & Data Quality" description="These are common HubSpot CRM cleanup, workflow, reporting, lead-handoff, and integration problems. If any feel personal, I am not judging you. The portal and I will discuss it privately." />
           <HubSpotProblemMap />
         </section>
 
         <section id="process" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="How I Handle HubSpot Implementation" personalityLabel="My Highly Dramatic Method" description="Audit the existing portal, map the safe path, build the approved changes, and validate production behavior. The method is intentionally boring. The drama is supplied by the existing portal." />
+          <HubSpotSectionHeader title="How I Handle HubSpot Implementation" description="Audit the existing portal, map the safe path, build the approved changes, and validate production behavior. The method is intentionally boring. The drama is supplied by the existing portal." />
           <div className="relative mt-12 border-y border-secondary/25 py-4 sm:py-6 lg:grid lg:grid-cols-4 lg:py-10">
             <span aria-hidden="true" className="pointer-events-none absolute bottom-12 left-9 top-12 w-px bg-[linear-gradient(180deg,rgba(10,196,255,.68),rgba(139,108,255,.5),rgba(255,107,69,.4))] shadow-[0_0_12px_rgba(10,196,255,.3)] max-[430px]:left-11 sm:left-12 lg:bottom-auto lg:left-[12.5%] lg:right-[12.5%] lg:top-28 lg:h-px lg:w-auto" />
             {hubspotProcess.map((step, index) => {
@@ -197,7 +197,7 @@ export default function HubSpotPage() {
         </section>
 
         <section id="tools" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="HubSpot Integrations & Connected Systems" personalityLabel="The Extended Cast" description="HubSpot rarely operates alone. I have connected, supported, or validated data flows involving these systems; several have appeared in previous episodes." />
+          <HubSpotSectionHeader title="HubSpot Integrations & Connected Systems" description="HubSpot rarely operates alone. I have connected, supported, or validated data flows involving these systems; several have appeared in previous episodes." />
           <div className="relative mt-10 overflow-hidden border-y border-secondary/25">
             <span aria-hidden="true" className="pointer-events-none absolute left-0 right-0 top-1/2 z-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.28),rgba(139,108,255,.32),transparent)]" />
             <div className="relative z-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
@@ -217,7 +217,7 @@ export default function HubSpotPage() {
         </section>
 
         <section id="projects" className="scroll-mt-28 py-14 sm:py-16">
-          <HubSpotSectionHeader title="Selected HubSpot Implementation Work" personalityLabel="Previously In HubSpot" description="Structural CRM cleanup, duplicate prevention, lifecycle automation, and several moments of staring quietly at enrollment history." />
+          <HubSpotSectionHeader title="Selected HubSpot Implementation Work" description="Structural CRM cleanup, duplicate prevention, lifecycle automation, and several moments of staring quietly at enrollment history." />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {hubspotProjects.map((project, index) => (
               <Reveal key={project.title} delay={index * 0.07} className="h-full min-w-0">

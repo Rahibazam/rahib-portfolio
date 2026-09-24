@@ -3,11 +3,10 @@ import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionH
 type HubSpotSectionHeaderProps = {
   title: string;
   description: string;
-  personalityLabel?: string;
   className?: string;
 };
 
-export function HubSpotSectionHeader({ title, description, personalityLabel, className }: HubSpotSectionHeaderProps) {
+export function HubSpotSectionHeader({ title, description, className }: HubSpotSectionHeaderProps) {
   const words = title.trim().split(/\s+/);
   const accentWord = words.pop();
 
@@ -21,7 +20,6 @@ export function HubSpotSectionHeader({ title, description, personalityLabel, cla
         </>
       }
       description={description}
-      personalityLabel={personalityLabel}
     />
   );
 }

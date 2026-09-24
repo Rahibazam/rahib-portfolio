@@ -194,9 +194,6 @@ export function MusicPlayerCard({ availableAudio = {}, availableArtwork = {} }: 
           className="h-full w-full"
         />
       </div>
-      <button type="button" aria-label="Toggle favourite" className="absolute right-0 top-0 z-20 shrink-0 rounded-lg p-1 text-purple-200 transition hover:-translate-y-0.5 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary sm:right-auto sm:left-[7.75rem] lg:left-[9.25rem] xl:left-[10.25rem]">
-          <Heart aria-hidden="true" className="h-5 w-5 lg:h-6 lg:w-6" />
-      </button>
       <div className="mobile-image-card-layout relative z-10 grid grid-cols-1 gap-5 sm:mt-4 sm:grid-cols-[7.5rem_1fr] lg:mt-5 lg:grid-cols-[9rem_minmax(0,1fr)] lg:items-start lg:gap-5 xl:grid-cols-[10rem_minmax(0,1fr)] xl:gap-6">
         <div role="img" aria-label={`${activeTrack.title} cover artwork`} className="mobile-image-card-media relative mx-auto aspect-square w-full max-w-[13rem] overflow-hidden rounded-xl border border-white/12 bg-[#060813] shadow-[0_14px_35px_rgba(0,0,0,.5)] sm:mx-0 sm:max-w-none lg:rounded-2xl">
           {activeArtworkAvailable ? (
@@ -207,7 +204,12 @@ export function MusicPlayerCard({ availableAudio = {}, availableArtwork = {} }: 
           <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,.08),transparent_42%,rgba(0,0,0,.32)),radial-gradient(circle_at_50%_0%,rgba(10,196,255,.18),transparent_46%)]" />
         </div>
         <div className="mobile-image-card-content min-w-0 self-center lg:max-w-[22rem] xl:max-w-[23rem]">
-          <h3 className="mb-3 font-display text-lg font-black uppercase tracking-[0.04em] text-secondary lg:text-xl">Current Soundtrack</h3>
+          <div className="mb-3 flex items-start justify-between gap-4">
+            <h3 className="font-display text-lg font-black uppercase tracking-[0.04em] text-secondary lg:text-xl">Current Soundtrack</h3>
+            <button type="button" aria-label="Toggle favourite" className="shrink-0 rounded-lg p-1 text-purple-200 transition hover:-translate-y-0.5 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary">
+              <Heart aria-hidden="true" className="h-5 w-5 lg:h-6 lg:w-6" />
+            </button>
+          </div>
           <div className="min-w-0">
             <span className="block whitespace-normal break-words font-display text-2xl font-black leading-tight text-white sm:truncate lg:text-[1.78rem]" title={activeTrack.title}>{activeTrack.title}</span>
             <MarqueeText text={activeTrack.artist} className="mt-1 text-sm text-white/67 lg:text-base" />

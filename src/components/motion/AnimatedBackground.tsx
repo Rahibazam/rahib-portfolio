@@ -88,14 +88,20 @@ export function AnimatedBackground() {
         {shouldAnimate ? (
           <g filter="url(#signal-glow)">
             <motion.circle
+              cx="-60"
+              cy="350"
               r="3.5"
               fill="#63DCFF"
+              initial={{ cx: -60, cy: 350, opacity: 0 }}
               animate={{ cx: [-60, 265, 604, 948, 1320, 1660], cy: [350, 392, 281, 266, 331, 244], opacity: [0, 0.9, 0.65, 0.8, 0.55, 0] }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             />
             <motion.circle
+              cx="1660"
+              cy="682"
               r="3"
               fill="#9B83FF"
+              initial={{ cx: 1660, cy: 682, opacity: 0 }}
               animate={{ cx: [1660, 1374, 1110, 892, 482, -40], cy: [682, 808, 777, 680, 832, 870], opacity: [0, 0.8, 0.55, 0.75, 0.5, 0] }}
               transition={{ duration: 26, repeat: Infinity, ease: 'linear', delay: 4 }}
             />

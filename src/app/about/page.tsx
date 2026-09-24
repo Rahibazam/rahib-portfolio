@@ -118,7 +118,6 @@ export default function AboutPage() {
         <section className="mobile-about-toolkit py-14 sm:py-16">
           <HomeSectionHeader
             title={<>CRM, Web &amp; Automation <HeadingAccent>Toolkit</HeadingAccent></>}
-            personalityLabel="Things I Click"
             description="The stack changes by problem. These are tools I have used for HubSpot implementation, CRM systems, automation, web development, CMS work, and QA. They are currently aware of my existence."
           />
 
@@ -236,7 +235,6 @@ export default function AboutPage() {
         <section className="mobile-about-experience py-14 sm:py-16">
           <HomeSectionHeader
             title={<>CRM, HubSpot &amp; Web <HeadingAccent>Experience</HeadingAccent></>}
-            personalityLabel="Previously On Rahib"
             description="Hands-on HubSpot, CRM automation, web development, CMS, reporting, SEO, and implementation work. Apparently “he kept fixing stuff” is not considered sufficient professional history."
           />
 
