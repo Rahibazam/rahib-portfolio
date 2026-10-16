@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 
@@ -11,17 +11,6 @@ type HubSpotWindow = Window & {
 export function HubSpotTracking() {
   const pathname = usePathname();
   const isInitialPageView = useRef(true);
-  const [canLoadTracking, setCanLoadTracking] = useState(false);
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') return;
-
-    // HubSpot's analytics bundle is intentionally kept out of the initial
-    // render window; it can otherwise monopolize slower mobile CPUs while the
-    // hero and navigation are becoming interactive.
-    const trackingTimer = window.setTimeout(() => setCanLoadTracking(true), 8000);
-    return () => window.clearTimeout(trackingTimer);
-  }, []);
 
   useEffect(() => {
     if (process.env.NODE_ENV !== 'production') return;
@@ -39,13 +28,13 @@ export function HubSpotTracking() {
     hubSpotWindow._hsq.push(['trackPageView']);
   }, [pathname]);
 
-  if (process.env.NODE_ENV !== 'production' || !canLoadTracking) return null;
+  if (process.env.NODE_ENV !== 'production') return null;
 
   return (
     <Script
       id="hs-script-loader"
       src="https://js-na2.hs-scripts.com/50435581.js"
-      strategy="lazyOnload"
+      strategy="afterInteractive"
     />
   );
 }

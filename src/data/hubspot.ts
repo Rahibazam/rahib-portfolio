@@ -55,21 +55,21 @@ export const hubspotProjects = [
     href: '/portfolio/hubspot-crm-rebuild'
   },
   {
-    title: 'Duplicate Deal Prevention',
-    category: 'HubSpot Workflow Automation',
-    description: 'Designed deal-creation guardrails that prevented duplicates while preserving existing lead paths, vendor routing, company-association edge cases, and the workflows already depending on them.',
-    tags: ['Duplicate prevention', 'Existing flows protected', 'Edge cases handled'],
+    title: 'HVAC Lifecycle Automation',
+    category: 'Lifecycle Automation',
+    description: 'Built a multi-system HVAC lead lifecycle across HubSpot, Zapier, Instantly, Aircall, Slack, and Meta workflows, including multi-touch nurture, role-based sequencing, hot-lead routing, win-back, monthly drip, and deal-based suppression.',
+    tags: ['Multi-touch nurture', 'Role-based nurture track', 'Delayed win-back logic'],
     visual: 'workflow',
-    status: 'Draft case study',
-    href: undefined
+    status: 'Published case study',
+    href: '/portfolio/hvac-lifecycle-automation'
   },
   {
-    title: 'Audit Nurture Automation',
-    category: 'Lifecycle Automation',
-    description: 'Built and QA’d a multi-touch nurture with booking and reply stops, webhook ingestion, deal creation, scheduling, reconciliation, isolation safeguards, and production error alerts.',
-    tags: ['41 QA tests', 'Automated deal creation', 'Production safeguards'],
+    title: 'Audit Nurture System',
+    category: 'HubSpot Automation',
+    description: 'Built and QA’d a multi-touch audit nurture with primary and fallback paths, booking and reply exits, webhook-driven deal creation, reconciliation, scheduling, error alerts, and production isolation safeguards validated through extensive automated testing.',
+    tags: ['Extensive QA coverage', 'Primary nurture path', 'Fallback nurture path'],
     visual: 'reporting',
-    status: 'Draft case study',
-    href: undefined
+    status: 'Published case study',
+    href: '/portfolio/audit-nurture-system'
   }
 ] as const;

@@ -1,4 +1,132 @@
-import { BarChart3, Check, GitBranch, Image as ImageIcon, PanelsTopLeft, Workflow } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import {
+  BarChart3,
+  Brain,
+  Bug,
+  Check,
+  Database,
+  FileSearch,
+  Filter,
+  GitBranch,
+  Image as ImageIcon,
+  Lock,
+  Mail,
+  Monitor,
+  PanelsTopLeft,
+  Route,
+  Workflow
+} from 'lucide-react';
+
+type CaseStudyVisualConfig = {
+  icon: LucideIcon;
+  eyebrow: string;
+  stages: [string, string, string];
+  metrics: [string, string, string];
+  glow: string;
+};
+
+const caseStudyVisuals: Record<string, CaseStudyVisualConfig> = {
+  'hubspot-crm-rebuild': {
+    icon: Database,
+    eyebrow: 'CRM data model',
+    stages: ['Properties', 'Lifecycle', 'Reporting'],
+    metrics: ['Clean', 'Synced', 'Trusted'],
+    glow: 'bg-secondary/20'
+  },
+  'hvac-lifecycle-automation': {
+    icon: Route,
+    eyebrow: 'Lead lifecycle',
+    stages: ['Capture', 'Route', 'Nurture'],
+    metrics: ['New', 'Qualified', 'Booked'],
+    glow: 'bg-purple/20'
+  },
+  'audit-nurture-system': {
+    icon: Mail,
+    eyebrow: 'Nurture control',
+    stages: ['Webhook', 'Schedule', 'Reconcile'],
+    metrics: ['Queued', 'Active', 'Exited'],
+    glow: 'bg-secondary/20'
+  },
+  'pardot-database-rebuild': {
+    icon: Filter,
+    eyebrow: 'Audience recovery',
+    stages: ['Segment', 'Deduplicate', 'Validate'],
+    metrics: ['Review', 'Sendable', 'Suppressed'],
+    glow: 'bg-purple/20'
+  },
+  'website-qa-crawler': {
+    icon: Bug,
+    eyebrow: 'Rendered-page QA',
+    stages: ['Crawl', 'Inspect', 'Evidence'],
+    metrics: ['Pages', 'Checks', 'Findings'],
+    glow: 'bg-secondary/20'
+  },
+  'hubspot-form-finder': {
+    icon: FileSearch,
+    eyebrow: 'Form discovery',
+    stages: ['Render', 'Detect', 'Classify'],
+    metrics: ['Found', 'Mapped', 'Reviewed'],
+    glow: 'bg-purple/20'
+  },
+  'nero-ai-second-brain': {
+    icon: Brain,
+    eyebrow: 'Knowledge system',
+    stages: ['Capture', 'Connect', 'Recall'],
+    metrics: ['Notes', 'Links', 'Context'],
+    glow: 'bg-secondary/20'
+  },
+  'private-media-archive': {
+    icon: Lock,
+    eyebrow: 'Protected archive',
+    stages: ['Authorize', 'Organize', 'Deliver'],
+    metrics: ['Private', 'Indexed', 'Responsive'],
+    glow: 'bg-purple/20'
+  },
+  'legacy-portfolio-website': {
+    icon: Monitor,
+    eyebrow: 'Frontend system',
+    stages: ['Structure', 'Style', 'Ship'],
+    metrics: ['Desktop', 'Tablet', 'Mobile'],
+    glow: 'bg-secondary/20'
+  }
+};
+
+function CaseStudyProjectVisual({ config, heightClass }: { config: CaseStudyVisualConfig; heightClass: string }) {
+  const Icon = config.icon;
+
+  return (
+    <div aria-hidden="true" className={`relative overflow-hidden bg-[linear-gradient(145deg,#07182f,#0a102b_55%,#171039)] p-4 sm:p-5 ${heightClass}`}>
+      <span className={`absolute -right-14 -top-16 h-52 w-52 rounded-full blur-3xl ${config.glow}`} />
+      <span className="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-secondary/[0.09] blur-3xl" />
+      <div className="relative grid h-full grid-cols-[0.78fr_1.22fr] gap-3 sm:gap-4">
+        <div className="flex min-w-0 flex-col justify-between rounded-xl border border-secondary/25 bg-[#08152d]/85 p-3 shadow-[inset_0_1px_0_rgba(255,255,255,.06)] sm:p-4">
+          <p className="font-mono text-[0.48rem] font-bold uppercase tracking-[0.16em] text-secondary/85 sm:text-[0.55rem]">{config.eyebrow}</p>
+          <Icon className="h-12 w-12 text-cyan-100 drop-shadow-[0_0_16px_rgba(10,196,255,.55)] sm:h-16 sm:w-16" strokeWidth={1.45} />
+          <div className="grid gap-1.5">
+            {config.metrics.map((metric, index) => (
+              <div key={metric} className="flex items-center gap-2">
+                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${index === 1 ? 'bg-purple' : 'bg-secondary'}`} />
+                <span className="truncate font-mono text-[0.45rem] uppercase tracking-wider text-white/46 sm:text-[0.52rem]">{metric}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative flex min-w-0 flex-col justify-center gap-2 sm:gap-3">
+          <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox="0 0 240 180" preserveAspectRatio="none">
+            <path d="M22 32C88 32 62 90 124 90S154 148 218 148" fill="none" stroke="#23D2FF" strokeOpacity=".32" strokeWidth="2" strokeDasharray="5 7" />
+          </svg>
+          {config.stages.map((stage, index) => (
+            <div key={stage} className={`relative flex min-w-0 items-center gap-3 rounded-xl border bg-[#0a1733]/90 px-3 py-3 sm:px-4 ${index === 1 ? 'ml-3 border-purple/35 sm:ml-7' : 'border-secondary/25'}`}>
+              <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-lg border font-mono text-[0.55rem] font-bold ${index === 1 ? 'border-purple/45 bg-purple/[0.12] text-purple-100' : 'border-secondary/35 bg-secondary/[0.08] text-cyan-100'}`}>0{index + 1}</span>
+              <span className="truncate font-mono text-[0.55rem] font-bold uppercase tracking-[0.11em] text-white/72 sm:text-[0.62rem]">{stage}</span>
+              <Check className="ml-auto h-3.5 w-3.5 shrink-0 text-secondary" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function PortfolioProjectVisual({
   slug,
@@ -10,6 +138,11 @@ export function PortfolioProjectVisual({
   visualMode?: 'code-preview';
 }) {
   const heightClass = featured ? 'h-64 sm:h-96 lg:h-full lg:min-h-[30rem]' : 'h-44 sm:h-56';
+
+  const caseStudyVisual = caseStudyVisuals[slug];
+  if (caseStudyVisual) {
+    return <CaseStudyProjectVisual config={caseStudyVisual} heightClass={heightClass} />;
+  }
 
   if (slug === 'duplicate-deal-prevention-system' || slug === 'campaign-workflow-reporting-support') {
     return (

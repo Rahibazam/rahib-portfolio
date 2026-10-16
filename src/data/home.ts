@@ -103,6 +103,6 @@ export const homeFeaturedWork = [
     image: '/images/projects/featured-surfing.svg',
     description: 'Built a repeatable crawler that checks page health, visible output, and technical issues across large website inventories.',
     tags: ['TypeScript', 'Crawlee', 'Web QA'],
-    href: '/portfolio#project-grid'
+    href: '/portfolio/website-qa-crawler'
   }
 ];

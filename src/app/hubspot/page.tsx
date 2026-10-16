@@ -233,7 +233,7 @@ export default function HubSpotPage() {
                     <h3 className="mt-5 font-display text-2xl font-black uppercase leading-tight text-white">{project.title}</h3>
                     <p className="mt-4 text-sm leading-7 text-white/62">{project.description}</p>
                     <div className="mt-5 flex flex-wrap gap-2">{project.tags.map((tag) => <Badge key={tag} className="min-h-6 px-2.5 text-[0.58rem]">{tag}</Badge>)}</div>
-                    <TransitionLink href={project.href ?? '/portfolio'} className="mt-auto inline-flex w-fit max-w-full flex-wrap items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b1d]">{project.href ? 'Read case study' : 'View project archive'} <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0" /></TransitionLink>
+                    <TransitionLink href={project.href} className="mt-auto inline-flex w-fit max-w-full flex-wrap items-center gap-2 pt-7 font-mono text-xs font-bold uppercase tracking-[0.14em] text-secondary hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#070b1d]">Read case study <ArrowRight aria-hidden="true" className="h-3.5 w-3.5 shrink-0" /></TransitionLink>
                   </div>
                 </article>
               </Reveal>

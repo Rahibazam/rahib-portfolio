@@ -89,17 +89,17 @@ export default function TermsPage() {
     <PageShell>
       <Container className="mobile-page mobile-page-legal mobile-page-terms max-w-[108rem] px-5 pt-32 sm:px-8 sm:pt-36 lg:pt-40 xl:px-10">
         <Reveal variant="plain">
-          <header className="relative overflow-hidden border-y border-secondary/25 px-0 py-14 sm:py-16 lg:py-20">
+          <header className="relative overflow-hidden border-y border-secondary/25 px-4 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_10%,rgba(10,196,255,.12),transparent_28rem),radial-gradient(circle_at_92%_85%,rgba(108,76,255,.14),transparent_32rem)]" />
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(10,196,255,.7),rgba(139,108,255,.5),transparent)]" />
-            <div className="relative z-10 max-w-5xl">
+            <div className="relative z-10 mx-auto max-w-5xl text-center">
               <h1 className="home-display text-[clamp(2.7rem,6.4vw,5.8rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-white">
                 Clear terms. No <HeadingAccent>fine-print fog.</HeadingAccent>
               </h1>
-              <p className="mt-8 max-w-3xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">
+              <p className="mx-auto mt-8 max-w-3xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8">
                 These Terms &amp; Conditions explain the rules that apply when you use this website, submit an inquiry, view portfolio materials, or consider working with me.
               </p>
-              <div className="mt-9 flex flex-wrap gap-x-8 gap-y-3 border-l border-secondary/45 pl-5 font-mono text-[0.68rem] font-bold uppercase tracking-[0.15em] text-white/58">
+              <div className="mt-9 flex flex-wrap justify-center gap-x-8 gap-y-3 font-mono text-[0.68rem] font-bold uppercase tracking-[0.15em] text-white/58">
                 <span>Effective September 11, 2026</span>
                 <span>Last updated September 11, 2026</span>
               </div>
