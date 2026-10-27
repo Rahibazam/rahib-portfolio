@@ -48,6 +48,11 @@ export type CaseStudy = {
   engagement: string;
   role: string;
   heroStatement: string;
+  relatedService?: {
+    href: string;
+    leadIn: string;
+    label: string;
+  };
   headings: CaseStudySectionHeadings;
   facts: CaseStudyFact[];
   challenge: {
@@ -75,6 +80,11 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Live HubSpot CRM rebuild",
     "role": "CRM implementation specialist",
     "heroStatement": "Rebuilt a live HubSpot environment around cleaner data, lifecycle logic, automation, reporting, and governance while removing a large duplicate population from active operations.",
+    "relatedService": {
+      "href": "/hubspot",
+      "leadIn": "If your portal faces similar structural issues, explore my",
+      "label": "HubSpot implementation and cleanup services"
+    },
     "headings": {
       "challenge": { "lead": "Live HubSpot", "accent": "CRM Repair" },
       "approach": { "lead": "CRM Cleanup and", "accent": "Rebuild" },
@@ -207,6 +217,11 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Multi-channel lifecycle automation",
     "role": "Marketing automation specialist",
     "heroStatement": "Built an HVAC lifecycle system spanning nurture, hot-lead routing, deal suppression, win-back, monthly drip, calling, and cross-platform handoffs across connected marketing tools.",
+    "relatedService": {
+      "href": "/hubspot",
+      "leadIn": "If your lifecycle workflows face similar gaps, explore my",
+      "label": "HubSpot workflow automation services"
+    },
     "headings": {
       "challenge": { "lead": "Disconnected Lead", "accent": "Lifecycle Automation" },
       "approach": { "lead": "HVAC Lead Lifecycle", "accent": "Build" },
@@ -339,6 +354,11 @@ export const caseStudies: CaseStudy[] = [
     "engagement": "Production nurture automation",
     "role": "HubSpot automation specialist",
     "heroStatement": "Built a production-safe audit nurture with webhook ingestion, automated deal creation, exit logic, reconciliation, scheduling, and extensive automated QA before activation.",
+    "relatedService": {
+      "href": "/hubspot",
+      "leadIn": "If your automation needs the same safeguards, explore my",
+      "label": "HubSpot workflow automation and troubleshooting services"
+    },
     "headings": {
       "challenge": { "lead": "Production-Safe", "accent": "Nurture Automation" },
       "approach": { "lead": "Audit Nurture Workflow", "accent": "Build" },

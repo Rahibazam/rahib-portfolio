@@ -112,7 +112,10 @@ export default function HubSpotPage() {
         <ScrollFadeHero className="grid min-h-[calc(100svh-5rem)] items-center gap-12 pb-24 xl:min-h-[48rem] xl:grid-cols-[0.95fr_1.05fr] xl:gap-8">
           <div aria-hidden="true" className="pointer-events-none absolute -left-48 top-1/4 h-[34rem] w-[34rem] rounded-full bg-secondary/[0.08] blur-[120px]" />
           <Reveal priority className="relative z-10">
-            <h1 className="home-display max-w-[52rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.025em] text-white">
+            <p className="font-mono text-xs font-bold uppercase tracking-[0.32em] text-secondary drop-shadow-[0_0_10px_rgba(10,196,255,0.55)] sm:text-sm">
+              HubSpot CRM Implementation Consultant
+            </p>
+            <h1 className="home-display mt-7 max-w-[52rem] text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.98] tracking-[-0.025em] text-white">
               <span className="block xl:whitespace-nowrap">I live in HubSpot.</span>
               <span className="block xl:whitespace-nowrap">Rent is <HeadingAccent>terrible.</HeadingAccent></span>
             </h1>

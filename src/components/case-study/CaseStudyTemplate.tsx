@@ -17,6 +17,7 @@ import { CaseStudySystemSpine } from '@/components/case-study/CaseStudySystemSpi
 import { HeadingAccent, HomeSectionHeader } from '@/components/home/HomeSectionHeader';
 import { PageShell } from '@/components/motion/PageShell';
 import { Reveal } from '@/components/motion/Reveal';
+import { TransitionLink } from '@/components/motion/TransitionLink';
 import { ButtonTransitionLink } from '@/components/ui/Button';
 import { BuildTogetherBackground } from '@/components/ui/BuildTogetherBackground';
 import { Container } from '@/components/ui/Container';
@@ -214,7 +215,20 @@ export function CaseStudyTemplate({ caseStudy, project }: CaseStudyTemplateProps
                   </div>
 
                   <h2 className="site-h2-statement mt-6">{caseStudy.headings.closing.lead} <HeadingAccent>{caseStudy.headings.closing.accent}</HeadingAccent></h2>
-                  <p className="mx-auto mt-7 max-w-5xl text-base leading-8 text-white/72 sm:text-lg">{caseStudy.reflection}</p>
+                  <p className="mx-auto mt-7 max-w-5xl text-base leading-8 text-white/72 sm:text-lg">
+                    {caseStudy.reflection}
+                    {caseStudy.relatedService ? (
+                      <>
+                        {' '}{caseStudy.relatedService.leadIn}{' '}
+                        <TransitionLink
+                          href={caseStudy.relatedService.href}
+                          className="premium-underline-link font-semibold text-secondary"
+                        >
+                          {caseStudy.relatedService.label}
+                        </TransitionLink>.
+                      </>
+                    ) : null}
+                  </p>
                   <p className="mx-auto mt-5 max-w-5xl font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white">{caseStudy.confidentiality}</p>
 
                   <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
